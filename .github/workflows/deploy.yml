@@ -1,11 +1,12 @@
-name: deploy-please
+name: deploy
 on:                            # Trigger the workflow on push to main branch
  push:
   branches:
    - master
 
 # Testing: Setting the GITHUB_TOKEN permissions for all jobs in a workflow
-permissions: read-all write-all
+permissions: write-all
+
 
  # This job installs dependencies, build the book, and pushes it to `gh-pages`
 
