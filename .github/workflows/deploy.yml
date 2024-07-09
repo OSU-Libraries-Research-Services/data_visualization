@@ -1,16 +1,14 @@
-name: deploy
+name: deploy-please
+on:                            # Trigger the workflow on push to main branch
+ push:
+  branches:
+   - master
 
-on:
-  # Trigger the workflow on push to main branch
-  push:
-  
-  # Testing: Setting the GITHUB_TOKEN permissions for all jobs in a workflow
+# Testing: Setting the GITHUB_TOKEN permissions for all jobs in a workflow
 permissions: read-all write-all
-  
-    branches:
-      - master
 
-# This job installs dependencies, build the book, and pushes it to `gh-pages`
+ # This job installs dependencies, build the book, and pushes it to `gh-pages`
+
 jobs:
   build-and-deploy-book:
     runs-on: ${{ matrix.os }}
