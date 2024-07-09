@@ -3,6 +3,10 @@ name: deploy
 on:
   # Trigger the workflow on push to main branch
   push:
+  
+  # Testing: Setting the GITHUB_TOKEN permissions for all jobs in a workflow
+permissions: read-all write-all
+  
     branches:
       - master
 
