@@ -1,0 +1,25 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 51431d05-b505-41f1-a61d-9ce1feee8f89
+  # title: Data Visualization
+  # description:
+  keywords: []
+  authors: [
+    - name: Sarah Murphy, Data Visualization Librarian
+    affiliation: The Ohio State University
+  ]
+  copyright: "The Ohio State University Libraries, 2024"
+  github: Murphy465/learn_jupyterbooks
+  # bibliography: []
+site:
+  template: book-theme
+  title: Data Visualization
+  # options:
+  #   favicon: favicon.ico
+  #   logo: logo.png
+  nav: []
+  actions:
+    - title: Learn More
+      url: https://mystmd.org/guide
+  domains: []

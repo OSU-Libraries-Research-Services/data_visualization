@@ -1,0 +1,31 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+# parts:
+# - caption: What tool is right for my project?
+#   file: dataVisualizationTools
+chapters:
+- file: dataVisualizationTools
+  title: What tool is right for my project?
+  sections:
+  - file: excel
+    title: ... Excel
+  - file: tableau
+    title: ... Tableau
+  - file: python
+    title: ... Python
+  - file: r_language
+    title: ... R
+# - caption: Where can I find data to visualize?
+#   chapters:
+#   - file: test
+#     title: test file
+#   - file: table
+#     title: table file
+#   - file: test_myst
+#     title: try myst
+
+
+
