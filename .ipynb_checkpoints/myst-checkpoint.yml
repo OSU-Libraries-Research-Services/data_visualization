@@ -1,0 +1,51 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 1fdbd555-4f92-488d-87f3-5c26265f8410
+  title: Data Visualization
+  description: Library curated resources to enhance your data visualization and data preparation skills.
+  keywords: data visualization, data preparation, Excel, Tableau, Python, R
+  authors: Sarah Anne Murphy
+  github: https://github.com/Murphy465/data_visualization_myst
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+  toc:
+    - file: README.md
+    - title: Resources
+      children:
+      - file: tools.md
+        # children:
+      - file: excel.md
+      - file: tableau.md
+      - file: python.md
+      - file: r_language.md
+    - title: Tutorials - Python
+      children:
+      - file: python_basics.md
+      - title: Websites and APIs
+        children:
+        - file: latern.md
+        - file: animals.md
+        - file: wikipedia.md
+        - file: icite.md
+        - file: pubmed_author_affiliations.md
+        - file: ohiolink.md
+        - file: crossref.md
+        - file: scopus.md
+    - title: Tutorials - Tableau
+      children:
+      - file: tableau_for_research.md
+
+
+
+
+
+
+
+    
+site:
+  template: book-theme
+  options:
+    favicon: favicon.ico
+    logo: logo.png
+
+
