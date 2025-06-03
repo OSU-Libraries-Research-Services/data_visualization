@@ -123,7 +123,7 @@ print(results.shape)
 print(results.columns)
 
 #export results to csv file
-results.to_csv('results.csv', encoding='utf8')
+results.to_csv('results.csv', encoding='utf-8')
 
 :::
 
@@ -188,6 +188,8 @@ results_authors=pd.DataFrame(s_author.authors)
 
 #select columns
 results_authors=results_authors[['surname','initials','givenname','affiliation','city','country']]
+
+results_authors.to_csv('results_authors.csv', encoding='utf-8')
 ```
 
 :::
