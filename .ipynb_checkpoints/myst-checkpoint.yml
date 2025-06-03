@@ -20,20 +20,20 @@ project:
       - file: r_language.md
     - title: Tutorials - Python
       children:
-      - file: python_basics.md
+      - file: python_basics.ipynb
       - title: Websites and APIs
         children:
-        - file: latern.md
-        - file: animals.md
-        - file: wikipedia.md
-        - file: icite.md
-        - file: pubmed_author_affiliations.md
-        - file: ohiolink.md
-        - file: crossref.md
-        - file: scopus.md
+        - file: latern.ipynb
+        - file: animals.ipynb
+        - file: wikipedia.ipynb
+        - file: icite.ipynb
+        - file: pubmed_author_affiliations.ipynb
+        - file: ohiolink.ipynb
+        - file: crossref.ipynb
+        - file: scopus.ipynb
     - title: Tutorials - Tableau
       children:
-      - file: tableau_for_research.md
+      - file: tableau_for_research.ipynb
 
 
 
