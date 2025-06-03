@@ -20,7 +20,7 @@ project:
       - file: r_language.md
     - title: Tutorials - Python
       children:
-      - file: python_basics.md
+      # - file: python_basics.md
       - file: python_basics_jupyter.ipynb
       - title: Websites and APIs
         children:
