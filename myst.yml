@@ -23,7 +23,7 @@ project:
       - file: python_basics.ipynb
       - title: Websites and APIs
         children:
-        - file: latern.ipynb
+        - file: lantern.ipynb
         - file: animals.ipynb
         - file: wikipedia.ipynb
         - file: icite.ipynb
