@@ -32,7 +32,8 @@ project:
         - file: crossref.ipynb
         - file: scopus.ipynb
       - title: Data Visualization
-        - file: python_data_visualization
+        children:
+        - file: python_data_visualization.ipynb
     - title: Tutorials - Tableau
       children:
       - file: tableau_for_research.ipynb
