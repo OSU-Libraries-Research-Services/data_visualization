@@ -23,7 +23,7 @@ project:
       - file: python_basics.ipynb
       - title: Websites and APIs
         children:
-        - file: latern.ipynb
+        - file: lantern.ipynb
         - file: animals.ipynb
         - file: wikipedia.ipynb
         - file: icite.ipynb
@@ -31,6 +31,8 @@ project:
         - file: ohiolink.ipynb
         - file: crossref.ipynb
         - file: scopus.ipynb
+        - title: Data Visualization
+        - file: python_data_visualization
     - title: Tutorials - Tableau
       children:
       - file: tableau_for_research.ipynb
