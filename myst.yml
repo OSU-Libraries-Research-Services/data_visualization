@@ -31,9 +31,9 @@ project:
         - file: ohiolink.ipynb
         - file: crossref.ipynb
         - file: scopus.ipynb
-      - title: Data Visualization
-        children:
-        - file: python_data_visualization.ipynb
+      # - title: Data Visualization
+      #   children:
+      - file: python_data_visualization.ipynb
     - title: Tutorials - Tableau
       children:
       - file: tableau_for_research.ipynb
