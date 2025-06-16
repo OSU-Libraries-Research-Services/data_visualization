@@ -19,7 +19,7 @@ project:
       - file: python.md
       - file: r_language.md
     # - title: DATA SKILLS
-    - file: data_skills.ipynb
+    # - file: data_skills.ipynb
     - title: Tutorials - Python
       children:
       - file: python_basics.ipynb
@@ -33,13 +33,13 @@ project:
         - file: ohiolink.ipynb
         - file: crossref.ipynb
         - file: scopus.ipynb
-      # - title: Data Visualization
-      #   children:
       - file: python_data_visualization.ipynb
     - title: Tutorials - Tableau
       children:
-      - file: tableau_for_research.ipynb
-      - file: tableau_research_getting_started.ipynb
+      - title: Tableau for Research
+        children:
+        - file: tableau_for_research.ipynb
+        - file: tableau_research_getting_started.ipynb
 
 
 
