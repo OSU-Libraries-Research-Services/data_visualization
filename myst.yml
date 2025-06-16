@@ -36,12 +36,8 @@ project:
       - file: python_data_visualization.ipynb
     - title: Tutorials - Tableau
       children:
-      - title: Tableau for Research
-        children:
-        - title: Tableau for Research
-          children:
-          - file: tableau_for_research.ipynb
-          - file: tableau_research_getting_started.ipynb
+      - file: tableau_for_research.ipynb
+      - file: tableau_research_getting_started.ipynb
 
 
 
