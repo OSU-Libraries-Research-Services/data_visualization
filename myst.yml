@@ -18,7 +18,8 @@ project:
       - file: tableau.md
       - file: python.md
       - file: r_language.md
-    - title: DATA SKILLS
+    # - title: DATA SKILLS
+    - file: data_skills.ipynb
     - title: Tutorials - Python
       children:
       - file: python_basics.ipynb
@@ -38,6 +39,7 @@ project:
     - title: Tutorials - Tableau
       children:
       - file: tableau_for_research.ipynb
+      - file: tableau_research_getting_started.ipynb
 
 
 
