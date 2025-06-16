@@ -38,8 +38,10 @@ project:
       children:
       - title: Tableau for Research
         children:
-        - file: tableau_for_research.ipynb
-        - file: tableau_research_getting_started.ipynb
+        - title: Tableau for Research
+          children:
+          - file: tableau_for_research.ipynb
+          - file: tableau_research_getting_started.ipynb
 
 
 
