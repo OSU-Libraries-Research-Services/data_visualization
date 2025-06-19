@@ -38,6 +38,7 @@ project:
       children:
       - file: tableau_for_research.ipynb
       - file: tableau_research_getting_started.ipynb
+      - file: tableau_research_choose_effective_visual.ipynb
 
 
 
