@@ -27,30 +27,49 @@ It can also help us share our data in meaninful and effective ways.
 
 # How should I visualize data?
 
-## Know your audience
-Think about the purpose of your visualization. Are you explaining or exploring a phenomenon? Will your audience better understand and respond to a simple representation of data, or something more complex? 
-## Apply visual best practices:
-### Choose the right chart for your data.
-This is one of the most difficult and rewarding aspects of visualizing data. Fortunately, a small number of graphs, when skillfully formatted and presented, fulfill most data visualization needs.
+## 👥 Know your audience
+Before you create a chart, consider your purpose. Are you explaining a concept or exploring a pattern? Will your audience benefit more from a simple, clear visual or a more complex, detailed one? Tailoring your visualization to your audience’s needs is key to making your data meaningful.
+## Apply visual best practices
+### 📊 Choose the right chart for your data
+Selecting the best chart type is one of the most important—and sometimes most challenging—parts of data visualization. Fortunately, a small set of well-designed charts can meet most needs when used thoughtfully.
 
-<!-- The __[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__ groups charts into various categories, such as deviation, ranking, distribution, and magnitude, to help you match your data to the relationship that is most important to visualize. ![Financial Times Visual Vocabulary](images/ft_thumbnail.png)  -->
-
-The __[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__ provides a **visual taxonomy** — or categorized collection of chart types — organized by the kind of relationship or message you want to convey. It helps answer the question: *“What’s the best way to visualize this data?”*
+- The **__[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__** provides a **visual taxonomy** — or categorized collection of chart types — organized by the kind of relationship or message you want to show — such as change over time, distribution, ranking, or correlation. It helps answer the question: ***“What’s the best way to visualize this data?”***
 
 ![Financial Times Visual Vocabulary](images/ft_thumbnail.png)
 
-To help you display relationships, comparisons, compositions, or distributions, __[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__ directs you to various charts based on the number of dimensions -- or categories -- and/or the number of measures or vairable -- you have to visualize.
+- **__[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__** helps you select a chart based on the number of measures and dimensions in your data.
 
-If you are thinking about how to influence action using the data you've collected, Stephanie Evergreen's Quantitative Chart Chooser, __[Effective Data Visualization: the Right Chart for the Right Data](https://library.ohio-state.edu/record=b10327021~S7)__ helps you to select a chart based on what you're trying to accomplish with your visualization. Published on the inside front cover of her book, the chooser guides your chart selection choices, challenging you to ask yourself whether you are trying to emphasize one number, show change over time, or display how your organization compares to a benchmark. Evergreen also provides a Qualitative Chart Chooser on the inside back cover and dedicates an entire chapter to helping you determine how to best present this data.
+- Stephanie Evergreen's **Quantitative Chart Chooser** published on the inside front cover of her book __[Effective Data Visualization: the Right Chart for the Right Data](https://library.ohio-state.edu/record=b10327021~S7)__, guide you based on your **communication goal.** Are emphasizing a single number? Showing change over time? Comparing to a benchmark? This tool guides you through those decisions.
 
-### Limit colors and fonts. Less is better.
-Use a color selection tool to choose an accessible palette. Simplify your chart. Remove tick marks and grid lines that do not add value. Try placing labels directly on your graph, rather than in a separate key. Use color to emphasize key points.
+Evergreen also provides a **Qualitative Chart Chooser** on the inside back cover and dedicates an entire chapter to helping you determine the best ways to present qualitative data effectively.
 
-## Add interactivity, if appropriate
-Consider using Tableau, RShiny, or another tool to allow users to meaningfully filter your visuals. Structure filters to allow users to filter data from higher to lower levels of granularity or detail.
+### 🎨 Use colors and fonts wisely 
+- Limit your color palette to maintain clarity and accessbility.
+- Use color to emphasize key point.
+- Stciek to clean, readable fonts and avoid unnecessary styling.
 
-## Provide context, and incorporate instructions
-Don't assume your audience will intuitively know how to use filters or interpret your graph. Provide context for your data source. Incorporate instructions into your title or create help page and link to it. Don't keep your audience guessing. Use your chart title to share the key takeaway(s).
+### ✂️ Less is better.
+- Simplify your chart.
+- Remove tick marks and grid lines that do not add value.
+- Label data point directly when possible to reduce cognitive load.
+- Aim for clarity over complexity — less is often more!
 
-## Test, test, test
-Ask a trusted friend or colleague to critique your visual. Do they understand it? If your visualization is interactive, are the filters working as you intended them to?
+## 🖱️ Add interactivity (when appropriate)
+Interactive tools like **Tableau**, **RShiny**, or **Power BI** allow users to explore data on their own.
+- Use filters to let users drill down from high-level overviews to detailed views.
+- Structure interactivity to support meaningful exploration.
+
+
+## 🧭 Provide context and clear instructions
+- Don't assume your audience knows how to interpret your chart.
+- Include a clear title that communicates the key takeaway.
+- Add brief instructions or a help link if your visualization is interactive.
+- Provide context for your data source(s).
+- Always cite your data source(s).
+
+
+## 🧪 Test your visualization
+Before sharing, ask a colleague or friend to critique your chart:
+- Do they understand the message?
+- Can they use the filters (if interactive)?
+- Does the visual guide them to the insight you intended?
