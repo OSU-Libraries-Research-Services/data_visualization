@@ -40,6 +40,7 @@ project:
       - file: tableau_research_getting_started.ipynb
       - file: tableau_research_choose_effective_visual.ipynb
       - file: tableau_research_read_interpret_evaluate.ipynb
+      - file: tableau_communicate.ipynb
 
 
 
