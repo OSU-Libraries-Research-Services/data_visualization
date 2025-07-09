@@ -12,11 +12,10 @@ license: CC-BY-4.0
 keywords: data visualization, tableau
 #abstract: 
 ---
-Tableau's drag and drop interface and no-code solutions allow you to effortlessly shift between alternative data visualizations as you work to determine which view is right for your data and your audience. Tableau can easily load and analyze datasets with more than 25 million rows. Further, Tableau is a flexible tool that encourages and develops visual thinking.
+**Tableau** is a powerful data visualization tool with a user-friendly drag-and-drop interface and no-code features that make it easy to explore different visual perspectives and find the best way to present your data. Capable of handling datasets with over 25 million rows, Tableau supports flexible, visual thinking and encourages experimentation as you analyze and communicate insights.
 # Free Resources
-Tableau's __[Academic Programs](https://www.tableau.com/community/academic)__ offers students faculty free licenses and learning resources. 
-
-University Libraries also offers __[free Tableau training](https://library.osu.edu/events?tid=921)__ tailored for faculty, graduate students and other university researchers throughout the year and a large number of __[training videos and books](https://search.library.osu.edu/discovery/search?query=any,contains,tableau%20computer%20file&tab=Everything&search_scope=MyInst_and_CI&vid=01OHIOLINK_OSU:OSU&facet=topic,include,Tableau%20Computer%20File&mode=simple&offset=0)__. 
+- Tableau's __[Academic Programs](https://www.tableau.com/community/academic)__ provides free licenses and learning resources for students and faculty. 
+- University Libraries  offers __[free Tableau training](https://library.osu.edu/events?tid=921)__ throughout the year, tailored for faculty, graduate students and other university researchers. - A wide range of __[training videos and books](https://search.library.osu.edu/discovery/search?query=any,contains,tableau%20computer%20file&tab=Everything&search_scope=MyInst_and_CI&vid=01OHIOLINK_OSU:OSU&facet=topic,include,Tableau%20Computer%20File&mode=simple&offset=0)__ is also available through University Libraries. 
 
 # Books
 

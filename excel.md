@@ -13,7 +13,7 @@ keywords: data visualization, excel
 #abstract: 
 ---
 
-Don't discount Excel! If you have fewer than 1,000 rows of data, Excel may be the perfect tool for the job. The following resources offer insights and valuable instruction for creating impactful visualizations with Excel.
+**Don’t discount Excel!** For datasets under 1,000 rows, Excel can be an ideal tool for creating clear and effective visualizations. The resources below offer practical guidance and tips for making the most of Excel’s powerful charting and data presentation features.
 
 # Books
 
