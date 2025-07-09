@@ -37,5 +37,5 @@ Sebastopol, CA : O'Reilly Media, 2023.
 :::
 
 ::::
-
+# O'Reilly Online Learning
 For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resources is provided by University Libraries and is available toall Ohio State faculty, students, and staff with a valid osu.edu email address.
