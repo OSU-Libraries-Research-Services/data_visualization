@@ -41,6 +41,7 @@ project:
       - file: tableau_research_choose_effective_visual.ipynb
       - file: tableau_research_read_interpret_evaluate.ipynb
       - file: tableau_communicate.ipynb
+      - file: tableau_continue_learning.ipynb
 
 
 

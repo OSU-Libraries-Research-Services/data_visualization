@@ -3,7 +3,7 @@
 
 # What is data visualization?
 
-Stephen Few defines data visualization as "all types of visual representations that support the exploration, examination, and communication of data" in his book __[Now You See It: Simple Visualization Techniques for Quantitative Analysis](https://olc1.ohiolink.edu/record=b27686243)__. Visualized data can help us efficiently and effectively summarize data. It can also help you observe patterns you might miss if you examined the raw data alone (e.g., __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__). 
+Stephen Few defines data visualization as "all types of visual representations that support the exploration, examination, and communication of data" in his book __[Now You See It: Simple Visualization Techniques for Quantitative Analysis](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9911857524308506)__. Visualized data can help us efficiently and effectively summarize data. It can also help you observe patterns you might miss if you examined the raw data alone (e.g., __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__). 
 
 <!-- <div class="video-container">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/YDT5ZPcMZWM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -39,7 +39,7 @@ Selecting the best chart type is one of the most important—and sometimes most 
 
 - **__[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__** helps you select a chart based on the number of measures and dimensions in your data.
 
-- Stephanie Evergreen's **Quantitative Chart Chooser** published on the inside front cover of her book __[Effective Data Visualization: the Right Chart for the Right Data](https://library.ohio-state.edu/record=b10327021~S7)__, guide you based on your **communication goal.** Are emphasizing a single number? Showing change over time? Comparing to a benchmark? This tool guides you through those decisions.
+- Stephanie Evergreen's **Quantitative Chart Chooser** published on the inside front cover of her book __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__, guide you based on your **communication goal.** Are emphasizing a single number? Showing change over time? Comparing to a benchmark? This tool guides you through those decisions.
 
 Evergreen also provides a **Qualitative Chart Chooser** on the inside back cover and dedicates an entire chapter to helping you determine the best ways to present qualitative data effectively.
 
