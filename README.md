@@ -46,7 +46,7 @@ The __[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visua
 
 __[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__ helps you select a chart based on how many variables (measures and dimensions) you are working with.
 
-Stephanie Evergreen's ***Quantitative Chart Chooser***, feature on the inside front cover of her book __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__), helps guide your chart selection based on your **communication goal.**—whether you're emphasizing a single number, showing change over time, or comparing data to a benchmark. On the inside back cover, her ***Qualitative Chart Chooser***, along with dedicated chapter in the book, offers practical guidance on how to effectively visualize qualitative data.
+Stephanie Evergreen's ***Quantitative Chart Chooser***, featured on the inside front cover of her book __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__), helps guide your chart selection based on your **communication goal.**—whether you're emphasizing a single number, showing change over time, or comparing data to a benchmark. On the inside back cover, her ***Qualitative Chart Chooser***, along with dedicated chapter in the book, offers practical guidance on how to effectively visualize qualitative data.
 
 ---
 ## 🎨 Use colors and fonts wisely 
@@ -82,4 +82,3 @@ Before sharing, ask a colleague or friend to critique your chart:
 - Can they use the filters (if interactive)?
 - Does the visual guide them to the insight you intended?
 
----
