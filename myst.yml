@@ -20,7 +20,7 @@ project:
       - file: r_language.md
     # - title: DATA SKILLS
     # - file: data_skills.ipynb
-    - title: Tutorials - Python
+    - title: Python Tutorials
       children:
       - file: python_basics.ipynb
       - title: Websites and APIs
@@ -34,7 +34,7 @@ project:
         - file: crossref.ipynb
         - file: scopus.ipynb
       - file: python_data_visualization.ipynb
-    - title: Tutorials - Tableau
+    - title: Tableau Tutorials
       children:
       - file: tableau_for_research.ipynb
       - file: tableau_research_getting_started.ipynb
