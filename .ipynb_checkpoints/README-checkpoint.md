@@ -8,7 +8,7 @@ Stephen Few in __[Now You See It: Simple Visualization Techniques for Quantitati
 Visualizing data allows us to:
 
 - Summarize complex information quickly
-- Spot patterns and trends that might be hidden in raw numbers (like in__[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__).
+- Spot patterns and trends that might be hidden in raw numbers (like in __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__).
 - Make data more accessible and meaningful.
 
 
