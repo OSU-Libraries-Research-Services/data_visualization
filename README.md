@@ -40,17 +40,17 @@ Tailoring your visuals to your audience ensures your message is clear and impact
 ## 📊 Choose the right chart for your data
 Picking the right chart type is crucial—and sometimes tricky. Luckily, there are great tools to help:
 
-- __[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__\
-    A **visual taxonomy**—or categorized collection of chart types—based kind of relationship or message you want to show (e.g., change over time, distribution, correlation. It helps answer the question: ***“What’s the best way to visualize this data?”***
+### Financial Times Visual Vocabulary
+__[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__ offers a **visual taxonomy**—or categorized collection of chart types—based kind of relationship or message you want to show (e.g., change over time, distribution, correlation. It helps answer the question: ***“What’s the best way to visualize this data?”***
 
 ![Financial Times Visual Vocabulary](images/ft_thumbnail.png)
 
-- __[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__\
-    Helps you select a chart based on how many variables (measures and dimensions) you are working with.
+### Abela's Chart Chooser
+__[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__ helps you select a chart based on how many variables (measures and dimensions) you are working with.
 
-- **Stephanie Evergreen's Chart Choosers**
-    - ***Quantitative Chart Chooser*** (front cover __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__) guides you based on your **communication goal.**—whether you're highlighting a single numbe, showing change over time, or comparing benchmarks. 
-    - ***Qualitative Chart Chooser*** (back cover) and an entire chapter in her book focus on how to effectively visualize qualitative data.
+### Stephanie Evergreen's Chart Choosers
+- ***Quantitative Chart Chooser*** (front cover __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__) guides you based on your **communication goal.**—whether you're highlighting a single numbe, showing change over time, or comparing benchmarks. 
+- ***Qualitative Chart Chooser*** (back cover) and an entire chapter in her book focus on how to effectively visualize qualitative data.
 
 ---
 ## 🎨 Use colors and fonts wisely 
