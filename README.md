@@ -5,13 +5,9 @@
 
 Stephen Few in __[Now You See It: Simple Visualization Techniques for Quantitative Analysis](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9911857524308506)__ defines data visualization as "all types of visual representations that support the exploration, examination, and communication of data". In essence, it's about turning raw data into visuals that help us understand and communicate insights more effectively.
 
-Visualizing data allows us to:
+Visualizing data allows us to quickly summarize complex information, making it easier to digest and interpret. It helps reveal patterns and trends that might otherwise go unnoticed when examining raw numbers alone—such as those illustrated by __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__. By transforming data into visual formats we can make information more accessible, meaningful, and easier to communicate to a wider audience.
 
-- Summarize complex information quickly
-- Spot patterns and trends that might be hidden in raw numbers (like in __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__).
-- Make data more accessible and meaningful.
-
-
+---
 :::{iframe} https://www.youtube.com/embed/YDT5ZPcMZWM
 :width: 100%
 
@@ -44,17 +40,17 @@ Tailoring your visuals to your audience ensures your message is clear and impact
 ## 📊 Choose the right chart for your data
 Picking the right chart type is crucial—and sometimes tricky. Luckily, there are great tools to help:
 
-- **The [Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)**
+- __[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__\
     A **visual taxonomy**—or categorized collection of chart types—based kind of relationship or message you want to show (e.g., change over time, distribution, correlation. It helps answer the question: ***“What’s the best way to visualize this data?”***
 
 ![Financial Times Visual Vocabulary](images/ft_thumbnail.png)
 
-- **[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)**
+- __[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__\
     Helps you select a chart based on how many variables (measures and dimensions) you are working with.
 
 - **Stephanie Evergreen's Chart Choosers**
-    - *Quantitative Chart Chooser* (front cover __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__) guides you based on your **communication goal.**—whether you're highlighting a single numbe, showing change over time, or comparing benchmarks. 
-    - *Qualitative Chart Chooser* (back cover) and an entire chapter in her book focus on how to effectively visualize qualitative data.
+    - ***Quantitative Chart Chooser*** (front cover __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__) guides you based on your **communication goal.**—whether you're highlighting a single numbe, showing change over time, or comparing benchmarks. 
+    - ***Qualitative Chart Chooser*** (back cover) and an entire chapter in her book focus on how to effectively visualize qualitative data.
 
 ---
 ## 🎨 Use colors and fonts wisely 
@@ -89,3 +85,5 @@ Before sharing, ask a colleague or friend to critique your chart:
 - Do they understand the message?
 - Can they use the filters (if interactive)?
 - Does the visual guide them to the insight you intended?
+
+---
