@@ -3,63 +3,79 @@
 
 # What is data visualization?
 
-Stephen Few defines data visualization as "all types of visual representations that support the exploration, examination, and communication of data" in his book __[Now You See It: Simple Visualization Techniques for Quantitative Analysis](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9911857524308506)__. Visualized data can help us efficiently and effectively summarize data. It can also help you observe patterns you might miss if you examined the raw data alone (e.g., __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__). 
+Stephen Few in __[Now You See It: Simple Visualization Techniques for Quantitative Analysis](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9911857524308506)__ defines data visualization as "all types of visual representations that support the exploration, examination, and communication of data". In essence, it's about turning raw data into visuals that help us understand and communicate insights more effectively.
 
-<!-- <div class="video-container">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/YDT5ZPcMZWM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div> -->
+Visualizing data allows us to:
+
+- Summarize complex information quickly
+- Spot patterns and trends that might be hidden in raw numbers (like in__[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__).
+- Make data more accessible and meaningful.
+
 
 :::{iframe} https://www.youtube.com/embed/YDT5ZPcMZWM
 :width: 100%
 
 :::
 
+---
 # Why visualize data?
 
-Visualized data can help us ...
-- **spot trends**
-- **identify patterns**, and
-- **quickly make sense** of our data. 
+Data visualization helps us:
 
-It can also help us share our data in meaninful and effective ways.
+- 📈 Identify trends
+- 🔍 Recognize patterns
+- 🧠 Quickly interpret information
 
-+++
+It also enhances how we **communicate findings**, making our data more compelling and easier to understand for others.
+
+---
 
 # How should I visualize data?
 
 ## 👥 Know your audience
-Before you create a chart, consider your purpose. Are you explaining a concept or exploring a pattern? Will your audience benefit more from a simple, clear visual or a more complex, detailed one? Tailoring your visualization to your audience’s needs is key to making your data meaningful.
-## Apply visual best practices
-### 📊 Choose the right chart for your data
-Selecting the best chart type is one of the most important—and sometimes most challenging—parts of data visualization. Fortunately, a small set of well-designed charts can meet most needs when used thoughtfully.
+Before creating a chart, think about your goal:
 
-- The **__[Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)__** provides a **visual taxonomy** — or categorized collection of chart types — organized by the kind of relationship or message you want to show — such as change over time, distribution, ranking, or correlation. It helps answer the question: ***“What’s the best way to visualize this data?”***
+- Are you **explaining** a concept or **exploring** a pattern?
+- Does your audience need a **simple overview** or a **detailed analysis**?
+
+Tailoring your visuals to your audience ensures your message is clear and impactful.
+
+---
+## 📊 Choose the right chart for your data
+Picking the right chart type is crucial—and sometimes tricky. Luckily, there are great tools to help:
+
+- **The [Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/)**
+    A **visual taxonomy**—or categorized collection of chart types—based kind of relationship or message you want to show (e.g., change over time, distribution, correlation. It helps answer the question: ***“What’s the best way to visualize this data?”***
 
 ![Financial Times Visual Vocabulary](images/ft_thumbnail.png)
 
-- **__[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)__** helps you select a chart based on the number of measures and dimensions in your data.
+- **[Abela's Chart Chooser](https://extremepresentation.typepad.com/files/choosing-a-good-chart-09.pdf)**
+    Helps you select a chart based on how many variables (measures and dimensions) you are working with.
 
-- Stephanie Evergreen's **Quantitative Chart Chooser** published on the inside front cover of her book __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__, guide you based on your **communication goal.** Are emphasizing a single number? Showing change over time? Comparing to a benchmark? This tool guides you through those decisions.
+- **Stephanie Evergreen's Chart Choosers**
+    - *Quantitative Chart Chooser* (front cover __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__) guides you based on your **communication goal.**—whether you're highlighting a single numbe, showing change over time, or comparing benchmarks. 
+    - *Qualitative Chart Chooser* (back cover) and an entire chapter in her book focus on how to effectively visualize qualitative data.
 
-Evergreen also provides a **Qualitative Chart Chooser** on the inside back cover and dedicates an entire chapter to helping you determine the best ways to present qualitative data effectively.
-
-### 🎨 Use colors and fonts wisely 
+---
+## 🎨 Use colors and fonts wisely 
 - Limit your color palette to maintain clarity and accessbility.
 - Use color to emphasize key point.
 - Stciek to clean, readable fonts and avoid unnecessary styling.
 
-### ✂️ Less is better.
+---
+## ✂️ Less is better.
 - Simplify your chart.
 - Remove tick marks and grid lines that do not add value.
 - Label data point directly when possible to reduce cognitive load.
 - Aim for clarity over complexity — less is often more!
 
+---
 ## 🖱️ Add interactivity (when appropriate)
 Interactive tools like **Tableau**, **RShiny**, or **Power BI** allow users to explore data on their own.
 - Use filters to let users drill down from high-level overviews to detailed views.
 - Structure interactivity to support meaningful exploration.
 
-
+---
 ## 🧭 Provide context and clear instructions
 - Don't assume your audience knows how to interpret your chart.
 - Include a clear title that communicates the key takeaway.
@@ -67,7 +83,7 @@ Interactive tools like **Tableau**, **RShiny**, or **Power BI** allow users to e
 - Provide context for your data source(s).
 - Always cite your data source(s).
 
-
+---
 ## 🧪 Test your visualization
 Before sharing, ask a colleague or friend to critique your chart:
 - Do they understand the message?
