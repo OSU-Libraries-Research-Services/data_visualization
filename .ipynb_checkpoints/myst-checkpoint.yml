@@ -4,7 +4,7 @@ project:
   id: 1fdbd555-4f92-488d-87f3-5c26265f8410
   title: Data Visualization
   description: Library curated resources to enhance your data visualization and data preparation skills.
-  keywords: data visualization, data preparation, Excel, Tableau, Python, R
+  keywords: data visualization, data preparation, Excel, Tableau, Python, R, library resources, tutorials
   authors: Sarah Anne Murphy
   github: https://github.com/OSU-Libraries-Research-Services/data_visualization
   # To autogenerate a Table of Contents, run "myst init --write-toc"

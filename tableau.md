@@ -46,4 +46,4 @@ With an additional 100 chapters, this book continues where __[Practical Tableau 
 ::::
 
 # O'Reilly Online Learning
-For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resources is provided by University Libraries and is available toall Ohio State faculty, students, and staff with a valid osu.edu email address.
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.

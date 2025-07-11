@@ -12,7 +12,7 @@ license: CC-BY-4.0
 keywords: data visualization, R programming language
 #abstract: 
 ---
-R is a free, open-source statistical programming language that is popular in several academic fields. R offers several packages supporting data cleaning and data visualization, inclugin ggplot and plotly. 
+**R is a free, open-source programming language designed for statistical computing and widely used across various academic disciplines.** It features a rich ecosystem of packages for data cleaning and visualization, including popular tools like **ggplot2** and **Plotly**, making it a powerful choice for data analysis and research.
 
 # Install R
 1. Download and install the __[R](https://cran.case.edu/)__ programming language.
@@ -38,4 +38,4 @@ Sebastopol, CA : O'Reilly Media, 2023.
 
 ::::
 # O'Reilly Online Learning
-For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resources is provided by University Libraries and is available toall Ohio State faculty, students, and staff with a valid osu.edu email address.
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
