@@ -52,7 +52,7 @@ Stephanie Evergreen's ***Quantitative Chart Chooser***, featured on the inside f
 ## 🎨 Use colors and fonts wisely 
 - Limit your color palette to maintain clarity and accessbility.
 - Use color to emphasize key point.
-- Stciek to clean, readable fonts and avoid unnecessary styling.
+- Stick to clean, readable fonts and avoid unnecessary styling.
 
 ---
 ## ✂️ Less is better.

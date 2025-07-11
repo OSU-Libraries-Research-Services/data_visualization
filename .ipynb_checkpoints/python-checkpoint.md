@@ -16,7 +16,7 @@ keywords: data visualization, python
 __[Python](https://www.python.org/)__ is a free, general purpose programming language widely used in both academia and industry. It provides a rich ecosystem of libraries—such as **Matplotlib**, **Plotly**, **Pandas**, and **BeautifulSoup**—that support tasks like data collection, cleaning, and visualization. 
 
 ## Free Resources
-Explore a collection of open-access, discipline-specific textbooks that are completely free to use. Each resource includes highly valuable Jupyter notbooks, which you can download or cline to reinforce your learning. Practice the concepts using the included demo datasets or apply them to your own data for a more personalized experience.
+Explore a collection of open-access, discipline-specific textbooks that are completely free to use. Each resource includes highly valuable Jupyter notbooks, which you can download or clone to reinforce your learning. Practice the concepts using the included demo datasets or apply them to your own data for a more personalized experience.
 
 ::::{grid} 1 1 2 3
 

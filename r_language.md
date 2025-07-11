@@ -12,7 +12,7 @@ license: CC-BY-4.0
 keywords: data visualization, R programming language
 #abstract: 
 ---
-**R is a free, open-source programming language designed for statistical computing and widely used across various academic disciplines.** It features a rich ecosystem of packages for data cleaning and visualization, including popular tools like **ggplot2** and **Plotly**, making it a powerful choice for data analysis and research.
+R is a free, open-source programming language designed for statistical computing and widely used across various academic disciplines. It features a rich ecosystem of packages for data cleaning and visualization, including popular tools like **ggplot2** and **Plotly**, making it a powerful choice for data analysis and research.
 
 # Install R
 1. Download and install the __[R](https://cran.case.edu/)__ programming language.
