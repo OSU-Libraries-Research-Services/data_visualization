@@ -12,6 +12,7 @@ project:
     - file: README.md
     - title: Library Resources
       children:
+      - file: overview.md
       - file: tools.md
         # children:
       - file: excel.md
