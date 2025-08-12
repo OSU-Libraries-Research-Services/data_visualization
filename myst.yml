@@ -56,5 +56,6 @@ site:
   options:
     favicon: favicon.ico
     logo: logo.png
+    analytics_google: G-BJ38N1FLJT
 
 
