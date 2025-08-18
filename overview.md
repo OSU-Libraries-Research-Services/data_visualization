@@ -8,6 +8,7 @@ authors:
       - The Ohio State University Libraries
     #   - Data Literacy and Data Literacy Librarian
     orcid: 0000-0002-7787-6890
+copyright: The Ohio State University Libraries, 2025
 license: CC-BY-4.0
 keywords: data visualization
 #abstract: 
