@@ -6,6 +6,8 @@ project:
   description: Library curated resources to enhance your data visualization and data preparation skills.
   keywords: data visualization, data preparation, Excel, Tableau, Python, R, library resources, tutorials
   authors: Sarah Anne Murphy
+  copyright: The Ohio State University Libraries, 2025
+  license: CC BY 4.0
   github: https://github.com/OSU-Libraries-Research-Services/data_visualization
   # To autogenerate a Table of Contents, run "myst init --write-toc"
   toc:
