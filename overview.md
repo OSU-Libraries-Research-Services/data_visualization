@@ -14,8 +14,7 @@ keywords: data visualization
 #abstract: 
 ---
 
-🚧 THIS PAGE IS UNDER CONSTRUCTION 🚧
-
+**Not sure where to start?** The resources below provide an overview of key data visualization concepts, showcase inspiring examples to spark creativity, explore the theory behind effective visual communication, and offer practical guidance for developing your skills through structured practice.
 
 ## Overview
 
