@@ -20,11 +20,7 @@ keywords: data visualization
 :::{card} Better Data Visualizations
 :link: https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507
 
-The entire card can be clicked to navigate to __[Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507)__ .
-
-![](images/cover_schwabish_data_visualization.png "Decorative book cover") 
-+++
-__[Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507)__ \
+![](images/cover_schwabish_data_visualization.png "Decorative book cover") __[Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507)__ \
 by Jonathan Schwabish\
 New York: Columbia University Press, 2021.
 :::
