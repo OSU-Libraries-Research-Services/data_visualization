@@ -8,15 +8,21 @@ authors:
       - The Ohio State University Libraries
     #   - Data Literacy and Data Literacy Librarian
     orcid: 0000-0002-7787-6890
+copyright: The Ohio State University Libraries, 2025
 license: CC-BY-4.0
 keywords: data visualization
 #abstract: 
 ---
 
-🚧 THIS PAGE IS UNDER CONSTRUCTION 🚧
-
+**Not sure where to start?** The resources below provide an overview of key data visualization concepts, showcase inspiring examples to spark creativity, explore the theory behind effective visual communication, and offer practical guidance for developing your skills through structured practice.
 
 ## Overview
+:::{card} Clickable Card
+:link: __[Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507)__ 
+
+The entire card can be clicked to navigate to book.
+:::
+
 
 ::::{grid} 1 1 2 3
 
