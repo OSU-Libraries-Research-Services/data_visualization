@@ -17,14 +17,17 @@ keywords: data visualization
 **Not sure where to start?** The resources below provide an overview of key data visualization concepts, showcase inspiring examples to spark creativity, explore the theory behind effective visual communication, and offer practical guidance for developing your skills through structured practice.
 
 ## Overview
-:::{card} Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks
+::::{card} Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks
 :link: https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507
 
-![](images/cover_schwabish_data_visualization.png "Decorative book cover")
+:::{figure} images/cover_schwabish_data_visualization.png
+:alt: Decorative book cover
+:figclass: left
+:::
 
 by Jonathan Schwabish\
 New York: Columbia University Press, 2021.
-:::
+::::
 
 ::::{grid} 1 1 2 3
 
