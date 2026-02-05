@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Visualizing Data – Data Visualization</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./scopus.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Visualization</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Library Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./python_basics.html" aria-current="page"> 
+<span class="menu-text">Python Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tableau_for_research.html"> 
+<span class="menu-text">Tableau Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/OSU-Libraries-Research-Services/data_visualization"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python_data_visualization.html">DATA VISUALIZATION</a></li><li class="breadcrumb-item"><a href="./python_data_visualization.html">Visualizing Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">INTRODUCTION</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mastering the Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">WEBSITES AND APIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lantern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1. The Lantern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./animals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2. Meet the Animals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wikipedia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Wikipedia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./icite.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4. iCite</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pubmed_author_affiliations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 5. Author Affiliations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ohiolink.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 6. OhioLINK ETD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./crossref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 7. Crossref</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scopus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 8. Scopus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">DATA VISUALIZATION</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_data_visualization.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Visualizing Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">CONTENTS</h2>
+   
+  <ul>
+  <li><a href="#data-skills-concepts" id="toc-data-skills-concepts" class="nav-link active" data-scroll-target="#data-skills-concepts">Data skills | concepts</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#pandas" id="toc-pandas" class="nav-link" data-scroll-target="#pandas">PANDAS</a>
+  <ul class="collapse">
+  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart">📊 Bar Chart</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-import-libraries" id="toc-step-1.-import-libraries" class="nav-link" data-scroll-target="#step-1.-import-libraries">Step 1. Import libraries</a></li>
+  <li><a href="#step-2.-read-in-files" id="toc-step-2.-read-in-files" class="nav-link" data-scroll-target="#step-2.-read-in-files">Step 2. Read in files</a></li>
+  <li><a href="#step-2.-merge-datasets" id="toc-step-2.-merge-datasets" class="nav-link" data-scroll-target="#step-2.-merge-datasets">Step 2. Merge datasets</a></li>
+  <li><a href="#step-3.-create-and-apply-filters" id="toc-step-3.-create-and-apply-filters" class="nav-link" data-scroll-target="#step-3.-create-and-apply-filters">Step 3. Create and apply filters</a></li>
+  <li><a href="#step-4.-aggregate-data" id="toc-step-4.-aggregate-data" class="nav-link" data-scroll-target="#step-4.-aggregate-data">Step 4. Aggregate data</a></li>
+  <li><a href="#step-5.-plot" id="toc-step-5.-plot" class="nav-link" data-scroll-target="#step-5.-plot">Step 5. Plot</a></li>
+  </ul></li>
+  <li><a href="#line-chart" id="toc-line-chart" class="nav-link" data-scroll-target="#line-chart">📈 Line chart</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-identify-relevant-columns-and-data-types" id="toc-step-1.-identify-relevant-columns-and-data-types" class="nav-link" data-scroll-target="#step-1.-identify-relevant-columns-and-data-types">Step 1. Identify relevant columns and data types</a></li>
+  <li><a href="#step-2.-aggregate-data-and-plot" id="toc-step-2.-aggregate-data-and-plot" class="nav-link" data-scroll-target="#step-2.-aggregate-data-and-plot">Step 2. Aggregate data and plot</a></li>
+  </ul></li>
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot">░ Scatterplot</a></li>
+  </ul></li>
+  <li><a href="#plotly" id="toc-plotly" class="nav-link" data-scroll-target="#plotly">PLOTLY</a>
+  <ul class="collapse">
+  <li><a href="#bar-chart-1" id="toc-bar-chart-1" class="nav-link" data-scroll-target="#bar-chart-1">📊 Bar Chart</a></li>
+  <li><a href="#line-chart-1" id="toc-line-chart-1" class="nav-link" data-scroll-target="#line-chart-1">📈 Line chart</a></li>
+  <li><a href="#scatterplot-1" id="toc-scatterplot-1" class="nav-link" data-scroll-target="#scatterplot-1">▒ Scatterplot</a></li>
+  </ul></li>
+  <li><a href="#seaborn" id="toc-seaborn" class="nav-link" data-scroll-target="#seaborn">SEABORN</a>
+  <ul class="collapse">
+  <li><a href="#bar-chart-2" id="toc-bar-chart-2" class="nav-link" data-scroll-target="#bar-chart-2">📊 Bar Chart</a></li>
+  <li><a href="#line-chart-2" id="toc-line-chart-2" class="nav-link" data-scroll-target="#line-chart-2">📈 Line chart</a></li>
+  <li><a href="#scatterplot-2" id="toc-scatterplot-2" class="nav-link" data-scroll-target="#scatterplot-2">▒ Scatterplot</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python_data_visualization.html">DATA VISUALIZATION</a></li><li class="breadcrumb-item"><a href="./python_data_visualization.html">Visualizing Data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Visualizing Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This lesson introduces three of the most popular Python libraries for data visualization: <strong>Pandas</strong>, <strong>Plotly</strong>, and <strong>Seaborn</strong> Each library offers unique capabilities for analyzing and presenting data. You will gain hands-on experience comparing these tools while developing skills to create insightful visualizations like bar charts, line charts, and scatterplots.</p>
+<section id="data-skills-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
+<ul>
+<li>Pandas</li>
+<li>Plotly</li>
+<li>Seaborn</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<ol type="1">
+<li>Compare and contrast <strong>Pandas</strong>, <strong>Plotly</strong>, and <strong>Seaborn</strong> for visualizing data in Python.</li>
+<li><strong>Formulate</strong> a data-driven question and <strong>outline</strong> the steps needed to filter, aggregate, and visualize data effectively.</li>
+<li><strong>Create</strong> and <strong>customize bar charts</strong> to compare categorical data.</li>
+<li><strong>Illustrate</strong> trends and patterns over time using <strong>line charts</strong>.</li>
+<li><strong>Explore</strong> relationships between two variables through <strong>scatterplots</strong>.</li>
+</ol>
+<p>This tutorial is designed to support <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> hosted by The Ohio State University Libraries Research Commons. It assumes you already have a basic understanding of Python, including how to iterate through lists and dictionaries to extract data using a for loop. To learn basic Python concepts visit the <a href="./python_basics.html">Python - Mastering the Basics</a> tutorial.</p>
+</section>
+<section id="pandas" class="level1">
+<h1>PANDAS</h1>
+<p><strong><a href="https://pandas.pydata.org/docs/reference/index.html">Pandas</a></strong> is powerful Python library designed to help you organize, explore and analyze in tables using Python. Pandas can be used to generate summary statistics and build <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html#pandas.DataFrame.plot">basic visualizations</a></strong>.</p>
+<p>Pandas integrates with Matplotlib to generate simple plots using the <code>.plot()</code> method. The <code>kind =</code> parameter specifies the type of chart to create:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>kind =</strong></th>
+<th style="text-align: left;">**Chart Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>line</code></td>
+<td style="text-align: left;">line chart (default)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>bar</code> or <code>barh</code></td>
+<td style="text-align: left;">vertical or horizontal bar chart</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>hist</code></td>
+<td style="text-align: left;">histogram</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>box</code></td>
+<td style="text-align: left;">boxplot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>kde</code> or <code>density</code></td>
+<td style="text-align: left;">Kernel Denstity Estimation plot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>area</code></td>
+<td style="text-align: left;">area plot</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>scatter</code></td>
+<td style="text-align: left;">scatterplot</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>hex</code></td>
+<td style="text-align: left;">hexagonal bin plots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pie</code></td>
+<td style="text-align: left;">pie charts</td>
+</tr>
+</tbody>
+</table>
+<section id="bar-chart" class="level2">
+<h2 class="anchored" data-anchor-id="bar-chart">📊 Bar Chart</h2>
+<p>Let’s build a bar chart that highlights the <strong>average U.S. peak chart positions</strong> for albums by <strong><a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">2025 Rock &amp; Roll Hall of Fame inductees</a></strong> to explore visualizing data with Pandas.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The syntax for building a <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html#pandas.DataFrame.plot">Basic Pandas Chart</a></strong> is:</p>
+<p><code>DataFrame.plot(*args, **kwargs)</code></p>
+<section id="step-1.-import-libraries" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-import-libraries">Step 1. Import libraries</h3>
+<p>Pandas works alongside matplotlib libraries to visualize data.</p>
+<div id="21f7701d-b7d1-4ee5-a13a-da77c700c8fe" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-2.-read-in-files" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-read-in-files">Step 2. Read in files</h3>
+<p>We’ll use the <code>rock_n_roll_performers.csv</code> table from the Wikipedia page on <strong><a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">Rock and Roll Hall of Fame inductees</a></strong> to explore plotting with Pandas. The <em>Performers</em> category honors recording artists and bands who have had a significant and lasting impact on the development and legacy of rock and roll. We’ll also enhance our analysis by linking this dataset with <code>rock_n_roll_studio_albums.csv</code> which contains studio album information of many of the inductees.</p>
+<section id="read_csv" class="level4">
+<h4 class="anchored" data-anchor-id="read_csv">.read_csv()</h4>
+<div id="3578d0d1-4784-4054-b592-87a6166bb359" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>performers<span class="op">=</span>pd.read_csv(<span class="st">'data/rock_n_roll_performers.csv'</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># A UnicodeDecodeError occurs after asking Pandas to read in rock_n_roll_studio_albums. Co-pilot suggests trying a difference encoding, like latin1</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>studio_albums<span class="op">=</span>pd.read_csv(<span class="st">'data/rock_n_roll_studio_albums.csv'</span>, encoding<span class="op">=</span><span class="st">'latin1'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="step-2.-merge-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-merge-datasets">Step 2. Merge datasets</h3>
+<p>After loading the <strong>performers</strong> and <strong>studio_albums</strong> tables using <code>pd.read_csv</code>, we can inspect the column headers using <code>.columns</code>.</p>
+<div id="e0955572-1432-4b32-a2ee-7cf1c713798d" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>performers.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>Index(['index', 'year', 'image', 'name', 'inducted_members',
+       'prior_nominations', 'induction_presenter', 'artist', 'image_url',
+       'artist_url'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div id="1b635279-7366-462c-bc4c-d7c61a1b656b" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>studio_albums.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>Index(['index', 'album_title', 'artist', 'certification_aria',
+       'certification_aria_status', 'certification_aria_x',
+       'certification_bmvi', 'certification_bmvi_status',
+       'certification_bmvi_x', 'certification_bpi', 'certification_bpi_status',
+       'certification_bpi_x', 'certification_mc', 'certification_mc_status',
+       'certification_mc_x', 'certification_riaa', 'certification_riaa_status',
+       'certification_riaa_x', 'certification_snep',
+       'certification_snep_status', 'certification_snep_x', 'day',
+       'format_4_track', 'format_8_track', 'format_blueray', 'format_box_set',
+       'format_cassette', 'format_cd', 'format_digital_compact_cassette',
+       'format_digital_download', 'format_dvd', 'format_lp',
+       'format_mini_disc', 'format_picture_disc', 'format_reel',
+       'format_streaming', 'format_vhs', 'month', 'peakAUS', 'peakAUT',
+       'peakCAN', 'peakFRA', 'peakGER', 'peakIRE', 'peakITA', 'peakJPN',
+       'peakNLD', 'peakNOR', 'peakNZ', 'peakSPA', 'peakSWE', 'peakSWI',
+       'peakUK', 'peakUS', 'peakUS Country', 'peakUS R&amp;B', 'Record label',
+       'Release date', 'year'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<p>Both datasets share the columns <strong>artist</strong> and <strong>year</strong>, which could be used for merging. However, to avoid confusion after joining, we’ll first rename the header <strong>year</strong> in the <strong>performers</strong> dataset to <strong>year_inducted</strong>.</p>
+<section id="rename" class="level4">
+<h4 class="anchored" data-anchor-id="rename">.rename()</h4>
+<div id="82f9314c-cb1f-4a7e-8ef2-a63c38ae2867" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>performers<span class="op">=</span>performers.rename(columns<span class="op">=</span>{<span class="st">'year'</span>:<span class="st">'year_inducted'</span>})  </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>performers.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>Index(['index', 'year_inducted', 'image', 'name', 'inducted_members',
+       'prior_nominations', 'induction_presenter', 'artist', 'image_url',
+       'artist_url'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<p>Then, we’ll merge the two datasets using the shared <strong>artist</strong> column.</p>
+<div id="325bc730-1419-411c-af37-4b6b91046e8b" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>performers_albums<span class="op">=</span>pd.merge(performers, studio_albums, on<span class="op">=</span><span class="st">'artist'</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>performers_albums.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>Index(['index_x', 'year_inducted', 'image', 'name', 'inducted_members',
+       'prior_nominations', 'induction_presenter', 'artist', 'image_url',
+       'artist_url', 'index_y', 'album_title', 'certification_aria',
+       'certification_aria_status', 'certification_aria_x',
+       'certification_bmvi', 'certification_bmvi_status',
+       'certification_bmvi_x', 'certification_bpi', 'certification_bpi_status',
+       'certification_bpi_x', 'certification_mc', 'certification_mc_status',
+       'certification_mc_x', 'certification_riaa', 'certification_riaa_status',
+       'certification_riaa_x', 'certification_snep',
+       'certification_snep_status', 'certification_snep_x', 'day',
+       'format_4_track', 'format_8_track', 'format_blueray', 'format_box_set',
+       'format_cassette', 'format_cd', 'format_digital_compact_cassette',
+       'format_digital_download', 'format_dvd', 'format_lp',
+       'format_mini_disc', 'format_picture_disc', 'format_reel',
+       'format_streaming', 'format_vhs', 'month', 'peakAUS', 'peakAUT',
+       'peakCAN', 'peakFRA', 'peakGER', 'peakIRE', 'peakITA', 'peakJPN',
+       'peakNLD', 'peakNOR', 'peakNZ', 'peakSPA', 'peakSWE', 'peakSWI',
+       'peakUK', 'peakUS', 'peakUS Country', 'peakUS R&amp;B', 'Record label',
+       'Release date', 'year'],
+      dtype='object')</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="step-3.-create-and-apply-filters" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-create-and-apply-filters">Step 3. Create and apply filters</h3>
+<p>Now that we’ve merged the inductee and album datasets, we can begin filtering the data to focus on specific trends or groups.</p>
+<p>Before applying any filters, it’s important to confirm the data type of the <strong>year_inducted</strong> column in the <strong>performers_albums</strong> DataFrame. This ensures we can perform numerical comparisons or sorting without errors.</p>
+<section id="dtypes" class="level4">
+<h4 class="anchored" data-anchor-id="dtypes">.dtypes</h4>
+<div id="98cc84f7-d081-4d47-a5f4-b61246b3ae23" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>performers_albums[<span class="st">'year_inducted'</span>].dtypes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>dtype('int64')</code></pre>
+</div>
+</div>
+<p>We can create and apply <strong>filter</strong> to isolate the <strong>2025 inductees</strong> using the <strong>year_inducted</strong> field.</p>
+</section>
+<section id="filter_variabledfcolumnvalue" class="level4">
+<h4 class="anchored" data-anchor-id="filter_variabledfcolumnvalue">filter_variable=df[‘column’]==value</h4>
+<div id="dd9e44e2-57c1-4771-8c98-a53b8ae3eff2" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#First create the filter</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>_2025_inductees<span class="op">=</span> performers_albums[<span class="st">'year_inducted'</span>]<span class="op">==</span><span class="dv">2025</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="filtered_dfdffilter_variable" class="level4">
+<h4 class="anchored" data-anchor-id="filtered_dfdffilter_variable">filtered_df=df[filter_variable]</h4>
+<div id="f74ac124-a68a-4d0b-abb1-aa437b944ec9" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Then apply the filter</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>performers_albums_filtered<span class="op">=</span>performers_albums[_2025_inductees]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>performers_albums_filtered</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">index_x</th>
+<th data-quarto-table-cell-role="th">year_inducted</th>
+<th data-quarto-table-cell-role="th">image</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">inducted_members</th>
+<th data-quarto-table-cell-role="th">prior_nominations</th>
+<th data-quarto-table-cell-role="th">induction_presenter</th>
+<th data-quarto-table-cell-role="th">artist</th>
+<th data-quarto-table-cell-role="th">image_url</th>
+<th data-quarto-table-cell-role="th">artist_url</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">peakSPA</th>
+<th data-quarto-table-cell-role="th">peakSWE</th>
+<th data-quarto-table-cell-role="th">peakSWI</th>
+<th data-quarto-table-cell-role="th">peakUK</th>
+<th data-quarto-table-cell-role="th">peakUS</th>
+<th data-quarto-table-cell-role="th">peakUS Country</th>
+<th data-quarto-table-cell-role="th">peakUS R&amp;B</th>
+<th data-quarto-table-cell-role="th">Record label</th>
+<th data-quarto-table-cell-role="th">Release date</th>
+<th data-quarto-table-cell-role="th">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4770</th>
+<td>264</td>
+<td>2025</td>
+<td>NaN</td>
+<td>Bad Company[193]</td>
+<td>Boz Burrell, Simon Kirke, Mick Ralphs, and Pau...</td>
+<td>First nomination</td>
+<td>NaN</td>
+<td>Bad Company</td>
+<td>/wiki/File:Bad_Company_-_1976.jpg</td>
+<td>/wiki/Bad_Company</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Island, Swan Song</td>
+<td>5/24/1974</td>
+<td>1974</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4771</th>
+<td>264</td>
+<td>2025</td>
+<td>NaN</td>
+<td>Bad Company[193]</td>
+<td>Boz Burrell, Simon Kirke, Mick Ralphs, and Pau...</td>
+<td>First nomination</td>
+<td>NaN</td>
+<td>Bad Company</td>
+<td>/wiki/File:Bad_Company_-_1976.jpg</td>
+<td>/wiki/Bad_Company</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Island, Swan Song</td>
+<td>3/28/1975</td>
+<td>1975</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4772</th>
+<td>264</td>
+<td>2025</td>
+<td>NaN</td>
+<td>Bad Company[193]</td>
+<td>Boz Burrell, Simon Kirke, Mick Ralphs, and Pau...</td>
+<td>First nomination</td>
+<td>NaN</td>
+<td>Bad Company</td>
+<td>/wiki/File:Bad_Company_-_1976.jpg</td>
+<td>/wiki/Bad_Company</td>
+<td>...</td>
+<td>NaN</td>
+<td>23.0</td>
+<td>NaN</td>
+<td>4.0</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Island, Swan Song</td>
+<td>1/30/1976</td>
+<td>1976</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4773</th>
+<td>264</td>
+<td>2025</td>
+<td>NaN</td>
+<td>Bad Company[193]</td>
+<td>Boz Burrell, Simon Kirke, Mick Ralphs, and Pau...</td>
+<td>First nomination</td>
+<td>NaN</td>
+<td>Bad Company</td>
+<td>/wiki/File:Bad_Company_-_1976.jpg</td>
+<td>/wiki/Bad_Company</td>
+<td>...</td>
+<td>NaN</td>
+<td>32.0</td>
+<td>NaN</td>
+<td>17.0</td>
+<td>15.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Island, Swan Song</td>
+<td>3/3/1977</td>
+<td>1977</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4774</th>
+<td>264</td>
+<td>2025</td>
+<td>NaN</td>
+<td>Bad Company[193]</td>
+<td>Boz Burrell, Simon Kirke, Mick Ralphs, and Pau...</td>
+<td>First nomination</td>
+<td>NaN</td>
+<td>Bad Company</td>
+<td>/wiki/File:Bad_Company_-_1976.jpg</td>
+<td>/wiki/Bad_Company</td>
+<td>...</td>
+<td>NaN</td>
+<td>9.0</td>
+<td>NaN</td>
+<td>10.0</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Swan Song</td>
+<td>3/7/1979</td>
+<td>1979</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4846</th>
+<td>270</td>
+<td>2025</td>
+<td>NaN</td>
+<td>The White Stripes[193]</td>
+<td>Jack White and Meg White.[197][198]</td>
+<td>1 (2023)</td>
+<td>NaN</td>
+<td>The White Stripes</td>
+<td>/wiki/File:Jack_%26_Meg,_The_White_Stripes.jpg</td>
+<td>/wiki/The_White_Stripes</td>
+<td>...</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>137.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Sympathy for the Record Industry</td>
+<td>6/20/2000</td>
+<td>2000</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4847</th>
+<td>270</td>
+<td>2025</td>
+<td>NaN</td>
+<td>The White Stripes[193]</td>
+<td>Jack White and Meg White.[197][198]</td>
+<td>1 (2023)</td>
+<td>NaN</td>
+<td>The White Stripes</td>
+<td>/wiki/File:Jack_%26_Meg,_The_White_Stripes.jpg</td>
+<td>/wiki/The_White_Stripes</td>
+<td>...</td>
+<td>NaN</td>
+<td>53.0</td>
+<td>NaN</td>
+<td>55.0</td>
+<td>61.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Sympathy for the Record Industry, Third Man Re...</td>
+<td>7/3/2001</td>
+<td>2001</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4848</th>
+<td>270</td>
+<td>2025</td>
+<td>NaN</td>
+<td>The White Stripes[193]</td>
+<td>Jack White and Meg White.[197][198]</td>
+<td>1 (2023)</td>
+<td>NaN</td>
+<td>The White Stripes</td>
+<td>/wiki/File:Jack_%26_Meg,_The_White_Stripes.jpg</td>
+<td>/wiki/The_White_Stripes</td>
+<td>...</td>
+<td>NaN</td>
+<td>7.0</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>6.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>V2</td>
+<td>4/1/2003</td>
+<td>2003</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">4849</th>
+<td>270</td>
+<td>2025</td>
+<td>NaN</td>
+<td>The White Stripes[193]</td>
+<td>Jack White and Meg White.[197][198]</td>
+<td>1 (2023)</td>
+<td>NaN</td>
+<td>The White Stripes</td>
+<td>/wiki/File:Jack_%26_Meg,_The_White_Stripes.jpg</td>
+<td>/wiki/The_White_Stripes</td>
+<td>...</td>
+<td>NaN</td>
+<td>8.0</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>V2</td>
+<td>6/7/2005</td>
+<td>2005</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4850</th>
+<td>270</td>
+<td>2025</td>
+<td>NaN</td>
+<td>The White Stripes[193]</td>
+<td>Jack White and Meg White.[197][198]</td>
+<td>1 (2023)</td>
+<td>NaN</td>
+<td>The White Stripes</td>
+<td>/wiki/File:Jack_%26_Meg,_The_White_Stripes.jpg</td>
+<td>/wiki/The_White_Stripes</td>
+<td>...</td>
+<td>NaN</td>
+<td>9.0</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>Third Man, Warner Bros.</td>
+<td>6/15/2007</td>
+<td>2007</td>
+</tr>
+</tbody>
+</table>
+
+<p>81 rows × 68 columns</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-4.-aggregate-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-aggregate-data">Step 4. Aggregate data</h3>
+<p>Pandas supports a variety of <strong><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html">basic summary statistics</a></strong> through build-in methods:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><strong>Method</strong></th>
+<th style="text-align: center;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>.count()</code></td>
+<td style="text-align: center;">number of observations</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>.sum()</code></td>
+<td style="text-align: center;">histogram</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>.mean()</code></td>
+<td style="text-align: center;">boxplot</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>.medium()</code></td>
+<td style="text-align: center;">density plots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>.min()</code></td>
+<td style="text-align: center;">area plots</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>.max()</code></td>
+<td style="text-align: center;">scatterplots</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>mode()</code></td>
+<td style="text-align: center;">hexagonal bin plots</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>std()</code></td>
+<td style="text-align: center;">pie charts</td>
+</tr>
+</tbody>
+</table>
+<section id="groupby" class="level4">
+<h4 class="anchored" data-anchor-id="groupby">.groupby()</h4>
+<p>To calculate statistics grouped by category—such as average chart positions by artist or year—we use the <strong><a href="https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html#aggregating-statistics-grouped-by-category">.groupby()</a></strong> method. This allows us to aggregate data based on one or more columns before applying summary functions.</p>
+<div id="c5b295b3-c8fd-4ff7-bf1b-82edcef2084b" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>performers_albums_filtered.groupby(<span class="st">'artist'</span>)[<span class="st">'peakUS'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>artist
+Bad Company          41.000000
+Chubby Checker       57.333333
+Cyndi Lauper         59.100000
+Joe Cocker           62.571429
+Outkast               4.833333
+Soundgarden          31.000000
+The White Stripes    18.000000
+Name: peakUS, dtype: float64</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="step-5.-plot" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.-plot">Step 5. Plot</h3>
+<p>The last step to build our bar chart is to add the <code>.plot(*args, **kwargs)</code> method with relevant arguments and keyword arguments.</p>
+<p>First use the <code>.sort_values(ascending=False)</code> method first to sort the bars in descending order. Then <code>.plot</code> with the keyword arguments:</p>
+<ul>
+<li>kind = ‘bar’</li>
+<li>xlabel = ’’ (removes the redundant label on the x-axis)</li>
+<li>title = ‘Peak US Chart Position: Rock N Roll Hall of Fame Inductees’ (= newline)</li>
+</ul>
+<div id="fc388cd4-fe80-46d7-b20d-34d06341cda4" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>performers_albums_filtered.groupby(<span class="st">'artist'</span>)[<span class="st">'peakUS'</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>).plot(kind<span class="op">=</span><span class="st">'bar'</span>, xlabel<span class="op">=</span><span class="st">''</span>, title<span class="op">=</span><span class="st">'Average Peak US Chart Position: </span><span class="ch">\n</span><span class="st"> 2025 Rock N Roll Hall of Fame Inductees'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="python_data_visualization_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="line-chart" class="level2">
+<h2 class="anchored" data-anchor-id="line-chart">📈 Line chart</h2>
+<p>Line charts reveal trends over time and at minimum require a <strong>date field</strong> and a <strong>measure</strong>. To create a line chart with Pandas, set the <code>kind =</code> parameter to <code>line</code>.</p>
+<div id="accordionExercise1" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseOne" aria-expanded="true" aria-controls="ex1-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1: Pandas Line Chart
+</button>
+</h2>
+<div id="ex1-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex1-headingOne" data-bs-parent="#accordionExercise1">
+<div class="accordion-body fs-4">
+Create a line chart that shows the total number of albums released each year by all artists in the <code>performers_albums</code> dataset.
+<ol>
+<li>
+Identify relevant columns and data types
+</li>
+<li>
+Aggregate data and plot
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<section id="step-1.-identify-relevant-columns-and-data-types" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-identify-relevant-columns-and-data-types">Step 1. Identify relevant columns and data types</h3>
+<p>Before creating a chart, the first step is to identify which columns are needed for the visualization. Once those columns are selected, we’ll check their data types to ensure they are suitable for analysis and plotting.</p>
+<div id="c08073bf-7163-4718-975e-44fa9204bf12" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>performers_albums.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="463a1759-0b86-4544-b383-4c3ea771e54c" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>performers_albums[<span class="st">'Release date'</span>].dtypes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>In Pandas, <strong>dtype(‘O’)</strong> stands for <strong>object</strong> data type. This is a general-purpose type used when a column contains:</p>
+<ul>
+<li>Strings (most common)</li>
+<li>Mixed types (e.g., numbers and text)</li>
+<li>Python objects (less common)</li>
+</ul>
+<p>So if you see <strong>dtype(‘O’)</strong> for a column, it usually means that column contains text or string values.</p>
+<p>To convert <strong>Release date</strong> to year</p>
+<div id="501008fe-1c68-4d1d-bc24-bc5b8e666129" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>performers_albums[<span class="st">'Release year'</span>]<span class="op">=</span>performers_albums[<span class="st">'Release date'</span>].dt.year</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>performers_albums[<span class="st">'Release year'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-2.-aggregate-data-and-plot" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-aggregate-data-and-plot">Step 2. Aggregate data and plot</h3>
+<p>Group the album titles by <strong>Release year</strong> and then count <strong>album_title</strong> and set <strong>.plot(kind=‘line’)</strong>.</p>
+<div id="6e452bf8-869e-4bfb-96a7-8b339d0c0289" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>performers_albums.groupby(<span class="st">'Release year'</span>)[<span class="st">'album_title'</span>].count().plot(kind<span class="op">=</span><span class="st">'line'</span>, xlabel<span class="op">=</span><span class="st">''</span>, title<span class="op">=</span><span class="st">'Line Chart'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="scatterplot" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot">░ Scatterplot</h2>
+<p>Scatterplots are useful for exploring relationships between two or more numerical variables. In Pandas, you can create a scatterplot using the <code>.plot()</code> method by specifying the <strong>x</strong> and <strong>y</strong> keyword arguments.</p>
+<div id="accordionExercise2" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseOne" aria-expanded="true" aria-controls="ex2-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2: Pandas Scatterplot
+</button>
+</h2>
+<div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex2-headingOne" data-bs-parent="#accordionExercise2">
+<div class="accordion-body fs-4">
+<p>
+Use the Pandas <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.scatter.html#pandas.DataFrame.plot.scatter">scatterplot</a> documentation to create a scatterplot that visualizes the relationship between the Peak US and Peak UK chart positions for albums released by your favorite artist inducted into the Rock and Roll Hall of Fame.
+</p>
+<p>
+<strong>BONUS:</strong> reverse the <code>x</code> and <code>y</code> axis.
+</p>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseTwo" aria-expanded="false" aria-controls="ex2-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex2-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex2-headingTwo" data-bs-parent="#accordionExercise2">
+<div class="accordion-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>carmen_ohio<span class="op">=</span><span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># first 250 characters</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Step 1. Create and apply a filter for your favorite artist</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>favorite_artist<span class="op">=</span>performers_albums[<span class="st">'artist'</span>]<span class="op">==</span><span class="st">'Kate Bush'</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>kate_bush<span class="op">=</span>performers_albums[favorite_artist]</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Step 2. Plot the x and y axis</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>kate_bush.plot.scatter(x<span class="op">=</span><span class="st">'peakUS'</span>,y<span class="op">=</span><span class="st">'peakUK'</span>)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co">#BONUS</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>plt.gca().invert_xaxis()</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>plt.gca().invert_yaxis()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="plotly" class="level1">
+<h1>PLOTLY</h1>
+<p>The <strong><a href="https://plotly.com/python/">Plotly Open Source Graphing Library for Python</a></strong> is a robust and versatile Python library that offers over 40 types of interactive data visualizations—from basic <strong>bar</strong> and <strong>bubble charts</strong> to advanced <strong>3D scatter</strong> and <strong>3D surface</strong> plots. Plotly charts are fully interactive, enabling users to zoom, pan, hover for tooltips, and export visuals directly from the browser.</p>
+<p>Before using <strong>Plotly</strong>, be sure to follow the installation instructions provided in the official guide: <strong><a href="https://plotly.com/python/getting-started/">Getting Started with Plotly in Python</a></strong></p>
+<p>Let’s use plotly to build a <strong>bar</strong>, <strong>line</strong>, and <strong>scatterplot</strong> using the <strong>performers_albums</strong> DataFrame.</p>
+<section id="bar-chart-1" class="level2">
+<h2 class="anchored" data-anchor-id="bar-chart-1">📊 Bar Chart</h2>
+<p>Build a Bar Chart showing the maximum U.S. peak chart position for any album released by <strong><a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">2025 Rock &amp; Roll Hall of Fame inductees</a></strong>.</p>
+<div id="35272889-c11c-448c-b9fb-c5d92e36e1ec" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>pio.renderers.default<span class="op">=</span><span class="st">"notebook"</span> <span class="co"># This statement is needed to display Plotly in html</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#We already have a filtered DataFrame for the 2025 inductees. Since the highest chart position is 1, we need to tell Pandas to find the minimum peakUS chart position for each artist.</span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>agg_performers_albums_filtered<span class="op">=</span>performers_albums_filtered.groupby(<span class="st">'artist'</span>, as_index<span class="op">=</span><span class="va">False</span>)[<span class="st">'peakUS'</span>].<span class="bu">min</span>()</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Now we build our bar chart</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>fig<span class="op">=</span>pio.bar(agg_performers_albums_filtered, x<span class="op">=</span><span class="st">'artist'</span>, y<span class="op">=</span><span class="st">'peakUS'</span>, title<span class="op">=</span><span class="st">"Peak US Chart Position: 2025 Rock n Roll Hall of Fame Inductees"</span>, color<span class="op">=</span><span class="st">'artist'</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="images/plotly_bar_chart.png" title="Image of Plotly Bar Chart. Jupyter notebooks do not consistently render plotly in Quarto websites" class="img-fluid"></p>
+</section>
+<section id="line-chart-1" class="level2">
+<h2 class="anchored" data-anchor-id="line-chart-1">📈 Line chart</h2>
+<p>Create a line chart that shows the total number of albums released each year by all artists in the <code>performers_albums</code> dataset.</p>
+<div id="370bbe7d-326b-434c-a5df-9d26c6033aed" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We already converted 'Release date' to year in the code above. Now we tell Pandas to count the number of occurrences of each 'Year' using the .size() method</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>agg_for_line_performers_albums<span class="op">=</span>performers_albums.groupby([<span class="st">'Release year'</span>], as_index<span class="op">=</span><span class="va">False</span>).size()</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Build the chart</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>fig2<span class="op">=</span>pio.line(agg_for_line_performers_albums, x<span class="op">=</span><span class="st">'Release year'</span>, y<span class="op">=</span><span class="st">'size'</span>, title<span class="op">=</span><span class="st">"Line Chart"</span>, markers<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>fig2.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="images/plotly_line_chart.png" title="Image of Plotly Line Chart. Jupyter notebooks do not consistently render plotly in Quarto websites" class="img-fluid"></p>
+</section>
+<section id="scatterplot-1" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot-1">▒ Scatterplot</h2>
+<p>Create a scatterplot that visualizes the relationship between the Peak US and Peak UK chart positions for albums released by your favorite artist inducted into the Rock and Roll Hall of Fame.</p>
+<div id="458028d0-fa33-4f1c-a588-5525d2d92b04" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We already filtered the DataFrame for our favorite artist. Use this DataFrame to build the chart.</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>fig3<span class="op">=</span>pio.scatter(kate_bush, x<span class="op">=</span><span class="st">'peakUS'</span>, y<span class="op">=</span><span class="st">'peakUK'</span>, color<span class="op">=</span><span class="st">'album_title'</span>, title<span class="op">=</span><span class="st">"Kate Bush Albums: Peak US vs. UK Chart Positions"</span>)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>fig3.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><img src="images/plotly_scatterplot.png" title="Image of Plotly Scatterplot. Jupyter notebooks do not consistently render plotly in Quarto websites" class="img-fluid"></p>
+</section>
+</section>
+<section id="seaborn" class="level1">
+<h1>SEABORN</h1>
+<p><img src="images/seaborn_logo.png" title="Decorative" class="img-fluid"> Built on top of <strong>Matplotlib</strong> and seamlessly integrated with <strong>Pandas</strong>, the <strong><a href="https://seaborn.pydata.org/">Seaborn</a></strong> library enhances the visual appeal of Python charts with minimal effort. Featuring built-in themes, concise syntax, and a rich gallery of customizable examples, Seaborn helps you create polisthed, publication-quality visualizations quickly and effectively.</p>
+<section id="bar-chart-2" class="level2">
+<h2 class="anchored" data-anchor-id="bar-chart-2">📊 Bar Chart</h2>
+<p>Build a <strong><a href="https://seaborn.pydata.org/generated/seaborn.barplot.html#seaborn.barplot">Bar Chart</a></strong> showing the maximum U.S. peak chart position for any album released by <strong><a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">2025 Rock &amp; Roll Hall of Fame inductees</a></strong>.</p>
+<div id="434ea2f0-7657-4e74-8ada-3c375bca82dd" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># INSERT CODE HERE</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#Create bar chart</span></span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">6</span>))</span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>sns.barplot(x<span class="op">=</span><span class="st">'artist'</span>, y<span class="op">=</span><span class="st">'peakUS'</span>, data<span class="op">=</span>agg_performers_albums_filtered)</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add title and labels</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Peak US Chart Position </span><span class="ch">\n</span><span class="st"> 2025 Rock n Roll Hall of Fame Inductees"</span>)</span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Peak US chart position"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="line-chart-2" class="level2">
+<h2 class="anchored" data-anchor-id="line-chart-2">📈 Line chart</h2>
+<p>Create a line chart that shows the total number of albums released each year by all artists in the <code>performers_albums</code> dataset.</p>
+<div id="accordionExercise3" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex3-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseOne" aria-expanded="true" aria-controls="ex3-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Seaborn Line Chart
+</button>
+</h2>
+<div id="ex3-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex3-headingOne" data-bs-parent="#accordionExercise3">
+<div class="accordion-body fs-4">
+<p>
+Using the Seaborn library’s <a href="https://seaborn.pydata.org/tutorial/relational.html#emphasizing-continuity-with-line-plots">Emphasizing continuity with line plots</a> tutorial with the <a href="https://seaborn.pydata.org/generated/seaborn.lineplot.html#seaborn.lineplot">seaborn.lineplot</a> API documentation, create a line chart that shows the total number of albums released each year by all artists in the <code>performers_albums</code> dataset.
+</p>
+<p>
+Format the chart to:
+</p>
+<ul>
+<li>
+Remove gridlines and borders
+</li>
+<li>
+Adjust the x and y axis labels
+</li>
+<li>
+Name the chart
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex3-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseTwo" aria-expanded="false" aria-controls="ex3-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex3-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex3-headingTwo" data-bs-parent="#accordionExercise3">
+<div class="accordion-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Line chart</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#remove gridlines</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"white"</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#despine (i.e. remove borders)</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>sns.despine(top<span class="op">=</span><span class="va">True</span>, right<span class="op">=</span><span class="va">True</span>, left<span class="op">=</span><span class="va">True</span>, bottom<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">#Group and count number of release years using Pandas .size() method. Reset the index and name the reset index 'count'</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>released_albums_by_year<span class="op">=</span>performers_albums.groupby([<span class="st">'Release year'</span>]).size().reset_index(name<span class="op">=</span><span class="st">'count'</span>)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Build chart</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>released_albums_by_year, x<span class="op">=</span><span class="st">'Release year'</span>, y<span class="op">=</span><span class="st">'count'</span>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Line Chart"</span>)</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">""</span>)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"# albums released"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="scatterplot-2" class="level2">
+<h2 class="anchored" data-anchor-id="scatterplot-2">▒ Scatterplot</h2>
+<div id="accordionExercise4" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex4-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex4-collapseOne" aria-expanded="true" aria-controls="ex4-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 4: Seaborn Scatterplot
+</button>
+</h2>
+<div id="ex4-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex4-headingOne" data-bs-parent="#accordionExercise4">
+<div class="accordion-body fs-4">
+<p>
+Using the Seaborn library’s <a href="https://seaborn.pydata.org/tutorial/relational.html">Visualizing statistical relationships</a> tutorial with the <a href="https://seaborn.pydata.org/generated/seaborn.scatterplot.html">seaborn.scatterplot</a> API documentation, create a scatterplot that visualizes the relationship between the Peak US and Peak UK chart positions for albums released by your favorite artist inducted into the <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">Rock and Roll Hall of Fame</a>.
+</p>
+<p>
+<strong>BONUS:</strong> reverse the <code>x</code> and <code>y</code> axis.
+</p>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex4-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex4-collapseTwo" aria-expanded="false" aria-controls="ex4-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex4-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex4-headingTwo" data-bs-parent="#accordionExercise4">
+<div class="accordion-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">#We already filtered the DataFrame for our favorite artist. Use this DataFrame to build the chart.</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>kate_bush, x<span class="op">=</span><span class="st">'peakUS'</span>, y<span class="op">=</span><span class="st">'peakUK'</span>, hue<span class="op">=</span><span class="st">'album_title'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+<p>Check out the <strong><a href="https://seaborn.pydata.org/tutorial/aesthetics.html">Controlling figure aesthetics</a></strong> and <strong><a href="https://seaborn.pydata.org/tutorial/color_palettes.html#choosing-color-palettes">Choosing color palettes</a></strong> tutorials to learn how to customize theme and fine-tune the appearance of your Seaborn visualizations.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Visit the Websites and APIs. <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/wikipedia">Lesson 3. Wikipedia</a></strong> tutorial to learn how to extract tables from HTML using pandas.read_html.See the <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/icite">Websites and APIs. Lesson 4. iCite</a></strong> tutorial and <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/crossref">Websites and APIs. Lesson 7. Crossref</a></strong> tutorial to learn how to use APIs to gather data.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./scopus.html" class="pagination-link" aria-label="Lesson 8. Scopus">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lesson 8. Scopus</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://library.osu.edu/policies/copyright-information">
+<p>© 2026 The Ohio State University</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

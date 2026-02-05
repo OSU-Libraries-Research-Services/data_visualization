@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lesson 5. Author Affiliations – Data Visualization</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ohiolink.html" rel="next">
+<link href="./icite.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Visualization</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Library Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./python_basics.html" aria-current="page"> 
+<span class="menu-text">Python Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tableau_for_research.html"> 
+<span class="menu-text">Tableau Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/OSU-Libraries-Research-Services/data_visualization"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lantern.html">WEBSITES AND APIS</a></li><li class="breadcrumb-item"><a href="./pubmed_author_affiliations.html">Lesson 5. Author Affiliations</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">INTRODUCTION</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mastering the Basics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">WEBSITES AND APIS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lantern.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1. The Lantern</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./animals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2. Meet the Animals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wikipedia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Wikipedia</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./icite.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4. iCite</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pubmed_author_affiliations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lesson 5. Author Affiliations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ohiolink.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 6. OhioLINK ETD</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./crossref.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 7. Crossref</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scopus.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 8. Scopus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">DATA VISUALIZATION</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_data_visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualizing Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">CONTENTS</h2>
+   
+  <ul>
+  <li><a href="#data-skills-concepts" id="toc-data-skills-concepts" class="nav-link active" data-scroll-target="#data-skills-concepts">Data skills | concepts</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#lesson-5" id="toc-lesson-5" class="nav-link" data-scroll-target="#lesson-5">LESSON 5</a>
+  <ul class="collapse">
+  <li><a href="#what-is-efetch" id="toc-what-is-efetch" class="nav-link" data-scroll-target="#what-is-efetch">What is EFetch?</a></li>
+  <li><a href="#where-are-author-affiliations" id="toc-where-are-author-affiliations" class="nav-link" data-scroll-target="#where-are-author-affiliations">Where are author affiliations?</a></li>
+  <li><a href="#step-1.-construct-an-efetch-request" id="toc-step-1.-construct-an-efetch-request" class="nav-link" data-scroll-target="#step-1.-construct-an-efetch-request">Step 1. Construct an EFetch request</a></li>
+  <li><a href="#step-2.-identify-python-libraries-for-project" id="toc-step-2.-identify-python-libraries-for-project" class="nav-link" data-scroll-target="#step-2.-identify-python-libraries-for-project">Step 2. Identify Python libraries for project</a></li>
+  <li><a href="#regular-expressions-regex" id="toc-regular-expressions-regex" class="nav-link" data-scroll-target="#regular-expressions-regex">Regular Expressions (regex)</a>
+  <ul class="collapse">
+  <li><a href="#common-regex-patterns" id="toc-common-regex-patterns" class="nav-link" data-scroll-target="#common-regex-patterns">Common Regex Patterns</a></li>
+  <li><a href="#common-metacharacters-and-their-functions" id="toc-common-metacharacters-and-their-functions" class="nav-link" data-scroll-target="#common-metacharacters-and-their-functions">Common metacharacters and their functions</a></li>
+  <li><a href="#learning-resources" id="toc-learning-resources" class="nav-link" data-scroll-target="#learning-resources">LEARNING RESOURCES</a></li>
+  </ul></li>
+  <li><a href="#re-module" id="toc-re-module" class="nav-link" data-scroll-target="#re-module">re module</a>
+  <ul class="collapse">
+  <li><a href="#commonly-used-re-methods" id="toc-commonly-used-re-methods" class="nav-link" data-scroll-target="#commonly-used-re-methods">Commonly used re methods</a></li>
+  <li><a href="#re.match" id="toc-re.match" class="nav-link" data-scroll-target="#re.match">re.match( )</a></li>
+  <li><a href="#re.search" id="toc-re.search" class="nav-link" data-scroll-target="#re.search">re.search( )</a></li>
+  <li><a href="#re.findall" id="toc-re.findall" class="nav-link" data-scroll-target="#re.findall">re.findall( )</a></li>
+  <li><a href="#re.sub" id="toc-re.sub" class="nav-link" data-scroll-target="#re.sub">re.sub( )</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lantern.html">WEBSITES AND APIS</a></li><li class="breadcrumb-item"><a href="./pubmed_author_affiliations.html">Lesson 5. Author Affiliations</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lesson 5. Author Affiliations</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The Entrez <strong><a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a></strong> offer a suite of tools that enable researchers to automate the search and retrieval of scientific information from <strong><a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a></strong> and other databases maintained by the National Center for Biotechnology Information (NCBI). In <a href="./icite.html">Lesson 4</a> we identified an active NIH funded research project at The Ohio State University and generated a list of PMIDs (PubMed Identifiers) associated with each project. In Lesson 5, we will use this list of PMIDs with the Entrez <strong><a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a></strong> to gather the affiliations of each author listed on the corresponding articles. We will also begin to explore regular expressions, a tool used across programming languages for matching and manipulating string data.</p>
+<section id="data-skills-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
+<ul>
+<li>Working with APIs</li>
+<li>Manipulating text</li>
+<li>Regular expressions</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<ol type="1">
+<li>Locate API documentation and identify key components required to formulate an API request</li>
+<li>Parse an API response and store extracted data.</li>
+<li>Utilize regular expressions to search, match, and manipulate text.</li>
+</ol>
+<p>This tutorial is designed to support multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> hosted by The Ohio State University Libraries Research Commons. It assumes you already have a basic understanding of Python, including how to iterate through lists and dictionaries to extract data using a for loop. To learn basic Python concepts visit the <a href="./python_basics.html">Python - Mastering the Basics</a> tutorial.</p>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip
+</div>
+<div class="card-body">
+<img src="images/microsoft_copilot_icon.svg" alt="" aria-hidden="true">The Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual can be overwhelming to read and comprehend at first. The example code is written in Perl script, not Python and the documentation assumes you are familiar working with APIs and programming tools. Before starting this tutorial, <strong>ask Copilot</strong> to <span class="text-primary">explain entrez e-utilities</span>. Copilot returns a useful summary of the key components and functionalities of these tools, explains how they work, provides an example workflow, and identifies potential use cases. As you become more comfortable working with APIs, you can revisit the Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual to learn how to do more complex tasks.
+</div>
+</div>
+</section>
+<section id="lesson-5" class="level1">
+<h1>LESSON 5</h1>
+<p>Science is constantly evolving, with new disciplines emerging from interdisciplinary research, technological innovation, and global collaboration. Analyzing <strong>research networks</strong> can help researchers identify potential collaborators, track emerging fields, and discover new research directions.</p>
+<p>One effective way to explore these networks is by examining <strong>author affiliations</strong> listed in journal publications.</p>
+<section id="what-is-efetch" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-efetch">What is EFetch?</h2>
+<p><strong>EFetch</strong> is a utility provided by NCBI’s Entrez system that retrieves detailed records for a list of unique identifiers (like PMIDs) from databases such as PubMed.</p>
+</section>
+<section id="where-are-author-affiliations" class="level2">
+<h2 class="anchored" data-anchor-id="where-are-author-affiliations">Where are author affiliations?</h2>
+<p>In PubMed records, author affiliations are embedded in the XML under:</p>
+<div id="d0ebc6c8" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>Author<span class="op">&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="op">&lt;</span>AffiliationInfo<span class="op">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&nbsp;&nbsp;&nbsp; <span class="op">&lt;</span>Affiliation<span class="op">&gt;</span>...<span class="op">&lt;/</span>Affiliation<span class="op">&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="op">&lt;/</span>AffiliationInfo<span class="op">&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>Author<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="accordionExercise1" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseOne" aria-expanded="true" aria-controls="ex1-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1: Inspect a PubMed record
+</button>
+</h2>
+<div id="ex1-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex1-headingOne" data-bs-parent="#accordionExercise1">
+<div class="accordion-body fs-4">
+<p>
+Use the <strong>first PMID</strong> from your list from Lesson 4.
+</p>
+<ul>
+<li>
+Search for it on <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>.
+</li>
+<li>
+Observe:
+<ul>
+<li>
+The <strong>structure of the URL</strong>
+</li>
+<li>
+The <strong>location of author affiliations</strong> in the record
+</li>
+<li>
+<strong>Inspect</strong> the author elements.
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseTwo" aria-expanded="false" aria-controls="ex1-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex1-headingTwo" data-bs-parent="#accordionExercise1">
+<div class="accordion-body">
+<h2 class="anchored">
+URL = https://pubmed.ncbi.nlm.nih.gov/<strong>39773557</strong>/
+</h2>
+<p>
+<strong>Note:</strong> The PMID is at the end of the URL
+</p>
+<img src="images/pubmed_1.png" alt="Screenshot of PubMed record showing affiliation list expanded." class="img-fluid" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-1.-construct-an-efetch-request" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-construct-an-efetch-request">Step 1. Construct an EFetch request</h2>
+<p>To retrieve XML data for a PubMed article, use the following components: - <strong>Base URL</strong>: <code>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</code> - <strong>Parameters</strong>: - <strong>Database name</strong>: <code>?db=pubmed</code> - <strong>Unique identifier</strong>: <code>&amp;id=39773557</code> - <strong>API key</strong>: <code>&amp;api_key=INSERT YOUR API KEY HERE</code></p>
+<p>Required parameters for an <strong>EFetch</strong> request depend on the specific Entrez <a href="(https://www.ncbi.nlm.nih.gov/books/NBK25497/table/chapter2.T._entrez_unique_identifiers_ui/?report=objectonly)__">database</a> you are querying. For <strong>PubMed</strong>, the default EFetch response format is XML.</p>
+<p>To manage request volume, the <strong>NCBI</strong> enforces rate limits: - Without an API key: <strong>3 requests per second</strong> - With an API key: <strong>up to 10 requests per second</strong></p>
+<p>While you can view a single XML record without an API key, completing the exercises in this tutorial requires one. You can obtain an API key by visiting the <strong>Settings page of your <a href="https://www.ncbi.nlm.nih.gov/account/">NCBI account</a></strong>.</p>
+<div id="accordionExercise2" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseOne" aria-expanded="true" aria-controls="ex2-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2: Construct a request
+</button>
+</h2>
+<div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex2-headingOne" data-bs-parent="#accordionExercise2">
+<div class="accordion-body fs-4">
+Use the <strong>EFetch</strong> utility to retrieve the <strong>XML record</strong> for the <strong>first PMID</strong> from the list you generated in Lesson 4. This XML will contain detailed metadata about the article, including author affiliations (if available).
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseTwo" aria-expanded="false" aria-controls="ex2-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex2-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex2-headingTwo" data-bs-parent="#accordionExercise2">
+<div class="accordion-body">
+<h2 class="anchored">
+Example:
+</h2>
+<p>
+<a href="https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=39773557">https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id=39773557</a>
+</p>
+<p><img src="images/pubmed_2.png" alt="Screenshot of PubMed XML record number 39773557" class="img-fluid" style="max-width: 100%; border-radius: 8px; padding: 1rem;"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2.-identify-python-libraries-for-project" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-identify-python-libraries-for-project">Step 2. Identify Python libraries for project</h2>
+<p>The following Python libraries are needed for this project: - <code>requests</code> – to make HTTP requests - <code>pandas</code> – to manage and store data - <code>BeautifulSoup</code>– to parse XML and extract affiliations</p>
+<div id="accordionExercise3" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex3-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseOne" aria-expanded="true" aria-controls="ex3-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Write and test code
+</button>
+</h2>
+<div id="ex3-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex3-headingOne" data-bs-parent="#accordionExercise3">
+<div class="accordion-body fs-4">
+<p>
+Using the list of PMIDs you generated in Lesson 4, write and test a Python script that:
+</p><ol>
+<li>
+Iterates through your list of PMIDs
+</li>
+<li>
+Sends an EFetch request for each
+</li>
+<li>
+Parses the XML to extract author affiliations
+</li>
+<li>
+Handles missing or incomplete data gracefully
+</li>
+</ol>
+<p></p>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExercise3">
+<div class="accordion-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup <span class="im">as</span> bs</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Create a last_updated variable with today's date.</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> date.today()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>last_updated<span class="op">=</span>today</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#2. Create list of PMIDs</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>pmids<span class="op">=</span>[<span class="st">'39773557'</span>, <span class="st">'39656677'</span>, <span class="st">'37398045'</span>, <span class="st">'39229161'</span>, <span class="st">'39713331'</span>, <span class="st">'39315813'</span>, <span class="st">'38338688'</span>, <span class="st">'36721057'</span>, <span class="st">'37322069'</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#3.Create a dataframe to store the search results. </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>author_affiliations<span class="op">=</span>pd.DataFrame(columns<span class="op">=</span>[<span class="st">"pmid"</span>,<span class="st">"name"</span>,<span class="st">"affiliation"</span>,<span class="st">"last_updated"</span>])</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#4. Use requests, BeautifulSoup, and the EFetch utility to retrieve author affiliations.</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Store results in a DataFrame.</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>count<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_record <span class="kw">in</span> pmids:</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># try:</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'starting record '</span><span class="op">+</span><span class="bu">str</span>(count)<span class="op">+</span><span class="st">': '</span><span class="op">+</span><span class="bu">str</span>(each_record))</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    search_url<span class="op">=</span><span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id="</span><span class="op">+</span><span class="bu">str</span>(each_record)<span class="op">+</span><span class="st">"&amp;api_key=INSERT YOUR API KEY HERE"</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    xml_data<span class="op">=</span>requests.get(search_url).text</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> bs(xml_data, <span class="st">'xml'</span>)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    records<span class="op">=</span>soup.find(<span class="st">'PubmedArticle'</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    pmid<span class="op">=</span>records.PMID.text</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    authors<span class="op">=</span>records.find_all(<span class="st">"Author"</span>)</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each_author <span class="kw">in</span> authors:</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.LastName <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span>each_author.LastName.text</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span><span class="st">''</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.ForeName <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span>each_author.ForeName.text</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span><span class="st">''</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> lastname <span class="op">!=</span> <span class="st">''</span> <span class="kw">and</span> forename <span class="op">!=</span> <span class="st">''</span>:</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>lastname<span class="op">+</span><span class="st">', '</span><span class="op">+</span>forename</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">''</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.Affiliation <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span>each_author.Affiliation.text</span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span><span class="st">''</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>                </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span>{</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pmid"</span>: pmid,</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>            <span class="st">"name"</span>: name,</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>            <span class="st">"affiliation"</span>: affiliation,</span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>            <span class="st">"last_updated"</span>: last_updated</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>        author_info<span class="op">=</span>pd.DataFrame(row, index<span class="op">=</span>[<span class="dv">0</span>])</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>        author_affiliations <span class="op">=</span> pd.concat([author_info,author_affiliations], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.15</span>)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="co">#5. Export results to csv        </span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>author_affiliations.to_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="regular-expressions-regex" class="level2">
+<h2 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (regex)</h2>
+<p>Analyzing author and affiliation data can be messy due to: - Inconsistent naming conventions - Variations in institutional affiliation formats - Ambiguities in author identify.</p>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: ORCID
+</div>
+<div class="card-body">
+<img src="images/orcid_24x24.png" alt="orcid logo">
+<p>
+<a href="https://orcid.org/register">Create your ORCID iD</a>to help researchers distinguish your work from others and better track the impact of your work.
+</p>
+<p>
+PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Several journals and funding agencies also now require ORCID iDs for submissions. See <a href="https://guides.osu.edu/c.php?g=608754&amp;p=4233669">Tracking and Enhacing the Impact of your Research</a> for more information.
+</p>
+</div>
+</div>
+<p><strong>Regular expressions (regex)</strong> match patterns in text. Often described as wildcards on steroids, regular expressions help: - <strong>Validate</strong> patterns (e.g., ZIP codes: (^$)) - <strong>Extract</strong> variations (e.g., “ha?ematology” matches both “hematology” and “haematology”) - <strong>Replace</strong> text (e.g., re.sub(r’, ‘Ohio’, text))</p>
+<p>Regular expressions are included in several programming langauges and software programs including Python, JavaScript, and Tableau.</p>
+<section id="common-regex-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="common-regex-patterns">Common Regex Patterns</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Pattern</th>
+<th style="text-align: left;">Matches</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>[A-Z]</code></td>
+<td style="text-align: left;">Any uppercase letter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>[a-z]</code></td>
+<td style="text-align: left;">Any lowercase letter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>[0-9]{5}</code></td>
+<td style="text-align: left;">Exactly 5 digits</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>^Ohio</code></td>
+<td style="text-align: left;">Starts with “Ohio”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>State$</code></td>
+<td style="text-align: left;">Ends with “State”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>ha?ematology</code></td>
+<td style="text-align: left;">“hematology” or “haematology”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>Ohio State\|OSU</code></td>
+<td style="text-align: left;">“Ohio State” or “OSU”</td>
+</tr>
+</tbody>
+</table>
+<p><strong><a href="https://www.w3schools.com/python/gloss_python_regex_metacharacters.asp">Metacharacters</a></strong> are special symbols in regular expressions that represent patterns rather than literal characters. To match them as literal characters, you must <strong>escape them with a backslash ( &nbsp;)</strong>.</p>
+</section>
+<section id="common-metacharacters-and-their-functions" class="level3">
+<h3 class="anchored" data-anchor-id="common-metacharacters-and-their-functions">Common metacharacters and their functions</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>[ ]</code></td>
+<td style="text-align: left;">A set or range of characters</td>
+<td style="text-align: left;"><code>[a-f]</code> matches any lowercase letter from a to f</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>\</code></td>
+<td style="text-align: left;">Starts a special sequence</td>
+<td style="text-align: left;"><code>\w</code> matches any word character (letter, digit, or underscore)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>.</code></td>
+<td style="text-align: left;">Any character except newline</td>
+<td style="text-align: left;"><code>d.g</code> matches “dog”, “dig”, “dug”, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>^</code></td>
+<td style="text-align: left;">Start of a string</td>
+<td style="text-align: left;"><code>^Ohio</code> matches any string that starts with “Ohio”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>$</code></td>
+<td style="text-align: left;">End of a string</td>
+<td style="text-align: left;"><code>State$</code> matches any string that ends with “State”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>.*</code></td>
+<td style="text-align: left;">Zero or more of the preceding character</td>
+<td style="text-align: left;"><code>h*matology</code> matches “hematology”, “haematology”, etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>+</code></td>
+<td style="text-align: left;">One or more of the preceding character</td>
+<td style="text-align: left;"><code>spe+d</code> matches “sped”, “speed”, etc.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>?</code></td>
+<td style="text-align: left;">Zero or one of the preceding character</td>
+<td style="text-align: left;"><code>travel?ling</code> matches “traveling”, “travelling”. etc.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>{ }</code></td>
+<td style="text-align: left;">Exactly a specified number of repetitions</td>
+<td style="text-align: left;"><code>[0-9]{5}</code> matches any 5-digit number</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>( )</code></td>
+<td style="text-align: left;">Grouping or capturing</td>
+<td style="text-align: left;"><code>The (Ohio) State University</code> extracts “Ohio”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>\|</code></td>
+<td style="text-align: left;">Logical OR</td>
+<td style="text-align: left;"><code>Ohio State\|OSU</code> matches “Ohio State” or “OSU”</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="learning-resources" class="level3">
+<h3 class="anchored" data-anchor-id="learning-resources">LEARNING RESOURCES</h3>
+<div class="grid g-4">
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+REGEX 101
+</div>
+<div class="card-body">
+<img src="images/regex101.png" alt="Screenshot of regex101 homepage" class="d-block mx-auto">
+<h4 class="card-title anchored">
+<a href="https://regex101.com/">regular expressions 101: build, test, and debug regex
+</a></h4><a href="https://regex101.com/">
+</a></div><a href="https://regex101.com/">
+</a><ul><a href="https://regex101.com/">
+</a><li><a href="https://regex101.com/">
+</a><a href="https://regex101.com/">regular expressions 101: build, test, and debug regex</a> is an interactive tool that helps you build, test, and debug regular expressions across multiple programming languages. It lets you test your regex against sample text, provides real-time explanations as you type, and includes a searchable reference for regex syntax.
+</li>
+</ul>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+EFFECTIVE DATA VISUALIZATION
+</div>
+<div class="card-body">
+<img src="images/cover_learning_regular_expressions.png" alt="learning regular expressions book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a>
+</h4>
+</div>
+<ul>
+
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a> by <strong>Ben Forta</strong>** is available through the Libraries’ <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507">O’Reilly Online Learning</a> collection of technical books and videos. Each chapter is structured as a lesson, guiding you through how to match individual characters or sets of characters, use metacharacters, and more—making it a practical resource for mastering regex step by step.
+
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="re-module" class="level2">
+<h2 class="anchored" data-anchor-id="re-module">re module</h2>
+<p>To work with regular expressions in Python, start by importing the built-in <code>re</code> module:</p>
+<div id="74b3cf9f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>🔗 See <strong><a href="https://docs.python.org/3/library/re.html">re</a></strong> module documentation.</p>
+<section id="commonly-used-re-methods" class="level3">
+<h3 class="anchored" data-anchor-id="commonly-used-re-methods">Commonly used re methods</h3>
+</section>
+<section id="re.match" class="level3">
+<h3 class="anchored" data-anchor-id="re.match">re.match( )</h3>
+<div id="4fc0ea98" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>re.match(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Checks for a match <strong>only at the beginning</strong> of the string.</li>
+<li>Returns a match object if found, otherwise None.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div id="e4d251f5-2248-4220-a388-a9edc3a5a632" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>pd.read_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>addresses.dropna(subset<span class="op">=</span><span class="st">'affiliation'</span>) <span class="co">#drops rows with null affiliation values</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> addresses.iloc[<span class="dv">0</span>:<span class="dv">10</span>].iterrows():</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="op">=</span><span class="bu">str</span>(row.affiliation)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(affiliation)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    osu_match<span class="op">=</span>re.match(<span class="vs">r"Ohio State University"</span>,affiliation) </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> osu_match:</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" MATCH </span><span class="sc">{</span>osu_match<span class="sc">.</span>group()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The Ohio State Biochemistry Program, The Ohio State University, Columbus, OH, 43210, USA. fu.978@osu.edu.
+The Ohio State Biochemistry Program, The Ohio State University, Columbus, OH, 43210, USA.
+Center for Cancer Metabolism, The Ohio State University Comprehensive Cancer Center, Columbus, OH, 43210, USA.
+Department of Biological Chemistry and Pharmacology, The Ohio State University, Columbus, OH, 43210, USA.
+Department of Biological Chemistry and Pharmacology, The Ohio State University, Columbus, OH, 43210, USA.
+The Ohio State Biochemistry Program, The Ohio State University, Columbus, OH, 43210, USA.
+Department of Biological Chemistry and Pharmacology, The Ohio State University, Columbus, OH, USA. fu.978@osu.edu.
+Department of Biological Chemistry and Pharmacology, The Ohio State University, Columbus, OH, USA.
+Department of Physics, Northeastern University, Boston, MA 02115, USA.
+Department of Chemistry and Biochemistry, Center for RNA Biology, Ohio State University, Columbus, OH 43210, USA.</code></pre>
+</div>
+</div>
+<p>🔗 See <a href="https://docs.python.org/3/library/re.html#re.match">re.match()</a> documentation.</p>
+</section>
+<section id="re.search" class="level3">
+<h3 class="anchored" data-anchor-id="re.search">re.search( )</h3>
+<div id="983e3e0f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>re.search(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Scans through the string and returns the <strong>first match</strong> of the pattern.</li>
+<li>Returns a match object or None.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div id="a915cf18-06b4-49e8-a9c0-f1337f651d4e" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>pd.read_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>addresses.dropna(subset<span class="op">=</span><span class="st">'affiliation'</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> addresses.iloc[<span class="dv">0</span>:<span class="dv">10</span>].iterrows():</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="op">=</span><span class="bu">str</span>(row.affiliation)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(affiliation)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    osu_search<span class="op">=</span>re.search(<span class="vs">r"The Ohio State University"</span>,affiliation) </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> osu_search:</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(osu_search.group())</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"No match: affiliation = </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The Ohio State University
+The Ohio State University
+The Ohio State University
+The Ohio State University
+The Ohio State University
+The Ohio State University
+The Ohio State University
+The Ohio State University
+No match: affiliation = Department of Physics, Northeastern University, Boston, MA 02115, USA.
+No match: affiliation = Department of Chemistry and Biochemistry, Center for RNA Biology, Ohio State University, Columbus, OH 43210, USA.</code></pre>
+</div>
+</div>
+<p>🔗 See <a href="https://docs.python.org/3/library/re.html#re.search">re.search()</a> documentation.</p>
+</section>
+<section id="re.findall" class="level3">
+<h3 class="anchored" data-anchor-id="re.findall">re.findall( )</h3>
+<div id="6c11c247" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>re.findall(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Returns <strong>all non-overlapping matches</strong> of the pattern in the string as a list.</li>
+</ul>
+<p><strong>Example</strong>:</p>
+<div id="532ff7b1-5b53-4313-b2b1-0cf038bf4e36" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># HOW MANY TORTOISES AND TURTLES ARE IN THIS LIST OF ANIMALS?</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'data/animals_tortoises.csv'</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span>df.common_name.tolist()</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span><span class="st">','</span>.join(animals)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'LIST OF ANIMALS'</span>)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(animals)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>tortoises_turtles<span class="op">=</span>re.findall(<span class="vs">r"tortoise</span><span class="cf">|</span><span class="vs">turtle"</span>, animals)</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ANSWER'</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"There are </span><span class="sc">{</span><span class="bu">len</span>(tortoises_turtles)<span class="sc">}</span><span class="ss"> tortoises and turtles in this list of animals."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>LIST OF ANIMALS
+abyssinian-ground-hornbill,addax,african-clawed-frog,african-pancake-tortoise,african-plated-lizard,aldabr-tortoise,allens-swamp-monkey,alligator-lizard,alligator-snapping-turtle,alpaca
+ANSWER
+There are 3 tortoises and turtles in this list of animals.</code></pre>
+</div>
+</div>
+<p>🔗 See <a href="https://docs.python.org/3/library/re.html#re.findall">re.findall()</a> documentation.</p>
+</section>
+<section id="re.sub" class="level3">
+<h3 class="anchored">re.sub( )</h3>
+<div id="f00d2907" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>re.sub(pattern, repl, string, count<span class="op">=</span><span class="dv">0</span>, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Replaces all occurrences of the pattern in the string with the replacement text (<code>repl</code>).</li>
+<li>You can limit the number of replacements using the count parameter.</li>
+</ul>
+<p><strong>Examples</strong>:</p>
+<div id="a9deaa68-9090-4026-baf9-dc19cf682632" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FIND TORTOISES AT THE NATIONAL ZOO AND REPLACE THE COMMON_NAME WITH "SLOW TORTOISE"</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'data/animals_tortoises.csv'</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span>df.common_name.tolist()</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span><span class="st">','</span>.join(animals)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>pattern<span class="op">=</span><span class="st">"tortoise|turtle"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>tortoises_slow<span class="op">=</span>re.sub(pattern,<span class="st">"SLOW TORTOISE,"</span>,animals)</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>tortoises_slow</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>'abyssinian-ground-hornbill,addax,african-clawed-frog,african-pancake-SLOW TORTOISE,,african-plated-lizard,aldabr-SLOW TORTOISE,,allens-swamp-monkey,alligator-lizard,alligator-snapping-SLOW TORTOISE,,alpaca'</code></pre>
+</div>
+</div>
+<p>🔗 See <a href="https://docs.python.org/3/library/re.html#re.sub">re.sub()</a> documentation.</p>
+<div id="accordionExercise4" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex4-headingOne" data-anchor-id="re.sub">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex4-collapseOne" aria-expanded="true" aria-controls="ex4-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 4: Use re to normalize affiliations
+</button>
+</h2>
+<div id="ex4-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex4-headingOne" data-bs-parent="#accordionExercise4">
+<div class="accordion-body fs-4">
+Use regular expressions to create a list of institution names from the affiliations list you generated in Exercise 3.
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex4-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex4-collapseTwo" aria-expanded="false" aria-controls="ex4-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex4-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex4-headingTwo" data-bs-parent="#accordionExercise4">
+<div class="accordion-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup <span class="im">as</span> bs</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Create a last_updated variable with today's date.</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> date.today()</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>last_updated<span class="op">=</span>today</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">#2. Create list of PMIDs</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>pmids<span class="op">=</span>[<span class="st">'39773557'</span>, <span class="st">'39656677'</span>, <span class="st">'37398045'</span>, <span class="st">'39229161'</span>, <span class="st">'39713331'</span>, <span class="st">'39315813'</span>, <span class="st">'38338688'</span>, <span class="st">'36721057'</span>, <span class="st">'37322069'</span>]</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">#3.Create a dataframe to store the search results. </span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>author_affiliations<span class="op">=</span>pd.DataFrame(columns<span class="op">=</span>[<span class="st">"pmid"</span>,<span class="st">"name"</span>,<span class="st">"affiliation"</span>,<span class="st">"institution"</span>,<span class="st">"last_updated"</span>])</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co">#4. Use requests, BeautifulSoup, and the EFetch utility to retrieve author affiliations.</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Store results in a DataFrame.</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>count<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_record <span class="kw">in</span> pmids:</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># try:</span></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'starting record '</span><span class="op">+</span><span class="bu">str</span>(count)<span class="op">+</span><span class="st">': '</span><span class="op">+</span><span class="bu">str</span>(each_record))</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    search_url<span class="op">=</span><span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id="</span><span class="op">+</span><span class="bu">str</span>(each_record)<span class="op">+</span><span class="st">"&amp;api_key=INSERT API KEY HERE"</span></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    xml_data<span class="op">=</span>requests.get(search_url).text</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> bs(xml_data, <span class="st">'xml'</span>)</span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    records<span class="op">=</span>soup.find(<span class="st">'PubmedArticle'</span>)</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    pmid<span class="op">=</span>records.PMID.text</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    authors<span class="op">=</span>records.find_all(<span class="st">"Author"</span>)</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each_author <span class="kw">in</span> authors:</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.LastName <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span>each_author.LastName.text</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span><span class="st">''</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.ForeName <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span>each_author.ForeName.text</span>
+<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span><span class="st">''</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> lastname <span class="op">!=</span> <span class="st">''</span> <span class="kw">and</span> forename <span class="op">!=</span> <span class="st">''</span>:</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>lastname<span class="op">+</span><span class="st">', '</span><span class="op">+</span>forename</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">''</span></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.Affiliation <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span>each_author.Affiliation.text</span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>            ohio_state<span class="op">=</span>re.search(<span class="vs">r"Ohio State"</span>, affiliation)</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>            harvard_medical_school<span class="op">=</span>re.search(<span class="vs">r"Harvard Medical School"</span>, affiliation)</span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>            institut_genetique<span class="op">=</span>re.search(<span class="vs">r"Institut de Génétique et de Biologie Moléculaire et Cellulaire"</span>, affiliation)</span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>            johns_hopkins<span class="op">=</span>re.search(<span class="vs">r"Johns Hopkins University"</span>, affiliation)</span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>            mcgill<span class="op">=</span>re.search(<span class="vs">r"McGill University"</span>, affiliation)</span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>            nci<span class="op">=</span>re.search(<span class="vs">r"National Cancer Institute"</span>, affiliation)</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>            nidcd<span class="op">=</span>re.search(<span class="vs">r"National Institute on Deafness and Other Communication Disorders"</span>, affiliation)</span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>            northeastern<span class="op">=</span>re.search(<span class="vs">r"Northeastern University"</span>, affiliation)</span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>            u_bristol<span class="op">=</span>re.search(<span class="vs">r"University of Bristol"</span>, affiliation)</span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>            u_maryland<span class="op">=</span>re.search(<span class="vs">r"University of Maryland"</span>, affiliation)</span>
+<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>            u_virginia<span class="op">=</span>re.search(<span class="vs">r"University of Virginia"</span>, affiliation)</span>
+<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>            vicosa<span class="op">=</span>re.search(<span class="vs">r"Universidade Federal de Viçosa"</span>, affiliation)</span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ohio_state:</span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span><span class="st">"The Ohio State University"</span></span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> harvard_medical_school:</span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>harvard_medical_school.group()</span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> institut_genetique:</span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>institut_genetique.group()</span>
+<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> johns_hopkins:</span>
+<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>johns_hopkins.group()</span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> mcgill:</span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>mcgill.group()</span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> nci:</span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>nci.group()</span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> nidcd:</span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>nidcd.group()</span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> northeastern:</span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>northeastern.group()</span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_bristol:</span>
+<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_bristol.group()</span>
+<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_maryland:</span>
+<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_maryland.group()</span>
+<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_virginia:</span>
+<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_virginia.group()</span>
+<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> vicosa:</span>
+<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>vicosa.group()</span>
+<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span><span class="st">''</span></span>
+<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span>{</span>
+<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pmid"</span>: pmid,</span>
+<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a>            <span class="st">"name"</span>: name,</span>
+<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>            <span class="st">"affiliation"</span>: affiliation,</span>
+<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a>            <span class="st">"institution"</span>: institution,</span>
+<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a>            <span class="st">"last_updated"</span>: last_updated</span>
+<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a>        author_info<span class="op">=</span>pd.DataFrame(row, index<span class="op">=</span>[<span class="dv">0</span>])</span>
+<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a>        author_affiliations <span class="op">=</span> pd.concat([author_info,author_affiliations], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.15</span>)</span>
+<span id="cb16-101"><a href="#cb16-101" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb16-102"><a href="#cb16-102" aria-hidden="true" tabindex="-1"></a><span class="co">#5. Export results to csv        </span></span>
+<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a>author_affiliations.to_csv(<span class="st">'pubmed_author_affiliations.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./icite.html" class="pagination-link" aria-label="Lesson 4. iCite">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lesson 4. iCite</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ohiolink.html" class="pagination-link" aria-label="Lesson 6. OhioLINK ETD">
+        <span class="nav-page-text">Lesson 6. OhioLINK ETD</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://library.osu.edu/policies/copyright-information">
+<p>© 2026 The Ohio State University</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

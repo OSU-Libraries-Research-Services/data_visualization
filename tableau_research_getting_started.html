@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lesson 1. Getting Started – Data Visualization</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./tableau_research_choose_effective_visual.html" rel="next">
+<link href="./tableau_for_research.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Visualization</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Library Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_basics.html"> 
+<span class="menu-text">Python Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tableau_for_research.html" aria-current="page"> 
+<span class="menu-text">Tableau Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/OSU-Libraries-Research-Services/data_visualization"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_for_research.html">TABLEAU FOR RESEARCH</a></li><li class="breadcrumb-item"><a href="./tableau_research_getting_started.html">Lesson 1. Getting Started</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">TABLEAU FOR RESEARCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_for_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_getting_started.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lesson 1. Getting Started</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_choose_effective_visual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2. Choose an Effective Visual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_read_interpret_evaluate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Read, Interpret, and Evaluate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_communicate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4. Communicate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_continue_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Continue Learning Tableau</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">CONTENTS</h2>
+   
+  <ul>
+  <li><a href="#data-skills-concepts" id="toc-data-skills-concepts" class="nav-link active" data-scroll-target="#data-skills-concepts">Data skills | concepts</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#lesson-1" id="toc-lesson-1" class="nav-link" data-scroll-target="#lesson-1">LESSON 1</a></li>
+  <li><a href="#finding-andor-obtaining-data" id="toc-finding-andor-obtaining-data" class="nav-link" data-scroll-target="#finding-andor-obtaining-data">Finding and/or obtaining data</a></li>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data">Reading data</a>
+  <ul class="collapse">
+  <li><a href="#the-drama-framework" id="toc-the-drama-framework" class="nav-link" data-scroll-target="#the-drama-framework">The DRAMA framework</a></li>
+  </ul></li>
+  <li><a href="#the-tableau-environment" id="toc-the-tableau-environment" class="nav-link" data-scroll-target="#the-tableau-environment">The Tableau Environment</a>
+  <ul class="collapse">
+  <li><a href="#the-start-page" id="toc-the-start-page" class="nav-link" data-scroll-target="#the-start-page">The Start page</a>
+  <ul class="collapse">
+  <li><a href="#make-learning-meaningful" id="toc-make-learning-meaningful" class="nav-link" data-scroll-target="#make-learning-meaningful">Make Learning Meaningful!!!🌟</a></li>
+  </ul></li>
+  <li><a href="#the-data-source-page" id="toc-the-data-source-page" class="nav-link" data-scroll-target="#the-data-source-page">The Data Source page</a>
+  <ul class="collapse">
+  <li><a href="#dimensions-vs.-measures---part-1" id="toc-dimensions-vs.-measures---part-1" class="nav-link" data-scroll-target="#dimensions-vs.-measures---part-1">Dimensions vs.&nbsp;measures - Part 1</a></li>
+  <li><a href="#change-data-type---option-1" id="toc-change-data-type---option-1" class="nav-link" data-scroll-target="#change-data-type---option-1">Change data type - Option 1</a></li>
+  <li><a href="#wide-vs.-tall-data" id="toc-wide-vs.-tall-data" class="nav-link" data-scroll-target="#wide-vs.-tall-data">Wide vs.&nbsp;tall data</a></li>
+  </ul></li>
+  <li><a href="#the-tableau-workspace" id="toc-the-tableau-workspace" class="nav-link" data-scroll-target="#the-tableau-workspace">The Tableau Workspace</a>
+  <ul class="collapse">
+  <li><a href="#dimensions-vs.-measures---part-2" id="toc-dimensions-vs.-measures---part-2" class="nav-link" data-scroll-target="#dimensions-vs.-measures---part-2">Dimensions vs.&nbsp;measures - Part 2</a></li>
+  <li><a href="#change-data-type---option-2" id="toc-change-data-type---option-2" class="nav-link" data-scroll-target="#change-data-type---option-2">Change data type - Option 2</a></li>
+  <li><a href="#toggle-between-workspace-data-source-and-start-page" id="toc-toggle-between-workspace-data-source-and-start-page" class="nav-link" data-scroll-target="#toggle-between-workspace-data-source-and-start-page">Toggle between workspace, data source and start page</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#supplemental-readings" id="toc-supplemental-readings" class="nav-link" data-scroll-target="#supplemental-readings">Supplemental readings</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_for_research.html">TABLEAU FOR RESEARCH</a></li><li class="breadcrumb-item"><a href="./tableau_research_getting_started.html">Lesson 1. Getting Started</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lesson 1. Getting Started</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This lesson provides an introduction to the Tableau workspace and explores effective strategies for finding and critically assessing publicly available data. Readings also offer guidance on understanding audience needs prior to data visualization and outline key principles for creating more impactful visual representations.</p>
+<section id="data-skills-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
+<ul>
+<li>Tableau</li>
+<li>Finding data</li>
+<li>Reading data</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<ol type="1">
+<li>Apply the <strong><a href="https://www.librarianyarns.com/drama-source-eval#:~:text=DRAMA%20stands%20for%20Date%2C%20Relevance,in%20a%20one%20shot%20session.">DRAMA Framework</a></strong> to critically evaluate a dataset.</li>
+<li>Navigate the Tableau <strong>start page</strong>, <strong>data source page</strong>, and <strong>workspace</strong>.</li>
+</ol>
+<p>This tutorial is designed to support a multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">Tableau for Research</a></strong> workshop hosted by The Ohio State University Libraries Research Commons. It is intended to help the <strong>ABSOLUTE</strong> beginner, or anyone who is relatively new to Tableau to build the skills and confidence to apply Tableau to research projects.</p>
+</section>
+<section id="lesson-1" class="level1">
+<h1>LESSON 1</h1>
+</section>
+<section id="finding-andor-obtaining-data" class="level1">
+<h1>Finding and/or obtaining data</h1>
+<div class="p-4">
+<div class="grid g-4">
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card d-flex flex-column h-100 text-center">
+<div class="card-body d-flex flex-column justify-content-center align-items-center">
+<img src="images/DataOhio-logo-hiRes.png" class="card-img-top p-3" alt="DataOhio logo">
+</div>
+<div class="card-footer text-muted">
+<a href="https://data.ohio.gov/">data.ohio.gov</a>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card d-flex flex-column h-100 text-center">
+<div class="card-body d-flex flex-column justify-content-center align-items-center">
+<img src="images/data_gov_logo.png" class="card-img-top p-3" alt="data.gov logo">
+</div>
+<div class="card-footer text-muted">
+<a href="https://data.gov/">data.gov</a>
+</div>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card d-flex flex-column h-100 text-center">
+<div class="card-body d-flex flex-column justify-content-center align-items-center">
+<img src="images/Wikipedia-logo-v2-en.svg" class="card-img-top p-3" alt="Wikipedia logo">
+</div>
+<div class="card-footer text-muted">
+<a href="https://www.wikipedia.org/">Wikipedia</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Data is everywhere. Data for examples and activities in this tutorial was gathered from <strong><a href="https://data.ohio.gov/">DataOhio</a></strong>, <strong><a href="https://data.gov/">data.gov</a></strong>, and <strong><a href="https://www.wikipedia.org/">Wikipedia</a></strong>. Open data, defined as any data that “can be freely used, re-used, and redistributed by anyone, subject only, at most, to the requirement to attribute and share alike,” serves as a valuable resource for developing data literacy. <span class="citation" data-cites="open_data_handbook">(<a href="#ref-open_data_handbook" role="doc-biblioref">Dietrich, n.d.</a>)</span> While government agencies are primary producers of open data, it is also commonly shared by nonprofit organizations, independent researchers, and data enthusiasts. Enagaging with datasets that hold personal relevance can significantly enhance the learning experience, particularly when developing skills in data analysis and visualization. You are encouraged to download a dataset that is personally meaningful to you to use with the practices activities provided in this tutorial.</p>
+<p>University Libraries offers several guides to help you <strong><a href="https://guides.osu.edu/data/home">Find Data</a></strong>. You can also talk with a <strong><a href="https://library.osu.edu/unit/research-commons/meet-the-team">librarian</a></strong> about your unique research data needs. Collecting research data on your own requires an understanding of acceptable methods for rigorously and ethically collecting data for your discipline. You can find current methodology for your discipline by talking to experts in your field, <strong><a href="https://search.library.osu.edu/discovery/dbsearch?vid=01OHIOLINK_OSU:OSU&amp;lang=en">searching the literature</a></strong>, and finding ebooks, journals, and more the <strong><a href="https://library.ohio-state.edu/">library catalog</a></strong>.</p>
+<p>If you need data for a project, chances are your data may already be collected by a federal, state, or local governmental entity. Major publishers of U.S. government data include:</p>
+<ul>
+<li><strong><a href="https://www.bea.gov/">Bureau of Economic Analysis</a></strong></li>
+<li><strong><a href="https://bjs.ojp.gov/">Bureau of Justice Statistics</a></strong></li>
+<li><strong><a href="https://www.bls.gov/">Bureau of Labor Statistics</a></strong></li>
+<li><strong><a href="https://www.bts.gov/">Bureau of Transportation Statistics</a></strong></li>
+<li><strong><a href="https://www.census.gov/">Census Bureau</a></strong></li>
+<li><strong><a href="https://www.ers.usda.gov/">Economic Research Service of the Department of Agriculture</a></strong></li>
+<li><strong><a href="https://www.eia.gov/">Energy Information Administration</a></strong></li>
+<li><strong><a href="https://nces.ed.gov/">National Center for Education Statistics</a></strong></li>
+<li><strong><a href="https://www.cdc.gov/nchs/index.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fnchs%2Findex.htm">National Center for Health Statistics</a></strong></li>
+<li><strong><a href="https://ncses.nsf.gov/">National Center for Science and Engineering Statistics</a></strong></li>
+<li><strong><a href="https://www.ssa.gov/policy/about/ORES.html">Office of Research, Evaluation and Statistics of the Social Security Administration</a></strong></li>
+<li><strong><a href="https://www.irs.gov/statistics/soi-tax-stats-statistics-of-income">Statistics of Income Division of the Internal Revenue Service</a></strong></li>
+</ul>
+</section>
+<section id="reading-data" class="level1">
+<h1>Reading data</h1>
+<p>Reading data effectively requires us to slow down and critically evaluate a dataset to understand its origins, who the dataset was created by and why, how the data was collected, and more. Data is not inherently neutral and context matters. Data analysts have a responsibility to recognize and disclose potential data biases that may distort visualizations and lead to misleading interpretations or narratives. A thorough examination of the dataset’s structure—including its dimensions (categorical variables) and measures (quantitative variables)—and a clear understanding of how these elements are defined, is fundamental to responsible and accurate data analysis.</p>
+<section id="the-drama-framework" class="level2">
+<h2 class="anchored" data-anchor-id="the-drama-framework">The DRAMA framework</h2>
+<p>The <strong>DRAMA Framework</strong> is a helpful tool for critically evaluating data sources. <span class="citation" data-cites="primeau">(<a href="#ref-primeau" role="doc-biblioref">Primeau, n.d.</a>)</span></p>
+<div class="list-group">
+<a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start active">
+<div class="d-flex w-100 justify-content-between">
+<h5 class="mb-1 anchored">
+DRAMA Framework
+</h5>
+</div>
+</a> <a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start">
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>D</strong>ate
+</p>
+</div>
+<small>When was the data last updated? Is it current? Does it reflect current trends?</small> </a> <a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start">
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>R</strong>elevance
+</p>
+</div>
+<small>What procedures were used to collect the data? Is the data relevant to my research project? Did sampling procedures target the right audience or population? What was the context for collecting the data? Is there a description of the data set and what data it does and does not contain?</small> </a> <a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start">
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>A</strong>ccuracy
+</p>
+</div>
+<small>Is the data reliable? Valid? Were procedures for gathering the data followed consistently?</small> </a> <a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start">
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>M</strong>otivation
+</p>
+</div>
+<small>Why was the data collected? Are there any potential biases in the data? Was any relevant data not included in the dataset? If yes, was this disclosed?</small> </a> <a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start">
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>A</strong>uthority
+</p>
+</div>
+<small>Who collected the data? an individual? a government agency? a business? or a political action committee? Are they credible?</small>
+<p></p>
+</a><p><a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start"></a></p>
+</div>
+</section>
+</section>
+<section id="the-tableau-environment" class="level1">
+<h1>The Tableau Environment</h1>
+<div class="alert alert-dismissible alert-info">
+<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<h4 class="alert-heading anchored">
+<img src="images/document_pencil_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Note:
+</h4>
+<p>
+This tutorial is designed to support multi-session <a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a> hosted by The Ohio State University Libraries Research Commons.
+</p>
+<p>
+Since the Tableau for Research workshop takes place in the Research Commons computer lab, the examples provided here use the <strong>Tableau Desktop</strong> interface. Please note that this interface may look slightly different from the <strong>Tableau Desktop Public Edition</strong>.
+</p>
+</div>
+<section id="the-start-page" class="level2">
+<h2 class="anchored" data-anchor-id="the-start-page">The Start page</h2>
+<p>When you open Tableau Desktop, you’ll land on the blue <strong>Start Page</strong>. Here’s what you’ll find:</p>
+<ul>
+<li><strong>Connect (Left Pane):</strong> Connect to your data sources. Connections to flat files, such as .xlsx, .csv, and .json documents are listed on the top. Direct connections to tables hosted on servers are listed below.</li>
+<li><strong>Center Pane:</strong> Open recently used workbooks.</li>
+<li><strong>Discover (Right Pane):</strong> Learn more about Tableau.</li>
+</ul>
+<p><img src="images/tableau_desktop_start.png" title="Tableau Desktop Start Page" class="img-fluid"></p>
+<p>With each new release, Tableau introduces new features and improvements. The <strong>Discover</strong> section is a valuable resource for staying informed and seeing how these features may support your ability to work with, analyze, and argue with data.</p>
+<section id="make-learning-meaningful" class="level3">
+<h3 class="anchored" data-anchor-id="make-learning-meaningful">Make Learning Meaningful!!!🌟</h3>
+<p>Let’s take a moment here to emphasize something important:</p>
+<p>When learning data analysis and visualization, it’s incredibly helpful to work with <strong>data that matters to you</strong>.</p>
+<ul>
+<li>🎵 <strong>Love music?</strong> Try using a Wikipedia table listing albums or songs by your favorite artist.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>🍽️ <strong>Foodie at heart?</strong> Explore recipes using the <strong><a href="https://www.themealdb.com/">TheMealDB</a></strong> API.</li>
+<li>🏀 <strong>Into sports?</strong> Check out the curated <strong><a href="https://sportsandsociety.osu.edu/sports-data-sets">Sports Data Sets</a></strong> from The Ohio State University Sports and Society Initiative.</li>
+</ul>
+<p>Working with familiar or interesting data makes the learning process more engaging—and more fun!</p>
+<div class="alert alert-dismissible alert-primary">
+<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<h4 class="alert-heading anchored">
+<img src="images/star_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Important!
+</h4>
+<p>
+<strong>Always review the copyright and terms of use</strong> before sourcing data from any website.
+</p>
+<p>
+Limited use of copyrighted materials is allowed under certain conditions for journalism, scholarship, and teaching. <a href="https://library.osu.edu/copyright/fair-use">Use the Resources for determining fair use</a> to verify your project is within the scope of fair use. Contact University Libraries <a href="https://library.osu.edu/copyright">Copyright Services</a> if you have any questions.
+</p>
+</div>
+</section>
+</section>
+<section id="the-data-source-page" class="level2">
+<h2 class="anchored" data-anchor-id="the-data-source-page">The Data Source page</h2>
+<p>To get started with the Tableau <strong>Data Source</strong> page, we’ll use the <strong>Performers</strong> table from the Wikipedia page on <strong><a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">Rock and Roll Hall of Fame inductees</a></strong>. The <strong>Performers</strong> category honors recording artists and bands who have had a significant and lasting impact on the development and legacy of rock and roll.</p>
+<p>That said, you’re encouraged to use a dataset that’s personally meaningful to you! Feel free to substitute the example with your own data as you work through the practice activities in this tutorial.</p>
+<p>To connect to <code>rock_n_roll_performers.csv</code> in your workshop materials.</p>
+<p>On Tableau’s <strong>Start Page</strong></p>
+<ol type="1">
+<li>Go to the <strong>Connect</strong> pane on the left.</li>
+<li>Select <strong>Text file</strong>.</li>
+<li>Navigate to and open the CSV file.</li>
+</ol>
+<p>This opens the <strong>Data Source Page</strong>.</p>
+<video src="videos/tableau_data_source.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+<p>On the <strong>Data Source</strong> page you’ll find:</p>
+<p>The <strong>Connections</strong>** pane on the left. Tableau Desktop allows multiple connections, which can be joined or related using common fields. For this tutorial, we will keep things simple and use only the <code>rock_n_roll_performers.csv</code> file.</p>
+<p>The <strong>Canvas</strong> in the top center. The canvas displays the <code>rock_n_roll_performers.csv</code> file in a rectangle. Right-click on this rectangle or use the ▼ caret to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Rename tables</label></li>
+<li><label><input type="checkbox">Join and relate tables</label></li>
+<li><label><input type="checkbox">Apply pre-filters to your data</label></li>
+</ul>
+<p>The <strong>Metadata Grid</strong> in the bottom center. Here the data headers are displayed as rows. This feature is particularly helpful when you connect to a dataset with multiple tables and fields. The metadata grid allows you to:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Understand your data structure</label></li>
+<li><label><input type="checkbox">Change data types</label></li>
+<li><label><input type="checkbox">Hide unnecessary fields not required for your analysis</label></li>
+</ul>
+<p>The <strong>Data Grid</strong> on the bottom right. The data grid shows the first 1,000 rows of data in your data source. In the data grid you can:</p>
+<ul class="task-list">
+<li><label><input type="checkbox">Pivot data</label></li>
+<li><label><input type="checkbox">Create groups and bins</label></li>
+<li><label><input type="checkbox">Build calculated fields</label></li>
+</ul>
+<section id="dimensions-vs.-measures---part-1" class="level3">
+<h3 class="anchored" data-anchor-id="dimensions-vs.-measures---part-1">Dimensions vs.&nbsp;measures - Part 1</h3>
+<section id="what-is-a-measure" class="level4">
+<h4 class="anchored" data-anchor-id="what-is-a-measure">What is a measure?</h4>
+<p>Think of a measure as a variable used for math. Measures represent our quantitative data or units of measure.</p>
+</section>
+<section id="what-is-a-dimension" class="level4">
+<h4 class="anchored" data-anchor-id="what-is-a-dimension">What is a dimension?</h4>
+<p>Dimensions represent the qualitative data used to segment the measures.&nbsp;</p>
+</section>
+<section id="dimension-or-measure" class="level4">
+<h4 class="anchored" data-anchor-id="dimension-or-measure">Dimension or measure?</h4>
+<p>Dimensions sometimes function as measures. Age, for example, can be used to categorize data, or as a measure in a calculation. Measures sometimes function as dimensions. An identification number, for example, can represent a person, yet consist of all numbers. If the identification number is added sequentially to a database, it may also be used in a calculation.</p>
+<div id="fig-figure1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/dimensions_measures_fruit.png" title="example showing apple, banana, pear, and kiwi as a dimension in the fruit column and the number of apples, bananas, pears, and kiki in the number of fruit column" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Dimensions and Measures
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="change-data-type---option-1" class="level3">
+<h3 class="anchored" data-anchor-id="change-data-type---option-1">Change data type - Option 1</h3>
+<p>The metadata grid for the <code>rock_n_roll_performers.csv</code> dataset primarily shows dimensions. The <strong>Index</strong> field represents an identification number and can serve as a dimension or measure. The <strong>Year</strong> field is currently recognized as a whole number. To change the data type of the <strong>Year</strong> field:</p>
+<ol type="1">
+<li>Locate the <strong>YEAR</strong> field in the metadata grid.</li>
+<li>Right-click on the <strong>number icon</strong> before the field name.</li>
+<li>Select <strong>Date &amp; Time</strong> from the menu.</li>
+</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 32%">
+<col style="width: 15%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Type</strong></th>
+<th style="text-align: left;"><strong>Field Name</strong></th>
+<th style="text-align: left;"><strong>Physical Table</strong></th>
+<th style="text-align: left;"><strong>Remote Field Name</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/numeric_icon.png" title="Decorative # icon" class="img-fluid"></td>
+<td style="text-align: left;">Number (whole)</td>
+<td style="text-align: left;">Index</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">index</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="images/symbol_datetime.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">Date &amp; Time</td>
+<td style="text-align: left;">Year</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">year</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Image</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">image</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Name</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">name</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Inducted Members</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">inducted_members</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Prior Nominations</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">prior_nominations</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Induction Presenter</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">induction_presenter</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Artist</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">artist</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Image Url</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">image_url</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="images/abc_icon.png" title="Decorative abc icon" class="img-fluid"></td>
+<td style="text-align: left;">String</td>
+<td style="text-align: left;">Artist Url</td>
+<td style="text-align: left;">rock_n_roll_performers.csv</td>
+<td style="text-align: left;">artist_url</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="wide-vs.-tall-data" class="level3">
+<h3 class="anchored">Wide vs.&nbsp;tall data</h3>
+<p>Sometimes to efficiently and effectively analyze and/or visualize data we must restructure our data from <strong>wide</strong> to <strong>tall</strong> format. In <a href="#fig-figure1" class="quarto-xref">Figure&nbsp;1</a> above, each individual is represented by a single row, with separate columns for name, age, and number of visits. To transform this data into <strong>tall</strong> format, each individual would have a row for each measure. This structure includes:</p>
+<ul>
+<li>A column for the <strong>measure name</strong> (e.g., “Age”, “Visits”)</li>
+<li>A column for the <strong>measure values</strong> (e.g., 34, 5)</li>
+</ul>
+<div id="fig-figure2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-figure2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/tall_format.png" title="example showing data from figure 1 reconfigured in tall format" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Tall data
+</figcaption>
+</figure>
+</div>
+<p>For many Tableau projects, converting data to a <strong>tall</strong> format can enhance analysis and visualization.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="headingOne" data-anchor-id="wide-vs.-tall-data">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1. Transform data to a tall format
+</button>
+</h2>
+<div id="collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+<div class="accordion-body fs-4">
+<p>
+Try transforming the <strong>rock_n_roll_performers.csv</strong> dataset from <strong>wide</strong> to <strong>tall</strong> format using Tableau’s pivot feature.
+</p>
+<ol>
+<li>
+In the <strong>data grid</strong>, click to highlight the <strong>Year</strong> column.
+</li>
+<li>
+Hold the <strong>Shift</strong> key, scroll to the right, and click to highlight the <strong>Artist Url</strong> column.
+</li>
+<li>
+Click the ▼ caret on right side of the <strong>Artist Url</strong> column and select <strong>Pivot</strong>.
+</li>
+<li>
+Tableau will transform the selected columns from a <strong>wide</strong> format (many columns) to <strong>tall</strong> format (fewer columns, more rows). ✅ This is useful for reshaping data to make it easier to analyze or visualize in Tableau.
+</li>
+<li>
+To undo the pivot, press <strong>Ctrl+Z</strong> (Windows) or <strong>Command+Z</strong> (Mac).
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<img src="images/tableau_desktop_data_source_window_pivot.png" alt="data source window showing all fields except index pivoted." style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</div>
+</div>
+</div>
+</div>
+<p>&nbsp;</p>
+</section>
+</section>
+<section id="the-tableau-workspace" class="level2">
+<h2 class="anchored" data-anchor-id="the-tableau-workspace">The Tableau Workspace</h2>
+<p>To access the Tableau workspace, select the <strong>Sheet1</strong> tab at the bottom of workbook.</p>
+<p class="visually-hidden">
+Video showing the location of elements listed below.
+</p>
+<video src="videos/tableau_workspace.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+<ul>
+<li>The <strong>Data Pane</strong> and the <strong>Analytics Pane</strong> are located in the <strong>Side Bar</strong> on the left.</li>
+<li>The <strong>Marks Card</strong> is to the right of the <strong>Side Bar</strong>.</li>
+<li>The <strong>Filters Shelf</strong> is above the <strong>Marks Card</strong>.</li>
+<li>Dimensions and measures are placed on the columns and rows <strong>Shelves</strong>.</li>
+<li>The data visualization is designed in the <strong>View</strong>.</li>
+</ul>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Multiple ways to accomplish a task!!!
+</div>
+<div class="card-body">
+<img src="images/tableau_logo.svg" class="mx-auto d-block" alt="tableau logo" style="vertical-align: middle; margin-right: 0.5rem; padding: 1rem;">
+<p>
+The more you use Tableau, the more you’ll notice there’s often more than one way to accomplish the same task!!!
+</p>
+</div>
+</div>
+<section id="dimensions-vs.-measures---part-2" class="level3">
+<h3 class="anchored">Dimensions vs.&nbsp;measures - Part 2</h3>
+<p>When you connect to a data source, Tableau automatically categorizes each field as either a <em>dimension</em> or a <em>measure</em>. In the <strong>Data Pane</strong>, dimensions appear above the gray line, while measures are listed below it. If Tableau classifies a dimension as a measure, you can easily correct it by dragging the field above the gray line into the dimension area.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="headingOne" data-anchor-id="dimensions-vs.-measures---part-2">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2. Change measure to dimension
+</button>
+</h2>
+<div id="collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+<div class="accordion-body fs-4">
+Drag the <strong>Index</strong> field above the gray line to categorize <strong>Index</strong> as a dimension.
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="change-data-type---option-2" class="level3">
+<h3 class="anchored" data-anchor-id="change-data-type---option-2">Change data type - Option 2</h3>
+<p>To change the data type of a field in the Tableau Workspace:</p>
+<ol type="1">
+<li>Locate the field in the data pane.</li>
+<li>Right-click on the data type icon before the field name.</li>
+<li>Select the desired data type from the menu.</li>
+</ol>
+</section>
+<section id="toggle-between-workspace-data-source-and-start-page" class="level3">
+<h3 class="anchored" data-anchor-id="toggle-between-workspace-data-source-and-start-page">Toggle between workspace, data source and start page</h3>
+<video src="videos/tableau_toggle.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 61%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>location</strong></th>
+<th style="text-align: left;"><strong>Toggles between</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/tableau_data_source.png" title="Decorative" class="img-fluid" alt="Data Source tab"></td>
+<td style="text-align: left;">bottom left</td>
+<td style="text-align: left;">Tableau Workspace and Data Source</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><img src="images/tableau_logo_small.png" title="Decorative" class="img-fluid" alt="Small Tableau logo white"></td>
+<td style="text-align: left;">top left</td>
+<td style="text-align: left;">Data Source and Start Page</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><img src="images/tableau_logo_small_white.png" title="Decorative" class="img-fluid" alt="Small Tableau logo"></td>
+<td style="text-align: left;">top left</td>
+<td style="text-align: left;">Start Page and Data Source</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>Sheet 1</code></td>
+<td style="text-align: left;">bottom left</td>
+<td style="text-align: left;">Data Source and Tableau Workspace</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+<section id="supplemental-readings" class="level1">
+<h1>Supplemental readings</h1>
+<div class="grid g-4">
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+BETTER DATA VISUALIZATIONS
+</div>
+<div class="card-body">
+<img src="images/cover_schwabish_data_visualization.png" alt="better data visualizations book cover" class="d-block mx-auto">
+<h4 class="card-title anchored" data-anchor-id="supplemental-readings">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507">Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Jonathan Schwabish
+</li>
+<li class="list-group-item">
+New York : Columbia University Press, 2021.
+</li>
+</ul>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+STORYTELLING WITH DATA
+</div>
+<div class="card-body">
+<img src="images/cover_knaflic.png" alt="storytelling with data book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_proquest_ebookcentral_EBC4187267">Storytelling with Data: A Data Visualization Guide for Business Professionals</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Cole Nussbaumer Knaflic
+</li>
+<li class="list-group-item">
+Hoboken, New Jersey: Wiley, 2015.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-open_data_handbook" class="csl-entry" role="listitem">
+Dietrich, Jonathan AND McNamara, Daniel AND Gray. n.d. <span>“Open Data Handbook.”</span> <a href="https://opendatahandbook.org/guide/en/">https://opendatahandbook.org/guide/en/</a>.
+</div>
+<div id="ref-primeau" class="csl-entry" role="listitem">
+Primeau, Hanna. n.d. <span>“Taking the Drama Out of Source Evaluation.”</span> <em>Librarian Yarns</em>. <a href="https://www.librarianyarns.com/drama-source-eval">https://www.librarianyarns.com/drama-source-eval</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Visit the Websites and APIs. <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/wikipedia">Lesson 3. Wikipedia</a></strong> tutorial to learn how to extract tables from HTML using pandas.read_html.See the <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/icite">Websites and APIs. Lesson 4. iCite</a></strong> tutorial and <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/crossref">Websites and APIs. Lesson 7. Crossref</a></strong> tutorial to learn how to use APIs to gather data.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tableau_for_research.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tableau_research_choose_effective_visual.html" class="pagination-link" aria-label="Lesson 2. Choose an Effective Visual">
+        <span class="nav-page-text">Lesson 2. Choose an Effective Visual</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://library.osu.edu/policies/copyright-information">
+<p>© 2026 The Ohio State University</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

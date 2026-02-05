@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lesson 4. Communicate Data – Data Visualization</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./tableau_continue_learning.html" rel="next">
+<link href="./tableau_research_read_interpret_evaluate.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Visualization</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Library Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_basics.html"> 
+<span class="menu-text">Python Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tableau_for_research.html" aria-current="page"> 
+<span class="menu-text">Tableau Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/OSU-Libraries-Research-Services/data_visualization"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_for_research.html">TABLEAU FOR RESEARCH</a></li><li class="breadcrumb-item"><a href="./tableau_communicate.html">Lesson 4. Communicate Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">TABLEAU FOR RESEARCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_for_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_getting_started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1. Getting Started</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_choose_effective_visual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2. Choose an Effective Visual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_read_interpret_evaluate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Read, Interpret, and Evaluate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_communicate.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lesson 4. Communicate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_continue_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Continue Learning Tableau</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">CONTENTS</h2>
+   
+  <ul>
+  <li><a href="#data-skills-concepts" id="toc-data-skills-concepts" class="nav-link active" data-scroll-target="#data-skills-concepts">Data skills | concepts</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#lesson-4" id="toc-lesson-4" class="nav-link" data-scroll-target="#lesson-4">LESSON 4</a></li>
+  <li><a href="#arguing-with-data" id="toc-arguing-with-data" class="nav-link" data-scroll-target="#arguing-with-data">Arguing with data</a>
+  <ul class="collapse">
+  <li><a href="#ethical-use-of-data" id="toc-ethical-use-of-data" class="nav-link" data-scroll-target="#ethical-use-of-data">Ethical use of data</a></li>
+  <li><a href="#data-citation" id="toc-data-citation" class="nav-link" data-scroll-target="#data-citation">Data Citation</a></li>
+  </ul></li>
+  <li><a href="#managing-data" id="toc-managing-data" class="nav-link" data-scroll-target="#managing-data">Managing data</a></li>
+  <li><a href="#choose-an-effective-visual" id="toc-choose-an-effective-visual" class="nav-link" data-scroll-target="#choose-an-effective-visual">Choose an effective visual</a>
+  <ul class="collapse">
+  <li><a href="#dual-axis-combination-chart" id="toc-dual-axis-combination-chart" class="nav-link" data-scroll-target="#dual-axis-combination-chart">Dual-axis combination chart</a></li>
+  <li><a href="#pareto-chart" id="toc-pareto-chart" class="nav-link" data-scroll-target="#pareto-chart">📈 Pareto chart</a></li>
+  </ul></li>
+  <li><a href="#calculated-fields-and-parameters" id="toc-calculated-fields-and-parameters" class="nav-link" data-scroll-target="#calculated-fields-and-parameters">Calculated fields and parameters</a>
+  <ul class="collapse">
+  <li><a href="#calculated-fields" id="toc-calculated-fields" class="nav-link" data-scroll-target="#calculated-fields">🧮 Calculated fields</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  </ul></li>
+  <li><a href="#basic-mapping" id="toc-basic-mapping" class="nav-link" data-scroll-target="#basic-mapping">Basic Mapping</a>
+  <ul class="collapse">
+  <li><a href="#symbol-map" id="toc-symbol-map" class="nav-link" data-scroll-target="#symbol-map">🗺️ Symbol map</a></li>
+  <li><a href="#choropleth-map" id="toc-choropleth-map" class="nav-link" data-scroll-target="#choropleth-map">🗺️ Choropleth map</a></li>
+  <li><a href="#dual-axis-map" id="toc-dual-axis-map" class="nav-link" data-scroll-target="#dual-axis-map">🗺️ Dual-axis map</a></li>
+  </ul></li>
+  <li><a href="#dashboards" id="toc-dashboards" class="nav-link" data-scroll-target="#dashboards">Dashboards</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_for_research.html">TABLEAU FOR RESEARCH</a></li><li class="breadcrumb-item"><a href="./tableau_communicate.html">Lesson 4. Communicate Data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lesson 4. Communicate Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="./tableau_research_read_interpret_evaluate.html">Lesson 3</a> introduced the use of <strong>groups</strong> to modify data categories and <strong>hierarchies</strong> to organize data and enhance interactivity in visualizations. The readings explored the advantages and limitations of <strong>pie charts</strong> for illustrating part-to-whole relationships and suggested alternative visualization methods. <strong>Formatting</strong> techniques and <strong>table calculations</strong> were also covered to improve visual impact and optimize Tableau performance by limiting the scope of computation to what’s displayed in the view. Lesson 4 introduces calculated fields, parameters, maps, and dashboard design.</p>
+<section id="data-skills-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
+<ul>
+<li>Tableau</li>
+<li>Analyzing data</li>
+<li>Arguing with Data</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<ol type="1">
+<li>Create <strong>calculated fields</strong> to clean data, assign values, add interactivity, and perform statistical analysis.</li>
+<li>Use <strong>parameters</strong> to replace constants, highlight data dynamically, apply filters, and more.</li>
+<li>Build <strong>symbol maps</strong> and <strong>choropleth maps</strong> for geographic data visualization.</li>
+<li>Design and assemble a <strong>dashboard</strong>.</li>
+</ol>
+<p>This tutorial is designed to support a multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">Tableau for Research</a></strong> workshop hosted by The Ohio State University Libraries Research Commons. It is intended to help the <strong>ABSOLUTE</strong> beginner, or anyone who is relatively new to Tableau to build the skills and confidence to apply Tableau to research projects.</p>
+</section>
+<section id="lesson-4" class="level1">
+<h1>LESSON 4</h1>
+</section>
+<section id="arguing-with-data" class="level1">
+<h1>Arguing with data</h1>
+<p><strong>Understanding your audience is not only essential for effective data visualization—it’s also a cornerstone of data literacy.</strong> While academic research papers typically follow a structured format (introduction, literature review, methodology, discussion, and conclusion) and adhere to style guides like the Chicago Manual of Style for visuals, this approach may not suit every audience. When advocating with data, a more impactful strategy might involve using simple icons, bold numbers, and brief explanatory text to quickly engage and motivate action.</p>
+<p><img src="images/nonprofit_impact_matters.png" title="Example from nonprofitimpactmatters.org of a visual using large numbers, simple icons, and explanatory text to motivate action." class="img-fluid"></p>
+<h6 a="" href="https://www.nonprofitimpactmatters.org/" class="anchored">
+https://www.nonprofitimpactmatters.org/
+</h6>
+<section id="ethical-use-of-data" class="level2">
+<h2 class="anchored" data-anchor-id="ethical-use-of-data">Ethical use of data</h2>
+<p>Handling data responsibly—especially when it includes personally identifiable information—requires thoughtful ethical practices. From how data is collected and stored to how it’s shared and used, each step involves important considerations. To explore these principles further, check out this informative video from Virginia Tech University Libraries.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/l-k_1RQmmVY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="data-citation" class="level2">
+<h2 class="anchored" data-anchor-id="data-citation">Data Citation</h2>
+<p>Using data ethically means giving proper credit to the people or organizations that created it. Just like citing books or articles, citing data acknowledges the original source and supports transparency and reproducibility. Want to learn more? Check out ICPSR’s fun video on why citing data matters!</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/jiCZKV-alC0?si=i4yQfVRstJLHq_Cv" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
+<section id="managing-data" class="level1">
+<h1>Managing data</h1>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/-wjFMMQD3UA?si=h91u_HZRrcXVRIgI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Having a plan to organize, store, preserve, and share research data is an important aspect of the research lifecycle. Check out University Libraries resources supporting <strong><a href="https://guides.osu.edu/IntroDataManagement">Research Data Management</a></strong>.</p>
+</section>
+<section id="choose-an-effective-visual" class="level1">
+<h1>Choose an effective visual</h1>
+<section id="dual-axis-combination-chart" class="level2">
+<h2 class="anchored" data-anchor-id="dual-axis-combination-chart">Dual-axis combination chart</h2>
+<p>A dual-axis combination chart lets you display two different data fields on the same graph—either to save space or to highlight comparisons more effectively. You can also enhance your visual analysis by layering multiple mark types (like bars and lines) in a single view.</p>
+<p>Let’s dive back into our <code>rock_n_roll_performers</code> dataset to create a dual-axis chart that highlights our favorite albums and their peak U.S. chart positions.</p>
+<ol type="1">
+<li><strong>Start a new worksheet</strong> and rename it <strong>DualAxis</strong></li>
+<li><strong>Filter for favorite albums</strong>
+<ul>
+<li>Drag <strong>Favorite albums group</strong> to the <strong>Filters shelf</strong>.</li>
+<li>Select <strong>Favorite albums only</strong>.</li>
+</ul></li>
+<li><strong>Build the initial bar chart</strong>
+<ul>
+<li>Drag <strong>album_title</strong> to <strong>Columns</strong>.</li>
+<li>Drag <strong>Peak US</strong> to Rows.</li>
+</ul></li>
+<li><strong>Create the dual axis</strong>
+<ul>
+<li>Hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>SUM(Peak US)</strong> to the right on the <strong>Rows</strong> shelf to duplicate it.</li>
+<li>You’ll now see <strong>three Marks Cards:</strong>
+<ul>
+<li><strong>All</strong></li>
+<li><strong>SUM(Peak US)</strong></li>
+<li><strong>SUM(Peak US) (2)</strong></li>
+</ul></li>
+<li>Click the ▼ caret on the second <strong>SUM(Peak US)</strong> pill and select <strong>Dual Axis</strong>.</li>
+</ul></li>
+<li><strong>Format as a lollipop chart</strong>
+<ul>
+<li>On the <strong>Marks Card</strong> for <strong>SUM(Peak US)</strong>, change the mark type to <strong>Bar</strong>.</li>
+<li>On the <strong>Marks Card</strong> for <strong>SUM(Peak US) (2)</strong>, leave it as <strong>Circle</strong>.</li>
+<li>Synchronize the axes:
+<ul>
+<li>Right-click the right Y-axis and select <strong>Synchronize Axis</strong>.</li>
+</ul></li>
+<li>Adjust bar size:
+<ul>
+<li>On the <strong>SUM(Peak US)</strong> Marks card, click<strong>Size</strong> and drag the slider left to reduce bar width.</li>
+</ul></li>
+</ul></li>
+<li><strong>Enhance the visual formatting</strong>
+<ul>
+<li>Change the view to <strong>Entire View</strong> from the <strong>Toolbar</strong>.</li>
+<li><strong>Color the marks</strong>:
+<ul>
+<li><strong>Bars:</strong><br>
+On <strong>SUM(Peak US)</strong> click <strong>Color</strong> and choose a <strong>light gray</strong>.</li>
+<li><strong>Circles:</strong><br>
+On <strong>SUM(Peak US) (2)</strong> click <strong>Color &gt; More Colors…,</strong> enter <strong>#ba0c2f</strong> for <strong>HTML color</strong>.</li>
+</ul></li>
+<li><strong>Add data labels</strong>:
+<ul>
+<li>On the <strong>SUM(Peak US) (2)</strong>, hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>SUM(Peak US)</strong> to <strong>Label</strong>.</li>
+<li>Click <strong>Label</strong> and set:
+<ul>
+<li><strong>Horizontal Alignment:</strong> Center</li>
+<li><strong>Vertical Alignment:</strong> Center</li>
+<li><strong>Font Color:</strong> White</li>
+</ul></li>
+</ul></li>
+<li>Adjust circle and bar size if needed.</li>
+</ul></li>
+<li><strong>Clean up the view</strong>
+<ul>
+<li><strong>Remove unnecessary lines</strong>:
+<ul>
+<li>Go to <strong>Format</strong> &gt; <strong>Lines</strong>.
+<ul>
+<li>Set <strong>Zero Lines</strong> and <strong>Grid Lines</strong> to <strong>None</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Remove borders</strong>:
+<ul>
+<li>Go to <strong>Format</strong> &gt; <strong>Borders</strong>.
+<ul>
+<li>On <strong>Sheet</strong> tab, set <strong>Row and Column Dividers</strong> to <strong>None</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Hide headers and field labels</strong>:
+<ul>
+<li>Right-click the left Y-axis and uncheck <strong>Show Header</strong>.</li>
+<li>Right-click <strong>album_title</strong> and select <strong>Hide Field Labels for Columns</strong>.</li>
+</ul></li>
+<li><strong>Ensure album titles are fully visible</strong>:
+<ul>
+<li>Hover over the X-axis line until the until the <strong>↕</strong> icon appears.</li>
+<li>Drag upward to increase axis height.</li>
+</ul></li>
+</ul></li>
+<li><strong>Add a descriptive title</strong>
+<ul>
+<li>Double click the worksheet title <strong>DualAxis</strong>.</li>
+<li>Enter:
+<ul>
+<li><strong>Line 1:</strong> <em>My Favorite Albums</em></li>
+<li><strong>Line 2:</strong> <em>Peak US Chart Positions</em>.</li>
+</ul></li>
+<li>Adjust font sizes and styling as needed.</li>
+</ul></li>
+</ol>
+<p><img src="images/tableau_dual_axis.png" title="Dual axis chart created following steps 1-7 above" class="img-fluid"></p>
+</section>
+<section id="pareto-chart" class="level2">
+<h2 class="anchored" data-anchor-id="pareto-chart">📈 Pareto chart</h2>
+<p>Pareto charts illustrate the <strong>Pareto Principle</strong>, which suggests that roughly <strong>80% of outcomes result from 20% of causes</strong>. In Tableau, these charts are built using <strong>table calculations</strong>. Individual values are displayed as bars in <strong>descending order</strong>, while a <strong>cumulative percentage line</strong> overlays the bars to show the proportion each category contributes to the total.</p>
+<div id="accordionExercise1" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseOne" aria-expanded="true" aria-controls="ex1-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1. Pareto Chart
+</button>
+</h2>
+<div id="ex1-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex1-headingOne" data-bs-parent="#accordionExercise1">
+<div class="accordion-body fs-4">
+<p>
+Create a Pareto Chart showing the cumulative percentage of album titles of all inductees into the <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">Rock N Roll Hall of Fame</a>
+</p>
+<ol>
+<li>
+<strong>Start a new worksheet</strong> and rename it <strong>ParetoChart</strong>
+</li>
+<li>
+<strong>Adjust the View</strong>
+<ul>
+<li>
+In the <strong>Toolbar</strong>, change the view from <strong>Standard</strong> to <strong>Entire View</strong>
+</li>
+</ul>
+</li>
+<li>
+<strong>Build the initial bar chart</strong>
+<ul>
+<li>
+Drag <strong>Artist</strong> to <strong>Columns</strong>.
+</li>
+<li>
+Right-click , hold, and drag <strong>album_title</strong> to <strong>Rows</strong>.
+</li>
+<li>
+In the <strong>Drop Field</strong> dialog, select <strong>CNTD(album_title)</strong>.
+</li>
+<li>
+Sort the bars in <strong>descending</strong> order.
+</li>
+</ul>
+</li>
+<li>
+<strong>Create the Dual Axis</strong>
+<ul>
+<li>
+Hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>CNTD(album_title)</strong> to the right on the <strong>Rows</strong> shelf to duplicate it.
+</li>
+<li>
+Click the ▼ caret on the second <strong>CNTD(album_title)</strong> pill and select <strong>Dual Axis</strong>.
+</li>
+</ul>
+</li>
+<li>
+<strong>Format as a Pareto chart.</strong>
+<ul>
+<li>
+On the <strong>Marks Card</strong> for <strong>CNTD(album_title):</strong>
+<ul>
+<li>
+Set mark type to <strong>Bar</strong>.
+</li>
+<li>
+Click <strong>Color</strong> and choose a <strong>light gray</strong>.
+</li>
+<li>
+Click <strong>Size</strong> and drag the slider all the way to left to minimize bar size.
+</li>
+</ul>
+</li>
+<li>
+On the <strong>Marks Card</strong> for <strong>CNTD(album_title) (2):</strong>
+<ul>
+<li>
+Set the mark type to <strong>Line</strong>.
+</li>
+<li>
+Click <strong>Color &gt; More Colors…</strong> and enter <span class="text-primary">#ba0c2f</span> in the HTML color field.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>Add a table calculation</strong>
+<ul>
+<li>
+Click the ▼ caret on the second <strong>CNTD(album_title)</strong> pill and select <strong>Add Table Calculation</strong>.
+</li>
+<li>
+Change Calculation Type to <strong>Running Total</strong>.
+</li>
+<li>
+Check ✔ <strong>Add secondary calculation</strong> and set it to <strong>Percent of Total</strong>.
+</li>
+<li>
+Close the Table Calculation window.
+</li>
+</ul>
+</li>
+<li>
+<strong>Adjust axis titles.</strong>
+<ul>
+<li>
+Right-click the <strong>left Y-axis</strong>, choose <strong>Edit Axis</strong> and rename it to <strong># of albums</strong>.
+</li>
+<li>
+Right-clic the <strong>right Y-axis</strong>, choose <strong>Edit Axis</strong> and rename it to <strong>% of all albums released</strong>.
+</li>
+</ul>
+</li>
+<li>
+<strong>Clean up the view</strong>
+<ul>
+<li>
+<strong>Remove lines</strong>:
+<ul>
+<li>
+Go to <strong>Format</strong> &gt; <strong>Lines</strong>.
+</li>
+<li>
+Set <strong>Zero Lines</strong> and <strong>Grid Lines</strong> to <strong>None</strong>.
+</li>
+</ul>
+</li>
+<li>
+<strong>Remove borders</strong>:
+<ul>
+<li>
+Go to <strong>Format</strong> &gt; <strong>Borders</strong>.
+</li>
+<li>
+On <strong>Sheet</strong> tab, set <strong>Row and Column Dividers</strong> to <strong>None</strong>.
+</li>
+</ul>
+</li>
+<li>
+<strong>Hide headers and field labels</strong>:
+<ul>
+<li>
+Click the ▼ caret on the <strong>Artist</strong> pill and uncheck <strong>Show Header</strong>.
+</li>
+<li>
+Right-click <strong>Artist</strong> and select <strong>Hide Field Labels for Columns</strong>.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<strong>Enhance interactivity.</strong>
+<ul>
+<li>
+On the <strong>Marks Card</strong> for <strong>All</strong>:
+<ul>
+<li>
+Click <strong>Tooltip</strong>
+</li>
+<li>
+Edit the tooltip to: <em><strong>Artist</strong> released <strong>CNTD(album_title)</strong> albums</em>
+</li>
+<li>
+Hover over a bar to preview and proofread the tooltip.
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseTwo" aria-expanded="false" aria-controls="ex1-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex1-headingTwo" data-bs-parent="#accordionExercise1">
+<div class="accordion-body">
+<img src="images/tableau_pareto_chart.png" alt="shows completed steps 1-10 from exercise 1 above" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="calculated-fields-and-parameters" class="level1">
+<h1>Calculated fields and parameters</h1>
+<section id="calculated-fields" class="level2">
+<h2 class="anchored" data-anchor-id="calculated-fields">🧮 Calculated fields</h2>
+<p>Calculated fields empower you to transform your data directly within Tableau. You can use them to clean and organize data, define custom segments, add interactivity, and even perform statistical or mathematical calculations—all without modifying the original dataset.</p>
+<p>For example, in the <code>rock_n_roll_studio_albums</code> table, you’ll find album certification statuses from organizations like the <strong><a href="https://en.wikipedia.org/wiki/Recording_Industry_Association_of_America">RIAA</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/British_Phonographic_Industry">BPI</a></strong>, and <strong><a href="https://en.wikipedia.org/wiki/Australian_Recording_Industry_Association">ARIA</a></strong>. With calculated fields, you can standardize these certifications, compare award levels across countries, or even create new fields that group albums by global recognition—making your analysis more insightful and dynamic.</p>
+<p>Let’s take a closer look at how <strong>calculated fields</strong> work by analyzing <strong>RIAA certifications</strong> for our favorite albums.</p>
+<p>Over time, the <strong><a href="https://en.wikipedia.org/wiki/Recording_Industry_Association_of_America">Recording Industry Association of America (RIAA)</a></strong> has updated its certification standards to reflect changes in how music is consumed. Originally based solely on album sales, certifications now account for digital downloads and streaming activity. To keep things simple, we’ll use the current criteria for album-level awards, as defined by the RIAA in <strong>February 2016</strong>:</p>
+<p>🎵 <strong>RIAA Certification Levels</strong> - Gold: 500,000 units - Platinum: 1,000,000 units - Multi-Platinum: 2,000,000+ units (in 1,000,000-unit increments) - Diamond: 10,000,000 units</p>
+<p>💽 <strong>What Counts as a Unit?</strong> A single unit can be any of the following:</p>
+<ul>
+<li>One full digital or physical album sale</li>
+<li>10 track downloads from the same album</li>
+<li>1,500 on-demand audio or video streams from the album</li>
+</ul>
+<p>Using this framework, we can create a calculated field in Tableau to categorize albums by their certification level based on total units.</p>
+<ol type="1">
+<li><strong>Start a new worksheet</strong> and rename it <strong>CalculatedFields</strong></li>
+<li><strong>Build a text table</strong>
+<ul>
+<li>Drag <strong>Favorite albums</strong> to the <strong>Filters Shelf</strong> and select <strong>Favorite albums</strong>.</li>
+<li>Drag <strong>album_title</strong> to <strong>Rows</strong>.</li>
+<li>Drag <strong>Certification Riaa Status</strong> to <strong>Text</strong> on the <strong>Marks Card</strong>.</li>
+<li>Right-click any album titles with no certification and select <strong>❌ Exclude</strong>.</li>
+</ul></li>
+<li><strong>Create a calculated field</strong>
+<ul>
+<li>In the <strong>Data Pane</strong>, click the ▼ caret next to the search bar and choose <strong>Create Calculated Field</strong>.</li>
+<li><strong>Name</strong> the field <strong>Number of units</strong>.</li>
+<li>Click the ▶ caret on the right side of the Calculation Editor to explore available functions.</li>
+<li>Use an IF statement to assign unit values based on certification: assign units to each certification category.<br>
+</li>
+</ul>
+<em>IF &lt;expr&gt; THEN &lt;then&gt; [ELSEIF] &lt;expr2&gt; THEN &lt;then2&gt; …] [ELSE &lt;else&gt;] END</em></li>
+</ol>
+<div id="d5093d8f" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> [Certification Riaa Status]<span class="op">=</span><span class="st">'Gold'</span> then <span class="dv">500000</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>elseif [Certification Riaa Status]<span class="op">=</span><span class="st">'Platinum'</span> then <span class="dv">1000000</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>elseif [Certification Riaa Status]<span class="op">=</span><span class="st">'Multiplatinum'</span> then <span class="dv">2000000</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>elseif [Certification Riaa Status]<span class="op">=</span><span class="st">'Diamond'</span> then <span class="dv">10000000</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>end</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="4" type="1">
+<li><strong>Add the calculated field to view</strong>
+<ul>
+<li>On the <strong>Marks Card</strong>, replace <strong>Certification Riaa Status</strong> with the calculated field <strong>Number of units</strong>.</li>
+</ul></li>
+<li><strong>Clean up and enhance the view</strong>
+<ul>
+<li><strong>Remove borders and shading</strong>:
+<ul>
+<li>Go to <strong>Format</strong> &gt; <strong>Borders</strong>.
+<ul>
+<li>On <strong>Sheet</strong> tab, set <strong>Row Divider</strong> to <strong>None</strong>.</li>
+</ul></li>
+<li>On <strong>Formatting Pane</strong>, go to <strong>Shading</strong>.
+<ul>
+<li>On <strong>Sheet</strong> tab, set row banding to <strong>None</strong> on <strong>Pane</strong> and <strong>Header</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Hide field labels</strong>:
+<ul>
+<li>Right-click <strong>album_title</strong> and select <strong>Hide Field Labels for Rows</strong>.</li>
+</ul></li>
+<li><strong>Edit the text display</strong>:
+<ul>
+<li>On the <strong>Marks Card</strong>, click <strong>Text</strong> and click the … button next to the text box..</li>
+<li>Enter the word <strong>units</strong> after &lt;SUM(Number of units)&gt; for clarity.</li>
+</ul></li>
+</ul></li>
+</ol>
+<p class="visually-hidden">
+Video of steps 1-5 above
+</p>
+<video src="videos/tableau_calculated_fields.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+</section>
+<section id="parameters" class="level2">
+<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<p>In Tableau, parameters: - <strong>Replace constant values</strong> such as numbers, dates, or text strings in calculations, filters, or reference lines—making your dashboards more flexible and dynamic. - <strong>Enhance interactivity</strong> by allowing users to control what data is displayed or how it’s calculated, depending on how the parameter is integrated into the view.</p>
+<p>Let’s take our <strong>CalculatedFields</strong> text table and <strong>transform it into a bar chart</strong>—a perfect opportunity to explore how <strong>parameters</strong> can add interactivity and flexibility to your visualization.</p>
+<ol type="1">
+<li><strong>Duplicate the existing sheet</strong>
+<ul>
+<li>Right-click on <strong>CalculatedFields</strong> and select Duplicate.</li>
+<li>Rename the new sheet <strong>Parameters</strong>.</li>
+</ul></li>
+<li><strong>Transform text table into a bar chart</strong>
+<ul>
+<li>Move <strong>SUM(Number of units)</strong> from <strong>Text</strong> to <strong>Columns</strong>.</li>
+<li>Sort the bars in <strong>descending</strong> order.</li>
+</ul></li>
+<li><strong>Create a parameter to highlight specific albums</strong>
+<ul>
+<li>In the <strong>Data Pane</strong>, click the ▼ caret next to the search bar and choose <strong>Create Parameter</strong>.</li>
+<li><strong>Name</strong> the parameter <strong>Highlight album</strong>.</li>
+<li>Set the <strong>Data type</strong> to <strong>String</strong>.</li>
+<li>Under <strong>Allowable values</strong>, select <strong>List</strong>.</li>
+<li>From the <strong>Add values from ▼</strong> dropdown, choose <strong>rock_n_roll_performers &gt; Certification Riaa Status</strong>.</li>
+</ul></li>
+</ol>
+<p>Once created, the <strong>Highlight album</strong> parameter will appear at the bottom of the <strong>Data Pane</strong>. Right-click it and select <strong>Show Parameter</strong> to display it in the view.</p>
+<div class="alert alert-dismissible alert-info">
+<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+<h4 class="alert-heading anchored">
+<img src="images/document_pencil_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Note:
+</h4>
+<p>
+Selecting values like Diamond, Gold, or Platinum won’t affect the chart yet. That’s because <span class="text-primary">parameters must be embedded in a calculated field</span> to have an effect—and that calculated field must be added to the view..
+</p>
+</div>
+<ol start="4" type="1">
+<li><strong>Create a calculated field</strong>
+<ul>
+<li>In the <strong>Data Pane</strong>, click the ▼ caret next to the search bar and choose <strong>Create Calculated Field</strong>.</li>
+<li><strong>Name</strong> the field <strong>Album highlighter</strong>.</li>
+<li>Enter the following formula:</li>
+</ul></li>
+</ol>
+<div id="f51a3ad1" class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>[Certification Riaa Status]<span class="op">=</span>[Highlight album]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This expression returns True for albums that match the selected certification in the parameter. </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol start="5" type="1">
+<li><strong>Add the calculated field to view</strong>
+<ul>
+<li>On the <strong>Marks Card</strong>, drag <strong>Album highligther</strong> to <strong>Color</strong>.</li>
+<li>Use the <strong>Highlight album</strong> parameter to toggle between <strong>Diamond</strong>, <strong>Gold</strong>, or <strong>Platinum</strong> and watch the corresponding bars update.</li>
+</ul></li>
+<li><strong>Clean up and enhance the view</strong>
+<ul>
+<li><strong>Remove lines</strong>:
+<ul>
+<li>Go to <strong>Format</strong> &gt; <strong>Lines</strong>.
+<ul>
+<li>On <strong>Columns</strong> tab, set <strong>Gridlines</strong> and <strong>Axis Rulers</strong> to <strong>None</strong>.</li>
+</ul></li>
+</ul></li>
+<li><strong>Customize colors</strong>:
+<ul>
+<li>For <strong>True</strong>
+<ul>
+<li>Click <strong>Color &gt; Edit Colors</strong> and then click <strong>True</strong>.</li>
+<li>Choose a bold color, like <strong>red</strong>.</li>
+</ul></li>
+<li>For <strong>False</strong>
+<ul>
+<li>Click <strong>Color &gt;Edit Colors</strong> and then click <strong>False</strong>.</li>
+<li>Choose a neutral color, like <strong>light gray</strong>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Rename Output File
+</div>
+<div class="card-body">
+<p>
+There are countless creative ways to use <strong>parameters</strong> with <strong>calculated fields</strong> in Tableau. You can:
+</p>
+<ul>
+<li>
+Highlight or filter specific data
+</li>
+<li>
+Add weights or thresholds
+</li>
+<li>
+Dynamically control reference lines
+</li>
+<li>
+Switch between metrics or dimensions
+</li>
+<li>
+And much more!
+</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="basic-mapping" class="level1">
+<h1>Basic Mapping</h1>
+<p>The <code>ODNR_fish_stocking.csv</code> dataset includes <strong>latitude and longitude</strong> for each stocking location. Here’s how to turn this data into a meaningful map:</p>
+<section id="symbol-map" class="level2">
+<h2 class="anchored" data-anchor-id="symbol-map">🗺️ Symbol map</h2>
+<!-- ### Start with latitude and longitude -->
+<ol type="1">
+<li><strong>Start a new worksheet</strong> and rename it <strong>SymbolMap</strong></li>
+<li><strong>Set the active data source</strong>
+<ul>
+<li>On the Data Pane, select <code>ODNR_fish_stocking</code>.</li>
+</ul></li>
+<li>Highlight <strong>Latitude</strong>, and <strong>Longitude</strong> in the <strong>Data Pane</strong></li>
+<li>Open <strong>Show Me</strong>—you’ll notice that <strong>Symbol Map</strong> is highlighted, since you’ve selected at least one geographic field</li>
+<li>Click <strong>Symbol Map</strong> to generate a map</li>
+</ol>
+<p>At this point, the map isn’t very informative. To make it meaningful, we need to add both a <strong>measure</strong> and a <strong>dimension</strong>.</p>
+<!-- ### Add detail and size -->
+<ol start="6" type="1">
+<li>Drag <strong>Numberstocked</strong> to <strong>Size</strong> on the Marks Card</li>
+<li>Drag <strong>Location Name</strong> to <strong>Detail</strong></li>
+</ol>
+<p>Now, each <strong>lake, river, reservoir, or pond</strong> where fish were stocked appears as a separate symbol. The <strong>size of each symbol</strong> reflects the number of fish stocked at that location.</p>
+<p><img src="images/tableau_symbol_map.png" title="Symbol map created using steps 1-7 above" class="img-fluid"></p>
+<p>Another quick way to create a symbol map:</p>
+<ol type="1">
+<li><strong>Start a new worksheet</strong></li>
+<li><strong>Double-click on County</strong> (or any geographic dimension) Tableau will automatically generate a map of <strong>Ohio</strong>, placing a <strong>blue dot in the center of each county</strong>.</li>
+</ol>
+</section>
+<section id="choropleth-map" class="level2">
+<h2 class="anchored" data-anchor-id="choropleth-map">🗺️ Choropleth map</h2>
+<p>You can easily convert your symbol map into a <strong><a href="https://en.wikipedia.org/wiki/Choropleth_map">choropleth map</a></strong> by replacing <strong>Location Name</strong> with <strong>County</strong> on <strong>Detail</strong> and changing the mark type from <strong>Automatic</strong> to <strong>Map</strong>. This change fills each county with color instead of using dots.</p>
+<p>By dragging <strong>Number Stocked</strong> (or another measure) to <strong>Color</strong>, you can visualize how that value is distributed across the state. The deeper the shade, the higher the number—making it easy to spot patterns and regional differences at a glance.</p>
+</section>
+<section id="dual-axis-map" class="level2">
+<h2 class="anchored" data-anchor-id="dual-axis-map">🗺️ Dual-axis map</h2>
+<p>To see Ohio alone, build a dual-axis map that combines features from both the symbol and the choropleth map. 1. <strong>Duplicate</strong> the <strong>SymbolMap</strong> worksheet and rename it <strong>DualAxisMap</strong> 2. <strong>Create the dual axis</strong> - Hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>AVG(Latitude)</strong> to the right on the <strong>Rows</strong> shelf to duplicate it. 3. <strong>Create a calculated field</strong> - In the <strong>Data Pane</strong>, click the ▼ caret next to the search bar and choose <strong>Create Calculated Field</strong>. - <strong>Name</strong> the field <strong>State</strong>. - Enter the following formula:</p>
+<pre><code>                "OH"
+ This expression creates a field for **State** and assigns the string "OH" to every row in the dataset.</code></pre>
+<ul>
+<li>Change <strong>State</strong> to <strong>String</strong> data type (if not already) and set <strong>Geographic Role</strong> to <strong>State/Province</strong>.</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>Format to isolate state</strong>
+<ul>
+<li>On the <strong>Marks Card</strong> for <strong>AVG(Latitude) (2):</strong>
+<ul>
+<li>Remove <strong>SUM(Numberstocked)</strong> and <strong>Location Name</strong> from the marks card.</li>
+<li>Change the marks type to <strong>Map</strong>.</li>
+<li>Place <strong>State</strong> on detail.</li>
+<li>Click <strong>Color</strong>:
+<ul>
+<li><strong>Color:</strong> white</li>
+<li><strong>Opacity:</strong> 0%</li>
+<li><strong>Border:</strong> dark gray</li>
+</ul></li>
+</ul></li>
+<li>From the <strong>Toolbar</strong> select <strong>Map &gt; Background Layers</strong>.
+<ul>
+<li>Set Washout to 100%</li>
+</ul></li>
+</ul></li>
+<li><strong>Set dual-axis</strong>
+<ul>
+<li>Click the ▼ caret on the second <strong>AVG(Latitude)</strong> pill and select <strong>Dual Axis</strong>.</li>
+</ul></li>
+<li><strong>Clean up and enhance the view</strong>
+<ul>
+<li><strong>Remove borders</strong>:
+<ul>
+<li>Go to <strong>Format</strong> &gt; <strong>Borders</strong>.
+<ul>
+<li>On <strong>Sheet</strong> tab, set <strong>Row and Column Dividers</strong> to <strong>None</strong>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ol>
+<p><img src="images/tableau_dual_axis_map.png" title="Dual-axis map created using steps 1-6 above" class="img-fluid"></p>
+</section>
+</section>
+<section id="dashboards" class="level1">
+<h1>Dashboards</h1>
+<p>Creating effective dashboards is both an art and a science—a skill that develops with time, experience, and thoughtful practice. Great dashboards are tailored to a specific audience, provide clear context and guidance, encourage interaction, and follow visual best practices.</p>
+<p>Before diving into design, pause and consider your audience. A highly detailed, data-dense dashboard might be perfect for one group but overwhelming for another. Some users may need narrative context embedded in each view. Ask yourself:</p>
+<ul>
+<li>What is the primary goal of this dashboard?</li>
+<li>How will it be used?</li>
+<li>What questions should it help answer?</li>
+<li>How will it support decision-making?</li>
+</ul>
+<p>These questions guide the design process and ensure your dashboard communicates data effectively.</p>
+<p><strong>Note:</strong> Each individual visualization is called a <strong><em>view</em></strong> in Tableau, and a <strong><em>dashboard</em></strong> is a collection of these views.</p>
+<p>Let’s build a dashboard that compares the highest <strong>Peak US chart position</strong> of albums released by each 2025 <strong><a href="">Rock and Roll Hall of Fame</a></strong> inductee with all albums released by <strong>your favorite artist</strong>. This dashboard will include three key views:</p>
+<ul>
+<li>Barchart1</li>
+<li>FavoriteArtistAlbum</li>
+<li>Scatterplot1</li>
+</ul>
+<ol type="1">
+<li><p><strong>Create a new dashboard</strong></p>
+<ul>
+<li>Click the <strong>New Dashboard</strong> <img src="images/tableau_dashboard_symbol.png" title="Decorative" class="img-fluid"> icon or go to the <strong>Dashboard</strong> menu in the toolbar and select <strong>New Dashboard</strong>.<br>
+</li>
+</ul></li>
+<li><p><strong>Set the display size</strong></p>
+<ul>
+<li>Before adding any content, determine the final display size:
+<ul>
+<li>If embedding in a website or blog, use a <strong>fixed size</strong>.</li>
+<li><strong>Automatic</strong> sizing adjusts to screen dimensions, but may distort views.</li>
+<li><strong>For academic presentations</strong>:
+<ul>
+<li>Under <strong>Size</strong> (left panel), select <strong>PowerPoint (1600 x 900)</strong>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Prepare the worksheets</strong></p>
+<ul>
+<li><strong>Barchart1</strong>
+<ul>
+<li>On <strong>Rows</strong> and the <strong>Marks Card</strong>, change the aggregation of <strong>Peak US</strong> from <strong>Average</strong> to <strong>Minimum</strong>.</li>
+<li>Double click the worksheet title and <strong>remove the word average</strong>.</li>
+</ul></li>
+<li><strong>FavoriteArtistAlbum</strong>
+<ul>
+<li>Drag <strong>Artist</strong> to the <strong>Filters</strong> shelf and select your favorite artist.</li>
+<li>Remove <strong>Artists</strong> from <strong>Rows</strong></li>
+<li>If your artist is from outise the US, consider adding their native chart position (e.g., Peak UK, Peak AUS).</li>
+<li><strong>Add a descriptive title</strong>
+<ul>
+<li>Double click the worksheet title and enter something like:
+<h3 class="anchored">
+Kate Bush
+</h3>
+<h4 class="anchored">
+Peak US and UK Chart Positions
+</h4></li>
+<li>Adjust font size and styling as needed</li>
+</ul></li>
+<li><strong>Adjust formatting</strong>
+<ul>
+<li>Go to the <strong>Format</strong> toolbar, select <strong>Borders</strong>.</li>
+<li>In the <strong>Formatting Pane</strong>:
+<ul>
+<li>On the <strong>Sheet</strong> tab, set <strong>Row Divider</strong> to <strong>None</strong> for both <strong>Pane</strong> and <strong>Header</strong>.</li>
+<li>Click <strong>Shading</strong>:
+<ul>
+<li>Set <strong>Row Banding</strong> to <strong>None</strong> for both <strong>Pane</strong> and <strong>Header</strong>.</li>
+</ul></li>
+<li>Click <strong>Alignment</strong>:
+<ul>
+<li>From the <strong>Fields ▼</strong> dropdown, select <strong>Measure Values</strong> .</li>
+<li>Set <strong>Horizontal Alignment</strong> to <strong>Center</strong>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Scatterplot1</strong>
+<ul>
+<li><strong>Filter for your favorite artist</strong>
+<ul>
+<li>Right-click <strong>Artist</strong> on the <strong>Filters</strong> shelf, click <strong>None</strong> to clear all filters, then select your favorite artist.</li>
+</ul></li>
+<li><strong>Remove lines</strong>
+<ul>
+<li>In the <strong>Formatting Pane</strong>, click <strong>Lines</strong> .</li>
+<li>On the <strong>Sheet</strong> tab, set <strong>Grid Lines</strong>, <strong>Zero Lines</strong> and <strong>Axis Rulers</strong> to <strong>None</strong>.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Assemble the dashboard</strong></p>
+<ul>
+<li><strong>Drag Barchart1</strong> onto the dashboard.
+<ul>
+<li>Click the ▼ caret on the upper corner and select <strong>Fit &gt; Entire View</strong>.</li>
+</ul></li>
+<li><strong>Drag FavoriteArtistAlbum</strong> to the right of Barchart1.
+<ul>
+<li>Click the sheet. When the gray border appears, click the ▼ caret and select <strong>Fit &gt; Entire View</strong>.</li>
+</ul></li>
+<li><strong>Drag Scatterplot1</strong> below FavoriteArtistAlbum.
+<ul>
+<li>Click the sheet. When the gray border appears, click the ▼ caret and select <strong>Fit &gt; Entire View</strong>.</li>
+<li>Uncheck <strong>Title</strong></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Final touches</strong> Tableau may automatically place the <strong>color legend</strong> for <em>Scatterplot1</em> beside the other views. Feel free to reposition or redesign this layout to better suit your audience and storytelling goals.</p></li>
+</ol>
+<p><video src="videos/tableau_dashboards.mp4" title="Video showing steps 1-4 above" class="img-fluid" controls=""><a href="videos/tableau_dashboards.mp4">Video</a></video></p>
+<div id="accordionExercise2" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingOne" data-anchor-id="dashboards">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseOne" aria-expanded="true" aria-controls="ex2-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2. Alternative Color Legends
+</button>
+</h2>
+<div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex2-headingOne" data-bs-parent="#accordionExercise2">
+<div class="accordion-body fs-4">
+<p>
+The color legend in your dashboard plays a key role in helping users interpret the data in Scatterplot1. Here are a few ways to enhance its presentation:
+</p>
+<h3 class="anchored">
+Option 1: Reposition the Color Legend
+</h3>
+<ul>
+<li>
+Click the <strong>color legend</strong> to activate it (a blue border will appear).
+</li>
+<li>
+Drag it to a new location on the dashboard—consider placing it:
+<ul>
+<li>
+Below or beside <strong>Scatterplot1</strong> for proximity.
+</li>
+<li>
+In a corner or floating position to save space.
+</li>
+<li>
+In a dedicated sidebar for a cleaner layout.
+</li>
+<li>
+Click the <strong>▼ caret</strong> in the upper corner.
+</li>
+</ul>
+</li>
+<li>
+Choose <strong>Distribute Contents Evenly</strong> to improve spacing and readability, especially if the legend includes many categories.
+</li>
+</ul>
+<h3 class="anchored">
+Option 2: Use a Custom Legend or Tooltip
+</h3>
+<ul>
+<li>
+<strong>Remove the default color legend</strong> and instead:
+<ul>
+<li>
+Add a <strong>custom text box</strong> with a simplified or stylized legend.
+</li>
+<li>
+Use <strong>tooltips</strong> in the scatterplot to display color meaning when users hover over data points.
+</li>
+<li>
+Create a <strong>separate worksheet</strong> that acts as a visual legend and place it on the dashboard.
+</li></ul>
+</li>
+</ul>
+<p>
+Can you think of an alternative way to present the color legend?
+</p>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseTwo" aria-expanded="false" aria-controls="ex2-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex2-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex2-headingTwo" data-bs-parent="#accordionExercise2">
+<div class="accordion-body">
+<img src="images/tableau_dashboard.svg" alt="image showing color legend moved to left of album titles" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</div>
+</div>
+</div>
+</div>
+<div class="grid g-4">
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+BETTER DATA VISUALIZATIONS
+</div>
+<div class="card-body">
+<img src="images/cover_schwabish_data_visualization.png" alt="better data visualizations book cover" class="d-block mx-auto">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507">Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Jonathan Schwabish
+</li>
+<li class="list-group-item">
+New York : Columbia University Press, 2021.
+</li>
+<li class="list-group-item">
+<h5 class="anchored">
+Recommended Chapters:
+</h5>
+<p>
+<strong>Chapter 7:</strong> “Putting it All Together.”
+</p>
+<p>
+<strong>Chapter 12:</strong> “Developing a Data Visualization Style Guide”
+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+EFFECTIVE DATA VISUALIZATION
+</div>
+<div class="card-body">
+<img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_nii_cinii_1130282272283601920">Effective Data Visualization: The Right Chart for the Right Data</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Stephanie Evergreen
+</li>
+<li class="list-group-item">
+Thousand Oaks, California: SAGE Publications, 2020
+</li>
+<li class="list-group-item">
+<h5 class="anchored">
+Recommended Chapters:
+</h5>
+<p>
+<strong>Chapter 11:</strong> “It’s About More Than the Buttons”
+</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+STORYTELLING WITH DATA
+</div>
+<div class="card-body">
+<img src="images/cover_knaflic.png" alt="storytelling with data book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_proquest_ebookcentral_EBC4187267">Storytelling with Data: A Data Visualization Guide for Business Professionals</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Cole Nussbaumer Knaflic
+</li>
+<li class="list-group-item">
+Hoboken, New Jersey: Wiley, 2015.
+</li>
+<li class="list-group-item">
+<h5 class="anchored">
+Recommended Chapters:
+</h5>
+<p>
+<strong>Chapter 8:</strong> “Putting it All Together.”
+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</section></main></div>
+
+
+
+
+
+ <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tableau_research_read_interpret_evaluate.html" class="pagination-link" aria-label="Lesson 3. Read, Interpret, and Evaluate Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lesson 3. Read, Interpret, and Evaluate Data</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tableau_continue_learning.html" class="pagination-link" aria-label="🚀 Continue Learning Tableau">
+        <span class="nav-page-text">🚀 Continue Learning Tableau</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+ <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://library.osu.edu/policies/copyright-information">
+<p>© 2026 The Ohio State University</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

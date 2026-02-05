@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lesson 2. Choose an Effective Visual – Data Visualization</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./tableau_research_read_interpret_evaluate.html" rel="next">
+<link href="./tableau_research_getting_started.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Data Visualization</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Library Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_basics.html"> 
+<span class="menu-text">Python Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tableau_for_research.html" aria-current="page"> 
+<span class="menu-text">Tableau Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/OSU-Libraries-Research-Services/data_visualization"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_for_research.html">TABLEAU FOR RESEARCH</a></li><li class="breadcrumb-item"><a href="./tableau_research_choose_effective_visual.html">Lesson 2. Choose an Effective Visual</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">TABLEAU FOR RESEARCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_for_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_getting_started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1. Getting Started</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_choose_effective_visual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lesson 2. Choose an Effective Visual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_read_interpret_evaluate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Read, Interpret, and Evaluate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_communicate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4. Communicate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_continue_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Continue Learning Tableau</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">CONTENTS</h2>
+   
+  <ul>
+  <li><a href="#data-skills-concepts" id="toc-data-skills-concepts" class="nav-link active" data-scroll-target="#data-skills-concepts">Data skills | concepts</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#lesson-2" id="toc-lesson-2" class="nav-link" data-scroll-target="#lesson-2">LESSON 2</a></li>
+  <li><a href="#working-with-data" id="toc-working-with-data" class="nav-link" data-scroll-target="#working-with-data">Working with data</a>
+  <ul class="collapse">
+  <li><a href="#relate-or-join-data-sources" id="toc-relate-or-join-data-sources" class="nav-link" data-scroll-target="#relate-or-join-data-sources">Relate or join data sources</a></li>
+  </ul></li>
+  <li><a href="#choose-an-effective-visual" id="toc-choose-an-effective-visual" class="nav-link" data-scroll-target="#choose-an-effective-visual">Choose an effective visual</a>
+  <ul class="collapse">
+  <li><a href="#ranking" id="toc-ranking" class="nav-link" data-scroll-target="#ranking">Ranking</a>
+  <ul class="collapse">
+  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart">📊 Bar Chart</a></li>
+  <li><a href="#understanding-tableau-pills" id="toc-understanding-tableau-pills" class="nav-link" data-scroll-target="#understanding-tableau-pills">Understanding Tableau pills</a></li>
+  <li><a href="#show-me" id="toc-show-me" class="nav-link" data-scroll-target="#show-me">Show Me</a></li>
+  </ul></li>
+  <li><a href="#change-over-time" id="toc-change-over-time" class="nav-link" data-scroll-target="#change-over-time">Change over time</a>
+  <ul class="collapse">
+  <li><a href="#line-chart" id="toc-line-chart" class="nav-link" data-scroll-target="#line-chart">📈 Line chart</a></li>
+  </ul></li>
+  <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a>
+  <ul class="collapse">
+  <li><a href="#scatterplot" id="toc-scatterplot" class="nav-link" data-scroll-target="#scatterplot">░ Scatterplot</a></li>
+  </ul></li>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting">Formatting</a></li>
+  <li><a href="#text-table" id="toc-text-table" class="nav-link" data-scroll-target="#text-table">Text table</a>
+  <ul class="collapse">
+  <li><a href="#callout-numbers" id="toc-callout-numbers" class="nav-link" data-scroll-target="#callout-numbers">Callout numbers</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#supplemental-readings" id="toc-supplemental-readings" class="nav-link" data-scroll-target="#supplemental-readings">Supplemental readings</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_for_research.html">TABLEAU FOR RESEARCH</a></li><li class="breadcrumb-item"><a href="./tableau_research_choose_effective_visual.html">Lesson 2. Choose an Effective Visual</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lesson 2. Choose an Effective Visual</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Choosing the right chart isn’t always straightforward — it’s often an <strong>iterative</strong> and <strong>context-dependent</strong> process. Effective data visualization requires you to consider both the <strong>nature of the data</strong> and the <strong>needs of your audience</strong>. This lesson introduces how to create basic charts in Tableau.</p>
+<section id="data-skills-concepts" class="level2">
+<h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
+<ul>
+<li>Tableau</li>
+<li>Working with data</li>
+<li>Analyzing data</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<ol type="1">
+<li>Select the <strong>most effective chart type</strong> for your audience.</li>
+<li>Distinguish between <strong>discrete</strong> and <strong>continuous</strong> dates and apply this when building line graphs in Tableau.</li>
+<li>Visualize relationships between two variables using <strong>scatterplots</strong>.</li>
+<li>Create <strong>alternatives to crosstabs or text tables</strong> for displaying numeric data.</li>
+<li>Discuss the strengths and limitations of data storytelling.</li>
+</ol>
+<p>This tutorial is designed to support a multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">Tableau for Research</a></strong> workshop hosted by The Ohio State University Libraries Research Commons. It is intended to help the <strong>ABSOLUTE</strong> beginner, or anyone who is relatively new to Tableau to build the skills and confidence to apply Tableau to research projects.</p>
+</section>
+<section id="lesson-2" class="level1">
+<h1>LESSON 2</h1>
+<figure class="text-end figure">
+<blockquote class="blockquote">
+<p class="mb-0">
+Data literacy is not about changing your abilities, talents, or skills—it’s about enhancing and empowering you to succeed with data.”
+</p>
+</blockquote>
+<figcaption class="blockquote-footer">
+Jordan Morrow
+</figcaption>
+</figure>
+<p class="visually-hidden">
+<span><span class="citation" data-cites="morrow_2021">Morrow (<a href="#ref-morrow_2021" role="doc-biblioref">2021</a>)</span></span>
+</p>
+</section>
+<section id="working-with-data" class="level1">
+<h1>Working with data</h1>
+<p>Working with data requires <strong>patience</strong>, <strong>practice</strong>, and <strong>curiosity</strong>. If you’re starting with a small dataset with just a few rows and columns, you can begin exploring it by creating simple charts and graphs. But keep in mind: <strong>data is often messy</strong> and may need to be cleaned or restructured before analysis.</p>
+<p>Here are some common data preparation and enhancement tasks:</p>
+<ul>
+<li><strong>Standardizing</strong> names, locations, and formats</li>
+<li><strong>Removing</strong> unnecessary punctuation</li>
+<li><strong>Eliminating</strong> duplicate rows (when appropriate)</li>
+<li><strong>Converting</strong> text to consistent case (e.g., all lowercase)</li>
+<li><strong>Replacing</strong> null values with zeros or other meaningful defaults</li>
+<li><strong>Standardizing</strong> date and time formats</li>
+<li><strong>Splitting or unmerging</strong> columns</li>
+<li><strong>Verifying and correcting</strong> data types</li>
+<li><strong>Enhancing</strong> your dataset by relating or joining it with a relevant external data source (e.g., adding demographic, geographic, or time-based context)</li>
+</ul>
+<div class="alert alert-dismissible alert-primary p-1">
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<h4 class="alert-heading anchored">
+<img src="images/star_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Important! Null Values and Misclassified Data Types
+</h4>
+<p>
+Be especially careful with null values and checking data types. Nulls can skew calculations like averages or medians, and misclassified data types — such as dates stored as integers — can lead to errors in analysis. <strong>Always verify that each column has the correct and consistent data type before building your visualizations.</strong>
+</p>
+</div>
+<p>We have already explored how to verify and correct data types in <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/tableau-research-getting-started">Lesson 1</a></strong>. Since our <code>rock_n_roll_performers.csv</code> dataset primarily contains <strong>dimensions</strong>, we’ll need to <strong>relate it to another dataset with measures</strong> to continue exploring Tableau’s full capabilities.</p>
+<section id="relate-or-join-data-sources" class="level2">
+<h2 class="anchored" data-anchor-id="relate-or-join-data-sources">Relate or join data sources</h2>
+<p><strong>Relationships</strong> combine data from multiple tables in a data source based on common fields <strong>— without merging them into a single flat table.</strong> This approach offers several benefits, including <strong>preserving table-level detail</strong> and helping to avoid issues like data duplication or incorrect aggregations.</p>
+<p>To practice creating relationships and to better understand how they affect the level of detail in your visualizations, consider downloading Tableau’s <strong><a href="https://help.tableau.com/current/pro/desktop/en-us/bookshop_data.htm">Bookshop dataset</a></strong>.</p>
+<p><strong>Joins</strong> in Tableau physically merge tables into a single flat table at the data source level, based on a defined join condition (e.g., inner, left, right, or full outer). While useful when both tables share the same level of detail, joins can lead to duplicated rows or inflated values if the join keys aren’t clean or consistent, so careful data preparation is essential.</p>
+<div class="card border-primary mb-3 p-1">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip - Copilot
+</div>
+<div class="card-body">
+<p>
+For a more in-depth exploration of these concepts, ask Copilot to <span class="text-primary">explain the difference between a relationship and a join in Tableau</span>. Copilot will provide a clear breakdown, along with guidance on when to use a <strong>relationship</strong> versus a <strong>join</strong>, depending on your data structure and analysis goals.
+</p>
+<img src="images/microsoft_copilot_icon.svg" alt="copilot icon">
+</div>
+</div>
+<p>Let’s enhance the <code>rock_n_roll_performers.csv</code> dataset by relating it to <code>rock_n_roll_studio_albums.csv</code>.</p>
+<ol type="1">
+<li>Go to the <strong>Data Source</strong> page.</li>
+<li>In the <strong>Connections</strong> pane, locate <code>rock_n_roll_studio_albums.csv</code>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Drag and drop the table onto the canvas.</li>
+<li>In the <strong>relationship settings</strong>, set the relationship as:<br>
+<code>Artist</code> = <code>Artist1</code>.</li>
+</ol>
+<p class="visually-hidden">
+Video showing steps 1-4 above
+</p>
+<video src="videos/tableau_related_data.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+</section>
+</section>
+<section id="choose-an-effective-visual" class="level1">
+<h1>Choose an effective visual</h1>
+<p>Choosing the right chart type is a crucial—and often tricky—step in effective data visualization. Thankfully, a thoughtfully selected set of well-crafted charts can address most communication needs.</p>
+<p>The <strong><strong><a href="https://www.ft.com/content/c7bb24c9-964d-479f-ba24-03a2b2df6e85">Financial Times Visual Vocabulary</a></strong></strong> offers a categorized collection of chart types. It is a useful reference for selecting the right chart for the needs and expectations of your audience. This section will explore how to create basic Tableau charts in the <strong>ranking</strong>, <strong>correlation</strong>, and <strong>change over time</strong> categories.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ft_thumbnail.png" class="img-fluid figure-img"></p>
+<figcaption>Financial Times Visual Vocabulary</figcaption>
+</figure>
+</div>
+<section id="ranking" class="level2">
+<h2 class="anchored" data-anchor-id="ranking">Ranking</h2>
+<p><strong><a href="https://ft-interactive.github.io/visual-vocabulary/">Ranking</a></strong> shows an element’s position in an ordered list. <strong>Horizontal</strong> and <strong>vertical bar charts</strong> are especially effective for visualizing rank-based comparisons, making it easy to see which values stand out.</p>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: One Task, Multiple Approaches
+</div>
+<div class="card-body">
+<img src="images/tableau_logo.svg" alt="" aria-hidden="true">
+<p>
+Tableau loves options—there’s almost always more than one way to do the same thing!!!
+</p>
+</div>
+</div>
+<section id="bar-chart" class="level3">
+<h3 class="anchored" data-anchor-id="bar-chart">📊 Bar Chart</h3>
+<p>Let’s build a bar chart that highlights the <strong>average U.S. peak chart positions</strong> for albums by <strong><a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">2025 Rock &amp; Roll Hall of Fame inductees</a></strong>.</p>
+<ol type="1">
+<li>In the <strong>Data Pane</strong> scroll down to find the <code>rock_n_roll_studio_albums.csv</code> table .</li>
+<li><strong>Double click Peak US</strong> to instantly generate a bar chart showing the <strong>total sum</strong> of US peak chart positions.</li>
+</ol>
+<p>Now let’s refine the chart to focus on specific artists and show <strong>average</strong> values instead:</p>
+<ol start="3" type="1">
+<li>Scroll up in the <strong>Data Pane</strong> to find the <code>rock_n_roll_performers.csv</code> table.</li>
+<li>Drag <strong>Artist</strong> to the <strong>Filters Shelf</strong>.</li>
+<li>In the filter dialog, select the following 2025 inductees:
+<ul class="task-list">
+<li><label><input type="checkbox">Bad Company</label></li>
+<li><label><input type="checkbox">Chubby Checker</label></li>
+<li><label><input type="checkbox">Joe Cocker</label></li>
+<li><label><input type="checkbox">Cyndi Lauper</label></li>
+<li><label><input type="checkbox">Outkast</label></li>
+<li><label><input type="checkbox">Soundgarden</label></li>
+<li><label><input type="checkbox">The White Stripes</label></li>
+</ul></li>
+<li>Drag <strong>Artist</strong> to the <strong>Columns Shelf</strong>.</li>
+<li>On the <strong>Rows Shelf</strong>, click the ▼ caret on <strong>SUM(Peak US)</strong> and change the aggregation form <strong>SUM</strong> to <strong>AVERAGE</strong>.</li>
+<li>Right-click the sheet tab and rename it <strong>BarChart1</strong>.</li>
+</ol>
+<p class="visually-hidden">
+Video showing the steps 1-6 below
+</p>
+<video src="videos/tableau_bar_chart.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Worksheet Names File
+</div>
+<div class="card-body">
+Always give your worksheets clear, meaningful names—this makes it much easier to organize and navigate your dashboards or stories later on.
+</div>
+</div>
+</section>
+<section id="understanding-tableau-pills" class="level3">
+<h3 class="anchored">Understanding Tableau pills</h3>
+<p>In Tableau, <strong>dimensions</strong> appear as <strong>blue pills</strong> and <strong>measures</strong> as <strong>green pills</strong>. Adding a dimension (like Artist) disaggregates the data in your view. Many Tableau features—such as formatting, sorting, or converting data types—are accessed by clicking the ▼ caret on a pill.</p>
+<p><img src="images/tableau_blue_pill_green_pill.png" title="Decorative" class="img-fluid"></p>
+<div id="accordionExercise1" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingOne" data-anchor-id="understanding-tableau-pills">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseOne" aria-expanded="true" aria-controls="ex1-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1: Bar Chart
+</button>
+</h2>
+<div id="ex1-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex1-headingOne" data-bs-parent="#accordionExercise1">
+<div class="accordion-body fs-4">
+<p>
+Build a bar chart that displays the <strong>peak U.S. chart positions</strong> for each album released by your favorite artist inducted into the <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees"><strong>Rock and Roll Hall of Fame</strong></a>.
+</p>
+<ol>
+<li>
+<strong>Open a new worksheet</strong><img src="images/tableau_worksheet_icon.png" alt="" aria-hidden="true">
+<ul>
+Click the <strong>worksheet icon</strong> next your Barchart1 tab in the lower-left corner of the Tableau workspace.
+</ul>
+</li>
+<li>
+<strong>Rename the sheet:</strong>
+<ul>
+Right-click on <strong>Sheet2</strong> and rename it <strong>BarChart2</strong>.
+</ul>
+</li>
+<li>
+<strong>Build your bar chart.</strong>
+<ul>
+Use the <strong>album_title</strong> dimension and the <strong>Peak US</strong> measure to create a bar chart showing chart positions for each album.
+</ul>
+</li>
+<li>
+<strong>Experiment with layout:</strong>
+<ul>
+Click the <img src="images/tableau_swap.png" alt=""><strong>Swap</strong> button in the toolbar to switch the orientation of the bars (horizontal ↔︎ vertical).
+</ul>
+</li>
+<li>
+<strong>Sort the bars:</strong>
+<ul>
+Use the <strong>Sort ascending</strong><img src="images/tableau_sort_ascend.png" alt=""> button in the toolbar to arrange bars from lowest to highest chart position.
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseTwo" aria-expanded="false" aria-controls="ex1-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex1-headingTwo" data-bs-parent="#accordionExercise1">
+<div class="accordion-body">
+<p><img src="images/tableau_barchart2.png" alt="screenshot of horizontal barchart showing albums released by Cyndi Lauper arranged in ascending order by peak U.S. chart position." style="max-width: 100%;"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="show-me" class="level3">
+<h3 class="anchored">Show Me</h3>
+<p>Another way to create a bar chart in Tableau is by using the <strong>Show Me</strong> <img src="images/tableau_show_me.png" title="Decorative" class="img-fluid"> button located in the upper right corner of the workspace. Before clicking <strong>Show Me</strong>, hold down the <strong>Ctrl key</strong> (or <strong>Option key</strong> on a Mac) while selecting one or more dimensions and/or measures. Tableau will then highlight the chart types that best match your selection.</p>
+<p>If you pre-select <strong>artist</strong>, <strong>album_title</strong>, and <strong>Peak US</strong>, for example, Tableau will automatically suggests horizontal bar charts as a suitable visualization.</p>
+<p><img src="images/tableau_show_me_barchart.png" title="Open show me tab with horizontal bars highlighted" class="img-fluid"></p>
+<div id="accordionExercise2" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingOne" data-anchor-id="show-me">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseOne" aria-expanded="true" aria-controls="ex2-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2. Bar Chart
+</button>
+</h2>
+<div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex2-headingOne" data-bs-parent="#accordionExercise2">
+<div class="accordion-body fs-4">
+<ol>
+<li>
+<strong>Open a new worksheet</strong> and rename the sheet <strong>BarChart3</strong>.
+</li>
+<li>
+<strong>Build the initial view:</strong>
+<ul>
+<li>
+Drag <strong>Release date</strong> to the <strong>Columns</strong> shelf.
+</li>
+<li>
+Drag <strong>rock_n_roll_studio_albums.csv (Count)</strong> to the <strong>Rows</strong> shelf.
+<p>
+<strong>Note:</strong> Tableau automatically creates a <strong>line chart</strong>, because <strong>Release date</strong> is recognized as a <strong>date field</strong>.
+</p>
+</li>
+</ul>
+</li>
+<li>
+<strong>Change the chart type:</strong>
+<ul>
+<li>
+On the <strong>Marks Card</strong>, click the dropdown next to <strong>Automatic</strong> and select <strong>Bar</strong>.
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="change-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="change-over-time">Change over time</h2>
+<section id="line-chart" class="level3">
+<h3 class="anchored" data-anchor-id="line-chart">📈 Line chart</h3>
+<p>Line charts are ideal for showing trends over time. When you place <strong>Release date</strong> on the Columns chelf and <strong>rock_n_roll_studio_albums.csv (Count)</strong> on the Rows shelf, Tableau automatically generates a <strong>line chart</strong>—because it recognizes <strong>Release date</strong> as a <strong>date field</strong>.</p>
+<p>Tableau classifies fields as either <strong>discrete</strong> or <strong>continuous</strong>, and this classification affects both the type of chart Tableau creates and how you interact with your data. You can identify the classification by the <strong>pill color</strong>:</p>
+<ul>
+<li><strong>Blue</strong> = Discrete</li>
+<li><strong>Green</strong> = Continuous</li>
+</ul>
+<p>This distinction is especially important when working with dates, as they can be treated either way.</p>
+<section id="discrete-dates" class="level4">
+<h4 class="anchored" data-anchor-id="discrete-dates">📅 Discrete dates</h4>
+<p>Let’s walk through an example using <strong>discrete</strong> dates:</p>
+<ol type="1">
+<li><strong>Create a new worksheet</strong> and rename it <strong>LineChart1</strong>.</li>
+<li><strong>Drag Release date to Columns</strong> and <strong>rock_n_roll_studio_albums.csv (Count) to Rows</strong>.
+<ul>
+<li>Notice that <strong>Release date</strong> appears as a <strong>blue pill</strong>, indicating it’s being treated as <strong>discrete</strong>.</li>
+<li>The pill is labeled <strong>YEAR(Release date)</strong> and is prefixed with a +, meaning it can be expanded.</li>
+</ul></li>
+<li><strong>Expand the date hierarchy:</strong>
+<ul>
+<li>Click the <code>+</code> next to <strong>YEAR</strong> to add <strong>QUARTER</strong>.</li>
+<li>Click the <code>+</code> again to add <strong>MONTH</strong>.</li>
+<li>Tableau automatically parses discrete dates into parts: <strong>year</strong>, <strong>quarter</strong>, <strong>month</strong>, <strong>day</strong>.</li>
+</ul></li>
+<li><strong>Clean up the view:</strong>
+<ul>
+<li>Remove <strong>YEAR</strong>, <strong>QUARTER</strong>, and <strong>DAY</strong> from the Columns shelf by dragging them off.</li>
+</ul></li>
+<li><strong>Add a filter for specific years:</strong>
+<ul>
+<li>Right-click and drag <strong>Release date</strong> to the <strong>Filters Shelf</strong>.</li>
+<li>In the <strong>Filter Field</strong> window, select <strong>YEARS</strong> and click <strong>Next</strong>.</li>
+<li>Choose <strong>1960-1964</strong>, then click <strong>OK</strong>.</li>
+<li>Again, Tableau uses <strong>blue</strong> and <strong>green</strong> to indicate <strong>discrete</strong> versus <strong>continuous</strong> dates.</li>
+</ul></li>
+<li><strong>Add color by year:</strong>
+<ul>
+<li>Hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>YEAR</strong> from the Filters shelf to the <strong>Color</strong> shelf on the <strong>Marks card</strong>.</li>
+</ul></li>
+</ol>
+<p><img src="images/tableau_line_chart_1.png" title="Image showing steps 1-5 above completed" class="img-fluid"></p>
+<p><strong>Note:</strong>The bulk of albums released in January is misleading. When gathering this data, if only a year was provided for release data, the month and day of the release date was automatically set to January 1.`</p>
+</section>
+<section id="continuous-dates" class="level4">
+<h4 class="anchored" data-anchor-id="continuous-dates">📅 Continuous dates</h4>
+<p>Now let’s see how the view changes when <strong>Release date</strong> is converted from a <strong>discrete</strong> to a <strong>continuous</strong> date.</p>
+<ol type="1">
+<li><strong>Duplicate the existing sheet:</strong>
+<ul>
+<li>Right-click on <strong>LineChart1</strong> and select <strong>Duplicate</strong>.</li>
+<li>Rename the new sheet <strong>LineChart2</strong>.</li>
+</ul></li>
+<li><strong>Convert the date field:</strong>
+<ul>
+<li>Click the ▼ caret on the <strong>MONTH(Release date)</strong> pill.</li>
+<li>Change the date from the <strong>discrete format</strong> (e.g.&nbsp;<em>Month (May)</em>) to the <strong>continuous format</strong> (e.g.&nbsp;<em>Month (May 2015)</em>).</li>
+</ul></li>
+</ol>
+<p>At first glance, the chart may look broken or disjointed. However, if you <strong>hover over each line</strong>, you’ll see that Tableau is correctly plotting each <strong>month across all years</strong> on a continuous timeline. The visual choppiness due to the color still being based on the <strong>discrete year</strong>.</p>
+<p>To smooth out the visualization and better highlight trends:</p>
+<ol start="3" type="1">
+<li>Remove the <strong>YEAR(Release date) pill</strong> from <strong>Color</strong>.</li>
+<li><strong>Add color based on values:</strong>
+<ul>
+<li>Drag a copy of <strong>rock_n_roll_studio_albums.csv (Count)</strong> to <strong>Color</strong> shelf on the <strong>Marks card</strong>.</li>
+</ul></li>
+</ol>
+<p>This change applies a <strong>diverging color palette</strong> based on the count values, helping to highlight highs and lows in the data. The result is a smoother, more insightful trend chart that emphasizes variation over time.</p>
+<p><img src="images/tableau_line_chart_2.png" title="Image showing steps 1-6 above completed" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="correlation" class="level2">
+<h2 class="anchored" data-anchor-id="correlation">Correlation</h2>
+<section id="scatterplot" class="level3">
+<h3 class="anchored">░ Scatterplot</h3>
+<p>Tableau automatically displays data at the <strong>highest level-of-detail</strong> available when creating a view. This behavior is especially noticeable when using <strong>scatterplots</strong> to analyze relationships between two or more measures.</p>
+<p><img src="images/tableau_scatterplot_1.png" class="img-fluid"></p>
+<p>To break down or <strong>disaggregate</strong> the data point, add a <strong>lower level of detail</strong> to the view.</p>
+<div id="accordionExercise3" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex3-headingOne" data-anchor-id="scatterplot">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseOne" aria-expanded="true" aria-controls="ex3-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3. Scatterplots
+</button>
+</h2>
+<div id="ex3-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex3-headingOne" data-bs-parent="#accordionExercise3">
+<div class="accordion-body fs-4">
+<p>
+Create a scatterplot to compare the <strong>Peak US</strong> and <strong>Peak UK</strong> chart positions for albums released by your favorite artist inducted into the <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees"><strong>Rock and Roll Hall of Fame</strong></a>.
+</p>
+<ol>
+<li>
+<strong>Open a new worksheet</strong> and rename it <strong>Scatterplot1</strong>.
+</li>
+<li>
+<strong>Build the scatterplot:</strong>
+<ul>
+<li>
+Drag <strong>Peak US</strong> to the Columns shelf.
+</li>
+<li>
+Drag <strong>Peak UK</strong> to the Rows shelf.
+</li>
+</ul>
+</li>
+<li>
+<strong>Filter by artist:</strong>
+<ul>
+<li>
+Drag <strong>Artist</strong> to the <strong>Filters</strong> shelf and select your favorite artist.
+</li>
+</ul>
+</li>
+<li>
+<strong>Add detail:</strong>
+<ul>
+<li>
+Drag <strong>album_title</strong> to <strong>Detail</strong> on the <strong>Marks card</strong>.
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<p>By adding <strong>album_title</strong> to <strong>Detail</strong>, you increase the granularity of the view. Now, each mark (circle) represents a unique album, plotted by its <strong>Peak US</strong> and <strong>Peak UK</strong> chart positions. This allows for more detailed and meaningful comparison across individual albums.</p>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Outliers
+</div>
+<div class="card-body">
+<p>
+Outliers can significantly distort the results of a scatterplot, so it’s important to handle them thoughtfully. Tableau makes it easy to exclude outlier data points: simply click on a mark to open the tooltip and select <span class="text-primary">🛇 Exclude</span>, or right-click the mark and choose <span class="text-primary">X Exclude</span>.
+</p>
+<p>
+However, always be sure to <strong>document your approach</strong> to handling outliers. Transparency in your data-cleaning decisions is essential for maintaining the integrity and reproducibility of your analysis.
+</p>
+</div>
+</div>
+</section>
+</section>
+<section id="formatting" class="level2">
+<h2 class="anchored" data-anchor-id="formatting">Formatting</h2>
+<p>Enhance the clarity and visual appeal of your scatterplot using the <strong>Marks card</strong>:</p>
+<ul>
+<li><strong>Add a dimension to Color</strong> (e.g., <code>album_title</code> or <code>release year</code>) to visually group or differentiate data points.</li>
+<li><strong>Change the mark type</strong> from <em>Automatic</em> to <em>Circle</em> for a cleaner, more focused design.</li>
+<li><strong>Apply a dark gray border</strong> and <strong>reduce opacity to 60%</strong> for a layered, professional appearance.</li>
+<li><strong>Increase the size</strong> of the circles to improve visibility and emphasis.</li>
+<li><strong>Hide null indicators</strong> to remove albums with missing US or UK chart data.</li>
+</ul>
+<p>These small adjustments can significantly improve the clarity and aesthetic appeal of your visualization.</p>
+<p class="visually-hidden">
+Video showing scatter plots steps 1-4 and formatting tips
+</p>
+<video src="videos/tableau_scatterplot.mp4" autoplay="" muted="" loop="" playsinline="" style="max-width: 100%; border-radius: 8px; padding: 1rem;">
+</video>
+</section>
+<section id="text-table" class="level2">
+<h2 class="anchored" data-anchor-id="text-table">Text table</h2>
+<p>A text table is not a data visualization. When used appropriately, however, a text table can complement visual elements by providing precise values, detailed comparisons, or supporting context that enhances the overall understanding of your data.</p>
+<p>Let’s walk through how to create a text table that displays the the <strong>peak chart positions in every country</strong> for each album released by <strong>The Beatles</strong>.</p>
+<ol type="1">
+<li><strong>Start a new worksheet</strong> and rename it <strong>TextTable</strong>.</li>
+<li><strong>Filter the data:</strong>
+<ul>
+<li>Drag <strong>Artist</strong> to the <strong>Filters shelf</strong> and select <strong>The Beatles</strong>.</li>
+</ul></li>
+<li><strong>Select the relevant fields:</strong>
+<ul>
+<li>Click on <strong>album_title</strong></li>
+<li>Hold <strong>Ctrl</strong> (or <strong>Cmd</strong> on Mac) and click <strong>Peak AUS</strong></li>
+<li>Then hold <strong>Shift</strong> and click <strong>Peak US</strong> to select all measures between them. <img src="images/tableau_show_me.png" title="Decorative" class="img-fluid"><br>
+</li>
+</ul></li>
+<li>Open <strong>Show Me</strong> and select <strong>Text Tables</strong>.</li>
+<li>In the <strong>Toolbar</strong>, change the view from <strong>Standard</strong> to <strong>Entire View</strong> .</li>
+<li>Adjust the width of the <strong>album_title</strong> column for better readability.</li>
+</ol>
+<section id="what-tableau-does-behind-the-scenes" class="level4">
+<h4 class="anchored" data-anchor-id="what-tableau-does-behind-the-scenes">What Tableau does behind the scenes</h4>
+<ul>
+<li>A blue <strong>Measure Names</strong> pill now appears on the <strong>Columns</strong> shelf.</li>
+<li>A green <strong>Measure Values</strong> pill is placed on <strong>Label</strong> on the <strong>Marks Card</strong>.</li>
+<li>Each selected measure now appears on a separate <strong>Measure Values</strong> card under the <strong>Marks Card</strong>.</li>
+</ul>
+</section>
+<section id="customizing-the-table" class="level4">
+<h4 class="anchored" data-anchor-id="customizing-the-table">Customizing the table</h4>
+<ul>
+<li><strong>Reorder columns</strong> by dragging measures on the <strong>Measures Values</strong> card.</li>
+<li><strong>Remove a measure</strong> by dragging it off the <strong>Measure Values</strong> card.</li>
+</ul>
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 1.8rem;">
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip - Set Default Properties
+</div>
+<div class="card-body">
+<p>
+To save time and ensure consistency, try setting <strong>Default Properties</strong> for dimensions and measures before starting a Tableau project.
+</p>
+<img src="images/tableau_default_properties.png" alt="Show default properties that can be set for a measure, including comment, color, number format, aggregation" style="max-width: 100%;">
+<ol>
+<li>
+<strong>Right-click</strong> on each measure that begins with <strong>“Peak”</strong>.
+</li>
+<li>
+Scroll to <strong>Default Properties</strong>, and select <strong>Number Format</strong>.
+</li>
+<li>
+Choose <strong>Number Standard</strong> from the formatting options.
+</li>
+<p>
+This ensures that all selected measures display in a consistent numeric format throughout your workbook, reducing the need for repetitive formatting later on.
+</p>
+</ol>
+</div>
+</div>
+</section>
+<section id="callout-numbers" class="level3">
+<h3 class="anchored" data-anchor-id="callout-numbers">Callout numbers</h3>
+<p>Sometimes one large, single number can make the most powerful statement in a data visualization. <strong>Callout numbers</strong> are used to highlight key takeaways and can be easily created in Tableau with a few formatting steps.</p>
+<p>Let’s create a callout number to emphasize the <strong>Peak US chart position</strong> for <strong>The Beatles’</strong> album <em>Abbey Road</em>.</p>
+<p>To emphasize the <em>Peak US</em> chart position for <strong>The Beatles</strong> album <strong>Abbey Road</strong>:</p>
+<ol type="1">
+<li><strong>Duplicate the existing sheet:</strong>
+<ul>
+<li>Right-click the <strong>TextTable</strong> sheet tab and select <strong>Duplicate</strong>.</li>
+<li>Rename the new sheet <strong>Callout</strong></li>
+</ul></li>
+<li><strong>Simplify the view:</strong>
+<ul>
+<li>Remove all <strong>Measure Values</strong> starting with <strong>“Peak”</strong> except <strong>SUM(Peak US)</strong>.</li>
+</ul></li>
+<li><strong>Filter to a single album:</strong>
+<ul>
+<li>In the view, right-click <strong>Abbey Road</strong> and choose <strong>✔ Keep only</strong>.</li>
+</ul></li>
+<li><strong>Format the number:</strong>
+<ul>
+<li>Right-click on the number (e.g., 2) and select <strong>Format</strong> to open the <strong>Formatting Pane</strong>.</li>
+<li>From the <strong>Fields ▼</strong> dropdown in the Formatting Pane, select <strong>SUM(Peak US)</strong>.</li>
+<li>Under <strong>Font</strong>, increase the font size from <strong>9</strong> to <strong>72</strong>.</li>
+<li>Under <strong>Alignment</strong>, set the <strong>horizontal</strong> and <strong>vertical</strong> alignment to <strong>Center</strong>.</li>
+</ul></li>
+<li><strong>Clean up the view:</strong>
+<ul>
+<li>Drag <strong>album_title</strong> from the <strong>Rows shelf</strong> to <strong>Detail</strong> on the <strong>Marks card</strong>.</li>
+</ul></li>
+<li><strong>Add a caption:</strong>
+<ul>
+<li>Right-click in the gray space under the <strong>Marks card</strong> and select <strong>Caption</strong>.</li>
+<li>Double-click the <strong>Caption</strong> area to edit it.</li>
+<li>Delete defaulat text and type: <code>Peak US chart position</code>.</li>
+<li>Highlight the text and select center in the edit caption window.</li>
+</ul></li>
+</ol>
+<p>With just a few additional formatting tweaks, you’ll have a clean, impactful callout number ready to be featured in your Tableau dashboard.</p>
+<p><img src="images/tableau_callout.png" title="The number 2 appears in large font above the words Peak US chart position" class="img-fluid"></p>
+</section>
+</section>
+</section>
+<section id="supplemental-readings" class="level1">
+<h1>Supplemental readings</h1>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<div class="grid g-4">
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+BETTER DATA VISUALIZATIONS
+</div>
+<div class="card-body">
+<img src="images/cover_schwabish_data_visualization.png" alt="better data visualizations book cover" class="d-block mx-auto">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507">Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Jonathan Schwabish
+</li>
+<li class="list-group-item">
+New York : Columbia University Press, 2021.
+</li>
+</ul>
+</div>
+</div>
+<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+<div class="card-header">
+STORYTELLING WITH DATA
+</div>
+<div class="card-body">
+<img src="images/cover_knaflic.png" alt="storytelling with data book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
+<h4 class="card-title anchored">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_proquest_ebookcentral_EBC4187267">Storytelling with Data: A Data Visualization Guide for Business Professionals</a>
+</h4>
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+by Cole Nussbaumer Knaflic
+</li>
+<li class="list-group-item">
+Hoboken, New Jersey: Wiley, 2015.
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-morrow_2021" class="csl-entry" role="listitem">
+Morrow, Jordan. 2021. <em>Be Data Literate: The Data Literacy Skills Everyone Needs to Succeed</em>. Kogan Page.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Want to learn how to gather discography tables from Wikipedia pages? Check out <a href="./wikipedia.html">Lesson 3</a> of the Research Commons’ Python tutorials on Websites and APIs.`<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tableau_research_getting_started.html" class="pagination-link" aria-label="Lesson 1. Getting Started">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lesson 1. Getting Started</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tableau_research_read_interpret_evaluate.html" class="pagination-link" aria-label="Lesson 3. Read, Interpret, and Evaluate Data">
+        <span class="nav-page-text">Lesson 3. Read, Interpret, and Evaluate Data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://library.osu.edu/policies/copyright-information">
+<p>© 2026 The Ohio State University</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
