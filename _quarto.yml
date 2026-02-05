@@ -4,9 +4,6 @@ project:
     - "videos/**"
     - "images/**"
 
-execute:
-  freeze: true
-
 website:
   title: "Data Visualization"
   favicon: images/favicon.ico
