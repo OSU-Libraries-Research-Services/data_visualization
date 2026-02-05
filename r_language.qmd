@@ -1,0 +1,47 @@
+---
+title: "R"
+subject: "RESOURCES"
+format:
+  html:
+    toc: true
+    toc-expand: 2
+    toc-title: CONTENTS
+# keywords:
+#   - data visualization
+#   - python
+---
+
+R is a free, open-source programming language designed for statistical computing and widely used across various academic disciplines. It features a rich ecosystem of packages for data cleaning and visualization, including popular tools like **ggplot2** and **Plotly**, making it a powerful choice for data analysis and research.
+
+# Install R
+1. Download and install the [R](https://cran.case.edu/) programming language.
+2. Download and install [R Studio](https://posit.co)
+3. Download and install [Tidyverse packages](https://www.tidyverse.org/packages/)
+
+# Websites
+* [R Studio Education](https://education.rstudio.com/)
+* [Getting Help with R](https://www.r-project.org/help.html)
+
+# Books
+
+::: {.grid .g-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">R FOR DATA SCIENCE</div>
+  <div class="card-body"><img src="images/cover_rfordatascience.png" alt="r for data science book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_askewsholts_vlebooks_9781492097365">R for Data Science, 2nd edition</a></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">by Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund</li>
+    <li class="list-group-item">Sebastopol, CA : O'Reilly Media, 2023.</li>
+  </ul>
+</div>
+
+:::
+
+:::
+
+# O'Reilly Online Learning
+For additional books and learning materials, the [O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507) collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
+
+# Workshops and Events
+[OSU Code Club](https://osu-codeclub.github.io/) supports learning **the R language** and welcomes anyone who studies or works at The Ohio State University to join.

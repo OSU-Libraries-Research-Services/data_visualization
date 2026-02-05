@@ -1,0 +1,69 @@
+---
+title: "... Excel"
+subject: "RESOURCES"
+format:
+  html:
+    toc: true
+    toc-expand: 2
+    toc-title: CONTENTS
+# keywords: 
+#   - data visualization
+#   - excel
+---
+**Don’t discount Excel!** For datasets under 1,000 rows, Excel can be an ideal tool for creating clear and effective visualizations. The resources below offer practical guidance and tips for making the most of Excel’s powerful charting and data presentation features.
+
+# Books
+
+::: {.grid .g-4}
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.card-header}
+**DATA VISUALIZATION IN EXCEL**
+:::
+::: {.card-body}
+![](images/cover_schwabish_excel.png){fig-alt="data visualization in excel book cover" fig-align="center" .p-2}
+
+Jonathan Schwabish shows Excel remains a powerful tool for visualizing data in [Data Visualization in Excel: A Guide for Scholars, Researchers, and Wonks](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1hnts55/cdi_askewsholts_vlebooks_9781000877373). Each chapter provides detailed instructions for creating nearly 30 additional graphs beyond Excel’s default graph library. From the basic heatmaps to advanced Marimekko charts, this book will guide you in crafting more colorful, effective data visualizations for your audience.  
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.card-header}
+**EFFECTIVE DATA VISUALIZATION**
+:::
+
+::: {.card-body}
+![](images/cover_evergreen.png){fig-alt="effective data visualization book cover" fig-align="center".p-2}
+
+Stephanie Evergreen’s [Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507) provides detailed instructions for constructing and then formatting Excel graphs that inspire conversations and support decision-making. A fun ninja rating scale helps you to decide how challenging it may be to create each graph and is embedded in the side-margins of each chapter. Further, an entire chapter offers ideas for visualizing qualitative and quantitative data.  
+Write MyST Markdown to create enriched documents with publication-quality features.
+:::
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+
+::: {.card-header}
+**STORYTELLING WITH DATA**
+:::
+
+::: {.card-body}
+![](images/cover_knaflic.png){fig-alt="storytelling with data cover" fig-align="center" .p-2}
+
+Stephanie Evergreen’s __[Effective Data Visualization: the Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085549207608507)__ provides detailed instructions for constructing and then formatting Excel graphs that inspire conversations and support decision-making. A fun ninja rating scale helps you to decide how challenging it may be to create each graph and is embedded in the side-margins of each chapter. Further, an entire chapter offers ideas for visualizing qualitative and quantitative data.  
+Write MyST Markdown to create enriched documents with publication-quality features.
+:::
+
+:::
+
+
+
+
+:::
+
+
+# O'Reilly Online Learning
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.

@@ -1,0 +1,19 @@
+---
+title: "What tool is right for my project?"
+subjects: "RESOURCES"
+format:
+  html:
+    toc: true
+    toc-expand: 2
+    toc-title: CONTENTS
+# keywords: 
+#   - data visualization
+#   - excel
+#   - python
+#   - tableau
+#   - r programming language
+---
+
+How do I decide what data visualization tool is right for my project? The answer really depends on your project, timeframe, and skillset. If you have fewer than 1,000 rows of data, Excel may be completely appropriate. For larger projects, you may need to use an analytics or visualization program like Tableau, or a coding language like python or R.
+
+{{< video https://www.youtube.com/embed/09PVKL8RyyA >}}

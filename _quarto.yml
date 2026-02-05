@@ -1,0 +1,96 @@
+project:
+  type: website
+  resources:
+    - "videos/**"
+    - "images/**"
+
+execute:
+  freeze: true
+
+website:
+  title: "Data Visualization"
+  favicon: images/favicon.ico
+  repo-url: https://github.com/Murphy465/data_visualization_test
+  page-navigation: true
+  page-footer: 
+    left: 
+      - text: "© 2026 The Ohio State University"
+        href: https://library.osu.edu/policies/copyright-information
+
+  navbar:
+    search: true
+    logo: images/home_standard_icon.png
+    logo-href: index.qmd
+    left:
+      - text: "Library Resources"
+        href: overview.qmd
+      - text: "Python Tutorials"
+        href: python_basics.ipynb
+      - text: "Tableau Tutorials"
+        href: tableau_for_research.ipynb
+    right:
+      - icon: github
+        href: https://github.com/OSU-Libraries-Research-Services/data_visualization
+
+  sidebar:
+    - title: "Library Resources"
+      style: "docked"
+      background: light
+      contents:
+        - section: "OVERVIEW"
+          contents:
+            - overview.qmd
+        - section: "TOOLS"
+          contents:
+            - tools.qmd
+            - text: "... Excel"
+              href: excel.qmd
+            - text: "... Tableau"
+              href: tableau.qmd
+            - text: "... Python"
+              href: python.qmd
+            - text: "... R"
+              href: r_language.qmd
+    - title: "Python Tutorials"
+      style: "docked"
+      background: light
+      contents:
+        - section: "INTRODUCTION"
+          contents:
+            - python_basics.ipynb
+        - section: "WEBSITES AND APIS"
+          contents:
+            - lantern.ipynb
+            - animals.ipynb
+            - wikipedia.ipynb
+            - icite.ipynb
+            - pubmed_author_affiliations.ipynb
+            - ohiolink.ipynb
+            - crossref.ipynb
+            - scopus.ipynb
+        - section: "DATA VISUALIZATION"
+          contents:
+            - python_data_visualization.ipynb
+    - title: "Tableau Tutorials"
+      style: "docked"
+      background: light
+      contents:
+        - section: "TABLEAU FOR RESEARCH"
+          contents:
+            - text: "Introduction"
+              href: tableau_for_research.ipynb
+            - tableau_research_getting_started.ipynb
+            - tableau_research_choose_effective_visual.ipynb
+            - tableau_research_read_interpret_evaluate.ipynb
+            - tableau_communicate.ipynb
+            - tableau_continue_learning.ipynb
+
+format:
+  html:
+    theme: 
+      - simplex
+      - styles/custom.scss
+    include-in-header:
+      - styles/osu-fonts.html
+    css: styles.css
+    toc: true

@@ -1,0 +1,40 @@
+name: Quarto Publish
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: write   # <-- REQUIRED so GitHub can create gh-pages
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Set up Python (needed because you use .ipynb)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Jupyter and dependencies
+        run: |
+          pip install jupyter
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
+
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

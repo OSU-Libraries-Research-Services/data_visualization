@@ -1,0 +1,55 @@
+---
+title: "Tableau"
+subject: "RESOURCES"
+format:
+  html:
+    toc: true
+    toc-expand: 2
+    toc-title: CONTENTS
+# keywords:
+#   - data visualization
+#   - tableau
+---
+
+**Tableau** is a powerful data visualization tool with a user-friendly drag-and-drop interface and no-code features that make it easy to explore different visual perspectives and find the best way to present your data. Capable of handling datasets with over 25 million rows, Tableau supports flexible, visual thinking and encourages experimentation as you analyze and communicate insights.
+
+# Free Resources
+- Tableau's [Academic Programs](https://www.tableau.com/community/academic) provides free licenses and learning resources for students and faculty. 
+- University Libraries  offers [free Tableau training](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) throughout the year, tailored for faculty, graduate students and other university researchers. 
+- A wide range of [training videos and books](https://search.library.osu.edu/discovery/search?query=any,contains,tableau%20computer%20file&tab=Everything&search_scope=MyInst_and_CI&vid=01OHIOLINK_OSU:OSU&facet=topic,include,Tableau%20Computer%20File&mode=simple&offset=0) is also available through University Libraries. 
+
+# Books
+::: {.grid .g-4}
+::: {.g-col-12 .g-col-md-6}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">PRACTICAL TABLEAU</div>
+  <div class="card-body"><img src="images/cover_sleeper_practical_tableau.png" alt="practical tableau book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991085521031208507">Practical Tableau : 100 tips, tutorials, and strategies from a Tableau Zen Master</a></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">by Ryan Sleeper<br>Sebastopol, CA : O'Reilly Media, 2018.</li>
+    <li class="list-group-item">With screenshots, step-by-step instructions and succinct explanations of key Tableau concepts this book will quickly orient you to Tableau. Sleeper covers basic and advanced chart types as well as parameters, filters, calculated fields and more, allowing you to create interactive visualizations for presentations, data exploration, or analysis.</li>
+  </ul>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">INNOVATIVE TABLEAU</div>
+  <div class="card-body"><img src="images/cover_sleeper_innovative_tableau.png" alt="innovative tableau book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991085492836908507">Innovative Tableau : 100 more tips, tutorials, and strategies</a></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">by Ryan Sleeper<br>Sebastopol, CA : O'Reilly Media, 2020.</li>
+    <li class="list-group-item">With an additional 100 chapters, this book continues where <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991085521031208507">Practical Tableau : 100 tips, tutorials, and strategies from a Tableau Zen Master</a> left off, offering instructions for conditionally formatting text, adding images to tooltips, and showing you how to use parameter and set actions. Sleeper introduces additional chart types, including diverging bar charts, waterfall charts, gauges, and more.</li>
+  </ul>
+</div>
+
+:::
+
+:::
+
+# O'Reilly Online Learning
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
+
+# Workshops and Events
+University Libraries offers a variety of data skills [workshops and events](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) for Ohio State faculty, students and staff throughout the academic year. 

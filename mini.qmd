@@ -1,0 +1,124 @@
+---
+title: "Mini Fence Test"
+format:
+  html:
+    theme: simplex
+    toc: false
+---
+
+## Overview
+::: {.grid .g-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">BETTER DATA VISUALIZATIONS</div>
+  <div class="card-body"><img src="images/cover_schwabish_data_visualization.png" alt="better data visualizations book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507">Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</a></h4><p>by Jonathan Schwabish<br>New York : Columbia University Press, 2021.</p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
+  <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_nii_cinii_1130282272283601920">Effective Data Visualization: The Right Chart for the Right Data</a></h4><p>by Stephanie Evergreen<br>Thousand Oaks, California: SAGE Publications, 2020</p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">STORYTELLING WITH DATA</div>
+  <div class="card-body"><img src="images/cover_knaflic.png" alt="storytelling with data book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_proquest_ebookcentral_EBC4187267">Storytelling with Data: A Data Visualization Guide for Business Professionals</a></h4><p>by Cole Nussbaumer Knaflic<br>Hoboken, New Jersey: Wiley, 2015.</p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">DATA STORY</div>
+  <div class="card-body"><img src="images/cover_duarte_data_story.jpg" alt="data story book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910477434908506">Data Story: Explain Data and Inspire Action Through Story</a></h4><p>by Nancy Duarte<br>Oakton, Virginia: Ideapress Publishing, 2019.</p>
+  </div>
+</div>
+
+:::
+
+:::
+
+## Inspiration
+::: {.grid .g-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">BOOK OF CIRCLES</div>
+  <div class="card-body"><img src="images/cover_lima_book_of_circles.png" alt="the book of circles book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma991061671169708507">The Book of Circles: Visualizing Spheres of Knowledge</a></h4><p>by Manuel Lima<br>New York, New York: Princeton Architectural Press, 2017.</p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">BOOK OF TREES</div>
+  <div class="card-body"><img src="images/cover_lima_book_of_trees.png" alt="the book of trees book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910255715008506">The Book of Trees: Visualizing Branches of Knowledge</a></h4><p>by Manuel Lima<br>New York, New York: Princeton Architectural Press, 2014. </p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">BIG BOOK of DASHBOARDS</div>
+  <div class="card-body"><img src="images/cover_wexler_big_book_dashboards.png" alt="big book of dashboards book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991016327379708507">The Big Book of Dashboards: Visualizing Your Data Using Real-World Business Scenarios</a></h4><p>by Steve Wexler, Jeffrey Shaffer, Andy Cotgreave<br>Hoboken, New Jersey : Wiley, 2017.</p>
+  </div>
+</div>
+
+:::
+
+:::
+
+## Theory
+
+::: {.grid .g-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">VISUAL DISPLAY OF QUANTITATIVE INFORMATION</div>
+  <div class="card-body"><img src="images/cover_tufte_visual_display.jpg" alt="the visual display of quantitative information book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991048472539708507">The Visual Display of Quantitative Information</a></h4><p>by Edward R. Tufte<br>Cheshire, Conn. : Graphic Press, 1983.</p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">BEAUTIFUL EVIDENCE</div>
+  <div class="card-body"><img src="images/cover_tufte_beautiful_evidence.jpg" alt="beautiful evidence book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/h2gfgs/alma991055492639708507">Beautiful Evidence</a></h4><p>by Edward R. Tufte<br>Cheshire, Conn. : Graphic Press, 2006.</p>
+  </div>
+</div>
+
+:::
+
+:::
+
+## Practice
+
+::: {.grid .g-4}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">STORYTELLING WITH DATA: LET'S PRACTICE!</div>
+  <div class="card-body"><img src="images/cover_knaflic_practice.png" alt="storytelling with data let's practice book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/h2gfgs/alma991085522205508507">Storytelling With Data: Let's Practice!</a></h4><p>by Cole Nussbaumer Knaflic<br>Hoboken, New Jersey : Wiley, 2020.</p>
+  </div>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">DATA VISUALIZATION SKETCHGBOOK</div>
+  <div class="card-body"><img src="images/cover_evergreen_sketchbook.png" alt="the data visualization sketchbook book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910518170608506">The Data Visualization Sketch Book</a></h4><p>by Stephanie D. H. Evergreen<br>Thousand Oaks : SAGE Publications, 2019.</p>
+  </div>
+</div>
+
+:::
+
+:::
