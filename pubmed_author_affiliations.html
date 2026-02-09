@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -338,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ol type="1">
-<li>Locate API documentation and identify key components required to formulate an API request</li>
+<li>Locate API documentation and identify key components required to formulate an API request.</li>
 <li>Parse an API response and store extracted data.</li>
 <li>Utilize regular expressions to search, match, and manipulate text.</li>
 </ol>
@@ -348,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip
 </div>
 <div class="card-body">
-<img src="images/microsoft_copilot_icon.svg" alt="" aria-hidden="true">The Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual can be overwhelming to read and comprehend at first. The example code is written in Perl script, not Python and the documentation assumes you are familiar working with APIs and programming tools. Before starting this tutorial, <strong>ask Copilot</strong> to <span class="text-primary">explain entrez e-utilities</span>. Copilot returns a useful summary of the key components and functionalities of these tools, explains how they work, provides an example workflow, and identifies potential use cases. As you become more comfortable working with APIs, you can revisit the Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual to learn how to do more complex tasks.
+The Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual can be overwhelming to read and comprehend at first. The example code is written in Perl script, not Python and the documentation assumes you are familiar working with APIs and programming tools. Before starting this tutorial, <strong>ask Copilot</strong> to <span class="text-primary">explain entrez e-utilities</span>. Copilot returns a useful summary of the key components and functionalities of these tools, explains how they work, provides an example workflow, and identifies potential use cases. As you become more comfortable working with APIs, you can revisit the Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual to learn how to do more complex tasks.<img src="images/microsoft_copilot_icon.svg" alt="" aria-hidden="true">
 </div>
 </div>
 </section>
@@ -426,9 +435,22 @@ URL = https://pubmed.ncbi.nlm.nih.gov/<strong>39773557</strong>/
 </section>
 <section id="step-1.-construct-an-efetch-request" class="level2">
 <h2 class="anchored" data-anchor-id="step-1.-construct-an-efetch-request">Step 1. Construct an EFetch request</h2>
-<p>To retrieve XML data for a PubMed article, use the following components: - <strong>Base URL</strong>: <code>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</code> - <strong>Parameters</strong>: - <strong>Database name</strong>: <code>?db=pubmed</code> - <strong>Unique identifier</strong>: <code>&amp;id=39773557</code> - <strong>API key</strong>: <code>&amp;api_key=INSERT YOUR API KEY HERE</code></p>
+<p>To retrieve XML data for a PubMed article, use the following components:</p>
+<ul>
+<li><strong>Base URL</strong>: <code>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</code></li>
+<li><strong>Parameters</strong>:
+<ul>
+<li><strong>Database name</strong>: <code>?db=pubmed</code></li>
+<li><strong>Unique identifier</strong>: <code>&amp;id=39773557</code></li>
+<li><strong>API key</strong>: <code>&amp;api_key=INSERT YOUR API KEY HERE</code></li>
+</ul></li>
+</ul>
 <p>Required parameters for an <strong>EFetch</strong> request depend on the specific Entrez <a href="(https://www.ncbi.nlm.nih.gov/books/NBK25497/table/chapter2.T._entrez_unique_identifiers_ui/?report=objectonly)__">database</a> you are querying. For <strong>PubMed</strong>, the default EFetch response format is XML.</p>
-<p>To manage request volume, the <strong>NCBI</strong> enforces rate limits: - Without an API key: <strong>3 requests per second</strong> - With an API key: <strong>up to 10 requests per second</strong></p>
+<p>To manage request volume, the <strong>NCBI</strong> enforces rate limits:</p>
+<ul>
+<li>Without an API key: <strong>3 requests per second</strong></li>
+<li>With an API key: <strong>up to 10 requests per second</strong></li>
+</ul>
 <p>While you can view a single XML record without an API key, completing the exercises in this tutorial requires one. You can obtain an API key by visiting the <strong>Settings page of your <a href="https://www.ncbi.nlm.nih.gov/account/">NCBI account</a></strong>.</p>
 <div id="accordionExercise2" class="accordion">
 <div class="accordion-item">
@@ -465,7 +487,12 @@ Example:
 </section>
 <section id="step-2.-identify-python-libraries-for-project" class="level2">
 <h2 class="anchored" data-anchor-id="step-2.-identify-python-libraries-for-project">Step 2. Identify Python libraries for project</h2>
-<p>The following Python libraries are needed for this project: - <code>requests</code> – to make HTTP requests - <code>pandas</code> – to manage and store data - <code>BeautifulSoup</code>– to parse XML and extract affiliations</p>
+<p>The following Python libraries are needed for this project:</p>
+<ul>
+<li><code>requests</code> – to make HTTP requests</li>
+<li><code>pandas</code> – to manage and store data</li>
+<li><code>BeautifulSoup</code>– to parse XML and extract affiliations</li>
+</ul>
 <div id="accordionExercise3" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex3-headingOne">
@@ -573,13 +600,17 @@ Handles missing or incomplete data gracefully
 </section>
 <section id="regular-expressions-regex" class="level2">
 <h2 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (regex)</h2>
-<p>Analyzing author and affiliation data can be messy due to: - Inconsistent naming conventions - Variations in institutional affiliation formats - Ambiguities in author identify.</p>
+<p>Analyzing author and affiliation data can be messy due to:</p>
+<ul>
+<li>Inconsistent naming conventions</li>
+<li>Variations in institutional affiliation formats</li>
+<li>Ambiguities in author identify.</li>
+</ul>
 <div class="card border-primary mb-3 p-1" style="max-width: 100%;">
 <div class="card-header" style="font-size: 1.8rem;">
-<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: ORCID
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: ORCID <img src="images/orcid_24x24.png" alt="orcid logo" aria-hidden="true">
 </div>
 <div class="card-body">
-<img src="images/orcid_24x24.png" alt="orcid logo">
 <p>
 <a href="https://orcid.org/register">Create your ORCID iD</a>to help researchers distinguish your work from others and better track the impact of your work.
 </p>
@@ -588,7 +619,12 @@ PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Se
 </p>
 </div>
 </div>
-<p><strong>Regular expressions (regex)</strong> match patterns in text. Often described as wildcards on steroids, regular expressions help: - <strong>Validate</strong> patterns (e.g., ZIP codes: (^$)) - <strong>Extract</strong> variations (e.g., “ha?ematology” matches both “hematology” and “haematology”) - <strong>Replace</strong> text (e.g., re.sub(r’, ‘Ohio’, text))</p>
+<p><strong>Regular expressions (regex)</strong> match patterns in text. Often described as wildcards on steroids, regular expressions help:</p>
+<ul>
+<li><strong>Validate</strong> patterns (e.g., ZIP codes: (^$))</li>
+<li><strong>Extract</strong> variations (e.g., “ha?ematology” matches both “hematology” and “haematology”)</li>
+<li><strong>Replace</strong> text (e.g., re.sub(r’, ‘Ohio’, text))</li>
+</ul>
 <p>Regular expressions are included in several programming langauges and software programs including Python, JavaScript, and Tableau.</p>
 <section id="common-regex-patterns" class="level3">
 <h3 class="anchored" data-anchor-id="common-regex-patterns">Common Regex Patterns</h3>
@@ -630,7 +666,7 @@ PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Se
 </tr>
 </tbody>
 </table>
-<p><strong><a href="https://www.w3schools.com/python/gloss_python_regex_metacharacters.asp">Metacharacters</a></strong> are special symbols in regular expressions that represent patterns rather than literal characters. To match them as literal characters, you must <strong>escape them with a backslash ( &nbsp;)</strong>.</p>
+<p><strong><a href="https://www.w3schools.com/python/gloss_python_regex_metacharacters.asp">Metacharacters</a></strong> are special symbols in regular expressions that represent patterns rather than literal characters. To match them as literal characters, you must <strong>escape them with a backslash ( \ )</strong>.</p>
 </section>
 <section id="common-metacharacters-and-their-functions" class="level3">
 <h3 class="anchored" data-anchor-id="common-metacharacters-and-their-functions">Common metacharacters and their functions</h3>
@@ -709,40 +745,32 @@ PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Se
 <section id="learning-resources" class="level3">
 <h3 class="anchored" data-anchor-id="learning-resources">LEARNING RESOURCES</h3>
 <div class="grid g-4">
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
 <div class="card-header">
 REGEX 101
 </div>
 <div class="card-body">
 <img src="images/regex101.png" alt="Screenshot of regex101 homepage" class="d-block mx-auto">
-<h4 class="card-title anchored">
-<a href="https://regex101.com/">regular expressions 101: build, test, and debug regex
-</a></h4><a href="https://regex101.com/">
-</a></div><a href="https://regex101.com/">
-</a><ul><a href="https://regex101.com/">
-</a><li><a href="https://regex101.com/">
-</a><a href="https://regex101.com/">regular expressions 101: build, test, and debug regex</a> is an interactive tool that helps you build, test, and debug regular expressions across multiple programming languages. It lets you test your regex against sample text, provides real-time explanations as you type, and includes a searchable reference for regex syntax.
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+<a href="https://regex101.com/">regular expressions 101: build, test, and debug regex</a> is an interactive tool that helps you build, test, and debug regular expressions across multiple programming languages. <strong>regex101</strong> lets you test your regex against sample text, provides real-time explanations as you type, and includes a searchable reference for regex syntax.
 </li>
 </ul>
 </div>
 </div>
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
 <div class="card-header">
 EFFECTIVE DATA VISUALIZATION
 </div>
 <div class="card-body">
 <img src="images/cover_learning_regular_expressions.png" alt="learning regular expressions book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
-<h4 class="card-title anchored">
-<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a>
-</h4>
 </div>
-<ul>
+<pre><code>&lt;ul class="list-group list-group-flush"&gt;
+  &lt;li class="list-group-item"&gt;&lt;a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507"&gt;Learning Regular Expressions&lt;/a&gt; by Ben Forta is available through the Libraries' &lt;a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507"&gt;O'Reilly Online Learning&lt;/a&gt; collection of technical books and videos. Each chapter is structured as a lesson, guiding you through how to match individual characters or sets of characters, use metacharacters, and more, making it a practical resource for mastering regex step by step.&lt;/li&gt;</code></pre>
 
-<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a> by <strong>Ben Forta</strong>** is available through the Libraries’ <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507">O’Reilly Online Learning</a> collection of technical books and videos. Each chapter is structured as a lesson, guiding you through how to match individual characters or sets of characters, use metacharacters, and more—making it a practical resource for mastering regex step by step.
-
-</ul>
 </div>
 </div>
 </div>
@@ -752,7 +780,7 @@ EFFECTIVE DATA VISUALIZATION
 <h2 class="anchored" data-anchor-id="re-module">re module</h2>
 <p>To work with regular expressions in Python, start by importing the built-in <code>re</code> module:</p>
 <div id="74b3cf9f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>🔗 See <strong><a href="https://docs.python.org/3/library/re.html">re</a></strong> module documentation.</p>
 <section id="commonly-used-re-methods" class="level3">
@@ -761,7 +789,7 @@ EFFECTIVE DATA VISUALIZATION
 <section id="re.match" class="level3">
 <h3 class="anchored" data-anchor-id="re.match">re.match( )</h3>
 <div id="4fc0ea98" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>re.match(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>re.match(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Checks for a match <strong>only at the beginning</strong> of the string.</li>
@@ -769,18 +797,18 @@ EFFECTIVE DATA VISUALIZATION
 </ul>
 <p><strong>Example</strong>:</p>
 <div id="e4d251f5-2248-4220-a388-a9edc3a5a632" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>pd.read_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>addresses.dropna(subset<span class="op">=</span><span class="st">'affiliation'</span>) <span class="co">#drops rows with null affiliation values</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> addresses.iloc[<span class="dv">0</span>:<span class="dv">10</span>].iterrows():</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="op">=</span><span class="bu">str</span>(row.affiliation)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(affiliation)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    osu_match<span class="op">=</span>re.match(<span class="vs">r"Ohio State University"</span>,affiliation) </span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> osu_match:</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" MATCH </span><span class="sc">{</span>osu_match<span class="sc">.</span>group()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>pd.read_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>addresses.dropna(subset<span class="op">=</span><span class="st">'affiliation'</span>) <span class="co">#drops rows with null affiliation values</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> addresses.iloc[<span class="dv">0</span>:<span class="dv">10</span>].iterrows():</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="op">=</span><span class="bu">str</span>(row.affiliation)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(affiliation)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    osu_match<span class="op">=</span>re.match(<span class="vs">r"Ohio State University"</span>,affiliation) </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> osu_match:</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f" MATCH </span><span class="sc">{</span>osu_match<span class="sc">.</span>group()<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The Ohio State Biochemistry Program, The Ohio State University, Columbus, OH, 43210, USA. fu.978@osu.edu.
 The Ohio State Biochemistry Program, The Ohio State University, Columbus, OH, 43210, USA.
@@ -799,7 +827,7 @@ Department of Chemistry and Biochemistry, Center for RNA Biology, Ohio State Uni
 <section id="re.search" class="level3">
 <h3 class="anchored" data-anchor-id="re.search">re.search( )</h3>
 <div id="983e3e0f" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>re.search(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>re.search(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Scans through the string and returns the <strong>first match</strong> of the pattern.</li>
@@ -807,20 +835,20 @@ Department of Chemistry and Biochemistry, Center for RNA Biology, Ohio State Uni
 </ul>
 <p><strong>Example</strong>:</p>
 <div id="a915cf18-06b4-49e8-a9c0-f1337f651d4e" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>pd.read_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>addresses.dropna(subset<span class="op">=</span><span class="st">'affiliation'</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> addresses.iloc[<span class="dv">0</span>:<span class="dv">10</span>].iterrows():</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="op">=</span><span class="bu">str</span>(row.affiliation)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(affiliation)</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    osu_search<span class="op">=</span>re.search(<span class="vs">r"The Ohio State University"</span>,affiliation) </span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> osu_search:</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(osu_search.group())</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"No match: affiliation = </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>pd.read_csv(<span class="st">'data/pubmed_author_affiliations.csv'</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>addresses<span class="op">=</span>addresses.dropna(subset<span class="op">=</span><span class="st">'affiliation'</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> idx, row <span class="kw">in</span> addresses.iloc[<span class="dv">0</span>:<span class="dv">10</span>].iterrows():</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    affiliation<span class="op">=</span><span class="bu">str</span>(row.affiliation)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># print(affiliation)</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    osu_search<span class="op">=</span>re.search(<span class="vs">r"The Ohio State University"</span>,affiliation) </span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> osu_search:</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(osu_search.group())</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"No match: affiliation = </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>The Ohio State University
 The Ohio State University
@@ -839,27 +867,27 @@ No match: affiliation = Department of Chemistry and Biochemistry, Center for RNA
 <section id="re.findall" class="level3">
 <h3 class="anchored" data-anchor-id="re.findall">re.findall( )</h3>
 <div id="6c11c247" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>re.findall(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>re.findall(pattern, string, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Returns <strong>all non-overlapping matches</strong> of the pattern in the string as a list.</li>
 </ul>
 <p><strong>Example</strong>:</p>
 <div id="532ff7b1-5b53-4313-b2b1-0cf038bf4e36" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># HOW MANY TORTOISES AND TURTLES ARE IN THIS LIST OF ANIMALS?</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'data/animals_tortoises.csv'</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span>df.common_name.tolist()</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span><span class="st">','</span>.join(animals)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'LIST OF ANIMALS'</span>)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(animals)</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>tortoises_turtles<span class="op">=</span>re.findall(<span class="vs">r"tortoise</span><span class="cf">|</span><span class="vs">turtle"</span>, animals)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ANSWER'</span>)</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"There are </span><span class="sc">{</span><span class="bu">len</span>(tortoises_turtles)<span class="sc">}</span><span class="ss"> tortoises and turtles in this list of animals."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># HOW MANY TORTOISES AND TURTLES ARE IN THIS LIST OF ANIMALS?</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'data/animals_tortoises.csv'</span>)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span>df.common_name.tolist()</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span><span class="st">','</span>.join(animals)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'LIST OF ANIMALS'</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(animals)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>tortoises_turtles<span class="op">=</span>re.findall(<span class="vs">r"tortoise</span><span class="cf">|</span><span class="vs">turtle"</span>, animals)</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'ANSWER'</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"There are </span><span class="sc">{</span><span class="bu">len</span>(tortoises_turtles)<span class="sc">}</span><span class="ss"> tortoises and turtles in this list of animals."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>LIST OF ANIMALS
 abyssinian-ground-hornbill,addax,african-clawed-frog,african-pancake-tortoise,african-plated-lizard,aldabr-tortoise,allens-swamp-monkey,alligator-lizard,alligator-snapping-turtle,alpaca
@@ -872,7 +900,7 @@ There are 3 tortoises and turtles in this list of animals.</code></pre>
 <section id="re.sub" class="level3">
 <h3 class="anchored">re.sub( )</h3>
 <div id="f00d2907" class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>re.sub(pattern, repl, string, count<span class="op">=</span><span class="dv">0</span>, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>re.sub(pattern, repl, string, count<span class="op">=</span><span class="dv">0</span>, flags<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Replaces all occurrences of the pattern in the string with the replacement text (<code>repl</code>).</li>
@@ -880,16 +908,16 @@ There are 3 tortoises and turtles in this list of animals.</code></pre>
 </ul>
 <p><strong>Examples</strong>:</p>
 <div id="a9deaa68-9090-4026-baf9-dc19cf682632" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FIND TORTOISES AT THE NATIONAL ZOO AND REPLACE THE COMMON_NAME WITH "SLOW TORTOISE"</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'data/animals_tortoises.csv'</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span>df.common_name.tolist()</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span><span class="st">','</span>.join(animals)</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>pattern<span class="op">=</span><span class="st">"tortoise|turtle"</span></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>tortoises_slow<span class="op">=</span>re.sub(pattern,<span class="st">"SLOW TORTOISE,"</span>,animals)</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>tortoises_slow</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># FIND TORTOISES AT THE NATIONAL ZOO AND REPLACE THE COMMON_NAME WITH "SLOW TORTOISE"</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'data/animals_tortoises.csv'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span>df.common_name.tolist()</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>animals<span class="op">=</span><span class="st">','</span>.join(animals)</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>pattern<span class="op">=</span><span class="st">"tortoise|turtle"</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>tortoises_slow<span class="op">=</span>re.sub(pattern,<span class="st">"SLOW TORTOISE,"</span>,animals)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>tortoises_slow</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'abyssinian-ground-hornbill,addax,african-clawed-frog,african-pancake-SLOW TORTOISE,,african-plated-lizard,aldabr-SLOW TORTOISE,,allens-swamp-monkey,alligator-lizard,alligator-snapping-SLOW TORTOISE,,alpaca'</code></pre>
 </div>
@@ -916,109 +944,109 @@ Use regular expressions to create a list of institution names from the affiliati
 </h2>
 <div id="ex4-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex4-headingTwo" data-bs-parent="#accordionExercise4">
 <div class="accordion-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup <span class="im">as</span> bs</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Create a last_updated variable with today's date.</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> date.today()</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>last_updated<span class="op">=</span>today</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co">#2. Create list of PMIDs</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>pmids<span class="op">=</span>[<span class="st">'39773557'</span>, <span class="st">'39656677'</span>, <span class="st">'37398045'</span>, <span class="st">'39229161'</span>, <span class="st">'39713331'</span>, <span class="st">'39315813'</span>, <span class="st">'38338688'</span>, <span class="st">'36721057'</span>, <span class="st">'37322069'</span>]</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">#3.Create a dataframe to store the search results. </span></span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>author_affiliations<span class="op">=</span>pd.DataFrame(columns<span class="op">=</span>[<span class="st">"pmid"</span>,<span class="st">"name"</span>,<span class="st">"affiliation"</span>,<span class="st">"institution"</span>,<span class="st">"last_updated"</span>])</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co">#4. Use requests, BeautifulSoup, and the EFetch utility to retrieve author affiliations.</span></span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Store results in a DataFrame.</span></span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>count<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_record <span class="kw">in</span> pmids:</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># try:</span></span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'starting record '</span><span class="op">+</span><span class="bu">str</span>(count)<span class="op">+</span><span class="st">': '</span><span class="op">+</span><span class="bu">str</span>(each_record))</span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    search_url<span class="op">=</span><span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id="</span><span class="op">+</span><span class="bu">str</span>(each_record)<span class="op">+</span><span class="st">"&amp;api_key=INSERT API KEY HERE"</span></span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    xml_data<span class="op">=</span>requests.get(search_url).text</span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> bs(xml_data, <span class="st">'xml'</span>)</span>
-<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    records<span class="op">=</span>soup.find(<span class="st">'PubmedArticle'</span>)</span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>    pmid<span class="op">=</span>records.PMID.text</span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>    authors<span class="op">=</span>records.find_all(<span class="st">"Author"</span>)</span>
-<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each_author <span class="kw">in</span> authors:</span>
-<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.LastName <span class="op">!=</span> <span class="va">None</span>:</span>
-<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span>each_author.LastName.text</span>
-<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span><span class="st">''</span></span>
-<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.ForeName <span class="op">!=</span> <span class="va">None</span>:</span>
-<span id="cb16-37"><a href="#cb16-37" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span>each_author.ForeName.text</span>
-<span id="cb16-38"><a href="#cb16-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span><span class="st">''</span></span>
-<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> lastname <span class="op">!=</span> <span class="st">''</span> <span class="kw">and</span> forename <span class="op">!=</span> <span class="st">''</span>:</span>
-<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>lastname<span class="op">+</span><span class="st">', '</span><span class="op">+</span>forename</span>
-<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">''</span></span>
-<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-46"><a href="#cb16-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.Affiliation <span class="op">!=</span> <span class="va">None</span>:</span>
-<span id="cb16-47"><a href="#cb16-47" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span>each_author.Affiliation.text</span>
-<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>            ohio_state<span class="op">=</span>re.search(<span class="vs">r"Ohio State"</span>, affiliation)</span>
-<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a>            harvard_medical_school<span class="op">=</span>re.search(<span class="vs">r"Harvard Medical School"</span>, affiliation)</span>
-<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a>            institut_genetique<span class="op">=</span>re.search(<span class="vs">r"Institut de Génétique et de Biologie Moléculaire et Cellulaire"</span>, affiliation)</span>
-<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>            johns_hopkins<span class="op">=</span>re.search(<span class="vs">r"Johns Hopkins University"</span>, affiliation)</span>
-<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a>            mcgill<span class="op">=</span>re.search(<span class="vs">r"McGill University"</span>, affiliation)</span>
-<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>            nci<span class="op">=</span>re.search(<span class="vs">r"National Cancer Institute"</span>, affiliation)</span>
-<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a>            nidcd<span class="op">=</span>re.search(<span class="vs">r"National Institute on Deafness and Other Communication Disorders"</span>, affiliation)</span>
-<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a>            northeastern<span class="op">=</span>re.search(<span class="vs">r"Northeastern University"</span>, affiliation)</span>
-<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a>            u_bristol<span class="op">=</span>re.search(<span class="vs">r"University of Bristol"</span>, affiliation)</span>
-<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a>            u_maryland<span class="op">=</span>re.search(<span class="vs">r"University of Maryland"</span>, affiliation)</span>
-<span id="cb16-59"><a href="#cb16-59" aria-hidden="true" tabindex="-1"></a>            u_virginia<span class="op">=</span>re.search(<span class="vs">r"University of Virginia"</span>, affiliation)</span>
-<span id="cb16-60"><a href="#cb16-60" aria-hidden="true" tabindex="-1"></a>            vicosa<span class="op">=</span>re.search(<span class="vs">r"Universidade Federal de Viçosa"</span>, affiliation)</span>
-<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ohio_state:</span>
-<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span><span class="st">"The Ohio State University"</span></span>
-<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> harvard_medical_school:</span>
-<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>harvard_medical_school.group()</span>
-<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> institut_genetique:</span>
-<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>institut_genetique.group()</span>
-<span id="cb16-67"><a href="#cb16-67" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> johns_hopkins:</span>
-<span id="cb16-68"><a href="#cb16-68" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>johns_hopkins.group()</span>
-<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> mcgill:</span>
-<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>mcgill.group()</span>
-<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> nci:</span>
-<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>nci.group()</span>
-<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> nidcd:</span>
-<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>nidcd.group()</span>
-<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> northeastern:</span>
-<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>northeastern.group()</span>
-<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_bristol:</span>
-<span id="cb16-78"><a href="#cb16-78" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_bristol.group()</span>
-<span id="cb16-79"><a href="#cb16-79" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_maryland:</span>
-<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_maryland.group()</span>
-<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_virginia:</span>
-<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_virginia.group()</span>
-<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> vicosa:</span>
-<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>vicosa.group()</span>
-<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span><span class="st">''</span></span>
-<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span>{</span>
-<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pmid"</span>: pmid,</span>
-<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a>            <span class="st">"name"</span>: name,</span>
-<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a>            <span class="st">"affiliation"</span>: affiliation,</span>
-<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a>            <span class="st">"institution"</span>: institution,</span>
-<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a>            <span class="st">"last_updated"</span>: last_updated</span>
-<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a>            }</span>
-<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a>        author_info<span class="op">=</span>pd.DataFrame(row, index<span class="op">=</span>[<span class="dv">0</span>])</span>
-<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a>        author_affiliations <span class="op">=</span> pd.concat([author_info,author_affiliations], axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.15</span>)</span>
-<span id="cb16-101"><a href="#cb16-101" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb16-102"><a href="#cb16-102" aria-hidden="true" tabindex="-1"></a><span class="co">#5. Export results to csv        </span></span>
-<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a>author_affiliations.to_csv(<span class="st">'pubmed_author_affiliations.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup <span class="im">as</span> bs</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> date</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co">#1. Create a last_updated variable with today's date.</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>today <span class="op">=</span> date.today()</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>last_updated<span class="op">=</span>today</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co">#2. Create list of PMIDs</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>pmids<span class="op">=</span>[<span class="st">'39773557'</span>, <span class="st">'39656677'</span>, <span class="st">'37398045'</span>, <span class="st">'39229161'</span>, <span class="st">'39713331'</span>, <span class="st">'39315813'</span>, <span class="st">'38338688'</span>, <span class="st">'36721057'</span>, <span class="st">'37322069'</span>]</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="co">#3.Create a dataframe to store the search results. </span></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>author_affiliations<span class="op">=</span>pd.DataFrame(columns<span class="op">=</span>[<span class="st">"pmid"</span>,<span class="st">"name"</span>,<span class="st">"affiliation"</span>,<span class="st">"institution"</span>,<span class="st">"last_updated"</span>])</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co">#4. Use requests, BeautifulSoup, and the EFetch utility to retrieve author affiliations.</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Store results in a DataFrame.</span></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>count<span class="op">=</span><span class="dv">0</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_record <span class="kw">in</span> pmids:</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    <span class="co"># try:</span></span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'starting record '</span><span class="op">+</span><span class="bu">str</span>(count)<span class="op">+</span><span class="st">': '</span><span class="op">+</span><span class="bu">str</span>(each_record))</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>    search_url<span class="op">=</span><span class="st">"https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&amp;id="</span><span class="op">+</span><span class="bu">str</span>(each_record)<span class="op">+</span><span class="st">"&amp;api_key=INSERT API KEY HERE"</span></span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    xml_data<span class="op">=</span>requests.get(search_url).text</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    soup <span class="op">=</span> bs(xml_data, <span class="st">'xml'</span>)</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    records<span class="op">=</span>soup.find(<span class="st">'PubmedArticle'</span>)</span>
+<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    pmid<span class="op">=</span>records.PMID.text</span>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    authors<span class="op">=</span>records.find_all(<span class="st">"Author"</span>)</span>
+<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each_author <span class="kw">in</span> authors:</span>
+<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.LastName <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span>each_author.LastName.text</span>
+<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>            lastname<span class="op">=</span><span class="st">''</span></span>
+<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.ForeName <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span>each_author.ForeName.text</span>
+<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>            forename<span class="op">=</span><span class="st">''</span></span>
+<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> lastname <span class="op">!=</span> <span class="st">''</span> <span class="kw">and</span> forename <span class="op">!=</span> <span class="st">''</span>:</span>
+<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span>lastname<span class="op">+</span><span class="st">', '</span><span class="op">+</span>forename</span>
+<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>            name<span class="op">=</span><span class="st">''</span></span>
+<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_author.Affiliation <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span>each_author.Affiliation.text</span>
+<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>            ohio_state<span class="op">=</span>re.search(<span class="vs">r"Ohio State"</span>, affiliation)</span>
+<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>            harvard_medical_school<span class="op">=</span>re.search(<span class="vs">r"Harvard Medical School"</span>, affiliation)</span>
+<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>            institut_genetique<span class="op">=</span>re.search(<span class="vs">r"Institut de Génétique et de Biologie Moléculaire et Cellulaire"</span>, affiliation)</span>
+<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>            johns_hopkins<span class="op">=</span>re.search(<span class="vs">r"Johns Hopkins University"</span>, affiliation)</span>
+<span id="cb17-53"><a href="#cb17-53" aria-hidden="true" tabindex="-1"></a>            mcgill<span class="op">=</span>re.search(<span class="vs">r"McGill University"</span>, affiliation)</span>
+<span id="cb17-54"><a href="#cb17-54" aria-hidden="true" tabindex="-1"></a>            nci<span class="op">=</span>re.search(<span class="vs">r"National Cancer Institute"</span>, affiliation)</span>
+<span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>            nidcd<span class="op">=</span>re.search(<span class="vs">r"National Institute on Deafness and Other Communication Disorders"</span>, affiliation)</span>
+<span id="cb17-56"><a href="#cb17-56" aria-hidden="true" tabindex="-1"></a>            northeastern<span class="op">=</span>re.search(<span class="vs">r"Northeastern University"</span>, affiliation)</span>
+<span id="cb17-57"><a href="#cb17-57" aria-hidden="true" tabindex="-1"></a>            u_bristol<span class="op">=</span>re.search(<span class="vs">r"University of Bristol"</span>, affiliation)</span>
+<span id="cb17-58"><a href="#cb17-58" aria-hidden="true" tabindex="-1"></a>            u_maryland<span class="op">=</span>re.search(<span class="vs">r"University of Maryland"</span>, affiliation)</span>
+<span id="cb17-59"><a href="#cb17-59" aria-hidden="true" tabindex="-1"></a>            u_virginia<span class="op">=</span>re.search(<span class="vs">r"University of Virginia"</span>, affiliation)</span>
+<span id="cb17-60"><a href="#cb17-60" aria-hidden="true" tabindex="-1"></a>            vicosa<span class="op">=</span>re.search(<span class="vs">r"Universidade Federal de Viçosa"</span>, affiliation)</span>
+<span id="cb17-61"><a href="#cb17-61" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> ohio_state:</span>
+<span id="cb17-62"><a href="#cb17-62" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span><span class="st">"The Ohio State University"</span></span>
+<span id="cb17-63"><a href="#cb17-63" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> harvard_medical_school:</span>
+<span id="cb17-64"><a href="#cb17-64" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>harvard_medical_school.group()</span>
+<span id="cb17-65"><a href="#cb17-65" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> institut_genetique:</span>
+<span id="cb17-66"><a href="#cb17-66" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>institut_genetique.group()</span>
+<span id="cb17-67"><a href="#cb17-67" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> johns_hopkins:</span>
+<span id="cb17-68"><a href="#cb17-68" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>johns_hopkins.group()</span>
+<span id="cb17-69"><a href="#cb17-69" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> mcgill:</span>
+<span id="cb17-70"><a href="#cb17-70" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>mcgill.group()</span>
+<span id="cb17-71"><a href="#cb17-71" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> nci:</span>
+<span id="cb17-72"><a href="#cb17-72" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>nci.group()</span>
+<span id="cb17-73"><a href="#cb17-73" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> nidcd:</span>
+<span id="cb17-74"><a href="#cb17-74" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>nidcd.group()</span>
+<span id="cb17-75"><a href="#cb17-75" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> northeastern:</span>
+<span id="cb17-76"><a href="#cb17-76" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>northeastern.group()</span>
+<span id="cb17-77"><a href="#cb17-77" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_bristol:</span>
+<span id="cb17-78"><a href="#cb17-78" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_bristol.group()</span>
+<span id="cb17-79"><a href="#cb17-79" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_maryland:</span>
+<span id="cb17-80"><a href="#cb17-80" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_maryland.group()</span>
+<span id="cb17-81"><a href="#cb17-81" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> u_virginia:</span>
+<span id="cb17-82"><a href="#cb17-82" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>u_virginia.group()</span>
+<span id="cb17-83"><a href="#cb17-83" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> vicosa:</span>
+<span id="cb17-84"><a href="#cb17-84" aria-hidden="true" tabindex="-1"></a>                institution<span class="op">=</span>vicosa.group()</span>
+<span id="cb17-85"><a href="#cb17-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-86"><a href="#cb17-86" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb17-87"><a href="#cb17-87" aria-hidden="true" tabindex="-1"></a>            affiliation<span class="op">=</span><span class="st">''</span></span>
+<span id="cb17-88"><a href="#cb17-88" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>affiliation<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb17-89"><a href="#cb17-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-90"><a href="#cb17-90" aria-hidden="true" tabindex="-1"></a>        row<span class="op">=</span>{</span>
+<span id="cb17-91"><a href="#cb17-91" aria-hidden="true" tabindex="-1"></a>            <span class="st">"pmid"</span>: pmid,</span>
+<span id="cb17-92"><a href="#cb17-92" aria-hidden="true" tabindex="-1"></a>            <span class="st">"name"</span>: name,</span>
+<span id="cb17-93"><a href="#cb17-93" aria-hidden="true" tabindex="-1"></a>            <span class="st">"affiliation"</span>: affiliation,</span>
+<span id="cb17-94"><a href="#cb17-94" aria-hidden="true" tabindex="-1"></a>            <span class="st">"institution"</span>: institution,</span>
+<span id="cb17-95"><a href="#cb17-95" aria-hidden="true" tabindex="-1"></a>            <span class="st">"last_updated"</span>: last_updated</span>
+<span id="cb17-96"><a href="#cb17-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-97"><a href="#cb17-97" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb17-98"><a href="#cb17-98" aria-hidden="true" tabindex="-1"></a>        author_info<span class="op">=</span>pd.DataFrame(row, index<span class="op">=</span>[<span class="dv">0</span>])</span>
+<span id="cb17-99"><a href="#cb17-99" aria-hidden="true" tabindex="-1"></a>        author_affiliations <span class="op">=</span> pd.concat([author_info,author_affiliations], axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb17-100"><a href="#cb17-100" aria-hidden="true" tabindex="-1"></a>        time.sleep(<span class="fl">0.15</span>)</span>
+<span id="cb17-101"><a href="#cb17-101" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb17-102"><a href="#cb17-102" aria-hidden="true" tabindex="-1"></a><span class="co">#5. Export results to csv        </span></span>
+<span id="cb17-103"><a href="#cb17-103" aria-hidden="true" tabindex="-1"></a>author_affiliations.to_csv(<span class="st">'pubmed_author_affiliations.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>

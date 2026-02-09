@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -447,7 +456,7 @@ The Ohio State University provides the online archives of Ohio State’s student
 </div>
 <div class="card-body">
 <p>
-The <a href="https://osupublicationarchives.osu.edu/">OSU Publication Archives website</a> is powered by Veridian software, enabling full-text searching of the Libraries digital collections possible. To output a search results from The Lantern to XML, simply add <code>&amp;f=XML</code> to the end of your url. See the <a href="https://demos.veridiansoftware.com/latest/text-correct/web/xml-interface-documentation/VeridianXMLInterface.htm">Veridian XML Interface</a> documentation to learn more about this service.
+The <a href="https://osupublicationarchives.osu.edu/">OSU Publication Archives website</a> is powered by Veridian software, enabling full-text searching of the Libraries digital collections. To output a search results from The Lantern to XML, simply add <code>&amp;f=XML</code> to the end of your url. See the <a href="https://demos.veridiansoftware.com/latest/text-correct/web/xml-interface-documentation/VeridianXMLInterface.htm">Veridian XML Interface</a> documentation to learn more about this service.
 </p>
 </div>
 </div>
@@ -468,7 +477,14 @@ The <a href="https://osupublicationarchives.osu.edu/">OSU Publication Archives w
 <section id="step-4.-inspect-the-elements" class="level1">
 <h1>Step 4. Inspect the elements</h1>
 <p>XML and HTML are tree-structured documents. When you request a search URL, it retrieves an HTML or XML page from a server. The browser then downloads the page into local memory and parses the HTML or XML for display.</p>
-<p>The <a href="https://en.wikipedia.org/wiki/Document_Object_Model">Document Object Model (DOM)</a> respresents the overall tree-structure of the XML or HTML document. For example, in the XML document shown in Step 2 above: - <code>VeridianXMLResponse</code> represents the document node. - All XML elements within <code>VeridianXMLResponse</code> are element nodes. - There is some HTML present in the <code>SearchResultSnippetHTML</code> node. - There are no XML attribute nodes, but there are HTML attribute nodes in the <code>SearchResultSnippetHTML</code> node. - Text between the XML elements are text nodes.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Document_Object_Model">Document Object Model (DOM)</a> respresents the overall tree-structure of the XML or HTML document. For example, in the XML document shown in Step 2 above:</p>
+<ul>
+<li><code>VeridianXMLResponse</code> represents the document node.</li>
+<li>All XML elements within <code>VeridianXMLResponse</code> are element nodes.</li>
+<li>There is some HTML present in the <code>SearchResultSnippetHTML</code> node.</li>
+<li>There are no XML attribute nodes, but there are HTML attribute nodes in the <code>SearchResultSnippetHTML</code> node.</li>
+<li>Text between the XML elements are text nodes.</li>
+</ul>
 <p>The tree is hierachically structured and each tree branch ends with a node. Each node contains objects, and nodes can be nested within nodes.</p>
 </section>
 <section id="step-5.-identify-python-libraries-for-project" class="level1">
@@ -687,20 +703,19 @@ Learning to navigate tags with BeautifulSoup can be difficult at first. Try usin
 <div class="accordion-body fs-4">
 <ol>
 <li>
-<ol type="1">
-<li>Examine the XML structure and identify the nodes for the following elements:
+Examine the XML structure and identify the nodes for the following elements:
 <ul>
 <li>
-unique_id
+<span class="text-primary"></span>&gt;
 </li>
 <li>
-article_title
+<span class="text-primary">article_title</span>
 </li>
 <li>
-article_type
+<span class="text-primary">article_type</span>
 </li>
 <li>
-document_date
+<span class="text-primary">document_date</span>
 </li>
 </ul>
 </li>
@@ -708,10 +723,9 @@ document_date
 Write a Python script that uses csv and BeautifulSoup to gather and store these elements. Focus on the first 20 search results.
 </li>
 </ol>
-</li></ol></div>
 </div>
 </div>
-
+</div>
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex3-headingTwo">
 <button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseTwo" aria-expanded="false" aria-controls="ex3-collapseTwo">
@@ -934,15 +948,11 @@ The default search output provide structured bibliographic metadata for each hom
 </div>
 
 
-</section></section></section></main></div>
+</section>
+</section>
+</section>
 
-
-
-
-
-
-
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -1355,7 +1365,7 @@ The default search output provide structured bibliographic metadata for each hom
       </a>
   </div>
 </nav>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
