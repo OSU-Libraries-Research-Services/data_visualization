@@ -284,7 +284,7 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
 </header>
 
 
-<p>Choosing the right chart isn’t always straightforward — it’s often an <strong>iterative</strong> and <strong>context-dependent</strong> process. Effective data visualization requires you to consider both the <strong>nature of the data</strong> and the <strong>needs of your audience</strong>. This lesson introduces how to create basic charts in Tableau.</p>
+<p>Choosing the right chart isn’t always straightforward. It’s often an <strong>iterative</strong> and <strong>context-dependent</strong> process. Effective data visualization requires you to consider both the <strong>nature of the data</strong> and the <strong>needs of your audience</strong>. This lesson introduces how to create basic charts in Tableau.</p>
 <section id="data-skills-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
 <ul>
@@ -341,13 +341,13 @@ Jordan Morrow
 <img src="images/star_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Important! Null Values and Misclassified Data Types
 </h4>
 <p>
-Be especially careful with null values and checking data types. Nulls can skew calculations like averages or medians, and misclassified data types — such as dates stored as integers — can lead to errors in analysis. <strong>Always verify that each column has the correct and consistent data type before building your visualizations.</strong>
+Be especially careful with null values and checking data types. Nulls can skew calculations like averages or medians. Misclassified data types, such as dates stored as integers, can lead to errors in analysis. <strong>Always verify that each column has the correct and consistent data type before building your visualizations.</strong>
 </p>
 </div>
-<p>We have already explored how to verify and correct data types in <strong><a href="https://osu-libraries-research-services.github.io/data_visualization/tableau-research-getting-started">Lesson 1</a></strong>. Since our <code>rock_n_roll_performers.csv</code> dataset primarily contains <strong>dimensions</strong>, we’ll need to <strong>relate it to another dataset with measures</strong> to continue exploring Tableau’s full capabilities.</p>
+<p>We have already explored how to verify and correct data types in <a href="tableau_getting_started.ipynb">Lesson 1</a>. Since our <code>rock_n_roll_performers.csv</code> dataset primarily contains <strong>dimensions</strong>, we’ll need to <strong>relate it to another dataset with measures</strong> to continue exploring Tableau’s full capabilities.</p>
 <section id="relate-or-join-data-sources" class="level2">
 <h2 class="anchored" data-anchor-id="relate-or-join-data-sources">Relate or join data sources</h2>
-<p><strong>Relationships</strong> combine data from multiple tables in a data source based on common fields <strong>— without merging them into a single flat table.</strong> This approach offers several benefits, including <strong>preserving table-level detail</strong> and helping to avoid issues like data duplication or incorrect aggregations.</p>
+<p><strong>Relationships</strong> combine data from multiple tables in a data source based on common fields <strong>without merging them into a single flat table.</strong> This approach offers several benefits, including <strong>preserving table-level detail</strong> and helping to avoid issues like data duplication or incorrect aggregations.</p>
 <p>To practice creating relationships and to better understand how they affect the level of detail in your visualizations, consider downloading Tableau’s <strong><a href="https://help.tableau.com/current/pro/desktop/en-us/bookshop_data.htm">Bookshop dataset</a></strong>.</p>
 <p><strong>Joins</strong> in Tableau physically merge tables into a single flat table at the data source level, based on a defined join condition (e.g., inner, left, right, or full outer). While useful when both tables share the same level of detail, joins can lead to duplicated rows or inflated values if the join keys aren’t clean or consistent, so careful data preparation is essential.</p>
 <div class="card border-primary mb-3 p-1">
@@ -385,13 +385,8 @@ Video showing steps 1-4 above
 <section id="choose-an-effective-visual" class="level1">
 <h1>Choose an effective visual</h1>
 <p>Choosing the right chart type is a crucial—and often tricky—step in effective data visualization. Thankfully, a thoughtfully selected set of well-crafted charts can address most communication needs.</p>
-<p>The <strong><strong><a href="https://www.ft.com/content/c7bb24c9-964d-479f-ba24-03a2b2df6e85">Financial Times Visual Vocabulary</a></strong></strong> offers a categorized collection of chart types. It is a useful reference for selecting the right chart for the needs and expectations of your audience. This section will explore how to create basic Tableau charts in the <strong>ranking</strong>, <strong>correlation</strong>, and <strong>change over time</strong> categories.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/ft_thumbnail.png" class="img-fluid figure-img"></p>
-<figcaption>Financial Times Visual Vocabulary</figcaption>
-</figure>
-</div>
+<p>The <strong><strong><a href="https://ft-interactive.github.io/visual-vocabulary/">Financial Times Visual Vocabulary</a></strong></strong> offers a categorized collection of chart types. It is a useful reference for selecting the right chart for the needs and expectations of your audience. This section will explore how to create basic Tableau charts in the <strong>ranking</strong>, <strong>correlation</strong>, and <strong>change over time</strong> categories.</p>
+<p><img src="images/ft_thumbnail.png" title="screenshot of Financial Times Visual Vocabulary poster pdf" class="img-fluid"></p>
 <section id="ranking" class="level2">
 <h2 class="anchored" data-anchor-id="ranking">Ranking</h2>
 <p><strong><a href="https://ft-interactive.github.io/visual-vocabulary/">Ranking</a></strong> shows an element’s position in an ordered list. <strong>Horizontal</strong> and <strong>vertical bar charts</strong> are especially effective for visualizing rank-based comparisons, making it easy to see which values stand out.</p>
@@ -400,7 +395,7 @@ Video showing steps 1-4 above
 <img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: One Task, Multiple Approaches
 </div>
 <div class="card-body">
-<img src="images/tableau_logo.svg" alt="" aria-hidden="true">
+<img src="images/tableau_logo.svg" class="mx-auto d-block" alt="" aria-hidden="true" style="vertical-align: middle; margin-right: 0.5rem; padding: 1rem;">
 <p>
 Tableau loves options—there’s almost always more than one way to do the same thing!!!
 </p>
@@ -447,7 +442,7 @@ Video showing the steps 1-6 below
 <img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Worksheet Names File
 </div>
 <div class="card-body">
-Always give your worksheets clear, meaningful names—this makes it much easier to organize and navigate your dashboards or stories later on.
+Always give your worksheets clear, meaningful names. This makes it much easier to organize and navigate your dashboards or stories later on.
 </div>
 </div>
 </section>
@@ -489,13 +484,13 @@ Use the <strong>album_title</strong> dimension and the <strong>Peak US</strong> 
 <li>
 <strong>Experiment with layout:</strong>
 <ul>
-Click the <img src="images/tableau_swap.png" alt=""><strong>Swap</strong> button in the toolbar to switch the orientation of the bars (horizontal ↔︎ vertical).
+Click the <img src="images/tableau_swap.png" alt="" aria-hidden="true"><strong>Swap</strong> button in the toolbar to switch the orientation of the bars (horizontal ↔︎ vertical).
 </ul>
 </li>
 <li>
 <strong>Sort the bars:</strong>
 <ul>
-Use the <strong>Sort ascending</strong><img src="images/tableau_sort_ascend.png" alt=""> button in the toolbar to arrange bars from lowest to highest chart position.
+Use the <strong>Sort ascending</strong><img src="images/tableau_sort_ascend.png" alt="" aria-hidden="true"> button in the toolbar to arrange bars from lowest to highest chart position.
 </ul>
 </li>
 </ol>
@@ -541,10 +536,7 @@ Use the <strong>Sort ascending</strong><img src="images/tableau_sort_ascend.png"
 Drag <strong>Release date</strong> to the <strong>Columns</strong> shelf.
 </li>
 <li>
-Drag <strong>rock_n_roll_studio_albums.csv (Count)</strong> to the <strong>Rows</strong> shelf.
-<p>
-<strong>Note:</strong> Tableau automatically creates a <strong>line chart</strong>, because <strong>Release date</strong> is recognized as a <strong>date field</strong>.
-</p>
+Drag <strong>rock_n_roll_studio_albums.csv (Count)</strong> to the <strong>Rows</strong> shelf.<strong>Note:</strong> Tableau automatically creates a <strong>line chart</strong>, because <strong>Release date</strong> is recognized as a <strong>date field</strong>.
 </li>
 </ul>
 </li>
@@ -607,7 +599,7 @@ On the <strong>Marks Card</strong>, click the dropdown next to <strong>Automatic
 </ul></li>
 </ol>
 <p><img src="images/tableau_line_chart_1.png" title="Image showing steps 1-5 above completed" class="img-fluid"></p>
-<p><strong>Note:</strong>The bulk of albums released in January is misleading. When gathering this data, if only a year was provided for release data, the month and day of the release date was automatically set to January 1.`</p>
+<p><strong>Note:</strong>The bulk of albums released in January is misleading. When gathering this data, if only a year was provided for release data, the month and day of the release date was automatically set to <strong>January 1</strong>.</p>
 </section>
 <section id="continuous-dates" class="level4">
 <h4 class="anchored" data-anchor-id="continuous-dates">📅 Continuous dates</h4>
@@ -624,7 +616,7 @@ On the <strong>Marks Card</strong>, click the dropdown next to <strong>Automatic
 <li>Change the date from the <strong>discrete format</strong> (e.g.&nbsp;<em>Month (May)</em>) to the <strong>continuous format</strong> (e.g.&nbsp;<em>Month (May 2015)</em>).</li>
 </ul></li>
 </ol>
-<p>At first glance, the chart may look broken or disjointed. However, if you <strong>hover over each line</strong>, you’ll see that Tableau is correctly plotting each <strong>month across all years</strong> on a continuous timeline. The visual choppiness due to the color still being based on the <strong>discrete year</strong>.</p>
+<p>At first glance, the chart may look broken or disjointed. However, if you <strong>hover over each line</strong>, you’ll see that Tableau is correctly plotting each <strong>month across all years</strong> on a continuous timeline. The visual choppiness is due to the color still being based on the <strong>discrete year</strong>.</p>
 <p>To smooth out the visualization and better highlight trends:</p>
 <ol start="3" type="1">
 <li>Remove the <strong>YEAR(Release date) pill</strong> from <strong>Color</strong>.</li>
@@ -703,7 +695,7 @@ Drag <strong>album_title</strong> to <strong>Detail</strong> on the <strong>Mark
 Outliers can significantly distort the results of a scatterplot, so it’s important to handle them thoughtfully. Tableau makes it easy to exclude outlier data points: simply click on a mark to open the tooltip and select <span class="text-primary">🛇 Exclude</span>, or right-click the mark and choose <span class="text-primary">X Exclude</span>.
 </p>
 <p>
-However, always be sure to <strong>document your approach</strong> to handling outliers. Transparency in your data-cleaning decisions is essential for maintaining the integrity and reproducibility of your analysis.
+However, always be sure to <strong>document your approach</strong> for handling outliers. Transparency in your data-cleaning decisions is essential for maintaining the integrity and reproducibility of your analysis.
 </p>
 </div>
 </div>
