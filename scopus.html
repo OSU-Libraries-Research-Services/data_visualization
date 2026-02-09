@@ -473,9 +473,11 @@ Use the <a href="https://pybliometrics.readthedocs.io/en/stable/reference/scopus
 <span class="text-primary">author_country</span>
 </li>
 </ul>
-<pre><code>&lt;/li&gt;
-&lt;li&gt;Export results to &lt;span class="text-primary"&gt;.csv&lt;/span&gt; file.&lt;/li&gt;</code></pre>
-</li></ol>
+</li>
+<li>
+Export results to <span class="text-primary">.csv</span> file.
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -487,49 +489,45 @@ Use the <a href="https://pybliometrics.readthedocs.io/en/stable/reference/scopus
 </h2>
 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 <div class="accordion-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybliometrics.scopus <span class="im">import</span> AuthorSearch</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>unique_author_ids<span class="op">=</span>[]</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>author_ids<span class="op">=</span>results.author_ids.tolist()</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_list <span class="kw">in</span> author_ids:</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    individual_ids<span class="op">=</span>each_list.split(<span class="st">';'</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each_id <span class="kw">in</span> individual_ids:</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_id <span class="kw">not</span> <span class="kw">in</span> unique_author_ids:</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>            search_string<span class="op">=</span><span class="st">'AU-ID('</span><span class="op">+</span><span class="bu">str</span>(each_id)<span class="op">+</span><span class="st">')'</span> <span class="op">+</span> <span class="st">' OR '</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            unique_author_ids.append(search_string)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co">#query first 10 unique author ids</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>unique_author_ids<span class="op">=</span>unique_author_ids[<span class="dv">0</span>:<span class="dv">10</span>]</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="co">#construct query</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>query<span class="op">=</span><span class="st">''</span>.join(unique_author_ids).rstrip(<span class="st">' OR'</span>).strip()</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co">#search</span></span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>s_author<span class="op">=</span>AuthorSearch(query, verbose<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co">#insert results into DataFrame</span></span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>results_authors<span class="op">=</span>pd.DataFrame(s_author.authors)</span>
-<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a><span class="co">#select columns</span></span>
-<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>results_authors<span class="op">=</span>results_authors[[<span class="st">'surname'</span>,<span class="st">'initials'</span>,<span class="st">'givenname'</span>,<span class="st">'affiliation'</span>,<span class="st">'city'</span>,<span class="st">'country'</span>]]</span>
-<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="co">#export results to csv file</span></span>
-<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>results_authors.to_csv(<span class="st">'results_authors.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybliometrics.scopus <span class="im">import</span> AuthorSearch</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>unique_author_ids<span class="op">=</span>[]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>author_ids<span class="op">=</span>results.author_ids.tolist()</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> each_list <span class="kw">in</span> author_ids:</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    individual_ids<span class="op">=</span>each_list.split(<span class="st">';'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> each_id <span class="kw">in</span> individual_ids:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> each_id <span class="kw">not</span> <span class="kw">in</span> unique_author_ids:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>            search_string<span class="op">=</span><span class="st">'AU-ID('</span><span class="op">+</span><span class="bu">str</span>(each_id)<span class="op">+</span><span class="st">')'</span> <span class="op">+</span> <span class="st">' OR '</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>            unique_author_ids.append(search_string)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co">#query first 10 unique author ids</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>unique_author_ids<span class="op">=</span>unique_author_ids[<span class="dv">0</span>:<span class="dv">10</span>]</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co">#construct query</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>query<span class="op">=</span><span class="st">''</span>.join(unique_author_ids).rstrip(<span class="st">' OR'</span>).strip()</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co">#search</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>s_author<span class="op">=</span>AuthorSearch(query, verbose<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">#insert results into DataFrame</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>results_authors<span class="op">=</span>pd.DataFrame(s_author.authors)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co">#select columns</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>results_authors<span class="op">=</span>results_authors[[<span class="st">'surname'</span>,<span class="st">'initials'</span>,<span class="st">'givenname'</span>,<span class="st">'affiliation'</span>,<span class="st">'city'</span>,<span class="st">'country'</span>]]</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#export results to csv file</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>results_authors.to_csv(<span class="st">'results_authors.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </div>
 
 
-</section></section></main></div>
+</section>
+</section>
 
-
-
-
-
-
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -942,7 +940,7 @@ Use the <a href="https://pybliometrics.readthedocs.io/en/stable/reference/scopus
       </a>
   </div>
 </nav>
- <!-- /content -->
+</div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
