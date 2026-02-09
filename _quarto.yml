@@ -8,6 +8,7 @@ website:
   title: "Data Visualization"
   favicon: images/favicon.ico
   repo-url: https://github.com/Murphy465/data_visualization_test
+  google-analytics: "G-BJ38N1FLJT"
   page-navigation: true
   page-footer: 
     left: 
