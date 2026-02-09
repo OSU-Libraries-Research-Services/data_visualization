@@ -27,7 +27,7 @@ format:
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">by Ryan Sleeper<br>Sebastopol, CA : O'Reilly Media, 2018.</li>
-    <li class="list-group-item">With screenshots, step-by-step instructions and succinct explanations of key Tableau concepts this book will quickly orient you to Tableau. Sleeper covers basic and advanced chart types as well as parameters, filters, calculated fields and more, allowing you to create interactive visualizations for presentations, data exploration, or analysis.</li>
+    <li class="list-group-item">With screenshots, step-by-step instructions and succinct explanations of key Tableau concepts, this book will quickly orient you to Tableau. Sleeper covers basic and advanced chart types as well as parameters, filters, calculated fields and more, allowing you to create interactive visualizations for presentations, data exploration, or analysis.</li>
   </ul>
 </div>
 
@@ -49,7 +49,7 @@ format:
 :::
 
 # O'Reilly Online Learning
-For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
 
 # Workshops and Events
 University Libraries offers a variety of data skills [workshops and events](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) for Ohio State faculty, students and staff throughout the academic year. 

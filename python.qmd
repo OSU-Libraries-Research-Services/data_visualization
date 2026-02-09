@@ -14,7 +14,7 @@ format:
 [Python](https://www.python.org/) is a free, general purpose programming language widely used in both academia and industry. It provides a rich ecosystem of libraries, such as **Matplotlib**, **Plotly**, **Pandas**, and **BeautifulSoup**, that support tasks like data collection, cleaning, and visualization. 
 
 # Free Resources
-Explore a collection of open-access, discipline-specific textbooks that are completely free to use. Each resource includes highly valuable Jupyter notbooks, which you can download or clone to reinforce your learning. Practice the concepts using the included demo datasets or apply them to your own data for a more personalized experience.
+Explore a collection of open-access, discipline-specific textbooks that are completely free to use. Each resource includes highly valuable Jupyter notebooks, which you can download or clone to reinforce your learning. Practice the concepts using the included demo datasets or apply them to your own data for a more personalized experience.
 
 ::: {.grid .g-4}
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
@@ -60,7 +60,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 # Books
 
 ::: {.grid .g-4}
-::: {.g-col-12 .g-col-md-6 .g-col-lg-4} 
+::: {.g-col-12 .g-col-md-6} 
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">PYTHON CRASH COURSE</div>
   <div class="card-body"><img src="images/cover_pythoncrashcourse.png" alt="python crash course book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_globaltitleindex_catalog_345576859">Python crash course : a hands-on, project-based introduction to programming, 3rd edition</a></h4>
@@ -73,7 +73,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 
 :::
 
-::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+::: {.g-col-12 .g-col-md-6}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">AUTOMATE THE BORING STUFF</div>
   <div class="card-body"><img src="images/cover_automateboringstuff.png" alt="automate the boring stuff book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_safari_books_v2_9798341620094">Automate the boring stuff with Python : practical programming for total beginners, 3rd edition</a></h4>
@@ -86,7 +86,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 
 :::
 
-::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+::: {.g-col-12 .g-col-md-6}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">PYTHON TOOLS FOR SCIENTISTS</div>
   <div class="card-body"><img src="images/cover_pythontoolsscientists.png" alt="python tools for scientists book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991085500459808507">Python tools for scientists : an introduction to using Anaconda, Jupyterlab, and Python's scientific libraries</a></h4><p>by Lee Vaughan<br>San Francisco: No Starch Press, 2023.</p>
@@ -101,7 +101,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 :::
 
 # O'Reilly Online Learning
-For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O'Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
 
 # Workshops and Events
 University Libraries offers a variety of data skills [workshops and events](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) for Ohio State faculty, students and staff throughout the academic year. 
