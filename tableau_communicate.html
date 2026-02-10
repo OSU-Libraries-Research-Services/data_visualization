@@ -316,11 +316,13 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
 </section>
 <section id="arguing-with-data" class="level1">
 <h1>Arguing with data</h1>
-<p><strong>Understanding your audience is not only essential for effective data visualization—it’s also a cornerstone of data literacy.</strong> While academic research papers typically follow a structured format (introduction, literature review, methodology, discussion, and conclusion) and adhere to style guides like the Chicago Manual of Style for visuals, this approach may not suit every audience. When advocating with data, a more impactful strategy might involve using simple icons, bold numbers, and brief explanatory text to quickly engage and motivate action.</p>
+<p><strong>Understanding your audience is not only essential for effective data visualization, it’s also a cornerstone of data literacy.</strong> While academic research papers typically follow a structured format (introduction, literature review, methodology, discussion, and conclusion) and adhere to style guides like the Chicago Manual of Style for visuals, this approach may not suit every audience. When advocating with data, a more impactful strategy might involve using simple icons, bold numbers, and brief explanatory text to quickly engage and motivate action.</p>
 <p><img src="images/nonprofit_impact_matters.png" title="Example from nonprofitimpactmatters.org of a visual using large numbers, simple icons, and explanatory text to motivate action." class="img-fluid"></p>
+<div>
 <h6 a="" href="https://www.nonprofitimpactmatters.org/" class="anchored">
 https://www.nonprofitimpactmatters.org/
 </h6>
+</div>
 <section id="ethical-use-of-data" class="level2">
 <h2 class="anchored" data-anchor-id="ethical-use-of-data">Ethical use of data</h2>
 <p>Handling data responsibly—especially when it includes personally identifiable information—requires thoughtful ethical practices. From how data is collected and stored to how it’s shared and used, each step involves important considerations. To explore these principles further, check out this informative video from Virginia Tech University Libraries.</p>
@@ -334,8 +336,8 @@ https://www.nonprofitimpactmatters.org/
 </section>
 <section id="managing-data" class="level1">
 <h1>Managing data</h1>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/-wjFMMQD3UA?si=h91u_HZRrcXVRIgI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <p>Having a plan to organize, store, preserve, and share research data is an important aspect of the research lifecycle. Check out University Libraries resources supporting <strong><a href="https://guides.osu.edu/IntroDataManagement">Research Data Management</a></strong>.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/-wjFMMQD3UA?si=h91u_HZRrcXVRIgI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 <section id="choose-an-effective-visual" class="level1">
 <h1>Choose an effective visual</h1>
@@ -634,11 +636,17 @@ Hover over a bar to preview and proofread the tooltip.
 <h1>Calculated fields and parameters</h1>
 <section id="calculated-fields" class="level2">
 <h2 class="anchored" data-anchor-id="calculated-fields">🧮 Calculated fields</h2>
-<p>Calculated fields empower you to transform your data directly within Tableau. You can use them to clean and organize data, define custom segments, add interactivity, and even perform statistical or mathematical calculations—all without modifying the original dataset.</p>
-<p>For example, in the <code>rock_n_roll_studio_albums</code> table, you’ll find album certification statuses from organizations like the <strong><a href="https://en.wikipedia.org/wiki/Recording_Industry_Association_of_America">RIAA</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/British_Phonographic_Industry">BPI</a></strong>, and <strong><a href="https://en.wikipedia.org/wiki/Australian_Recording_Industry_Association">ARIA</a></strong>. With calculated fields, you can standardize these certifications, compare award levels across countries, or even create new fields that group albums by global recognition—making your analysis more insightful and dynamic.</p>
+<p>Calculated fields empower you to transform your data directly within Tableau. You can use them to clean and organize data, define custom segments, add interactivity, and even perform statistical or mathematical calculations, all without modifying the original dataset.</p>
+<p>For example, in the <code>rock_n_roll_studio_albums</code> table, you’ll find album certification statuses from organizations like the <strong><a href="https://en.wikipedia.org/wiki/Recording_Industry_Association_of_America">RIAA</a></strong>, <strong><a href="https://en.wikipedia.org/wiki/British_Phonographic_Industry">BPI</a></strong>, and <strong><a href="https://en.wikipedia.org/wiki/Australian_Recording_Industry_Association">ARIA</a></strong>. With calculated fields, you can standardize these certifications, compare award levels across countries, or even create new fields that group albums by global recognition, making your analysis more insightful and dynamic.</p>
 <p>Let’s take a closer look at how <strong>calculated fields</strong> work by analyzing <strong>RIAA certifications</strong> for our favorite albums.</p>
 <p>Over time, the <strong><a href="https://en.wikipedia.org/wiki/Recording_Industry_Association_of_America">Recording Industry Association of America (RIAA)</a></strong> has updated its certification standards to reflect changes in how music is consumed. Originally based solely on album sales, certifications now account for digital downloads and streaming activity. To keep things simple, we’ll use the current criteria for album-level awards, as defined by the RIAA in <strong>February 2016</strong>:</p>
-<p>🎵 <strong>RIAA Certification Levels</strong> - Gold: 500,000 units - Platinum: 1,000,000 units - Multi-Platinum: 2,000,000+ units (in 1,000,000-unit increments) - Diamond: 10,000,000 units</p>
+<p>🎵 <strong>RIAA Certification Levels</strong></p>
+<ul>
+<li>Gold: 500,000 units</li>
+<li>Platinum: 1,000,000 units</li>
+<li>Multi-Platinum: 2,000,000+ units (in 1,000,000-unit increments)</li>
+<li>Diamond: 10,000,000 units</li>
+</ul>
 <p>💽 <strong>What Counts as a Unit?</strong> A single unit can be any of the following:</p>
 <ul>
 <li>One full digital or physical album sale</li>
@@ -716,8 +724,12 @@ Video of steps 1-5 above
 </section>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
-<p>In Tableau, parameters: - <strong>Replace constant values</strong> such as numbers, dates, or text strings in calculations, filters, or reference lines—making your dashboards more flexible and dynamic. - <strong>Enhance interactivity</strong> by allowing users to control what data is displayed or how it’s calculated, depending on how the parameter is integrated into the view.</p>
-<p>Let’s take our <strong>CalculatedFields</strong> text table and <strong>transform it into a bar chart</strong>—a perfect opportunity to explore how <strong>parameters</strong> can add interactivity and flexibility to your visualization.</p>
+<p>In Tableau, parameters:</p>
+<ul>
+<li><strong>Replace constant values</strong> such as numbers, dates, or text strings in calculations, filters, or reference lines, making your dashboards more flexible and dynamic.</li>
+<li><strong>Enhance interactivity</strong> by allowing users to control what data is displayed or how it’s calculated, depending on how the parameter is integrated into the view.</li>
+</ul>
+<p>Let’s take our <strong>CalculatedFields</strong> text table and <strong>transform it into a bar chart</strong>.</p>
 <ol type="1">
 <li><strong>Duplicate the existing sheet</strong>
 <ul>
@@ -857,13 +869,24 @@ And much more!
 </section>
 <section id="dual-axis-map" class="level2">
 <h2 class="anchored" data-anchor-id="dual-axis-map">🗺️ Dual-axis map</h2>
-<p>To see Ohio alone, build a dual-axis map that combines features from both the symbol and the choropleth map. 1. <strong>Duplicate</strong> the <strong>SymbolMap</strong> worksheet and rename it <strong>DualAxisMap</strong> 2. <strong>Create the dual axis</strong> - Hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>AVG(Latitude)</strong> to the right on the <strong>Rows</strong> shelf to duplicate it. 3. <strong>Create a calculated field</strong> - In the <strong>Data Pane</strong>, click the ▼ caret next to the search bar and choose <strong>Create Calculated Field</strong>. - <strong>Name</strong> the field <strong>State</strong>. - Enter the following formula:</p>
-<pre><code>                "OH"
- This expression creates a field for **State** and assigns the string "OH" to every row in the dataset.</code></pre>
+<p>To see Ohio alone, build a dual-axis map that combines features from both the symbol and the choropleth map.</p>
+<ol type="1">
+<li><strong>Duplicate</strong> the <strong>SymbolMap</strong> worksheet and rename it <strong>DualAxisMap</strong></li>
+<li><strong>Create the dual axis</strong>
 <ul>
-<li>Change <strong>State</strong> to <strong>String</strong> data type (if not already) and set <strong>Geographic Role</strong> to <strong>State/Province</strong>.</li>
+<li>Hold <strong>Ctrl</strong> (or <strong>Option</strong> on Mac) and drag <strong>AVG(Latitude)</strong> to the right on the <strong>Rows</strong> shelf to duplicate it.</li>
+</ul></li>
+<li><strong>Create a calculated field</strong>
+<ul>
+<li>In the <strong>Data Pane</strong>, click the ▼ caret next to the search bar and choose <strong>Create Calculated Field</strong>.</li>
+<li><strong>Name</strong> the field <strong>State</strong>.</li>
+<li>Enter the following formula:</li>
 </ul>
-<ol start="4" type="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>                 <span class="co">"OH"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>This expression creates a field for <strong>State</strong> and assigns the string “OH” to every row in the dataset.</li>
+<li>Change <strong>State</strong> to <strong>String</strong> data type (if not already) and set <strong>Geographic Role</strong> to <strong>State/Province</strong>.</li>
+</ul></li>
 <li><strong>Format to isolate state</strong>
 <ul>
 <li>On the <strong>Marks Card</strong> for <strong>AVG(Latitude) (2):</strong>
@@ -903,7 +926,7 @@ And much more!
 </section>
 <section id="dashboards" class="level1">
 <h1>Dashboards</h1>
-<p>Creating effective dashboards is both an art and a science—a skill that develops with time, experience, and thoughtful practice. Great dashboards are tailored to a specific audience, provide clear context and guidance, encourage interaction, and follow visual best practices.</p>
+<p>Creating effective dashboards is both an art and a science and is a skill that develops with time, experience, and thoughtful practice. Great dashboards are tailored to a specific audience, provide clear context and guidance, encourage interaction, and follow visual best practices.</p>
 <p>Before diving into design, pause and consider your audience. A highly detailed, data-dense dashboard might be perfect for one group but overwhelming for another. Some users may need narrative context embedded in each view. Ask yourself:</p>
 <ul>
 <li>What is the primary goal of this dashboard?</li>
