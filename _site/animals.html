@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
@@ -315,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#bonus-tryexcept" id="toc-bonus-tryexcept" class="nav-link" data-scroll-target="#bonus-tryexcept">BONUS: try/except</a>
   <ul class="collapse">
-  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">🧪 How It Works</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">How It Works</a></li>
   </ul></li>
   <li><a href="#step-6.-write-and-test-code" id="toc-step-6.-write-and-test-code" class="nav-link" data-scroll-target="#step-6.-write-and-test-code">Step 6. Write and test code</a></li>
   </ul>
@@ -358,8 +367,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>Identify search parameters and understand how they are inserted into a url.</li>
 <li>Navigate document, element, attribute, and text nodes in a Document Object Model (DOM).</li>
-<li>Extract and store HTML elements</li>
-<li>Export data to .csv</li>
+<li>Extract and store HTML elements,</li>
+<li>Export data to <code>.csv</code> files.</li>
 </ol>
 <p>This tutorial is designed to support multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> hosted by The Ohio State University Libraries Research Commons. It assumes you already have a basic understanding of Python, including how to iterate through lists and dictionaries to extract data using a for loop. To learn basic Python concepts visit the <a href="./python_basics.html">Python - Mastering the Basics</a> tutorial.</p>
 </section>
@@ -380,11 +389,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="fair-use" class="level2">
 <h2 class="anchored" data-anchor-id="fair-use">Fair Use</h2>
-<p>Limited use of copyrighted materials is allowed under certain conditions for journalism, scholarship, and teaching. <a href="https://library.osu.edu/copyright/fair-use">Use the Resources for determining fair use</a> to verify your project is within the scope of fair use. Contact University Libraries <a href="https://library.osu.edu/copyright">Copyright Services</a> if you have any questions.</p>
+<p>Limited use of copyrighted materials is allowed under certain conditions for journalism, scholarship, and teaching. Use the Resources for determining <a href="https://library.osu.edu/copyright/fair-use">Fair Use</a> to verify your project is within the scope of fair use. Contact University Libraries <a href="https://library.osu.edu/copyright">Copyright Services</a> if you have any questions.</p>
 </section>
 <section id="check-for-robots.txt-directives" class="level2">
 <h2 class="anchored" data-anchor-id="check-for-robots.txt-directives">Check for robots.txt directives</h2>
-<p>robots.txt directives limit web-scraping or web-crawling. Look for this file in the root directory of the website by adding /robots.txt to the end of the url. Respect these directives.</p>
+<p><strong>robots.txt</strong> directives limit web-scraping or web-crawling. Look for this file in the root directory of the website by adding <strong>/robots.txt</strong> to the end of the url. Respect these directives.</p>
 <div id="accordionExercise1" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex1-headingOne">
@@ -445,7 +454,7 @@ The copyright restrictions for the <a href="https://nationalzoo.si.edu/">Smithso
 <div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex2-headingOne" data-bs-parent="#accordionExercise2">
 <div class="accordion-body fs-4">
 <p>
-Go to <a href="https://nationalzoo.si.edu/animals/list">Meet the Animals</a>_ and choose an animal to examine from the list. Note the structure of the URL. Return to <a href="https://nationalzoo.si.edu/animals/list">Meet the Animals</a> and select another animal to examine. Confirm the structure of the URL.
+Go to <a href="https://nationalzoo.si.edu/animals/list">Meet the Animals</a> and choose an animal to examine from the list. Note the structure of the URL. Return to <a href="https://nationalzoo.si.edu/animals/list">Meet the Animals</a> and select another animal to examine. Confirm the structure of the URL.
 </p>
 </div>
 </div>
@@ -469,7 +478,7 @@ The base URL for the <a href="https://nationalzoo.si.edu/animals/list">Meet the 
 <section id="step-4.-inspect-the-elements" class="level1">
 <h1>Step 4. Inspect the elements</h1>
 <p>Both <strong>XML</strong> and <strong>HTML</strong> are structured as trees, where elements are nested within one another. When you request a URL, the server returns an HTML or XML document. Your browser then downloads and parses this document to display it visually.</p>
-<p>In <a href="./lantern.html">Lesson 1</a> we worked with well-structured XML, which made it easy to navigate:</p>
+<p>In <a href="./lantern.html">Lesson 1</a> we worked with well-structured XML, which made it easy to navigate.</p>
 <ul>
 <li>Each article was uniquely identified by the <code>&lt;LogicalSectionID&gt;</code> tag.</li>
 <li>Titles appeared in the <code>&lt;LogicalSectionTitle&gt;</code> tag.</li>
@@ -484,31 +493,21 @@ The base URL for the <a href="https://nationalzoo.si.edu/animals/list">Meet the 
 <li><strong>Right-click</strong> on the element you want to inspect (e.g., the common name).</li>
 <li>Select <strong>Inspect</strong>.</li>
 </ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/meerkat_inspect.png" title="Screenshot showing the word Inspect at the bottom of options in window that opens after right clicking webpage" class="img-fluid figure-img"></p>
-<figcaption>meerkat_inspect.png</figcaption>
-</figure>
-</div>
+<p><img src="images/meerkat_inspect.png" title="Screenshot showing the word Inspect at the bottom of options in window that opens after right clicking webpage" class="img-fluid"></p>
 <p>This opens the <strong><a href="https://developer.chrome.com/docs/devtools/dom">Developer Tools</a></strong> panel, typically on the right of the screen.</p>
 <ul>
 <li><p>The default <strong>Elements</strong> tab shows the HTML structure (DOM).</p></li>
 <li><p>Scroll through the rendered HTML to explore more content.</p></li>
-<li><p><img src="images/inspect_icon.png" title="Decorative" class="img-fluid" alt="inspect icon"> Click the <strong>inspect icon</strong> in the top-left corner of the in the Developer Tools panel.</p></li>
+<li><p><img src="images/inspect_icon.png" title="Decorative" class="img-fluid"> Click the <strong>inspect icon</strong> in the top-left corner of the in the Developer Tools panel.</p></li>
 <li><p>Hover over elements on the webpage to highlight them in the HTML.</p></li>
 </ul>
 <p>As you hover, Chrome will:</p>
 <ul>
-<li>Highlight the corresponding element on the page</li>
-<li>Show a tooltip with tag details (e.g., class, ID)</li>
-<li>Reveal the element’s location in the HTML tree</li>
+<li>Highlight the corresponding element on the page.</li>
+<li>Show a tooltip with tag details (e.g., class, ID).</li>
+<li>Reveal the element’s location in the HTML tree.</li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/meerkat_inspect_element.png" title="the Developer Tools highlight where the element is located in the HTML and provide a tooltip with additional information about the element" class="img-fluid figure-img"></p>
-<figcaption>meerkat_inspect_element</figcaption>
-</figure>
-</div>
+<p><img src="images/meerkat_inspect_element.png" title="the Developer Tools highlight where the element is located in the HTML and provide a tooltip with additional information about the element" class="img-fluid"></p>
 <p>This process helps you identify the exact tags and attributes you’ll need to target when scraping data from the page.</p>
 </section>
 <section id="viewing-an-elements-html-structure" class="level2">
@@ -520,18 +519,8 @@ The base URL for the <a href="https://nationalzoo.si.edu/animals/list">Meet the 
 <li>Paste the copied HTML into <strong>Notepad</strong> or any text editor to view its full structure and attributes.</li>
 </ol>
 <p>This is especially helpful for identifying tags, classes, and nesting when preparing to extract data through web scraping.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/meerkat_copy_element.png" title="Screenshot showing location of copy element" class="img-fluid figure-img"></p>
-<figcaption>meerkat_copy_element.png</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/meerkat_notepad.png" title="Screenshot of HTML snippet for selected element" class="img-fluid figure-img"></p>
-<figcaption>meerkat_notepad.png</figcaption>
-</figure>
-</div>
+<p><img src="images/meerkat_copy_element.png" title="Screenshot showing location of copy element" class="img-fluid"></p>
+<p><img src="images/meerkat_notepad.png" title="Screenshot of HTML snippet for selected element" class="img-fluid"></p>
 <div id="accordionExercise3" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex3-headingOne">
@@ -593,19 +582,19 @@ Fun facts
 <section id="step-5.-identify-python-libraries-for-project" class="level1">
 <h1>Step 5. Identify Python libraries for project</h1>
 <section id="requests" class="level2">
-<h2 class="anchored" data-anchor-id="requests"><a href="https://requests.readthedocs.io/en/latest/">requests</a></h2>
-<p>The <a href="https://requests.readthedocs.io/en/latest/">requests</a> library retrieves HTML or XML documents from a server and processes the response.</p>
+<h2 class="anchored" data-anchor-id="requests">requests</h2>
+<p>The <strong><a href="https://requests.readthedocs.io/en/latest/">requests</a></strong> library retrieves HTML or XML documents from a server and processes the response.</p>
 </section>
 <section id="beautifulsoup" class="level2">
-<h2 class="anchored" data-anchor-id="beautifulsoup"><a href="https://beautiful-soup-4.readthedocs.io/en/latest/">BeautifulSoup</a></h2>
-<p><a href="https://beautiful-soup-4.readthedocs.io/en/latest/">BeautifulSoup</a> parses HTML and XML documents, helping you search for and extract elements from the DOM.</p>
+<h2 class="anchored" data-anchor-id="beautifulsoup">BeautifulSoup</h2>
+<p><strong><a href="https://beautiful-soup-4.readthedocs.io/en/latest/">BeautifulSoup</a></strong> parses HTML and XML documents, helping you search for and extract elements from the DOM.</p>
 </section>
 <section id="pandas" class="level2">
-<h2 class="anchored" data-anchor-id="pandas"><a href="https://pandas.pydata.org/docs/user_guide/index.html">pandas</a></h2>
-<p>Pandas is a large Python library used for manipulating and analyzing tabular data. Helpful Pandas methods include:</p>
+<h2 class="anchored" data-anchor-id="pandas">pandas</h2>
+<p><strong><a href="https://pandas.pydata.org/docs/user_guide/index.html">Pandas</a></strong> is a large Python library used for manipulating and analyzing tabular data. Helpful Pandas methods include:</p>
 <section id="pd.dataframe" class="level3">
 <h3 class="anchored" data-anchor-id="pd.dataframe">pd.DataFrame</h3>
-<p>A Pandas <strong>DataFrame</strong> is one of the most powerful and commonly used data structures in Python for working with <strong>tabular data</strong>—data that is organized in rows and columns, similar to a spreadsheet or SQL table.</p>
+<p>A Pandas <strong>DataFrame</strong> is one of the most powerful and commonly used data structures in Python for working with <strong>tabular data</strong>, or data that is organized in rows and columns, similar to a spreadsheet or SQL table.</p>
 <p>A <strong>DataFrame</strong> is a 2-dimensional labeled data structure with:</p>
 <ul>
 <li><strong>Rows</strong> (each representing an observation or record)</li>
@@ -671,8 +660,8 @@ Fun facts
 <p>🔗 See <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html#pandas.read_csv">Pandas .read_csv( )</a> documentation.</p>
 </section>
 <section id="tolist" class="level3">
-<h3 class="anchored" data-anchor-id="tolist"><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.to_list.html">.tolist( )</a></h3>
-<p>The method <code>.tolist()</code> is used in to convert a <strong>Series</strong> (a single column of data) into a <strong>Python list</strong>.</p>
+<h3 class="anchored" data-anchor-id="tolist">.tolist( )</h3>
+<p>The method <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.Series.to_list.html">.tolist( )</a></strong> is used in to convert a <strong>Series</strong> (a single column of data) into a <strong>Python list</strong>.</p>
 <div id="9e07b490" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df.Series.tolist()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -698,6 +687,7 @@ Fun facts
 <div id="107b1a57" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>DataFrame.dropna(<span class="op">*</span>, axis<span class="op">=</span><span class="dv">0</span>, how<span class="op">=&lt;</span>no_default<span class="op">&gt;</span>, thresh<span class="op">=&lt;</span>no_default<span class="op">&gt;</span>, subset<span class="op">=</span><span class="va">None</span>, inplace<span class="op">=</span><span class="va">False</span>, ignore_index<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>🔗 See <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.dropna.html">.dropna( )</a> documentation.</p>
 </section>
 <section id="fillna" class="level3">
 <h3 class="anchored" data-anchor-id="fillna">.fillna( )</h3>
@@ -860,7 +850,7 @@ patagonian-mara</code></pre>
 <p>Even with well-written code, things can go wrong—like missing HTML tags on a webpage or inconsistent data formats. That’s where Python’s try / except blocks come in.</p>
 <p>They allow your program to <strong>handle errors gracefully</strong> instead of crashing.</p>
 <section id="how-it-works" class="level2">
-<h2 class="anchored" data-anchor-id="how-it-works">🧪 How It Works</h2>
+<h2 class="anchored" data-anchor-id="how-it-works">How It Works</h2>
 <ul>
 <li>The code inside the <strong>try</strong> block is executed first.</li>
 <li>If an error occurs, Python jumps to the except block.</li>
@@ -1171,7 +1161,7 @@ Fun facts
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
