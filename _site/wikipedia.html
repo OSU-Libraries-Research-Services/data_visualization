@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -334,8 +343,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ol type="1">
-<li>Extract and store tables and other HTML elements in a structured format</li>
-<li>Apply best practices for managing data</li>
+<li>Extract and store tables and other HTML elements in a structured format.</li>
+<li>Apply best practices for managing data.</li>
 </ol>
 <p>This tutorial is designed to support multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> offered by The Ohio State University Libraries Research Commons. It assumes you already have a basic understanding of Python, including how to iterate through lists and dictionaries to extract data using a for loop. To learn basic Python concepts visit the <a href="./python_basics.html">Python - Mastering the Basics</a> tutorial.</p>
 </section>
@@ -343,8 +352,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>LESSON 3</h1>
 <p><a href="./lantern.html">Lesson 1</a> and <a href="./animals.html">Lesson 2</a> introduced the basic steps for any webscraping or API project:</p>
 <ol type="1">
-<li>Review and understand copyright and terms of use.</li>
-<li>Check to see if an API is available.</li>
+<li>Review and understand copyright and terms of use</li>
+<li>Check to see if an API is available</li>
 <li>Examine the URL</li>
 <li>Inspect the elements</li>
 <li>Identify Python libraries for project</li>
@@ -527,7 +536,8 @@ List the Python libraries you may need to import for this project.
 <div class="accordion-body">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO <span class="co">#recommended to avoid FutureWarning. Parses literal HTML strings in modern pandas versions.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -542,7 +552,7 @@ List the Python libraries you may need to import for this project.
 <div id="890048ab" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> StringIO <span class="co">#recommended to avoid FutureWarning. Parses literal HTML strings in modern pandas versions.</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>url<span class="op">=</span><span class="st">'https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States'</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>}</span>
@@ -591,7 +601,7 @@ Visit the Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll
 <h1>BeautifulSoup</h1>
 <section id="find_previous-and-.find_all_previous" class="level2">
 <h2 class="anchored" data-anchor-id="find_previous-and-.find_all_previous">.find_previous( ) and .find_all_previous( )</h2>
-<p>Similar to <strong><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find-all-next-and-find-next">.find_next( ) and .find_all_next( )</a></strong>, <strong><a href="https://beautiful-soup-4.readthedocs.io/en/latest/#find-all-previous-and-find-previous">.find_previous( )</a></strong> and <strong><a href="https://beautiful-soup-4.readthedocs.io/en/latest/#find-all-previous-and-find-previous">.find_all_previous( )</a></strong> gathers the previous instance of a named tag.</p>
+<p>Similar to <strong><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find-all-next-and-find-next">.find_next( )</a></strong> and <strong><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/#find-all-next-and-find-next">.find_all_next( )</a></strong>, <strong><a href="https://beautiful-soup-4.readthedocs.io/en/latest/#find-all-previous-and-find-previous">.find_previous( )</a></strong> and <strong><a href="https://beautiful-soup-4.readthedocs.io/en/latest/#find-all-previous-and-find-previous">.find_all_previous( )</a></strong> gathers the previous instance of a named tag.</p>
 <div id="accordionExercise7" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex7-headingOne">
@@ -906,7 +916,7 @@ Increment counter variables for table numbers.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
