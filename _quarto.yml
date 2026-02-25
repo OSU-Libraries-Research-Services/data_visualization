@@ -18,7 +18,7 @@ website:
   navbar:
     search: true
     logo: images/home_standard_icon.png
-    logo-href: index.qmd
+    logo-href: https://library.osu.edu/
     left:
       - text: "Library Resources"
         href: overview.qmd
@@ -27,8 +27,6 @@ website:
       - text: "Tableau Tutorials"
         href: tableau_for_research.ipynb
     right:
-      - text: "<img src='images/libraries_logo.jpg' alt='OSU Libraries' style='height:24px;'>"
-        href: https://library.osu.edu/
       - icon: github
         href: https://github.com/OSU-Libraries-Research-Services/data_visualization
 
