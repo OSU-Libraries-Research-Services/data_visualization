@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -338,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ol type="1">
-<li>Locate API documentation and identify key components required to formulate an API request</li>
+<li>Locate API documentation and identify key components required to formulate an API request.</li>
 <li>Parse an API response and store extracted data.</li>
 <li>Utilize regular expressions to search, match, and manipulate text.</li>
 </ol>
@@ -348,8 +357,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip
 </div>
 <div class="card-body">
-<img src="images/microsoft_copilot_icon.svg" alt="" aria-hidden="true">The Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual can be overwhelming to read and comprehend at first. The example code is written in Perl script, not Python and the documentation assumes you are familiar working with APIs and programming tools. Before starting this tutorial, <strong>ask Copilot</strong> to <span class="text-primary">explain entrez e-utilities</span>. Copilot returns a useful summary of the key components and functionalities of these tools, explains how they work, provides an example workflow, and identifies potential use cases. As you become more comfortable working with APIs, you can revisit the Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual to learn how to do more complex tasks.
+The Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual can be overwhelming to read and comprehend at first. The example code is written in Perl script, not Python and the documentation assumes you are familiar working with APIs and programming tools. Before starting this tutorial, <strong>ask Copilot</strong> to <span class="text-primary">explain entrez e-utilities</span>. Copilot returns a useful summary of the key components and functionalities of these tools, explains how they work, provides an example workflow, and identifies potential use cases. As you become more comfortable working with APIs, you can revisit the Enztrez <a href="https://www.ncbi.nlm.nih.gov/books/NBK25500/">E-utilities</a> manual to learn how to do more complex tasks.
 </div>
+<p><img src="images/microsoft_copilot_icon.svg" alt="" aria-hidden="true"></p>
 </div>
 </section>
 <section id="lesson-5" class="level1">
@@ -426,9 +436,22 @@ URL = https://pubmed.ncbi.nlm.nih.gov/<strong>39773557</strong>/
 </section>
 <section id="step-1.-construct-an-efetch-request" class="level2">
 <h2 class="anchored" data-anchor-id="step-1.-construct-an-efetch-request">Step 1. Construct an EFetch request</h2>
-<p>To retrieve XML data for a PubMed article, use the following components: - <strong>Base URL</strong>: <code>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</code> - <strong>Parameters</strong>: - <strong>Database name</strong>: <code>?db=pubmed</code> - <strong>Unique identifier</strong>: <code>&amp;id=39773557</code> - <strong>API key</strong>: <code>&amp;api_key=INSERT YOUR API KEY HERE</code></p>
+<p>To retrieve XML data for a PubMed article, use the following components:</p>
+<ul>
+<li><strong>Base URL</strong>: <code>https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi</code></li>
+<li><strong>Parameters</strong>:
+<ul>
+<li><strong>Database name</strong>: <code>?db=pubmed</code></li>
+<li><strong>Unique identifier</strong>: <code>&amp;id=39773557</code></li>
+<li><strong>API key</strong>: <code>&amp;api_key=INSERT YOUR API KEY HERE</code></li>
+</ul></li>
+</ul>
 <p>Required parameters for an <strong>EFetch</strong> request depend on the specific Entrez <a href="(https://www.ncbi.nlm.nih.gov/books/NBK25497/table/chapter2.T._entrez_unique_identifiers_ui/?report=objectonly)__">database</a> you are querying. For <strong>PubMed</strong>, the default EFetch response format is XML.</p>
-<p>To manage request volume, the <strong>NCBI</strong> enforces rate limits: - Without an API key: <strong>3 requests per second</strong> - With an API key: <strong>up to 10 requests per second</strong></p>
+<p>To manage request volume, the <strong>NCBI</strong> enforces rate limits:</p>
+<ul>
+<li>Without an API key: <strong>3 requests per second</strong></li>
+<li>With an API key: <strong>up to 10 requests per second</strong></li>
+</ul>
 <p>While you can view a single XML record without an API key, completing the exercises in this tutorial requires one. You can obtain an API key by visiting the <strong>Settings page of your <a href="https://www.ncbi.nlm.nih.gov/account/">NCBI account</a></strong>.</p>
 <div id="accordionExercise2" class="accordion">
 <div class="accordion-item">
@@ -465,7 +488,12 @@ Example:
 </section>
 <section id="step-2.-identify-python-libraries-for-project" class="level2">
 <h2 class="anchored" data-anchor-id="step-2.-identify-python-libraries-for-project">Step 2. Identify Python libraries for project</h2>
-<p>The following Python libraries are needed for this project: - <code>requests</code> – to make HTTP requests - <code>pandas</code> – to manage and store data - <code>BeautifulSoup</code>– to parse XML and extract affiliations</p>
+<p>The following Python libraries are needed for this project:</p>
+<ul>
+<li><code>requests</code> – to make HTTP requests</li>
+<li><code>pandas</code> – to manage and store data</li>
+<li><code>BeautifulSoup</code>– to parse XML and extract affiliations</li>
+</ul>
 <div id="accordionExercise3" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex3-headingOne">
@@ -573,13 +601,17 @@ Handles missing or incomplete data gracefully
 </section>
 <section id="regular-expressions-regex" class="level2">
 <h2 class="anchored" data-anchor-id="regular-expressions-regex">Regular Expressions (regex)</h2>
-<p>Analyzing author and affiliation data can be messy due to: - Inconsistent naming conventions - Variations in institutional affiliation formats - Ambiguities in author identify.</p>
+<p>Analyzing author and affiliation data can be messy due to:</p>
+<ul>
+<li>Inconsistent naming conventions</li>
+<li>Variations in institutional affiliation formats</li>
+<li>Ambiguities in author identify.</li>
+</ul>
 <div class="card border-primary mb-3 p-1" style="max-width: 100%;">
 <div class="card-header" style="font-size: 1.8rem;">
-<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: ORCID
+<img src="images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Tip: ORCID <img src="images/orcid_24x24.png" alt="orcid logo" aria-hidden="true">
 </div>
 <div class="card-body">
-<img src="images/orcid_24x24.png" alt="orcid logo">
 <p>
 <a href="https://orcid.org/register">Create your ORCID iD</a>to help researchers distinguish your work from others and better track the impact of your work.
 </p>
@@ -588,7 +620,12 @@ PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Se
 </p>
 </div>
 </div>
-<p><strong>Regular expressions (regex)</strong> match patterns in text. Often described as wildcards on steroids, regular expressions help: - <strong>Validate</strong> patterns (e.g., ZIP codes: (^$)) - <strong>Extract</strong> variations (e.g., “ha?ematology” matches both “hematology” and “haematology”) - <strong>Replace</strong> text (e.g., re.sub(r’, ‘Ohio’, text))</p>
+<p><strong>Regular expressions (regex)</strong> match patterns in text. Often described as wildcards on steroids, regular expressions help:</p>
+<ul>
+<li><strong>Validate</strong> patterns (e.g., ZIP codes: (^$))</li>
+<li><strong>Extract</strong> variations (e.g., “ha?ematology” matches both “hematology” and “haematology”)</li>
+<li><strong>Replace</strong> text (e.g., re.sub(r’, ‘Ohio’, text))</li>
+</ul>
 <p>Regular expressions are included in several programming langauges and software programs including Python, JavaScript, and Tableau.</p>
 <section id="common-regex-patterns" class="level3">
 <h3 class="anchored" data-anchor-id="common-regex-patterns">Common Regex Patterns</h3>
@@ -630,7 +667,7 @@ PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Se
 </tr>
 </tbody>
 </table>
-<p><strong><a href="https://www.w3schools.com/python/gloss_python_regex_metacharacters.asp">Metacharacters</a></strong> are special symbols in regular expressions that represent patterns rather than literal characters. To match them as literal characters, you must <strong>escape them with a backslash ( &nbsp;)</strong>.</p>
+<p><strong><a href="https://www.w3schools.com/python/gloss_python_regex_metacharacters.asp">Metacharacters</a></strong> are special symbols in regular expressions that represent patterns rather than literal characters. To match them as literal characters, you must <strong>escape them with a backslash ( \ )</strong>.</p>
 </section>
 <section id="common-metacharacters-and-their-functions" class="level3">
 <h3 class="anchored" data-anchor-id="common-metacharacters-and-their-functions">Common metacharacters and their functions</h3>
@@ -709,39 +746,33 @@ PubMed now embeds the ORCID in <span class="text-primary">Author</span> tags. Se
 <section id="learning-resources" class="level3">
 <h3 class="anchored" data-anchor-id="learning-resources">LEARNING RESOURCES</h3>
 <div class="grid g-4">
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
 <div class="card-header">
 REGEX 101
 </div>
 <div class="card-body">
 <img src="images/regex101.png" alt="Screenshot of regex101 homepage" class="d-block mx-auto">
-<h4 class="card-title anchored">
-<a href="https://regex101.com/">regular expressions 101: build, test, and debug regex
-</a></h4><a href="https://regex101.com/">
-</a></div><a href="https://regex101.com/">
-</a><ul><a href="https://regex101.com/">
-</a><li><a href="https://regex101.com/">
-</a><a href="https://regex101.com/">regular expressions 101: build, test, and debug regex</a> is an interactive tool that helps you build, test, and debug regular expressions across multiple programming languages. It lets you test your regex against sample text, provides real-time explanations as you type, and includes a searchable reference for regex syntax.
+</div>
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+<a href="https://regex101.com/">regular expressions 101: build, test, and debug regex</a> is an interactive tool that helps you build, test, and debug regular expressions across multiple programming languages. <strong>regex101</strong> lets you test your regex against sample text, provides real-time explanations as you type, and includes a searchable reference for regex syntax.
 </li>
 </ul>
 </div>
 </div>
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-light mb-3" style="max-width: 20rem;">
 <div class="card-header">
 EFFECTIVE DATA VISUALIZATION
 </div>
 <div class="card-body">
 <img src="images/cover_learning_regular_expressions.png" alt="learning regular expressions book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
-<h4 class="card-title anchored">
-<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a>
-</h4>
 </div>
-<ul>
-
-<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a> by <strong>Ben Forta</strong>** is available through the Libraries’ <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507">O’Reilly Online Learning</a> collection of technical books and videos. Each chapter is structured as a lesson, guiding you through how to match individual characters or sets of characters, use metacharacters, and more—making it a practical resource for mastering regex step by step.
-
+<ul class="list-group list-group-flush">
+<li class="list-group-item">
+<a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085516536408507">Learning Regular Expressions</a> by Ben Forta is available through the Libraries’ <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507">O’Reilly Online Learning</a> collection of technical books and videos. Each chapter is structured as a lesson, guiding you through how to match individual characters or sets of characters, use metacharacters, and more, making it a practical resource for mastering regex step by step.
+</li>
 </ul>
 </div>
 </div>
@@ -1103,7 +1134,7 @@ Use regular expressions to create a list of institution names from the affiliati
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
