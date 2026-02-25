@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -312,7 +321,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The <strong><a href="https://doi.org/10.1371/journal.pbio.1002541">Relative Citation Ratio</a></strong> (RCR) evaluates the influence of a scientific article by analyzing its co-citation network. An RCR of <strong>1.0</strong> represents the median citation rate for articles in a given field. <strong>Values above 1.0</strong> indicate that an article is cited more frequently than average, suggesting greater impact or influence. In this lesson, we’ll use the <strong><a href="https://reporter.nih.gov/">NIH Reporter</a></strong> to identify an active project at <strong>The Ohio State University</strong> with associated publications. We will then retrieve the <strong>RCR values</strong> for the publications using the <strong><a href="https://icite.od.nih.gov/">iCite</a></strong> API.</p>
+<p>The <strong><a href="https://doi.org/10.1371/journal.pbio.1002541">Relative Citation Ratio</a></strong> (RCR) evaluates the influence of a scientific article by analyzing its co-citation network. An RCR of <strong>1.0</strong> represents the median citation rate for articles in a given field. <strong>Values above 1.0</strong> indicate that an article is cited more frequently than average, suggesting greater impact or influence. In this lesson, we’ll use the <strong><a href="https://reporter.nih.gov/">NIH Reporter</a></strong> to identify an active project at <strong>The Ohio State University</strong> with associated publications. We will then retrieve the <strong>RCR values</strong> for the publications using the <strong><a href="https://icite.od.nih.gov/analysis">iCite</a></strong> API.</p>
 <section id="data-skills-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
 <ul>
@@ -322,7 +331,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ol type="1">
-<li>Locate API documentation and identify key components required to formulate an API request</li>
+<li>Locate API documentation and identify key components required to formulate an API request.</li>
 <li>Parse the API response and store extracted data.</li>
 </ol>
 <p>This tutorial is designed to support multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> hosted by The Ohio State University Libraries Research Commons. It assumes you already have a basic understanding of Python, including how to iterate through lists and dictionaries to extract data using a for loop. To learn basic Python concepts visit the <a href="./python_basics.html">Python - Mastering the Basics</a> tutorial.</p>
@@ -362,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="step-4-export-the-publications" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-export-the-publications">Step 4: Export the publications</h2>
 <ul>
-<li>If the publications are listed, use the <strong>Export</strong> option to download the list for further analysis.</li>
+<li>If publications are listed, use the <strong>Export</strong> option to download the list for further analysis.</li>
 </ul>
 <p><img src="images/nih_reporter_4_export_publications.png" title="Screenshot of the publications page for the project with the location of the Export icon circled" class="img-fluid"></p>
 <div id="accordionExercise1" class="accordion">
@@ -509,28 +518,28 @@ Adjust the <strong>Python code example</strong> to extract the following fields 
 </p>
 <ul>
 <li>
-pmid
+<span class="text-primary">pmid</span>
 </li>
 <li>
-doi
+<span class="text-primary">doi</span>
 </li>
 <li>
-journal
+<span class="text-primary">journal</span>
 </li>
 <li>
-relative citation ratio
+<span class="text-primary">relative citation ratio</span>
 </li>
 <li>
-cited by
+<span class="text-primary">cited by</span>
 </li>
 <li>
-references
+<span class="text-primary">references</span>
 </li>
 <li>
-title
+<span class="text-primary">title</span>
 </li>
 <li>
-year
+<span class="text-primary">year</span>
 </li>
 </ul>
 </div>
@@ -671,7 +680,7 @@ year
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
