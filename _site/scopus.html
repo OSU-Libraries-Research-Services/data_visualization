@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -351,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>How much data</strong> you expect to retrieve - for example, “around 3,500 records.”</li>
 <li><strong>What your final product will be</strong> – such as a research paper, website, or something else.</li>
 </ul>
-<p>It’s a good idea to read through the <strong><a href="https://dev.elsevier.com/sc_apis.html">Getting Started guide for Scopus APIs</a></strong> before submitting your request. It will help you understand how the API works and what to expect. Also, be aware if you usually work off campus, you may need to request an institutional token and answer a few additional questions. Otherwise, you will need to use your API key while connected to the university’s network.</p>
+<p>It’s a good idea to read through the <strong><a href="https://dev.elsevier.com/sc_apis.html">Getting Started guide for Scopus APIs</a></strong> before submitting your request. It will help you understand how the API works and what to expect. Also, be aware if you usually work off-campus, you may need to request an institutional token and answer a few additional questions. Otherwise, you will need to use your API key while connected to the university’s network.</p>
 <p>Once you have your API key and institutional token, if needed, install the stable version of pybliometrics from <strong><a href="https://pypi.org/project/pybliometrics/">PyPI</a></strong>:</p>
 <div id="9f0202d7" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install pybliometrics</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -365,14 +374,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="scopussearch">ScopusSearch</h2>
 <p><strong><a href="https://pybliometrics.readthedocs.io/en/stable/reference/scopus/ScopusSearch.html">ScopusSearch</a></strong> is one of the 11 API interfaces available to interact with Elsevier’s Scopus database through the pybliometrics library. The ScopusSearch class in pybliometrics allows you to …</p>
 <ul>
-<li>Query Scopus using all fields available in Scopus advanced search except “INDEXTERMS()” and “LIMIT-TO()”.</li>
+<li>Query Scopus using all fields available in Scopus advanced search except <code>&lt;span class="text-primary"&gt;</code>INDEXTERMS()<code>and</code>LIMIT-TO()`.</li>
 <li>Filter results</li>
 <li>Retrieve metadata</li>
 </ul>
-<p>The search returns a list of named tuples that can be converted into a DataFrame with pandas for futher analysis or export to CSV.</p>
+<p>The search returns a list of named tuples that can be converted into a DataFrame with pandas for futher analysis or exported to CSV.</p>
 <section id="step-1.-construct-query" class="level3">
 <h3 class="anchored" data-anchor-id="step-1.-construct-query">Step 1. Construct query</h3>
-<p>To get started with the the ScopusSearch class in pybliometrics, we will begin by searching for publications that were: - Funded by the <strong>National Science Foundation (NSF)</strong> - Authored by researchers affiliated with <strong>The Ohio State University</strong> - Published between <strong>2000</strong> and <strong>2001</strong>.</p>
+<p>To get started with the the ScopusSearch class in pybliometrics, we will begin by searching for publications that were:</p>
+<ul>
+<li>Funded by the <strong>National Science Foundation (NSF)</strong></li>
+<li>Authored by researchers affiliated with <strong>The Ohio State University</strong></li>
+<li>Published between <strong>2000</strong> and <strong>2001</strong>.</li>
+</ul>
 <div id="10d981ed" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#identify libraries needed for project</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pybliometrics.scopus <span class="im">import</span> ScopusSearch</span>
@@ -414,9 +428,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Learning to read and interpret documentation is an <strong>essential skill</strong> for anyone working with data. Good documentation can:</p>
 <ul>
 <li><strong>Uncover powerful or lesser-known features</strong> that can enhance your project.</li>
-<li><strong>Introduce optional parameters</strong> that help you fine-tune your queries—for example, setting <code>enncoding=utf8</code>, specifying column headers, or filtering results.</li>
+<li><strong>Introduce optional parameters</strong> that help you fine-tune your queries, for example, setting <code>enncoding=utf8</code>, specifying column headers, or filtering results.</li>
 <li><strong>Define error messages</strong> and guide you through troubleshooting when things don’t work as expected.</li>
-<li><strong>Save your time</strong> by offering accurate, up-to-date information—often more reliable that what you’ll find in scattered or outdated online forums.</li>
+<li><strong>Save your time</strong> by offering accurate, up-to-date information which is often more reliable that what you’ll find in scattered or outdated online forums.</li>
 </ul>
 <div id="accordionExample" class="accordion">
 <div class="accordion-item">
@@ -437,20 +451,27 @@ Create a list of unique author_ids from the publication results you obtained in 
 <li>
 Use the <a href="https://pybliometrics.readthedocs.io/en/stable/reference/scopus/AuthorSearch.html">pybliometrics.scopus.AuthorSearch</a> documentation to write Python code that retrieves the following data for the first 10 unique <strong>author_id</strong>:
 <ul>
+<li>
 <span class="text-primary">author_id</span>
-
+</li>
+<li>
 <span class="text-primary">author_surname</span>
-
+</li>
+<li>
 <span class="text-primary">author_givenname</span>
-
+</li>
+<li>
 <span class="text-primary">author_initials</span>
-
+</li>
+<li>
 <span class="text-primary">author_affiliation</span>
-
+</li>
+<li>
 <span class="text-primary">author_city</span>
-
+</li>
+<li>
 <span class="text-primary">author_country</span>
-
+</li>
 </ul>
 </li>
 <li>
@@ -580,7 +601,7 @@ Export results to <span class="text-primary">.csv</span> file.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
