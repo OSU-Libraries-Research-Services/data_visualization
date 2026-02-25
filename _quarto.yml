@@ -27,6 +27,8 @@ website:
       - text: "Tableau Tutorials"
         href: tableau_for_research.ipynb
     right:
+      - logo: images/libraries_logo.jpg
+        logo-href: https://library.osu.edu/
       - icon: github
         href: https://github.com/OSU-Libraries-Research-Services/data_visualization
 
