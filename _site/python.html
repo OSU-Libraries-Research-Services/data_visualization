@@ -71,6 +71,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -240,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://www.python.org/">Python</a> is a free, general purpose programming language widely used in both academia and industry. It provides a rich ecosystem of libraries, such as <strong>Matplotlib</strong>, <strong>Plotly</strong>, <strong>Pandas</strong>, and <strong>BeautifulSoup</strong>, that support tasks like data collection, cleaning, and visualization.</p>
 <section id="free-resources" class="level1">
 <h1>Free Resources</h1>
-<p>Explore a collection of open-access, discipline-specific textbooks that are completely free to use. Each resource includes highly valuable Jupyter notbooks, which you can download or clone to reinforce your learning. Practice the concepts using the included demo datasets or apply them to your own data for a more personalized experience.</p>
+<p>Explore a collection of open-access, discipline-specific textbooks that are completely free to use. Each resource includes highly valuable Jupyter notebooks, which you can download or clone to reinforce your learning. Practice the concepts using the included demo datasets or apply them to your own data for a more personalized experience.</p>
 <div class="grid g-4">
 <div class="g-col-12 g-col-md-6 g-col-lg-4">
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
@@ -310,7 +319,7 @@ CODING FOR ECONOMISTS
 <section id="books" class="level1">
 <h1>Books</h1>
 <div class="grid g-4">
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
 <div class="card-header">
 PYTHON CRASH COURSE
@@ -331,7 +340,7 @@ This beginner-friendly book uses clear, accessible language and practical coding
 </ul>
 </div>
 </div>
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
 <div class="card-header">
 AUTOMATE THE BORING STUFF
@@ -352,7 +361,7 @@ This book starts with the basics, then dives into real-world tasks like web scra
 </ul>
 </div>
 </div>
-<div class="g-col-12 g-col-md-6 g-col-lg-4">
+<div class="g-col-12 g-col-md-6">
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
 <div class="card-header">
 PYTHON TOOLS FOR SCIENTISTS
@@ -377,7 +386,7 @@ by Lee Vaughan<br>San Francisco: No Starch Press, 2023.
 </section>
 <section id="oreilly-online-learning" class="level1">
 <h1>O’Reilly Online Learning</h1>
-<p>For additional books and learning materials, the <strong><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507">O’Reilly Online Learning: Academic/Public Library Edition</a></strong> collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects, featuring content from O’Reilly and other top publishers. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.</p>
+<p>For additional books and learning materials, the <strong><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507">O’Reilly Online Learning: Academic/Public Library Edition</a></strong> collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.</p>
 </section>
 <section id="workshops-and-events" class="level1">
 <h1>Workshops and Events</h1>
@@ -460,7 +469,7 @@ by Lee Vaughan<br>San Francisco: No Starch Press, 2023.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
