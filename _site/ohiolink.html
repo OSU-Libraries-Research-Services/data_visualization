@@ -106,6 +106,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -310,7 +319,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The OhioLINK <a href="https://etd.ohiolink.edu/acprod/odb_etd/r/etd/search/1?clear=0,1,5,10,20,21,1001">Electronic Theses and Dissertations (ETD) Center</a> provides access to abstracts and full-text PDFs of theses and dissertations submitted by participating Ohio colleges and universities. Users can perform basic searches by title, author, or keyword, or use <a href="https://etd.ohiolink.edu/acprod/odb_etd/r/etd/search/search-results?p1001_advanced=1&amp;clear=0,1001">advanced search</a> to filter by subject, year, language, institution, ORCID iD, committee members, topic keywords, and full-text content.</p>
-<p>For prospective PhD students, the ETD Center is a valuable resource to: - Explore research aligned with their interests - Identify academic programs that fit their goals - Discover potential advisors or committee members by reviewing recent dissertations</p>
+<p>For prospective PhD students, the ETD Center is a valuable resource to:</p>
+<ul>
+<li>Explore research aligned with their interests;</li>
+<li>Identify academic programs that fit their goals; or</li>
+<li>Discover potential advisors or committee members by reviewing recent dissertations.</li>
+</ul>
 <section id="data-skills-concepts" class="level2">
 <h2 class="anchored" data-anchor-id="data-skills-concepts">Data skills | concepts</h2>
 <ul>
@@ -321,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ol type="1">
-<li>Understand the difference between dynamic and static HTML</li>
+<li>Understand the difference between dynamic and static HTML.</li>
 <li>Develop strategies and approaches to gather dynamic HTML content.</li>
 </ol>
 <p>This tutorial is designed to support multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> hosted by The Ohio State University Libraries Research Commons. It assumes you already have a basic understanding of Python, including how to iterate through lists and dictionaries to extract data using a for loop. To learn basic Python concepts visit the <a href="./python_basics.html">Python - Mastering the Basics</a> tutorial.</p>
@@ -506,7 +520,7 @@ Use <strong>BeautifulSoup</strong> to extract the following elements from your s
 </ul>
 <p></p>
 <p>
-<strong>Remember to read the <span class="text-primary">HTML</span>` file into Python</strong> first. <strong>Export</strong> the results to a <span class="text-primary">CSV</span> file.
+<strong>Remember to read the <span class="text-primary">HTML</span> file into Python</strong> first. <strong>Export</strong> the results to a <span class="text-primary">CSV</span> file.
 </p>
 </div>
 </div>
@@ -655,7 +669,7 @@ Use <strong>BeautifulSoup</strong> to extract the following elements from your s
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
