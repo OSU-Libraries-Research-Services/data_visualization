@@ -105,6 +105,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
 <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
 
 
@@ -383,6 +392,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#looping-through-a-dictionary" id="toc-looping-through-a-dictionary" class="nav-link" data-scroll-target="#looping-through-a-dictionary">Looping through a dictionary</a>
   <ul class="collapse">
+  <li><a href="#loop-through-key-value-pairs" id="toc-loop-through-key-value-pairs" class="nav-link" data-scroll-target="#loop-through-key-value-pairs">1. Loop through key-value pairs</a></li>
   <li><a href="#loop-through-keys-only" id="toc-loop-through-keys-only" class="nav-link" data-scroll-target="#loop-through-keys-only">2. Loop through keys only</a></li>
   <li><a href="#loop-through-the-values-only" id="toc-loop-through-the-values-only" class="nav-link" data-scroll-target="#loop-through-the-values-only">3. Loop through the values only</a></li>
   </ul></li>
@@ -448,10 +458,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="learning-objectives" class="level3">
 <h3 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h3>
 <ol type="1">
-<li>Contruct variables, manipulate strings, and loop through lists</li>
-<li>Build and navigate dictionaries</li>
-<li>Define and use functions</li>
-<li>Export data to .csv files</li>
+<li>Contruct variables, manipulate strings, and loop through lists.</li>
+<li>Build and navigate dictionaries.</li>
+<li>Define and use functions.</li>
+<li>Export data to <code>.csv</code> files.</li>
 </ol>
 <p>This tutorial is designed to support multi-session <strong><a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">workshops</a></strong> hosted by The Ohio State University Libraries Research Commons. It is intended to help the <strong>ABSOLUTE</strong> beginner, or anyone who is relatively new to Python and working toward confidently applying their Python skills to research projects.</p>
 </section>
@@ -459,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="getting-started">Getting started</h2>
 <section id="setup-python" class="level3">
 <h3 class="anchored" data-anchor-id="setup-python">Setup Python</h3>
-<p>A easy way to install Python and essential libraries is by dowloading <a href="https://www.anaconda.com/download">Anaconda</a> on your personal device. Anaconda is a Python distribution that simplifies package management and deployment. It comes preloaded with over 250 popular for data analysis and visualization—including <strong>Pandas</strong>, <strong>NumPy</strong>, and <strong>Matplotlib</strong>—and allows you to install, update, and manage packages without using the command line, making it especially user-friendly for beginners.</p>
+<p>An easy way to install Python and essential libraries is by dowloading <a href="https://www.anaconda.com/download">Anaconda</a> on your personal device. Anaconda is a Python distribution that simplifies package management and deployment. It comes preloaded with over 250 popular libraries for data analysis and visualization, including <strong>Pandas</strong>, <strong>NumPy</strong>, and <strong>Matplotlib</strong>, and allows you to install, update, and manage packages without using the command line, making it especially user-friendly for beginners.</p>
 </section>
 <section id="setup-ide" class="level3">
 <h3 class="anchored" data-anchor-id="setup-ide">Setup IDE</h3>
@@ -550,7 +560,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="encoding" class="level2">
 <h2 class="anchored" data-anchor-id="encoding">Encoding</h2>
-<p>Use the encoding parameter when working in <strong>text mode</strong> to specify how characters are interpreted. Common encodings include: - <strong>utf-8</strong> — Most commonly used and recommended. - <strong>utf-16</strong> — Uses 2 bytes per character; useful for some international text. - <strong>utf-32</strong> — Uses 4 bytes per character; supports all Unicode characters directly.</p>
+<p>Use the encoding parameter when working in <strong>text mode</strong> to specify how characters are interpreted. Common encodings include:</p>
+<ul>
+<li><strong>utf-8</strong> — Most commonly used and recommended.</li>
+<li><strong>utf-16</strong> — Uses 2 bytes per character; useful for some international text.</li>
+<li><strong>utf-32</strong> — Uses 4 bytes per character; supports all Unicode characters directly.</li>
+</ul>
 <div id="768ebceb-6488-4aa2-aae8-a1bf4187a69b" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>carmen_ohio<span class="op">=</span><span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1128,7 +1143,7 @@ MCMURTY, LARRY</code></pre>
 </section>
 <section id="splitting-strings" class="level3">
 <h3 class="anchored" data-anchor-id="splitting-strings">3. Splitting strings</h3>
-<p>By default, <code>.split()</code> separates strings by spaces. You can also specify a delimiter, such as newline <strong>‘’</strong>. This returns a <strong>list of lines</strong>, one for each row in the string.</p>
+<p>By default, <code>.split()</code> separates strings by spaces. You can also specify a delimiter, such as newline <strong>‘\n’</strong>. This returns a <strong>list of lines</strong>, one for each row in the string.</p>
 <div id="789b351f-3e1d-4cce-be2d-6857d1655c77" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>newline_free_carmen<span class="op">=</span>carmen_ohio.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>newline_free_carmen</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1179,12 +1194,7 @@ MCMURTY, LARRY</code></pre>
 <p>Conditionals allow you to control the flow of your program by executing code <strong>only when certain conditions are met.</strong> Python uses <code>if</code>, <code>elif</code>, and <code>else</code> statements to evaluate whether something is <code>True</code> or <code>False</code>.</p>
 <section id="example-wilbur-the-pig" class="level2">
 <h2 class="anchored" data-anchor-id="example-wilbur-the-pig">Example: Wilbur the Pig</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/cute_piglet.jpg" class="img-fluid figure-img"></p>
-<figcaption>cute piglet</figcaption>
-</figure>
-</div>
+<p><img src="images/cute_piglet.jpg" class="img-fluid"></p>
 <p>Let’s say we want to:</p>
 <ul>
 <li>Print Wilbur’s name if he’s a pig.</li>
@@ -2175,7 +2185,7 @@ Starting record 50 Wyoming</code></pre>
 </div>
 <section id="access-a-nested-dictionary" class="level3">
 <h3 class="anchored" data-anchor-id="access-a-nested-dictionary">Access a nested dictionary</h3>
-<p>To access the first state in the dictionary states, use the key for <strong>“state1</strong>.</p>
+<p>To access the first state in the dictionary states, use the key for <strong>state1</strong>.</p>
 <div id="4138dbc1-bc01-4b69-ad8d-2756e17757d7" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb125"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a>states[<span class="st">"state1"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="22">
@@ -2190,7 +2200,7 @@ Starting record 50 Wyoming</code></pre>
 </section>
 <section id="access-a-nested-value" class="level3">
 <h3 class="anchored" data-anchor-id="access-a-nested-value">Access a nested value</h3>
-<p>To access the nicknames*for the first state in the dictionary states, use the keys for <strong>state1</strong> and <strong>nicknames</strong>.</p>
+<p>To access the nicknames for the first state in the dictionary states, use the keys for <strong>state1</strong> and <strong>nicknames</strong>.</p>
 <div id="0a4ff5ec-bef2-44ef-b669-4d0ccdcca71c" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb127"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a>states[<span class="st">"state1"</span>][<span class="st">"nicknames"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
@@ -2201,7 +2211,10 @@ Starting record 50 Wyoming</code></pre>
 </section>
 <section id="looping-through-a-dictionary" class="level2">
 <h2 class="anchored" data-anchor-id="looping-through-a-dictionary">Looping through a dictionary</h2>
-<p>Python provides several ways to iterate through the contents of a dictionary, depending on what you need to access: ### 1. Loop through key-value pairs Use the <code>.items()</code> method to access both keys and their corresponding values:</p>
+<p>Python provides several ways to iterate through the contents of a dictionary, depending on what you need to access:</p>
+<section id="loop-through-key-value-pairs" class="level3">
+<h3 class="anchored" data-anchor-id="loop-through-key-value-pairs">1. Loop through key-value pairs</h3>
+<p>Use the <code>.items()</code> method to access both keys and their corresponding values:</p>
 <div id="3b5d1c4b-8d52-4c61-ae9c-a839ddbbd0ae" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb129"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> key, value <span class="kw">in</span> states.items():</span>
 <span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -2217,6 +2230,7 @@ Key: state2
 Value: {'name': 'Michigan', 'nicknames': ['The Great Lake State', 'The Wolverine State', 'Water (Winter) Wonderland'], 'capital': 'Lansing', 'population': 10077331}</code></pre>
 </div>
 </div>
+</section>
 <section id="loop-through-keys-only" class="level3">
 <h3 class="anchored" data-anchor-id="loop-through-keys-only">2. Loop through keys only</h3>
 <p>Use the <code>.keys()</code> method to iterate over just the keys.</p>
@@ -2473,7 +2487,12 @@ state2</code></pre>
 </section>
 <section id="functions-in-python" class="level1">
 <h1>Functions in Python</h1>
-<p>Python includes many <strong>built-in functions</strong> that help you perform common tasks, such as: - <code>print()</code> – displays output - <code>type()</code> – returns the data type of a value - <code>enumerate()</code> – adds a counter to an iterable</p>
+<p>Python includes many <strong>built-in functions</strong> that help you perform common tasks, such as:</p>
+<ul>
+<li><code>print()</code> – displays output</li>
+<li><code>type()</code> – returns the data type of a value</li>
+<li><code>enumerate()</code> – adds a counter to an iterable</li>
+</ul>
 <p>In addition to these, you can also <strong>define your own functions</strong> to perform specific tasks. This is especially useful when you need to reuse the same block of code multiple times in a program.</p>
 <section id="what-is-a-function" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-a-function">What is a function?</h2>
@@ -2893,7 +2912,7 @@ When writing print functions, avoid a TypeError by using f-strings.
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
