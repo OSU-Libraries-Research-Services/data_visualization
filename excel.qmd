@@ -6,9 +6,6 @@ format:
     toc: true
     toc-expand: 2
     toc-title: CONTENTS
-# keywords:
-#   - data visualization
-#   - excel
 ---
 **Don’t discount Excel!** For datasets under 1,000 rows, Excel can be an ideal tool for creating clear and effective visualizations. The resources below offer practical guidance and tips for making the most of Excel’s powerful charting and data presentation features.
 
