@@ -14,7 +14,7 @@ format:
 ::: {.g-col-12 .g-col-md-6}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">DATA VISUALIZATION IN EXCEL</div>
-  <div class="card-body"><img src="images/cover_schwabish_excel.png" alt="data visualization in excel book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="library.osu.edu/permalink/01OHIOLINK_OSU/1hnts55/cdi_askewsholts_vlebooks_9781000877373">Data Visualization in Excel: A Guide for Scholars, Researchers, and Wonks</a></h4>
+  <div class="card-body"><img src="images/cover_schwabish_excel.png" alt="data visualization in excel book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/l4v3dr/alma991085710797108507">Data Visualization in Excel: A Guide for Scholars, Researchers, and Wonks</a></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Jonathan Schwabish shows Excel remains a powerful tool for visualizing data. Each chapter provides detailed instructions for creating nearly 30 additional graphs beyond Excel’s default graph library. From basic heatmaps to advanced Marimekko charts, this book will guide you in crafting more colorful, effective data visualizations for your audience.</li>
@@ -26,7 +26,7 @@ format:
 ::: {.g-col-12 .g-col-md-6}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
-  <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_nii_cinii_1130282272283601920">Effective Data Visualization: The Right Chart for the Right Data</a></h4>
+  <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data</a></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Stephanie Evergreen provides detailed instructions for constructing and then formatting Excel graphs that inspire conversations and support decision-making. A fun Ninja rating scale helps you to decide how challenging it may be to create each graph and is embedded in the side-margins of each chapter. Further, an entire chapter offers ideas for visualizing qualitative and quantitative data.</li>

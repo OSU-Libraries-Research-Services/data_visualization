@@ -6,6 +6,7 @@ format:
     toc: true
     toc-expand: 2
     toc-title: CONTENTS
+    link-external-newwindow: true
 # keywords:
 #   - data visualization
 #   - python
@@ -28,7 +29,7 @@ R is a free, open-source programming language designed for statistical computing
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">R FOR DATA SCIENCE</div>
-  <div class="card-body"><img src="images/cover_rfordatascience.png" alt="r for data science book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_askewsholts_vlebooks_9781492097365">R for Data Science, 2nd edition</a></h4>
+  <div class="card-body"><img src="images/cover_rfordatascience.png" alt="r for data science book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085430151308507">R for Data Science, 2nd edition</a></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">by Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund</li>

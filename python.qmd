@@ -6,6 +6,7 @@ format:
     toc: true
     toc-expand: 2
     toc-title: CONTENTS
+    link-external-newwindow: true
 # keywords:
 #   - data visualization
 #   - python
@@ -45,11 +46,11 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header">CODING FOR ECONOMISTS</div>
-  <div class="card-body"><img src="images/smith_lovelace.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://aeturrell.github.io/coding-for-economists/intro.html#">Coding for Economists</a></h4>
+  <div class="card-header">PYTHON FOR DATA SCIENCE</div>
+  <div class="card-body"><img src="images/python4ds.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://aeturrell.github.io/python4DS/">Python for Data Science</a></h4>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://github.com/aeturrell/coding-for-economists"><img src="images/github-mark.png" alt="github logo"></a> by Arthur Turrell, 2023.</li>
+    <li class="list-group-item"><a href="https://aeturrell.github.io/python4DS/"><img src="images/github-mark.png" alt="github logo"></a> by The Py4DS Community.</li>
   </ul>
 </div>
 
@@ -63,7 +64,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 ::: {.g-col-12 .g-col-md-6} 
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">PYTHON CRASH COURSE</div>
-  <div class="card-body"><img src="images/cover_pythoncrashcourse.png" alt="python crash course book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_globaltitleindex_catalog_345576859">Python crash course : a hands-on, project-based introduction to programming, 3rd edition</a></h4>
+  <div class="card-body"><img src="images/cover_pythoncrashcourse.png" alt="python crash course book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085770430608507">Python crash course : a hands-on, project-based introduction to programming, 3rd edition</a></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">by Eric Matthes<br>San Francisco: No Starch Press, 2023.</li>
@@ -76,7 +77,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 ::: {.g-col-12 .g-col-md-6}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">AUTOMATE THE BORING STUFF</div>
-  <div class="card-body"><img src="images/cover_automateboringstuff.png" alt="automate the boring stuff book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_safari_books_v2_9798341620094">Automate the boring stuff with Python : practical programming for total beginners, 3rd edition</a></h4>
+  <div class="card-body"><img src="images/cover_automateboringstuff.png" alt="automate the boring stuff book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma9927214990108506">Automate the boring stuff with Python : practical programming for total beginners, 3rd edition</a></h4>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">by Al Sweigart<br>San Francisco: No Starch Press, 2025.</li>

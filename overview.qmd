@@ -31,7 +31,7 @@ format:
   <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-      <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_nii_cinii_1130282272283601920">Effective Data Visualization: The Right Chart for the Right Data</a></h4></li>
+      <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data</a></h4></li>
     <li class="list-group-item">by Stephanie Evergreen</li>
     <li class="list-group-item">Thousand Oaks, California: SAGE Publications, 2020</li>
   </ul>
@@ -45,7 +45,7 @@ format:
   <div class="card-body"><img src="images/cover_knaflic.png" alt="storytelling with data book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n38col/cdi_proquest_ebookcentral_EBC4187267">Storytelling with Data: A Data Visualization Guide for Business Professionals</a></h4></li>
+    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085424573708507">Storytelling with Data: A Data Visualization Guide for Business Professionals</a></h4></li>
     <li class="list-group-item">by Cole Nussbaumer Knaflic</li>
     <li class="list-group-item">Hoboken, New Jersey: Wiley, 2015.</li>
   </ul>
