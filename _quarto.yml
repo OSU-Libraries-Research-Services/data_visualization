@@ -92,3 +92,4 @@ format:
       - styles/osu-fonts.html
     css: styles.css
     toc: true
+    link-external-newwindow: true

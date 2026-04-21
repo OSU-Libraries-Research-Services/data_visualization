@@ -6,10 +6,6 @@ format:
     toc: true
     toc-expand: 2
     toc-title: CONTENTS
-    link-external-newwindow: true
-# keywords:
-#   - data visualization
-#   - python
 ---
 
 [Python](https://www.python.org/) is a free, general purpose programming language widely used in both academia and industry. It provides a rich ecosystem of libraries, such as **Matplotlib**, **Plotly**, **Pandas**, and **BeautifulSoup**, that support tasks like data collection, cleaning, and visualization. 
@@ -50,7 +46,7 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
   <div class="card-body"><img src="images/python4ds.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://aeturrell.github.io/python4DS/">Python for Data Science</a></h4>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://aeturrell.github.io/python4DS/"><img src="images/github-mark.png" alt="github logo"></a> by The Py4DS Community.</li>
+    <li class="list-group-item"><a href="https://github.com/aeturrell/python4DS"><img src="images/github-mark.png" alt="github logo"></a> by The Py4DS Community.</li>
   </ul>
 </div>
 

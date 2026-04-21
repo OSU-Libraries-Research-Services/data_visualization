@@ -6,10 +6,6 @@ format:
     toc: true
     toc-expand: 2
     toc-title: CONTENTS
-    link-external-newwindow: true
-# keywords:
-#   - data visualization
-#   - python
 ---
 
 R is a free, open-source programming language designed for statistical computing and widely used across various academic disciplines. It features a rich ecosystem of packages for data cleaning and visualization, including popular tools like **ggplot2** and **Plotly**, making it a powerful choice for data analysis and research.
