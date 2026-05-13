@@ -18,7 +18,7 @@ website:
   navbar:
     search: true
     logo: images/home_standard_icon.png
-    logo-href: https://library.osu.edu/data-visualization
+    logo-href: https://osu-libraries-research-services.github.io/data_visualization/
     left:
       - text: "Library Resources"
         href: overview.qmd
