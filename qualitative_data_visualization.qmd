@@ -1,5 +1,5 @@
 ---
-title: "What is Qualitative Data Visualization?"
+title: "Qualitative Data Visualization"
 subject: "RESOURCES"
 format:
   html:
@@ -14,19 +14,36 @@ Instead of focusing on numbers, qualitative data visualization helps explain wha
 
 # Visualizing Meaning with Words
 Some qualitative data visualizations focus directly on the text itself. “Pure” qualitative visualizations highlight the meanings of words using:
+
 - Quotes
 - Diagrams 
 - Annotations
 - Thematic groupings
+
 Other qualitative data visualizations are created by first coding and then categorizing words. Once coded, the data is counted and visually displayed to show patterns, themes, and relationships.
 
 # When the Words Have the Meaning: Visualizing Qualitative Data
-![](images/cover_evergreen.png){.float-left width="25%"} Chapter 8 of Stephanie Evergreen’s [Effective Data Visualization: The Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507) introduces several creative ways to visualize qualitative research.
+::: {.grid .g-4}
+
+::: {.g-col-12 .g-col-md-6}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
+  <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data</a></h4>
+  </div>
+</div>
+
+:::
+
+:::
+
+![](images/cover_evergreen.png){.float-left width="10%"} Chapter 8 of Stephanie Evergreen’s [Effective Data Visualization: The Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507) introduces several creative ways to visualize qualitative research.
 Evergreen encourages readers to look beyond basic bar charts, word clouds, and heat maps. Instead, she presents alternatives, including:
+
 - Images with call-out numbers or text boxes
 - Journey maps that show experiences over time
 - Network diagrams that reveal relationships
 - Timelines and spectrum displays
+
 These techniques help communicate insights from qualitative research in ways that are clear, engaging, and meaningful.
 
 # Visualizing with text
