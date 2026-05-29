@@ -82,6 +82,12 @@ This video walks through nine powerful ways to visualize qualitative data analys
 ### • NVivo: How to Create a Bar Chart
 {{< video https://youtu.be/Oc-r8OHk-x0 >}}
 
+# O'Reilly Online Learning
+For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
+
+# Workshops and Events
+University Libraries offers a variety of data skills [workshops and events](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) for Ohio State faculty, students and staff throughout the academic year. 
+
 
 
 
