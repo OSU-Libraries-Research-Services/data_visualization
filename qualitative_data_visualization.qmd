@@ -12,7 +12,6 @@ Qualitative data visualization represents non-numerical, descriptive data to hel
 
 Instead of focusing on numbers, qualitative data visualization helps explain what people say, think, or experience, and how those ideas connect to one another.
 
-# Visualizing Meaning with Words
 Some qualitative data visualizations focus directly on the text itself. “Pure” qualitative visualizations highlight the meanings of words using:
 
 - Quotes
@@ -22,7 +21,6 @@ Some qualitative data visualizations focus directly on the text itself. “Pure�
 
 Other qualitative data visualizations are created by first coding and then categorizing words. Once coded, the data is counted and visually displayed to show patterns, themes, and relationships.
 
-# When the Words Have the Meaning: Visualizing Qualitative Data
 ::: {.grid .g-4}
 
 ::: {.g-col-12 .g-col-md-6}
@@ -36,7 +34,8 @@ Other qualitative data visualizations are created by first coding and then categ
 
 :::
 
-![](images/cover_evergreen.png){.float-left width="10%"} Chapter 8 of Stephanie Evergreen’s [Effective Data Visualization: The Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507) introduces several creative ways to visualize qualitative research.
+Chapter 8 of Stephanie Evergreen’s [Effective Data Visualization: The Right Chart for the Right Data](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507) "When the Words Have the Meaning: Visualizing Qualitative Data" introduces several creative ways to visualize qualitative research. 
+
 Evergreen encourages readers to look beyond basic bar charts, word clouds, and heat maps. Instead, she presents alternatives, including:
 
 - Images with call-out numbers or text boxes
@@ -47,7 +46,50 @@ Evergreen encourages readers to look beyond basic bar charts, word clouds, and h
 These techniques help communicate insights from qualitative research in ways that are clear, engaging, and meaningful.
 
 # Visualizing with text
+
+::: {.grid .g-4}
+
+::: {.g-col-12 .g-col-md-6}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
+  <div class="card-body"><img src="images/cover_brath_visualizing_text.jpg" alt="visualizing with text book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/l4v3dr/alma991085709546708507">Visualizing with Text</a></h4>
+  </div>
+</div>
+
+:::
+
+:::
+
 In [Visualizing with Text](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/l4v3dr/alma991085709546708507), Richard Brath reminds readers that text has been part of information visualizations since medieval times. The book includes 240 historical and contemporary examples showing how text can be used creatively and effectively to communicate information visually.
+
+::: {.grid .g-4}
+
+::: {.g-col-12 .g-col-md-6}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
+  <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data</a></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><p>Chapter 8 of Stephanie Evergreen’s <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data,</a> "When the Words Have the Meaning: Visualizing Qualitative Data," introduces several creative ways to visualize qualitative research. </p> <p>Evergreen encourages readers to look beyond basic bar charts, word clouds, and heat maps. Instead, she presents alternatives, including:</p> <ul> <li>Images with call-out numbers or text boxes</li> <li>Journey maps that show experiences over time</li> <li>Network diagrams that reveal relationships</li> <li>Timelines and spectrum displays</li> </ul><p>These techniques help communicate insights from qualitative research in ways that are clear, engaging, and meaningful.</p> </li>
+  </ul>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
+  <div class="card-body"><img src="images/cover_brath_visualizing_text.jpg" alt="visualizing with text book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/l4v3dr/alma991085709546708507">Visualizing with Text</a></h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">In <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/l4v3dr/alma991085709546708507">Visualizing with Text</a>, Richard Brath reminds readers that text has been part of information visualizations since medieval times. The book includes 240 historical and contemporary examples showing how text can be used creatively and effectively to communicate information visually.</li>
+  </ul>
+</div>
+
+:::
+
+:::
+
 
 # Tools for Visualizing Qualitative Data
 ## NVivo
