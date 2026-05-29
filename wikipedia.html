@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -77,10 +77,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2ed8be209c2ea8f85e6a0a1eda42d2d3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-57f6f6542877a4cbaa3ea6864b62b9f8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -549,7 +549,7 @@ List the Python libraries you may need to import for this project.
 <h1>Pandas</h1>
 <section id="read_html" class="level2">
 <h2 class="anchored" data-anchor-id="read_html">.read_html()</h2>
-<p>Read HTML tables directly into DataFrames with <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.read_html.html">.read_html()</a></strong> . This extremely useful tool extracts all tables present in specified URL or file, allowing each table to be accessed using standard list indexing and slicing syntax.</p>
+<p>Read HTML tables directly into DataFrames with <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.read_html.html">.read_html()</a></strong> . This extremely useful tool extracts all tables present in a specified URL or file, allowing each table to be accessed using standard list indexing and slicing syntax.</p>
 <p>The following code instructs Python to go to the Wikipedia <strong><a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States">List of states and territories of the United States</a></strong> and retrieve the second table.</p>
 <div id="890048ab" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
@@ -730,7 +730,7 @@ Headers do not always exist for each table. You may need to use a try-except blo
 <p>The <strong><a href="https://docs.python.org/3/library/os.html">os</a></strong> module tells Python where to find and save files.</p>
 <section id="os.mkdirpath" class="level3">
 <h3 class="anchored">os.mkdir(‘path’)</h3>
-<p>Creates a new directory in your project folder or another specified location. Makes a directory in your project folder or another folder you specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an <code>OSError</code>. Use a try-except block to handle the error.</p>
+<p>Makes a directory in your project folder or another folder you specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an <code>OSError</code>. Use a try-except block to handle the error.</p>
 <div id="f73478bc-72fa-49f1-a287-9e3e2964878b" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>artist <span class="op">=</span> <span class="st">"Cyndi_Lauper"</span></span>
