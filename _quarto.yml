@@ -49,6 +49,9 @@ website:
               href: python.qmd
             - text: "... R"
               href: r_language.qmd
+        - section: "QUALITATIVE DATA VISUALIZATION"
+          contents:
+            - qualitative_data_visualization.qmd
     - title: "Python Tutorials"
       style: "docked"
       background: light
