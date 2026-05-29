@@ -20,7 +20,7 @@ Some qualitative data visualizations focus directly on the text itself. “Pure�
 - Thematic groupings
 
 Other qualitative data visualizations are created by first coding and then categorizing words. Once coded, the data is counted and visually displayed to show patterns, themes, and relationships.
-
+# Books
 ::: {.grid .g-4}
 
 ::: {.g-col-12 .g-col-md-6}
@@ -91,7 +91,7 @@ In [Visualizing with Text](https://search.library.osu.edu/permalink/01OHIOLINK_O
 :::
 
 
-# Tools for Visualizing Qualitative Data
+# Other Resources
 ## NVivo
 {{< video https://youtu.be/-wjFMMQD3UA?si=h91u_HZRrcXVRIgI >}}
 
@@ -117,6 +117,7 @@ Walk through nine powerful ways to visualize qualitative data analysis results d
 Tableau can also be used to explore and visualize qualitative data. Ken Flerlage’s [A Starter Kit for Text Analysis in Tableau](https://www.flerlagetwins.com/2019/09/text-analysis.html) is a helpful, step-by-step resource for getting started.
 
 Flerlage shows you how to:
+
 - Clean and organize text data for analysis
 - Structure data so Tableau and read and visualize it effectively
 - Create visualizations including tree diagrams, word clouds, network diagrams, and barcode charts
