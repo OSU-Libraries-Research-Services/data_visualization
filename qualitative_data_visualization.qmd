@@ -47,39 +47,27 @@ Other qualitative data visualizations are created by first coding and then categ
   <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
 
   <div class="card-body">
-    <div class="d-flex gap-3 align-items-start">
-      
-      <!-- Image -->
-      <img 
+    <div class="d-flex flex-column flex-md-row gap-3 align-items-start">
+     <img 
         src="images/cover_evergreen.png" 
         alt="effective data visualization book cover"
         style="max-width: 200px; height: auto;"
-      >
-
-      <!-- Text -->
-      <div>
+        class="rounded"      >
+      <div class="flex-grow-1">
         <p>
           Chapter 8 of Stephanie Evergreen’s 
           <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">
             Effective Data Visualization: The Right Chart for the Right Data
-          </a>, 
-          "When the Words Have the Meaning: Visualizing Qualitative Data," introduces several creative ways to visualize qualitative research.
+          </a>.
         </p>
-
-        <p>Evergreen encourages readers to look beyond basic charts. Alternatives include:</p>
-
+        <p>Alternatives include:</p>
         <ul>
-          <li>Images with call-out annotations</li>
+          <li>Images with annotations</li>
           <li>Journey maps</li>
           <li>Network diagrams</li>
-          <li>Timelines and spectrum displays</li>
+          <li>Timelines</li>
         </ul>
-
-        <p>
-          These techniques help communicate qualitative insights clearly and meaningfully.
-        </p>
       </div>
-
     </div>
   </div>
 </div>
