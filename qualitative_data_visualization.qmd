@@ -21,6 +21,49 @@ Some qualitative data visualizations focus directly on the text itself. “Pure�
 
 Other qualitative data visualizations are created by first coding and then categorizing words. Once coded, the data is counted and visually displayed to show patterns, themes, and relationships.
 # Books
+
+<div class="card bg-secondary mb-3 w-100">
+  <div class="card-header">EFFECTIVE DATA VISUALIZATION</div>
+
+  <div class="card-body">
+    <img src="images/cover_evergreen.png" 
+         alt="effective data visualization book cover" 
+         class="d-block mx-auto mb-3"
+         style="max-width: 300px; height: auto;">
+
+    <h4 class="card-title">
+      <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">
+        Effective Data Visualization: The Right Chart for the Right Data
+      </a>
+    </h4>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+      <p>
+        Chapter 8 of Stephanie Evergreen’s 
+        <a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">
+          Effective Data Visualization: The Right Chart for the Right Data
+        </a>, 
+        "When the Words Have the Meaning: Visualizing Qualitative Data," introduces several creative ways to visualize qualitative research.
+      </p>
+
+      <p>Evergreen encourages readers to look beyond basic bar charts, word clouds, and heat maps. Instead, she presents alternatives, including:</p>
+
+      <ul>
+        <li>Images with call-out numbers or text boxes</li>
+        <li>Journey maps that show experiences over time</li>
+        <li>Network diagrams that reveal relationships</li>
+        <li>Timelines and spectrum displays</li>
+      </ul>
+
+      <p>
+        These techniques help communicate insights from qualitative research in ways that are clear, engaging, and meaningful.
+      </p>
+    </li>
+  </ul>
+</div>
+
 ::: {.grid .g-4}
 
 ::: {.g-col-12 .g-col-md-6}
@@ -92,6 +135,17 @@ In [Visualizing with Text](https://search.library.osu.edu/permalink/01OHIOLINK_O
 
 
 # Other Resources
+
+## Tableau
+Tableau can also be used to explore and visualize qualitative data. Ken Flerlage’s [A Starter Kit for Text Analysis in Tableau](https://www.flerlagetwins.com/2019/09/text-analysis.html) is a helpful, step-by-step resource for getting started.
+
+Flerlage shows you how to:
+
+- Clean and organize text data for analysis
+- Structure data so Tableau and read and visualize it effectively
+- Create visualizations including tree diagrams, word clouds, network diagrams, and barcode charts
+- Build an interactive text reader that allows users to highlight specific words within a body of text.
+
 ## NVivo
 {{< video https://youtu.be/-wjFMMQD3UA?si=h91u_HZRrcXVRIgI >}}
 
@@ -113,13 +167,5 @@ Walk through nine powerful ways to visualize qualitative data analysis results d
 {{< video https://youtu.be/Oc-r8OHk-x0 >}}
 
 
-## Tableau
-Tableau can also be used to explore and visualize qualitative data. Ken Flerlage’s [A Starter Kit for Text Analysis in Tableau](https://www.flerlagetwins.com/2019/09/text-analysis.html) is a helpful, step-by-step resource for getting started.
 
-Flerlage shows you how to:
-
-- Clean and organize text data for analysis
-- Structure data so Tableau and read and visualize it effectively
-- Create visualizations including tree diagrams, word clouds, network diagrams, and barcode charts
-- Build an interactive text reader that allows users to highlight specific words within a body of text.
 
