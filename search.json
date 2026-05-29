@@ -2082,10 +2082,10 @@
     "href": "qualitative_data_visualization.html",
     "title": "Qualitative Data Visualization",
     "section": "",
-    "text": "Qualitative data visualization represents non-numerical, descriptive data to help audiences understand patterns, themes, meanings, and relationships. This type of data often comes from descriptions, opinions, and personal experiences collected through interviews, observations, or open-ended survey questions.\nInstead of focusing on numbers, qualitative data visualization helps explain what people say, think, or experience, and how those ideas connect to one another.",
+    "text": "Qualitative data visualization represents non-numerical, descriptive data to help audiences understand patterns, themes, meanings, and relationships. This type of data often comes from descriptions, opinions, and personal experiences collected through interviews, observations, or open-ended survey questions.\nInstead of focusing on numbers, qualitative data visualization helps explain what people say, think, or experience, and how those ideas connect to one another.\nSome qualitative data visualizations focus directly on the text itself. “Pure” qualitative visualizations highlight the meanings of words using:\nOther qualitative data visualizations are created by first coding and then categorizing words. Once coded, the data is counted and visually displayed to show patterns, themes, and relationships. # Books ::: {.grid .g-4}\n:::\nChapter 8 of Stephanie Evergreen’s Effective Data Visualization: The Right Chart for the Right Data “When the Words Have the Meaning: Visualizing Qualitative Data” introduces several creative ways to visualize qualitative research.\nEvergreen encourages readers to look beyond basic bar charts, word clouds, and heat maps. Instead, she presents alternatives, including:\nThese techniques help communicate insights from qualitative research in ways that are clear, engaging, and meaningful.",
     "crumbs": [
       "Library Resources",
-      "QUALITATIVE DATA VISUALIZATION",
+      "VISUALIZING TEXT",
       "Qualitative Data Visualization"
     ]
   },
@@ -2097,7 +2097,7 @@
     "text": "NVivo\n\n\nVisualization with NVivo\nThis one-hour webinar for the NVivo Research Network covers coding stripes, hierarchy charts, word clouds, concept maps and more. {{&lt; videohttps://youtu.be/Ac_p_XxJ7rw &gt;}}\n\n\nNVivo for 15 Mac: Visualizing Coding\nLearn to use NVivo to visually explore your coded data using intuitive tools like hierarchy charts, which display the relative weight of each code based on how frequently it appears across your sources. The video shows how these visualizations make it easy to identity dominant themes at a glance, helping you prioritize areas for deeper analysis. \n\n\n9 Ways to Visualize Your Results in NVivo\nWalk through nine powerful ways to visualize qualitative data analysis results directly in NVivo, from generating word frequency clouds and charts to using cluster analysis to uncover patterns across your codes. \n\n\nNVivo: How to Create a Bar Chart",
     "crumbs": [
       "Library Resources",
-      "QUALITATIVE DATA VISUALIZATION",
+      "VISUALIZING TEXT",
       "Qualitative Data Visualization"
     ]
   },
@@ -2106,10 +2106,10 @@
     "href": "qualitative_data_visualization.html#tableau",
     "title": "Qualitative Data Visualization",
     "section": "Tableau",
-    "text": "Tableau\nTableau can also be used to explore and visualize qualitative data. Ken Flerlage’s A Starter Kit for Text Analysis in Tableau is a helpful, step-by-step resource for getting started.\nFlerlage shows you how to: - Clean and organize text data for analysis - Structure data so Tableau and read and visualize it effectively - Create visualizations including tree diagrams, word clouds, network diagrams, and barcode charts - Build an interactive text reader that allows users to highlight specific words within a body of text.",
+    "text": "Tableau\nTableau can also be used to explore and visualize qualitative data. Ken Flerlage’s A Starter Kit for Text Analysis in Tableau is a helpful, step-by-step resource for getting started.\nFlerlage shows you how to:\n\nClean and organize text data for analysis\nStructure data so Tableau and read and visualize it effectively\nCreate visualizations including tree diagrams, word clouds, network diagrams, and barcode charts\nBuild an interactive text reader that allows users to highlight specific words within a body of text.",
     "crumbs": [
       "Library Resources",
-      "QUALITATIVE DATA VISUALIZATION",
+      "VISUALIZING TEXT",
       "Qualitative Data Visualization"
     ]
   },
