@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Lesson 1. The Lantern – Data Visualization</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -70,15 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./images/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a6b5b06080e2902f5e39c1328c662d3f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -128,11 +130,11 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="https://osu-libraries-research-services.github.io/data_visualization/" class="navbar-brand navbar-brand-logo">
     <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
     <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="https://osu-libraries-research-services.github.io/data_visualization/">
     <span class="navbar-title">Data Visualization</span>
     </a>
   </div>
@@ -342,7 +344,7 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
 </header>
 
 
-<p>Web scraping and APIs are popular methods for collecting data from websites. <strong>Webscraping</strong> involves directly parsing a website’s HTML, allowing extraction of a wide range of data available on a page. Webscraping, however, introduces complexity to a project, especially if the website’s data is not consistently structured. <strong>APIs</strong> provide structured data and detailed documentation for querying the website and filtering results. They are generally easier to use but may come with restrictions, such as limits on the number of requests per day or the number of records you can retrieve.</p>
+<p>Web scraping and APIs are popular methods for collecting data from websites. <strong>Web scraping</strong> involves directly parsing a website’s HTML, allowing extraction of a wide range of data available on a page. Web scraping, however, introduces complexity to a project, especially if the website’s data is not consistently structured. <strong>APIs</strong> provide structured data and detailed documentation for querying the website and filtering results. They are generally easier to use but may come with restrictions, such as limits on the number of requests per day or the number of records you can retrieve.</p>
 <p>In publication since 1881, <a href="https://www.thelantern.com/"><strong><em>The Lantern</em></strong></a> is The Ohio State University’s award-winning student newspaper. <a href="https://osupublicationarchives.osu.edu/"><strong><em>The Lantern Digital Archives</em></strong></a> includes all articles, illustrations, and advertisments published in <em>The Lantern</em> between 1881 and 2018.</p>
 <div class="alert alert-dismissible alert-primary">
 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -376,7 +378,7 @@ The online archive of Ohio State University’s student newspaper <strong><em>Th
 </section>
 <section id="step-1.-copyright-terms-of-use" class="level1">
 <h1>Step 1. Copyright | Terms of Use</h1>
-<p>Before starting any webscraping or API project, you must</p>
+<p>Before starting any web scraping or API project, you must</p>
 <section id="review-and-understand-the-terms-of-use." class="level2">
 <h2 class="anchored" data-anchor-id="review-and-understand-the-terms-of-use.">Review and understand the terms of use.</h2>
 <ul class="task-list">
@@ -392,7 +394,7 @@ The online archive of Ohio State University’s student newspaper <strong><em>Th
 </section>
 <section id="check-for-robots.txt-directives" class="level2">
 <h2 class="anchored" data-anchor-id="check-for-robots.txt-directives">Check for robots.txt directives</h2>
-<p><strong>robots.txt</strong> directives limit web-scraping or web-crawling. Look for this file in the root directory of the website by adding <strong>/robots.txt</strong> to the end of the url. Respect these directives.</p>
+<p><strong>robots.txt</strong> directives limit web scraping or web crawling. Look for this file in the root directory of the website by adding <strong>/robots.txt</strong> to the end of the url. Respect these directives.</p>
 <div id="accordionExercise1" class="accordion">
 <div class="accordion-item">
 <h2 class="accordion-header anchored" id="ex1-headingOne">
@@ -688,7 +690,7 @@ Learning to navigate tags with BeautifulSoup can be difficult at first. Try usin
 </div>
 <p>Tags can have any number of <strong><a href="https://beautiful-soup-4.readthedocs.io/en/latest/#attributes">attributes</a></strong>.</p>
 <p><strong>Example</strong>:<br>
-<code>href</code> is an attribute of an <code>&lt;a href="url"&gt;</code> tag. To find an `href attribute value:</p>
+<code>href</code> is an attribute of an <code>&lt;a href="url"&gt;</code> tag. To find an <code>href</code> attribute value:</p>
 <div id="b80a5cbd" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>a[<span class="st">'href'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1040,6 +1042,11 @@ The default search output provide structured bibliographic metadata for each hom
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

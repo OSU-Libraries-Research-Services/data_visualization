@@ -1,0 +1,23 @@
+---
+format: revealjs
+---
+
+
+::::{.columns}
+
+:::{.column width="40%"}
+## Welcome to Python Mastering the Basics 
+Part 1: Python Fundamentals
+:::
+:::{.column width="60%"}
+![](C:/Users/murphy.465/Documents/GitHub/data_visualization){width="50%"}
+:::
+::::
+
+---
+
+## Getting Started
+
+1. Create an empty file named **python_workshop** on your desktop
+2. Go to https://go.osu.edu/python_mastering_basics
+

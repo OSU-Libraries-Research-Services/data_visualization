@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Lesson 3. Wikipedia – Data Visualization</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -70,15 +73,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./images/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-a6b5b06080e2902f5e39c1328c662d3f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -128,11 +130,11 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="https://osu-libraries-research-services.github.io/data_visualization/" class="navbar-brand navbar-brand-logo">
     <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
     <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="https://osu-libraries-research-services.github.io/data_visualization/">
     <span class="navbar-title">Data Visualization</span>
     </a>
   </div>
@@ -547,7 +549,7 @@ List the Python libraries you may need to import for this project.
 <h1>Pandas</h1>
 <section id="read_html" class="level2">
 <h2 class="anchored" data-anchor-id="read_html">.read_html()</h2>
-<p>Read HTML tables directly into DataFrames with <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.read_html.html">.read_html()</a></strong> . This extremely useful tool extracts all tables present in specified URL or file, allowing each table to be accessed using standard list indexing and slicing syntax.</p>
+<p>Read HTML tables directly into DataFrames with <strong><a href="https://pandas.pydata.org/docs/reference/api/pandas.read_html.html">.read_html()</a></strong> . This extremely useful tool extracts all tables present in a specified URL or file, allowing each table to be accessed using standard list indexing and slicing syntax.</p>
 <p>The following code instructs Python to go to the Wikipedia <strong><a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States">List of states and territories of the United States</a></strong> and retrieve the second table.</p>
 <div id="890048ab" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
@@ -728,7 +730,7 @@ Headers do not always exist for each table. You may need to use a try-except blo
 <p>The <strong><a href="https://docs.python.org/3/library/os.html">os</a></strong> module tells Python where to find and save files.</p>
 <section id="os.mkdirpath" class="level3">
 <h3 class="anchored">os.mkdir(‘path’)</h3>
-<p>Creates a new directory in your project folder or another specified location. Makes a directory in your project folder or another folder you specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an <code>OSError</code>. Use a try-except block to handle the error.</p>
+<p>Makes a directory in your project folder or another folder you specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an <code>OSError</code>. Use a try-except block to handle the error.</p>
 <div id="f73478bc-72fa-49f1-a287-9e3e2964878b" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>artist <span class="op">=</span> <span class="st">"Cyndi_Lauper"</span></span>
@@ -930,6 +932,11 @@ Increment counter variables for table numbers.
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
