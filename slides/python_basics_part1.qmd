@@ -12,6 +12,7 @@ format:
     logo: slide_images/osu_libraries.png
     slide-number: true
     chalkboard: true
+    multiplex: true
 ---
 
 ## Python Mastering the Basics 
