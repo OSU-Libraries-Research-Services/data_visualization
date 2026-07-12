@@ -1,0 +1,18 @@
+.reveal .slide-logo {
+position: fixed;
+bottom: 20px;
+right: 20px;
+height: 50px;
+z-index: 1000;
+}
+
+.reveal h2 {
+color: #BA0C2F !important;
+}
+
+.reveal table {
+2
+font-size: 0.6em !important;
+3
+}
+
