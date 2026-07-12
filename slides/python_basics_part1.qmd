@@ -1,23 +1,2013 @@
 ---
-format: revealjs
+format:
+  revealjs:
+    theme: white
+    css: 
+      - slides.css
+      - ../styles/custom.scss
+      - https://cdn.jsdelivr.net/npm/bootswatch@5/dist/simplex/bootstrap.min.css
+
+    include-in-header:
+      - ../styles/osu-fonts.html
+    logo: slide_images/osu_libraries.png
+    slide-number: true
+    chalkboard: true
 ---
 
-
-::::{.columns}
-
-:::{.column width="40%"}
-## Welcome to Python Mastering the Basics 
+## Python Mastering the Basics 
 Part 1: Python Fundamentals
-:::
-:::{.column width="60%"}
-![](C:/Users/murphy.465/Documents/GitHub/data_visualization){width="50%"}
-:::
-::::
 
----
+![](research_commons_data_visualization.jpg){width="100%"}
+
+
+--- 
 
 ## Getting Started
 
 1. Create an empty file named **python_workshop** on your desktop
-2. Go to https://go.osu.edu/python_mastering_basics
+2. Go to [https://go.osu.edu/python_mastering_basics](https://go.osu.edu/python_mastering_basics)
+3. Download and place in your **python_workshop** folder:
+
+      - carmen_ohio.txt
+      - carmen_ohio_revised.txt
+      - python_mastering_basics_workshop_exercises.py
+
+--- 
+
+## Learning Objectives
+
+**Python Fundamentals**
+
+- Construct variables, manipulate strings, and loop through lists
+- Build and navigate dictionaries
+- Define and use functions
+- Export data to CSV files
+
+---
+
+## Three things you need ...
+- An *integrated development environment* or IDE. This is where you write and run code
+- A *Python* installation, so your computer can interpret and execute Python code
+- *Python* packages. These are collections of existing, reusable code, also known as libraries, you can use in Python projects. (e.g. pandas, numpy, pytorch, etc...)
+
+---
+
+## Tour your IDE
+
+::::{.columns}
+
+:::{.column width="50%"}
+**Primary Side Bar**
+
+File Explorer\
+    ▢ Outline\
+Source Control\
+Extensions\
+    ▢ Python\
+    ▢ Jupyter\
+    ▢ Pylance\
+Run and Debug
+:::
+
+:::{.column width="50%"}
+
+**Command Palette**
+
+▢ Ctrl+Shift+P\
+▢ `>` Python: Select Interpreter
+
+**Editor**
+
+**Terminal**
+
+**Chat** (close)
+
+**Interactive Explorer**
+
+**Jupyter Variables**
+
+:::
+
+::::
+
+--- 
+
+## Absolute vs Relative Paths
+When you run a Python script, the folder it runs from is set as the **current working directory (cwd)**. This is where Python looks for files to read and write by default.
+<br><br>
+In **VS Code**, you can set the working directory by clicking the **Explorer** icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files.
+
+---
+
+## Relative paths
+
+If your files are stored in the same folder as your Python script, you can use a **relative path**.
+
+```{.python}
+relative_filepath_of_text = "text.txt"
+```
+<br>
+Python interprets this path relevant to the current working directory.
+
+```{.python}
+carmen_ohio = "carmen.txt"
+```
+
+---
+
+## Absolute paths
+
+If your files are stored elsewhere, use an **absolute path** to specify the full location:
+
+```{.python}
+absolute_filepath_of_text = "C:/path/to/your/directory/file.txt"
+```
+
+---
+
+## Opening a file
+To work with a file in Python, you first need to **open** it. This returns a file object that allows you read from or write to the file.
+
+```{.python}
+open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)
+
+```
+
+- **file**: The path to the file (absolute or relative)
+- **mode**: Optional. Specifies how the file is opened. Default is `r` (read mode).
+
+---
+
+## Common file modes
+
+Python supports a variety of built-in dtaa types, each suited for different kinds of information.
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.7em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Character</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>r</code></td>
+        <td>open for reading (default)</td>
+      </tr>
+      <tr>
+        <td><code>w</code></td>
+        <td>open for writing, truncating the file first</td>
+      </tr>
+      <tr>
+        <td><code>x</code></td>
+        <td>open for exclusive creation, failing if the file already exists</td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td>open for writing, appending to the end of a file if it exists</td>
+      </tr>
+      <tr>
+        <td><code>b</code></td>
+        <td>binary mode</td>
+      </tr>
+      <tr>
+        <td><code>t</code></td>
+        <td>text mode (default)</td>
+      </tr>
+      <tr>
+        <td><code>+</code></td>
+        <td>open for reading and writing</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Encoding
+
+Use the encoding parameter when working in **text mode** to specify how characters are interpreted. Common encodings include:
+
+- **utf-8** – Most commonly used and recommended.
+- **utf-16** – Uses 2 bytes per character, useful for some international text.
+- **utf-32** – Uses 4 bytes per characters; supports all Unicode characters directly.
+
+```{.python}
+carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8')
+print(carmen_ohio)
+```
+
+---
+
+## Reading a file
+
+To read a file, open it in read mode `r` and use the `.read()` method.
+
+```{.python}
+carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()
+print(carmen_ohio)
+```
+<br>
+**Alternative**
+
+Use a with block to open the file in read mode and use the `.read()` method.
+
+```{.python}
+with open('carmen_ohio.txt', mode='r', encoding='utf-8') as file:
+  content = file.read()
+```
+
+---
+
+## Write to a file
+
+To write to a file, open it in write mode `w`. This will **overwrite** the file if it already exists. If you don't specify a mode, Python defaults to `r` (read mode), so it's important to explicitly set `mode='w'` when writing.
+
+```{.python}
+open('carmen_ohio_revised.txt', mode='w', encoding='utf-8')
+```
+<br>
+This create an object. To add text to a file, use the `.write( )` method.
+
+```{.python}
+open('carmen_ohio_revised.txt', mode='w', encoding='utf-8')write("Let's firm thy friendship again!")
+```
+
+---
+
+<div class="card border-primary mb-3 p-1">
+  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Rename Output File</div>
+  <div class="card-body">To avoid accidentally overwriting your original file, consider renaming the output file before writing to it.
+  </div>
+</div>
+
+---
+
+## Variables
+
+Python supports a variety of built-in data types, each suited for different kinds of information.
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.6em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Name</th>
+        <th>Abbr</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td>String</td>
+        <td><code>str</code></td>
+        <td>Sequence</td>
+        <td>Text</td>
+        <td>"The Ohio State University"</td>
+      </tr>
+      <tr>
+        <td>Integer</td>
+        <td><code>int</code></td>
+        <td>Numeric</td>
+        <td>Whole numbers</td>
+        <td>1870</td>
+      </tr>
+      <tr>
+        <td>Float</td>
+        <td><code>float</code></td>
+        <td>Numeric</td>
+        <td>Decimal numbers</td>
+        <td>3.14</td>
+      </tr>
+      <tr>
+        <td>Boolean</td>
+        <td><code>bool</code></td>
+        <td>Boolean</td>
+        <td>True/False values</td>
+        <td>True</td>
+      </tr>
+      <tr>
+        <td>List</td>
+        <td><code>list</code></td>
+        <td>Sequence</td>
+        <td>Ordered, mutable collection</td>
+        <td>[ "The Ohio State University" , 1870 ]</td>
+      </tr>
+      <tr>
+        <td>Dictionary</td>
+        <td><code>dict</code></td>
+        <td>Mapping</td>
+        <td>Key-value pairs</td>
+        <td>{ "institution_name" : "The Ohio State University" , "year_founded" : 1870 }</td>
+      </tr>
+      <tr>
+        <td>Tuple</td>
+        <td><code>tuple</code></td>
+        <td>Sequence</td>
+        <td>Ordered, immutable collection</td>
+        <td>("The Ohio State University", 1870)</td>
+      </tr>      
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Working with variables
+
+Variables are created using the `=` operator.
+
+<br>
+**Naming Rules**
+
+- Can include letters, digits, and underscores.
+- Must not start with a digit.
+- Cannot contain spaces or special characters (except `_` )
+- Must **not** use reserved Pythons keywords.
+
+
+---
+
+## OSU variables
+
+```{.python}
+institution_name = "The Ohio State University"
+year_founded = 1870
+university_facts = {"institution_name" : "The Ohio State University", "year_founded" : 1870, "school_colors" : "scarlet & grey", "mascot" : "Brutus Buckeye" , "students" : 60046 , "endowment": 7.9 }
+fact_list = ["The Ohio State University" , 1870, "scarlet & gray" , "Brutus Buckeye", 60046, 7.9 ]
+
+```
+
+---
+
+## Reserved keywords
+
+<div class="alert alert-dismissible alert-danger">
+  <code>False, True, None, and, as, assert, async, await, def, del, elif, else, break, class, continue, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield
+ </code>
+</div>
+<p>To check a variable's type, use the <code>type()</code> function.</p>
+
+```{.python}
+type(university_facts)
+```
+
+--- 
+
+## Basic math operators
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.6em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Operation</th>
+        <th>Expression</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td>Addition</td>
+        <td><code>x+y</code></td>
+        <td>Sum of x and y</td>
+      </tr>
+      <tr >
+        <td>Subtraction</td>
+        <td><code>x-y</code></td>
+        <td>Difference of x and y</td>
+      </tr>
+      <tr >
+        <td>Multiplication</td>
+        <td><code>x*y</code></td>
+        <td>Product of x and y</td>
+      </tr>
+      <tr >
+        <td>Division</td>
+        <td><code>x/y</code></td>
+        <td>Quotient of x and y</td>
+      </tr>
+      <tr >
+        <td>Floor Division</td>
+        <td><code>x//y</code></td>
+        <td>Quotient rounded down</td>
+      </tr>
+      <tr >
+        <td>Modulus</td>
+        <td><code>x%y</code></td>
+        <td>Remainder of x divided by y</td>
+      </tr>
+      <tr >
+        <td>Exponentiation</td>
+        <td><code>x**y</code></td>
+        <td>x raised to the power of y</td>
+      </tr>
+      <tr >
+        <td>Negation</td>
+        <td><code>-x</code></td>
+        <td>Negative value of x</td>
+      </tr>
+      <tr >
+        <td>Absolute Value</td>
+        <td><code>abs(x)</code></td>
+        <td>Absolute value of x</td>
+      </tr>
+      <tr >
+        <td>Convert to Int</td>
+        <td><code>int(x)</code></td>
+        <td>Converts x to an integer</td>
+      </tr>
+      <tr >
+        <td>Convert to Float</td>
+        <td><code>float(x)</code></td>
+        <td>Converts x to a float</td>
+      </tr>
+      <tr >
+        <td>Power Function</td>
+        <td><code>power(x,y)</code></td>
+        <td>Equivalent to x**y</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Example
+
+```{.python}
+x = 10
+y = 15
+z = x+y
+print(z)
+```
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1: Find data type
+</div>
+
+Find data type for the variable:
+
+`institution_name`
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+type(institution_name)
+```
+---
+
+## Working with strings
+
+In Python, strings represent textual data and are enclosed in either **single (`'`)** or **double (`"`)** quotation marks:
+
+```{.python}
+'this is a string'
+"this is also a string"
+```
+
+The opening and closing quotes must match.
+<br>
+
+**Consider:**
+```{.python}
+"The Readers' Advisory Guide to Horror Fiction"
+'"Did you take the trash out?" she asked.'
+```
+
+---
+
+To include special characters like quotes within a string, use a backslash `\` to escape them. This tells Python to ignore the character.
+
+```{.python}
+'The Readers\' Advisory Guide to Horror Fiction'
+```
+
+---
+
+## Assigning strings to variables
+
+You can assign a string to a variable using the `+` operator.
+
+```{.python}
+banned_book = "Brave New World"
+```
+
+---
+
+## String indexing and slicing
+
+Python uses **zero-based indexing**, meaning the first character of a string is at position `0`.
+
+```{.python}
+banned_book[0]
+```
+
+---
+
+## Slice a substring
+
+To extract a portion of a string, use the following syntax:
+
+```{.python}
+string[start index:end index]
+```
+<br>
+The **start index** is where the slice begins and the **end index** tells Python where to stopi, but does not include the character at that position.
+
+<br>
+**Example:**
+
+Slice the word `Brave` from the string **banned_book**.
+
+```{.python}
+banned_book[0:5]
+```
+
+---
+
+## Negative indexing
+
+You can also access characters from the end of a string using negative indices:
+
+```{.python}
+library = "Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210"
+zipcode = library [-5:]
+
+print(zipcode)
+
+```
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2: Slice Carmen Ohio
+</div>
+
+1. Find the first 250 characters in Carmen Ohio
+2. Find the last 250 characters in Carmen Ohio
+3. Find the second sentence in Carmen Ohio (clue: starts at character 33)
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()
+
+# first 250 characters
+carmen_first_250 = carmen_ohio[:250]
+
+# last 250 characters
+carmen_last_250 = carmen_ohio[-250:]
+print(carmen_sentence)
+
+# second sentence
+carmen_sentence = carmen_ohio[33:62]
+print(carmen_sentence)
+
+```
+
+---
+
+## Common string methods
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.6em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Method</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td><code>string.lower()</code></td>
+        <td>Converts all characters to lowercase</td>
+      </tr>
+      <tr >
+        <td><code>string.upper()</code></td>
+        <td>Converts all characters to uppercase</td>
+      </tr>
+      <tr >
+        <td><code>string.title()</code></td>
+        <td>Capitalizes the first letter of each word</td>
+      </tr>
+      <tr >
+        <td><code>string.strip()</code></td>
+        <td>Removes leading and trailing white space</td>
+      </tr>
+      <tr >
+        <td><code>string.replace('old string','new string')</code></td>      
+        <td>Replaces all occurrences of <code>old</code> with <code>new</code></td>
+      </tr>
+      <tr >
+        <td><code>string.split('delim')</code></td>      
+        <td>Splits the string into a list using the specified delimiter</td>
+      </tr>
+      <tr >
+        <td><code>string.join(list)</code></td>
+        <td>Joins elements of a list into a string using the specified delimiter</td>
+      </tr>
+      <tr >
+        <td><code>string.startswith('some string')</code></td>
+        <td>Returns <code>True</code> if the string starts with the specified text</td>
+      </tr>
+      <tr >
+        <td><code>string.endswith('some string')</code></td>
+        <td>Returns <code>True</code> if the string ends with the specified text</td>
+      </tr>
+      <tr >
+        <td><code>string.isspace()</code></td>
+        <td>Returns <code>True</code> if the string contains only whitespace</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Replace text in a string
+
+Replace the word `praise` in the first sentence of carmen_ohio with `wonders` using the `replace` method.
+
+**Basic syntax**
+```{.python}
+string.replace('old string', 'new string')
+```
+<br>
+
+**Example:**
+
+```{.python}
+first_sentence = carmen_ohio[:32]
+revised_first_sentence = first_sentence.replace('praise','wonders')
+
+print("original first sentence: " + first_sentence)
+print(f"revised first sentence: {revised_first_sentence}")
+
+```
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Strings
+</div>
+
+1. Isolate a sentence in Carmen Ohio
+2. Print the isolated sentence
+3. Create a new sentence and try replacing a word
+4. Print the new sentence in uppercase text
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+carmen_ohio=open('carmen_ohio.txt', mode='r', encoding='utf-8').read()
+
+#isolate a sentence
+carmen_sentence=carmen_ohio[:333]
+
+#print the isolated sentence
+print(carmen_sentence)
+
+#create a new sentence and try replacing a word
+new_sentence=carmen_sentence.replace('gladdest','happiest')
+
+#print the new sentence
+print(new_sentence.upper()) 
+
+```
+
+---
+
+## Normalize case
+
+String methods like `.lower()` and `.upper()` are useful for **standardizing text**, especially when comparing values that may differ in capitalization.
+<br><br>
+**Example:**
+
+```{.python}
+name1 = "McMurty, Larry"
+name2 = "Mcmurty, Larry"
+name3 = "mcmurty, larry"
+
+#Convert all names to uppercase for consistent comparison
+name1_rev = name1.upper()
+name2_rev = name2.upper()
+name3_rev = name3.upper()
+
+print(name1_rev)
+print(name2_rev)
+print(name3_rev)
+
+```
+
+---
+
+## Splitting strings
+
+By default, `.split()` separates strings by spaces. You can also specify a delimiter, such as newline `\n`. This returns a **list of lines**, one for each row in the string.
+<br><br>
+**Example:**
+
+```{.python}
+newline_free_carmen = carmen_ohio.split('\n')
+print(newline_free_carmen)
+
+```
+<br>
+If the delimiter is blank, a **list of words** is returned:
+
+```{.python}
+carmen_split= carmen_ohio.split()
+print(carmen_split[0:6])
+
+```
+
+---
+
+## Brain Break
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- Stand up
+- Turn around
+- Touch your nose
+- Touch your toes
+:::
+
+::: {.column width="60%"}
+![](../images/brain_break_1.png){width="100%"}
+:::
+
+::::
+
+---
+
+## Conditionals and Comparisons
+
+Conditionals allow you to control the flow of your program by executing code **only when certain conditions are met**. Python uses `if`, `elif`, and `else` statements to evaluate whether something is `True` or `False`.
+
+---
+
+## Example: Wilbur the Pig
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![](../images/cute_piglet.jpg){width="50%"}
+:::
+
+::: {.column width="70%"}
+Let's say we want to:
+
+- Print Wilbur's name if he's a pig.
+- Compliment him if he's handsome.
+- Confirm if Charlotte is his best friend.
+:::
+
+::::
+
+### Step 1: Assign variables
+
+```{.python}
+wilbur_species = 'pig'
+wilbur_handsome = 'handsome'
+wilbur_likes_charlotte = True
+
+```
+
+---
+
+### Step 2: Create conditional statements
+
+```{.python}
+if wilbur_species == 'pig':
+    print('Wilbur')
+
+if wilbur_handsome == 'handsome':
+    print("He's really cute!")
+
+if wilbur_likes_charlotte == True:
+    print('Charlotte is Wilbur\'s best friend')
+else:
+    print('no')
+
+```
+
+---
+
+## Using if, elif, and else
+
+- `if` checks the first condition.
+- `elif` (short for "else if") checks additional conditions if the first is false.
+- `else` runs if none of the previous conditions are met.
+
+```{.python}
+if wilbur_likes_charlotte == False:
+    print('no')
+else:
+    print("Charlotte is Wilbur's best friend")
+
+```
+
+---
+
+## Comparison operators
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.6em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Operator</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td><code>==</code></td>
+        <td>Equal to</td>
+      </tr>
+      <tr >
+        <td><code>!=</code></td>
+        <td>Not equal to</td>
+      </tr>
+      <tr >
+        <td><code>></code></td>
+        <td>Greater than</td>
+      </tr>
+      <tr >
+        <td><code><</code></td>
+        <td>Less than</td>
+      </tr>
+      <tr >
+        <td><code>>=</code></td>      
+        <td>Greater then or equal to</td>
+      </tr>
+      <tr >
+        <td><code><=</code></td>      
+        <td>Less than or equal to</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 4: Conditions and Comparisons
+</div>
+
+```{.python}
+wilbur_age = 1
+charlotte_age = 4
+farmer_age = 42
+```
+<br>
+Is Wilbur older than Charlotte? Verify Wilbur's age with a conditional statement.
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+wilbur_age = 1
+charlotte_age = 4
+farmer_age = 42
+
+print('IS WILBUR OLDER THAN CHARLOTTE?')
+
+if wilbur_age > charlotte_age:
+    print("Wilbur is older than Charlotte")
+else:
+    print("Wilbur is younger than Charlotte")
+
+```
+
+---
+
+## Logical operators
+
+Use these to combine multiple conditions
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.6em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Operator</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td><strong>and</strong></td>
+        <td>True if <strong>both</strong> conditions are true</td>
+      </tr>
+      <tr >
+        <td><strong>or</strong></td>
+        <td>True if <strong>at least one</strong> condition is true</td>
+      </tr>
+      <tr >
+        <td><strong>not</strong></td>
+        <td>True if the condition is <strong>not</strong> true</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+**Example:**
+```{.python}
+if wilbur_species == 'pig' and wilbur_handsome == 'handsome':
+    print('Wilbur is a handsome pig!')
+
+```
+
+---
+
+## Is this Wilbur?
+
+:::: {.columns}
+
+::: {.column width="30%"}
+![](../images/guineapig.jpg){width="50%"}
+:::
+
+::: {.column width="70%"}
+```{.python}
+y='guinea pig'
+
+if not y:
+    print('Wilbur')
+else:
+    print(y)
+
+```
+:::
+
+::::
+
+---
+
+## Using the in keyword
+
+The `in` keyword checks if a substring exists within a string
+
+```{.python}
+if 'mouse' not in y:
+    print('Not a guinea pig')
+
+```
+<br>
+
+```{.python}
+if 'guinea' in y:
+    print('It's a guinea pig!')
+
+```
+
+---
+
+## Lists and loops
+
+A **list** is an ordered, mutable collection of items in Python. Lists are enclosed in square brackets `[]`, and items are separated by commas.
+
+```{.python}
+characters = ['Han Solo', 'Luke Skywalker', 'C3P0', 'R2D2']
+type(characters)
+
+```
+
+<br>
+
+Lists can contain any data type, even other lists or dictionaries.
+
+```{.python}
+random_list = ['Halloween', 'monster', 
+                2024, ['Snickers', 'M&Ms', 'Mars Bars'],
+                {'costume' : 'Han Solo', 'age': 7}]
+
+```
+
+---
+
+## Accessing list items
+
+Lists use **zero-based indexing**, just like strings. You can use slicing to extract elements
+
+```{.python}
+list_name[start_index:stop_index:step]
+```
+
+---
+
+## Examples:
+
+Extract the first item from the list **characters:**
+
+```{.python}
+characters[0]
+```
+
+<br>
+
+Extract the last 3 items from the list **characters:**
+
+```{.python}
+characters[-3]
+```
+
+<br>
+
+Extract characters from the string **han_solo:**
+
+```{.python}
+han_solo = 'Han Solo'
+han_only = han_solo[0:3]
+print(han_only)
+```
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 5: Extract list items
+</div>
+
+Is there another method to extract the last 3 items from the list **characters**?
+
+```{.python}
+characters = ['Han Solo', 'Luke Skywalker', 'C3P0', 'R2D2']
+
+```
+
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+characters = ['Han Solo', 'Luke Skywalker', 'C3P0', 'R2D2']
+last_3_characters_alternative = characters[1:]
+print(last_3_characters_alternative)
+
+```
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 6: Step through a list
+</div>
+
+Extract every second item from the list **numbers**?
+
+```{.python}
+numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+```
+
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+even_numbers = numbers[1::2]
+
+```
+
+---
+
+## Common list methods
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.6em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Method</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <td><code>list.append(another_item)</code></td>
+        <td>Adds an item to the end of the list</td>
+      </tr>
+      <tr >
+        <td><code>list.extend(another_list)</code></td>
+        <td>Adds all items from another list</td>
+      </tr>
+      <tr >
+        <td><code>list.remove(item)</code></td>
+        <td>Removes the first occurrence of the item</td>
+      </tr>
+      <tr >
+        <td><code>list.sort(reverse=False)</code></td>
+        <td>Sorts the list in ascending order</td>
+      </tr>
+      <tr >
+        <td><code>list.reverse()</code></td>
+        <td>Reverses the order of the list</td>
+      </tr>         
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Examples:
+
+```{.python}
+characters = ['Han Solo', 'Luke Skywalker', 'C3P0', 'R2D2']
+characters.append('Rey')
+print(characters)
+```
+
+<br>
+
+```{.python}
+characters.remove('Rey')
+print(characters)
+```
+
+<br>
+
+```{.python}
+characters_new = ['Rey','BB-8']
+characters.extend(characters_new)
+print(characters)
+```
+
+<br>
+
+```{.python}
+characters.sort(reverse=True)
+print(characters)
+```
+
+---
+
+## Using loops with lists
+
+When working with lists, it's a good practice to use **plural names** for your list variables. This make your code easier to read and understand, especially when you're iterating through each element.
+
+Python's `for` loop allows you to iterate over items in a **sequence**, as a list, tuple, dictionary, or string, and execute a block of code for each item.
+
+<br>
+**Basic syntax**
+
+```{.python}
+for item in sequence:
+    #Code to execute for each item
+```
+
+---
+
+## Examples:
+
+Loop through the characters list.
+
+```{.python}
+for character in characters:
+    print(character)
+```
+
+<br>
+
+Use slicing to print names of the last 3 characters.
+
+```{.python}
+for character in characters[-3:]:
+    print(character)
+
+```
+
+---
+
+Use conditional statements to add a comment for each character.
+
+```{.python}
+for character in characters:
+    if character == 'BB-8' or character == 'R2D2' or character == 'C3P0':
+	    print(f"{character} is a robot")
+    elif character == 'Luke Skywalker':
+	    print('Luke is Leia\'s brother')
+    elif character == 'Han Solo':
+	    print('Chewbacca is Han Solo\'s friend')
+    elif character == 'Rey':
+	    print("Rey rocks")
+
+```
+
+---
+
+```{.python code-line-numbers="3"}
+for character in characters:
+    if character == 'BB-8' or character == 'R2D2' or character == 'C3P0':
+	    print(f"{character} is a robot")
+    elif character == 'Luke Skywalker':
+	    print('Luke is Leia\'s brother')
+    elif character == 'Han Solo':
+	    print('Chewbacca is Han Solo\'s friend')
+    elif character == 'Rey':
+	    print("Rey rocks")
+
+```
+
+Note the line `f"{character} is a robot"` in the first conditional statement of the loop. This is known as a `f-string`, short for formatted string literal. 
+
+A `f-string` is created by placing the letter `f` directly before the opening quotation mark of a string. This allows you to embed variables or expressions inside the string using curly braces `{}`. Python will automatically evaluate the expression and insert its value into the string.
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 7: Loops
+</div>
+
+Print the name of each president of The Ohio State University.
+
+```{.python}
+presidents=["Edward Francis Baxter Orton Sr","Walter Quincy Scott",
+            "William Henry Scott","James Hulme Canfield",
+            "William Oxley Thompson","George Washington Rightmire",
+            "William McPherson","Howard Landis Bevis",
+            "Novice Gail Fawcett","Harold Leroy Enarson",
+            "Edward Harrington Jennings","E. Gordon Gee",
+            "John Richard Sisson","William English Kirwan",
+            "Edward Harrington Jennings","Karen Ann Holbrook",
+            "Joseph A. Alutto","E. Gordon Gee","Joseph A. Alutto",
+            "Michael V. Drake","Kristina M. Johnson",
+            "Peter J. Mohler",'Walter "Ted" Carter, Jr.',
+            "Ravi Bellamkonda"]
+
+```
+
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+for president in presidents:
+    print(president)
+
+```
+
+---
+
+## Index or enumerate list items
+
+There are several ways to determine the index position of items in a list.
+
+### index()
+Using a `for` loop with the built-in `.index()` method returns the **first occurrence** of a specified value in the list.
+
+```{.python}
+for president in presidents:
+    president_index_position = presidents.index(president)
+    president_index_position = president_index_position + 1
+    print(str(president_index_position)+' '+president) 
+```
+
+---
+
+### enumerate ()
+
+A more common and efficient approach is to use the built-in `enumerate()` function within a `for` loop.
+
+The `enumerate()` function returns both the index and the item as you iterate through the list, making your code more readable and avoiding potential issues with methods like `.index()`, which only returns the first occurrence of a value.
+
+
+---
+
+### Why use enumerate?
+
+- It's more efficient than calling `.index()` inside a loop.
+- It handles duplicate values correctly by giving the actual position in the list.
+- It improves readability and reduces the chance of logical errors.
+
+---
+
+This example asks Python to return two variables from the presidents list, the **index** position and the **president**.
+
+```{.python}
+for index, president in enumerate(presidents):
+    print(index, president)
+```
+
+This example uses a f-string to make the returned print statement more clear.
+
+```{.python}
+for index, president in enumerate(presidents):
+    print(f"{president} was the {index+1} president of The Ohio State University")	
+
+```
+Keep in mind that Python uses **zero-based indexing**, meaning the first item in a list as an index of `0`. To make the output more user-friendly, especially when displaying positions, you can **add 1** (`+1`) to each index so that counting starts at `1`.
+
+---
+
+<p>To enhance the script further, you can use a **conditional statement** to add a **superscript** to each number (like 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, etc.), making the output more polished and readable.</p>
+
+```{.python}
+for index, president in enumerate(presidents):
+    index = index+1
+    if index == 1 or index == 21:
+        superscript = 'st'
+    elif index == 2 or index == 22:
+        superscript = 'nd'
+    elif index == 3 or index == 23:
+        superscript = 'rd'
+    elif index >= 4 and index <= 20:
+        superscript = 'th'	
+    print(f"{president} was the {index}{superscript} president of The Ohio
+        State University")
+```
+
+---
+
+## Building lists with loops
+
+You can create new lists from existing ones by using a `for` loop along with the `.append()` method. This is a common and effective way to filter or transform data in Python.
+
+<br>
+
+**Example:** Find U.S. States that border the Pacific Ocean
+
+<br>
+
+START BY ASSIGNING AN EMPTY LIST TO A VARIABLE
+```{.python}
+pacific_states=[ ] 	
+```
+
+---
+
+NEXT WE NEED A LIST OF ALL THE STATES
+```{.python}
+united_states=["Alabama","Alaska","Arizona","Arkansas","California",
+"Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii",
+"Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana",
+"Maine","Maryland","Massachusetts","Michigan","Minnesota",
+"Mississippi","Missouri","Montana","Nebraska", "Nevada",
+"New Hampshire","New Jersey","New Mexico","New York",
+"North Carolina","North Dakota", "Ohio","Oklahoma","Oregon",
+"Pennsylvania","Rhode Island","South Carolina","South Dakota",
+"Tennessee","Texas","Utah","Vermont","Virginia","Washington",
+"West Virginia","Wisconsin","Wyoming"]
+```
+
+---
+
+THEN WE USE A FOR LOOP WITH A CONDITIONAL STATEMENT TO FIND THE WESTERN STATES
+```{.python}
+for state in united_states:
+if state=="Alaska" or state=="California" or state=="Hawaii" or state=="Oregon" or state=="Washington":
+	pacific_states.append(state)
+	
+print(pacific_states)
+```
+
+---
+
+## Counting items in a list
+
+Knowing how many items are in a list is especially helpful when working data, such as extracting information from a website or querying a database.
+
+In Python, you can determine the number of elements in a list using the built-in `len()` function.
+
+```{.python}
+len(united_states)
+```
+
+---
+
+## Counter variables
+
+While Python provides built-in tools like the `enumerate()` function and the `.index()` method to find the position of items in a list, there are times when using a **counter variable** can be a simple and effective alternative. A counter variable allows you to manually track the position of items as you loop through a list. This can be especially useful when you need more control over how positions are counted or displayed.
+
+```{.python}
+count = 0
+for state in states:
+    count += 1
+    print('Starting record '+str(count)+' '+state)
+```
+
+---
+
+## List comprehensions
+
+**List comprehensions** offer a compact way to create new lists by combing a `for` loop and an optional if condition in a single line of code.
+<br><br>
+**Basic syntax:**
+```{.python}
+[expression for item in iterable if condition]
+```
+
+---
+
+Instead of writing this longer version:
+
+```{.python}
+for state in united_states:
+if state=="Alaska" or state=="California" or state=="Hawaii" or state=="Oregon" or state=="Washington":
+	pacific_states.append(state)
+	
+print(pacific_states)
+```
+<br><br>
+You can simplify with a list comprehension.
+
+```{.python}
+list_pacific_states=["Alaska","California","Hawaii","Oregon","Washington"]
+pacific_states=[state for state in united states if state in list_pacific_states]
+
+```
+
+---
+
+## Brain Break
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- Stand up
+- Turn around
+- Touch your nose
+- Touch your toes
+:::
+
+::: {.column width="60%"}
+![](../images/brain_break_1.png){width="100%"}
+:::
+
+::::
+
+---
+
+## Dictionaries
+
+A **dictionary** is a collection of unordered, changeable (mutable) key-value pairs. Each key is unique and maps to a specific value. Dictionaries are enclosed in curly braces `{}`, with a key and value separated by a colon : and each pair separated by a comma.
+
+```{.python}
+university_facts = {"institution_name" : "The Ohio State University",
+	"year_founded" : 1870,
+	"school_colors" : "scarlet & gray",
+	"mascot" : "Brutus Buckeye",
+	"students" : 60046,
+	"endowment" : 7.9 }
+print(university_facts)
+```
+
+---
+
+## Accessing dictionary data
+
+### Keys
+Use `.keys()` to get a list of all keys.
+
+```{.python}
+university_facts.keys()
+```
+
+### Values
+Use `.values()` to get a list of all values.
+
+```{.python}
+university_facts.values()
+```
+
+---
+
+## Access a value
+Use the key inside square brackets.
+
+```{.python}
+first_president = {"name" : "Edward Francis Baxter Orton Sr",
+	"tenure" : "1873-1881"}
+
+print(first_president["name"])
+print(first_president["tenure"])
+```
+
+---
+
+## Modifying and adding data
+
+### Example 1: Add a new key-value pair
+
+```{.python}
+first_president["rank"] = "first president"
+print(first_president)
+```
+
+---
+
+### Example 2: Start with an empty dictionary
+You can beging with an empty dictionary and add key-value pairs as needed.
+
+```{.python}
+state_facts = {}
+state_facts["state"] = "Ohio"
+state_facts["nicknames"] = ["The Buckeye State",
+                            "Birthplace of Aviation",
+                            "The Heart of it All"]
+state_facts["capital"] = "Columbus"
+state_facts["population"] = 11785935
+
+state_facts
+```
+
+---
+
+### Example 3: Modify an existing value
+To update a value in a dictionary, use the dictionary name followed by the key in square brackets `["key"]`, then assign a new value using the `=` sign.
+
+```{.python}
+state_facts["state"] = "Michigan"
+state_facts["nicknames"] = ["The Great Lake State",
+                            "The Wolverine State",
+                            "Water (Winter) Wonderland"]
+state_facts["capital"] = "Lansing"
+state_facts["population"] = 10077331
+
+state_facts
+```
+
+---
+
+## Nesting dictionaries
+Dictionaries can contain other dictionaries, allowing for more complex data structures.
+
+```{.python}
+states={
+"state1" : {"name":"Ohio",
+            "nicknames" : ["The Buckeye State",
+                            "Birthplace of Aviation",
+                            "The Heart of it All"],
+            "capital" : "Columbus"
+            "population" : 11785935},
+"state2" : {"name" : "Michigan",
+            "nicknames" : ["The Great Lake State",
+                           "The Wolverine State",
+                           "Water (Winter) Wonderland"],
+            "capital" : "Lansing",
+            "population" : 10077331}
+}
+
+print(states)
+```
+
+---
+
+## Access a nested dictionary
+To access the first state in the dictionary states, use the key for `state1`.
+
+```{.python}
+states["state1"]
+```
+
+---
+
+## Access a nested value
+To access the nicknames for the first state in the dictionary states, use the keys for `state1` and `nicknames`.
+
+```{.python}
+states["state1"]["nicknames"]
+```
+
+---
+
+## Looping through a dictionary
+Python provides several ways to iterate through the contents of a dictionary, depending on what you need to access:
+
+### Method 1: Loop through key-value pairs
+Use the `.items()` method to access both keys and their corresponding value.
+
+```{.python}
+for key, value in states.items():
+    print(f"\nKey: {key}")
+    print(f"\nValue: {value}")
+```
+
+---
+
+### Method 2: Loop through keys only
+Use the `.keys()` method to iterate over just the keys.
+
+```{.python}
+for key in states.keys():
+    print(f"Key: {key}")
+```
+
+### Method 3: Loop through the values only
+Use the `.values()` method to iterate over just the values.
+
+```{.python}
+for value in states.values():
+  print(f"Value: {value}")
+  ```
+
+Each method gives you flexibility depending on whether you need the keys, the values, or both.
+
+---
+
+## Looping through a nested dictionary
+
+When working with nested dictionaries, or dictionaries that contain other dictionaries as values, you can use a nested for loop to access the inner keys and values.
+
+```{.python}
+for outer_key, inner_dict in states.items():
+    for inner_key, inner_value in value.items():
+        print(f"\nKey: {key}")
+        print(f"\nValue: {value}")
+```
+
+The first loop `for outer_key, inner_dict in states.items():` iterates through the outer dictionary.
+
+The second loop `for inner_key, inner_value in inner_dict.items():` goes through each inner dictionary
+
+---
+
+### Examples:
+
+```{.python}
+for key in states.keys():
+    print(state)
+```
+
+<br><br>
+
+```{.python}
+for key in states.values():
+    for each_state in state.keys():
+        print(each_state)
+```
+
+<br><br>
+
+```{.python}
+for key in states.values():
+    for each_state in state.values():
+        print(each_state)
+```
+
+---
+
+### Examples:
+
+```{.python}
+for each_dictionary in states:
+    print(each_dictionary)
+```
+
+<br><br>
+
+```{.python}
+for key in states:
+    print(states['each_dictionary'])
+```
+
+---
+
+## Functions in Python
+Python includes many **built-in functions** that help you perform common tasks, such as:
+
+- `print()` – displays output
+- `type()` – returns the data type of a value
+- `enumerate()` – adds a counter to an iterable
+
+In addition to these, you can also **define your own functions** to perform specific tasks. This is especially useful when you need to reuse the same block of code multiple times in a program.
+
+---
+
+## What is a function?
+A **function** is a reusable block of code designed to perform a particular task. Functions help make your code more organized, readable, and efficient.
+
+---
+
+## Define a function
+To define a function, use the `def` keyword, followed by the function name, parentheses `()` and a colon `:`. The code inside the function is indented.
+
+```{.python}
+def say_hello():
+  print("Hello")
+```
+
+---
+
+## Call a function
+
+To **call** or execute a function, simply write the function name followed by parentheses.
+
+```{.python}
+say_hello()
+```
+
+---
+
+## Arguments and parameters
+When defining a function, you can include **parameters** inside the parentheses. Parameters act as placeholders for values that will be passed into the function when it's called. This allows your function to work dynamically with different inputs.
+
+In this example:
+
+- `name` is a **parameter** – a variable defined in the function header.
+- When the function is called, you provide an **argument** – a specific value that replaces the parameter.
+
+```{.python}
+def say_hello(name):
+  print(f"Hello, {name}")
+```
+
+---
+
+## Calling a function with an argument
+
+```{.python}
+say_hello("Sarah")
+```
+
+This makes your function flexible and reusable with different inputs.
+
+---
+
+## Parameters vs. arguments
+A **parameter** is a variable listed inside the parentheses when defining a function. It acts as a placeholder for the value the function will receive.
+
+```{.python}
+def function_name(parameter):
+  # function body
+```
+
+An **argument** is the actual value you pass into a function when calling it.
+
+```{.python}
+function_name(argument)
+```
+
+If the function is defined with a parameter, you must provide an argument when calling the function or Python will raise an error.
+
+---
+
+## Positional vs. keyword arguments
+
+When calling a function in Python, you can pass arguments in two main ways: **positional** and **keyword**.
+
+### Positional arguments
+By default, Python matches arguments to parameters based on their **position** in the functional call. The first argument is assigned to the first parameter, the second to the second, and so on.
+
+```{.python}
+def describe_pet(animal_type, pet_name):
+    print(f"\nI have a {animal_type}")
+    print(f"\n My {animal_type}'s name is {pet_name.title()}.")
+```
+
+---
+
+### Keyword arguments
+With keyword arguments, you explicitly specify which value goes to which parameter using the `parameter=value` syntax. This removes the dependency on the order of arguments.
+
+```{.python}
+def describe_pet(pet_name="name",animal_type="species"):
+    print(f"\nI have a {animal_type}")
+    print(f"\n My {animal_type}'s name is {pet_name.title()}.")
+
+pet_description = describe_pet(pet_name='Charlotte', animal_type='spider')
+```
+
+---
+
+## Return values from functions
+So far we've used `print()` to display output from functions. However, functions can also **return values** using the `return` statement. This allows you to store the results and use it later.
+
+```{.python}
+def format_name(first_name, last_name):
+	full_name=f"{first_name} {last_name}"
+	return full_name.title()
+
+name=format_name('sarah','murphy')
+print(name)
+```
+
+Returning values is useful when you want to process data and use the result elsewhere in your program.
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 9: Functions
+</div>
+
+Make a function that tranforms a book title to lower case, then call your function.
+
+```{.python}
+# define your function first. Give it a name and assign a parameter.
+def function_name(parameter):
+	# your code block here
+	return #your code here
+```
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</div>
+
+```{.python}
+def lowercase(title):
+	lowercase_title = title.lower()
+	return lowercase_title	
+
+book = "Lonesome Dove"
+
+print(lowercase(book))
+```
+
+---
+
+## Export data to CSV file
+
+You can export data to a `.csv` file using either the built-in `csv` module or the powerful **pandas** library.
+
+---
+
+## CSV module
+STEP 1 - CREATE EMPTY DATASET AND DEFINE CSV HEADINGS
+```{.python}
+dataSet=[] columns=['institution_name','year_founded','school_colors','mascot','students','endowment'] # for CSV headings 
+```
+
+<br><br>
+
+STEP 2 - DEFINE FUNCTION TO WRITE RESULTS TO CSV FILE 
+
+```{.python}
+def writeto_csv(data,filename,columns): 
+	with open(filename,'w+',newline='',encoding="UTF-8") as file: 
+	writer = csv.DictWriter(file,fieldnames=columns) 
+	writer.writeheader() 
+	writer = csv.writer(file) 
+	for element in data: 
+		writer.writerows([element])
+```
+
+---
+
+STEP 3 - ADD A ROW OF DATA 
+```{.python}
+institution_name= "The Ohio State University" 
+year_founded = 1870 
+school_colors = "scarlet & gray" 
+mascot = "Brutus Buckeye" 
+students = 60046 
+endowment = 7.9 
+
+dataSet.append([institution_name,year_founded,school_colors,mascot,students,endowment]) 
+```
+
+<br><br>
+
+STEP 4 - EXPORT TO CSV 
+```{.python}
+writeto_csv(dataSet,'data/university_facts.csv',columns)
+```
+
+---
+
+## pandas
+
+A pandas **DataFrame** is one of the most powerful and commonly used data strutures in Python for working with **tabular data**, or data that is organized in rows and columns, similar to a spreadsheet or SQL tables. Think of it like an Excel or Google sheet or a table in a database, with:
+
+- **Rows** (each representing an observation or record)
+- **Columns** (each representing a variable or feature)
+
+```{.python}
+import pandas as pd
+
+df = pd.DataFrame([data, index, columns, dtype, copy])
+```
+
+---
+
+STEP 1 – CREATE A LIST OF DICTIONARIES. 
+```{.python}
+import pandas as pd
+
+data = [{"institution_name": "The Ohio State University", "year_founded" : 1870, "school_colors" : "scarlet & gray", "mascot" : "Brutus Buckeye", "students" : 60046, "endowment": 7.9 }," institution_name": "University of Michigan", "year_founded" : 1817, "school_colors" : "maize & blue", "mascot" : "Biff, the MichiganWolverine", "students" : 53488, "endowment": 21.2 }] 
+```
+**Notes:** Each dictionary is a row
+<br><br>
+
+
+STEP 2 - CREATE DATAFRAME TO STORE ROWS 
+
+```{.python}
+university_facts_df=pd.DataFrame(data)
+```
+
+<br><br>
+
+STEP 3 - EXPORT THE RESULTS DATAFRAME TO A CSV FILE
+
+```{.python}
+university_facts_df.to_csv('data/university_facts.csv', encoding='utf-8')
+```
+
+---
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.5em;">
+    <thead>
+      <tr class="table-primary">
+        <th></th>
+        <th>"year"</th>
+        <th>"title"</th>
+        <th>"author"</th>
+        <th>"number_challenges"</th>
+        <th>"rank"</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>2025</td>
+        <td>"Sold"</td>
+        <td>"Patricia McCormick</td>
+        <td>36</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2025</td>
+        <td>"The Perks of Being a Wallflower"</td>
+        <td>"Stephen Chbosky"</td>
+        <td>33</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>2025</td>
+        <td>"Gender Queer"</td>
+        <td>Maia Kobabe"</td>
+        <td>25</td>
+        <td>3</td>
+      </tr> 
+      <tr>
+        <td>4</td>
+        <td>2025</td>
+        <td>"Empire of Storms"</td>
+        <td>"Sarah J. Maas"</td>
+        <td>24</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>2025</td>
+        <td>"Last Night at the Telegraph Club"</td>
+        <td>"MAlinda Lo"</td>
+        <td>23</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>2025</td>
+        <td>"Tricks"</td>
+        <td>"Ellen Hopkins"</td>
+        <td>23</td>
+        <td>5</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+```{.python}
+df = pd.DataFrame({
+                  "year" : 2025,
+                  "rank" : [1,2,3,4,5,5],
+                  "title" : ["Sold","The Perks of Being a Wallflower","Gender Queer","Empire of Storms","Last Night at the Telegraph Club","Tricks"],
+                  "author" : ["Patricia McCormick","Stephen Chbosky","Maia Kobabe","Sarah J. Maas","Malinda Lo","Ellen Hopkins"],
+                  "number_challenges" : [36,33,25,24,23,23]
+})
+```
+
 

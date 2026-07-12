@@ -1,0 +1,208 @@
+/* ------------------------------
+   OSU Typography Overrides
+   ------------------------------ */
+
+/*-- scss:uses --*/
+/* If you @use or @import additional partials, do it here. 
+   Quarto will place this layer before the others. */
+
+/*-- scss:functions --*/
+/* Add any Sass functions here if needed. Keeping empty is fine. */
+
+/*-- scss:defaults --*/
+/* Variables (fonts, colors, sizes) live here. 
+   These are evaluated before Bootstrap/Bootswatch components are built. */
+
+/* Set OSU brand fonts as the defaults (loaded via styles/osu-fonts.html):
+   Family names per BUX: "BuckeyeSans" and "BuckeyeSerif". */
+$font-family-sans-serif: "BuckeyeSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif !default;
+$font-family-serif:      "BuckeyeSerif", "Georgia", serif !default;
+
+/* Optional Bootstrap weight variables (helpful defaults) */
+$font-weight-normal:   400 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold:     700 !default;
+
+/* Heading defaults (Bootstrap will apply these broadly) */
+$headings-font-family: $font-family-serif !default;
+$headings-font-weight: 700 !default;   /* h2–h6 default; we’ll fine‑tune below in rules */
+
+/* Set link color to scarlet */
+$link-color: #BA0C2F !default;
+$link-hover-color: darken(#BA0C2F, 12%) !default;
+
+/* You can also keep other theme variables here if you want:
+   e.g., $primary: #BB0000;  // OSU Scarlet
+*/
+
+/*-- scss:mixins --*/
+/* Reusable mixins go here (optional). */
+
+/*-- scss:rules --*/
+/* Concrete CSS rules/selectors live here. */
+
+/* Apply Buckeye Sans to body text */
+body {
+  font-family: "BuckeyeSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400; /* OSU brand weight for normal copy */
+}
+
+/* Headings use Buckeye Serif with OSU brand weights:
+   Buckeye Serif 2 supports 400, 600, 700, 900
+   Buckeye Sans 2 supports 400, 600, 700, 800, 900  */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "BuckeyeSerif", Georgia, serif;
+  line-height: 1.2;
+  margin-top: 1.2em;
+  margin-bottom: .6em;
+}
+
+/* OSU brand weight assignments */
+h1 { font-weight: 900; } /* Black */
+h2 { font-weight: 700; } /* Bold */
+h3 { font-weight: 600; } /* SemiBold */
+h4,
+h5,
+h6 { font-weight: 400; } /* Regular */
+
+/* OSU-styled emphasized text */
+strong, b { font-weight: 700; }
+.navbar-brand, .sidebar-title { font-weight: 700; }
+
+/* Ensure code blocks and small UI text stay readable with Sans */
+code, pre, kbd, samp { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* Remove Simplex box/border and background from breadcrumbs */
+.breadcrumb {
+  border: none;              /* Simplex sets a 1px border; turn it off */
+  background: transparent;   /* ensure no background fill */
+  box-shadow: none;          /* in case a theme adds shadows */
+  padding-left: 0;           /* optional: flush-left alignment */
+  padding-right: 0;          /* optional: flush-right alignment */
+  border-radius: 0;          /* optional: remove any rounding */
+}
+
+
+/* Custom alert background colors */
+.alert-primary {
+  background-color: #f3bfbe !important;
+  border-color: #e46d6b !important;
+}
+
+/* Info alert */
+.alert-info {
+  background-color: #b3e2f5 !important;
+  border-color: #67c5eb !important;
+}
+
+/* Warning alert */
+.alert-warning {
+  background-color: #ffc3b0 !important;
+  border-color: #ff8861 !important;
+}
+
+
+/* -----------------------------------------
+   Accordion state colors
+   - Collapsed buttons = white
+   - Expanded buttons = #f3bfbe
+   ----------------------------------------- */
+
+/* Collapsed (default) */
+.accordion-button,
+.accordion-button.collapsed {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Expanded (not collapsed) */
+.accordion-button:not(.collapsed) {
+  background-color: #f3bfbe;
+  color: #000;
+  /* Optional: keep a subtle divider like Bootstrap’s inset line */
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: border polish */
+.accordion-item {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: .375rem;
+  overflow: hidden;
+}
+
+/* -----------------------------------------
+   Ensure all grid columns behave like equal-height containers
+   ----------------------------------------- */
+
+.grid > [class*="g-col"] {
+  display: grid;
+}
+
+/* Make every card fill the grid cell vertically */
+.grid .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Allow the card body (image section) to grow/shrink appropriately */
+.grid .card-body {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+/* Push the list-group footer items to the bottom */
+.grid .list-group {
+  margin-top: auto;
+}
+
+/* -----------------------------------------
+   List group action item branding
+   - Active  : Scarlet background (#BA0C2F), white text
+   - Inactive: White background, default text
+   ----------------------------------------- */
+
+/* Inactive (default) */
+.list-group-item.list-group-item-action {
+  background-color: #fff;
+  color: inherit;               /* keep theme/default text color */
+  border-color: rgba(0,0,0,.125);
+}
+
+/* Hover & focus for inactive items (optional, keep subtle) */
+.list-group-item.list-group-item-action:hover,
+.list-group-item.list-group-item-action:focus {
+  background-color: #f8f9fa;    /* very light gray hover */
+  color: inherit;
+}
+
+/* Active state */
+.list-group-item.list-group-item-action.active {
+  background-color: #BA0C2F !important; /* OSU Scarlet */
+  border-color: #BA0C2F !important;
+  color: #fff !important;
+}
+
+/* Ensure links inside active items stay white */
+.list-group-item.list-group-item-action.active a {
+  color: #fff !important;
+  text-decoration: none;
+}
+.list-group-item.list-group-item-action.active a:hover,
+.list-group-item.list-group-item-action.active a:focus {
+  color: #fff !important;
+  text-decoration: underline;   /* optional for accessibility */
+}
+
+/* If your list uses badges inside items, keep them readable */
+.list-group-item.list-group-item-action.active .badge {
+  background-color: #fff;
+  color: #BA0C2F;
+}
+
+/* -----------------------------------------
+   Make .text-primary use OSU Scarlet
+   ----------------------------------------- */
+.text-primary {
+  color: #BA0C2F !important;
+}

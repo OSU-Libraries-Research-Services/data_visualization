@@ -2190,14 +2190,14 @@
     "href": "slides/python_basics_part1.html#getting-started",
     "title": "Data Visualization",
     "section": "Getting Started",
-    "text": "Getting Started\n\nCreate an empty file named python_workshop on your desktop\nGo to https://go.osu.edu/python_mastering_basics"
+    "text": "Getting Started\n\nCreate an empty file named python_workshop on your desktop\nGo to https://go.osu.edu/python_mastering_basics\nDownload and place in your python_workshop folder:\n\ncarmen_ohio.txt\ncarmen_ohio_revised.txt\npython_mastering_basics_workshop_exercises.py"
   },
   {
     "objectID": "slides/python_basics_part1.html#section",
     "href": "slides/python_basics_part1.html#section",
-    "title": "Python Mastering the Basics Part 1",
+    "title": "Data Visualization",
     "section": "",
-    "text": "Welcome to Python—Mastering the Basics Part 1: Python Fundamentals\n\nPicture"
+    "text": "Welcome to Python Mastering the Basics\nPart 1: Python Fundamentals"
   },
   {
     "objectID": "slides/python_basics_part1.html#welcome-to-python-mastering-the-basics",
@@ -2205,5 +2205,740 @@
     "title": "Data Visualization",
     "section": "Welcome to Python Mastering the Basics",
     "text": "Welcome to Python Mastering the Basics\nPart 1: Python Fundamentals"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#testing",
+    "href": "slides/python_basics_part1.html#testing",
+    "title": "Data Visualization",
+    "section": "Testing",
+    "text": "Testing"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#welcome-to",
+    "href": "slides/python_basics_part1.html#welcome-to",
+    "title": "Data Visualization",
+    "section": "Welcome to",
+    "text": "Welcome to\n\n\nPython Mastering the Basics\nPart 1: Python Fundamentals"
+  },
+  {
+    "objectID": "slides/test.html",
+    "href": "slides/test.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "## Slide 1\n    A paragraph with some text and a [link](https://hakim.se).\n    ---\n    ## Slide 2\n    ---\n    ## Slide 3"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#learning-objectives",
+    "href": "slides/python_basics_part1.html#learning-objectives",
+    "title": "Data Visualization",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nPython Fundamentals\n\nConstruct variables, manipulate strings, and loop through lists\nBuild and navigate dictionaries\nDefine and use functions\nExport data to CSV files"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#python-mastering-the-basics",
+    "href": "slides/python_basics_part1.html#python-mastering-the-basics",
+    "title": "Data Visualization",
+    "section": "Python Mastering the Basics",
+    "text": "Python Mastering the Basics\nPart 1: Python Fundamentals"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#three-things-you-need",
+    "href": "slides/python_basics_part1.html#three-things-you-need",
+    "title": "Data Visualization",
+    "section": "Three things you need …",
+    "text": "Three things you need …\n\nAn integrated development environment or IDE. This is where you write and run code\nA Python installation, so your computer can interpret and execute Python code\nPython packages. These are collections of existing, reusable code, also known as libraries, you can use in Python projects. (e.g. pandas, numpy, pytorch, etc…)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#tour-your-ide",
+    "href": "slides/python_basics_part1.html#tour-your-ide",
+    "title": "Data Visualization",
+    "section": "Tour your IDE",
+    "text": "Tour your IDE\n\n\nPrimary Side Bar\nFile Explorer\n▢ Outline\nSource Control\nExtensions\n▢ Python\n▢ Jupyter\n▢ Pylance\nRun and Debug\n\nCommand Palette\n▢ Ctrl+Shift+P\n▢ &gt; Python: Select Interpreter\nEditor\nTerminal\nChat (close)\nInteractive Explorer\nJupyter Variables"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#absolute-vs-relative-paths",
+    "href": "slides/python_basics_part1.html#absolute-vs-relative-paths",
+    "title": "Data Visualization",
+    "section": "Absolute vs Relative Paths",
+    "text": "Absolute vs Relative Paths\nWhen you run a Python script, the folder it runs from is set as the current working directory (cwd). This is where Python looks for files to read and write by default.  In VS Code, you can set the working directory by clicking the Explorer icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#relative-paths",
+    "href": "slides/python_basics_part1.html#relative-paths",
+    "title": "Data Visualization",
+    "section": "Relative paths",
+    "text": "Relative paths\nIf your files are stored in the same folder as your Python script, you can use a relative path.\nrelative_filepath_of_text = \"text.txt\"\n Python interprets this path relevant to the current working directory.\ncarmen_ohio = \"carmen.txt\""
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#absolute-paths",
+    "href": "slides/python_basics_part1.html#absolute-paths",
+    "title": "Data Visualization",
+    "section": "Absolute paths",
+    "text": "Absolute paths\nIf your files are stored elsewhere, use an absolute path to specify the full location:\nabsolute_filepath_of_text = \"C:/path/to/your/directory/file.txt\""
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#reading-and-writing-files",
+    "href": "slides/python_basics_part1.html#reading-and-writing-files",
+    "title": "Data Visualization",
+    "section": "Reading and writing files",
+    "text": "Reading and writing files\nOpening a file\nTo work with a file in Python, you first need to open it. This returns a file object that allows you read from or write to the file.\nopen(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)\n\nfile: The path to the file (absolute or relative)\nmode: Optional. Specifies how the file is opened. Default is r (read mode)."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#common-file-modes",
+    "href": "slides/python_basics_part1.html#common-file-modes",
+    "title": "Data Visualization",
+    "section": "Common file modes",
+    "text": "Common file modes\nPython supports a variety of built-in dtaa types, each suited for different kinds of information.\n\n\n\n\n\nCharacter\n\n\nMeaning\n\n\n\n\n\n\nr\n\n\nopen for reading (default)\n\n\n\n\nw\n\n\nopen for writing, truncating the file first\n\n\n\n\nx\n\n\nopen for exclusive creation, failing if the file already exists\n\n\n\n\na\n\n\nopen for writing, appending to the end of a file if it exists\n\n\n\n\nb\n\n\nbinary mode\n\n\n\n\nt\n\n\ntext mode (default)\n\n\n\n\n+\n\n\nopen for reading and writing"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#opening-a-file",
+    "href": "slides/python_basics_part1.html#opening-a-file",
+    "title": "Data Visualization",
+    "section": "Opening a file",
+    "text": "Opening a file\nTo work with a file in Python, you first need to open it. This returns a file object that allows you read from or write to the file.\nopen(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)\n\nfile: The path to the file (absolute or relative)\nmode: Optional. Specifies how the file is opened. Default is r (read mode)."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#common-file-modes-1",
+    "href": "slides/python_basics_part1.html#common-file-modes-1",
+    "title": "Data Visualization",
+    "section": "Common file modes",
+    "text": "Common file modes\n\n\n\n\n\n\n\n\nCharacter\n\n\nMeaning\n\n\n\n\n\n\nr\n\n\nOpen for reading (default)\n\n\n\n\nw\n\n\nOpen for writing, truncating the file first\n\n\n\n\nx\n\n\nOpen for exclusive creation, failing if the file already exists\n\n\n\n\na\n\n\nOpen for writing, appending to the end of a file if it exists\n\n\n\n\nb\n\n\nBinary mode\n\n\n\n\nt\n\n\nText mode (default)\n\n\n\n\n+\n\n\nOpen for both reading and writing"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#encoding",
+    "href": "slides/python_basics_part1.html#encoding",
+    "title": "Data Visualization",
+    "section": "Encoding",
+    "text": "Encoding\nUse the encoding parameter when working in text mode to specify how characters are interpreted. Common encodings include:\n\nutf-8 – Most commonly used and recommended.\nutf-16 – Uses 2 bytes per character, useful for some international text.\nutf-32 – Uses 4 bytes per characters; supports all Unicode characters directly.\n\ncarmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8')\nprint(carmen_ohio)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#reading-a-file",
+    "href": "slides/python_basics_part1.html#reading-a-file",
+    "title": "Data Visualization",
+    "section": "Reading a file",
+    "text": "Reading a file\nTo read a file, open it in read mode r and use the .read() method.\ncarmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()\nprint(carmen_ohio)\n Alternative\nUse a with block to open the file in read mode and use the .read() method.\nwith open('carmen_ohio.txt', mode='r', encoding='utf-8') as file:\n  content = file.read()"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#write-to-a-file",
+    "href": "slides/python_basics_part1.html#write-to-a-file",
+    "title": "Data Visualization",
+    "section": "Write to a file",
+    "text": "Write to a file\nTo write to a file, open it in write mode w. This will overwrite the file if it already exists. If you don’t specify a mode, Python defaults to r (read mode), so it’s important to explicitly set mode='w' when writing.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')\n This create an object. To add text to a file, use the .write( ) method.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')write(\"Let's firm thy friendship again!\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#variables",
+    "href": "slides/python_basics_part1.html#variables",
+    "title": "Data Visualization",
+    "section": "Variables",
+    "text": "Variables\nPython supports a variety of built-in data types, each suited for different kinds of information.\n\n\n\n\n\nName\n\n\nAbbr\n\n\nType\n\n\nDescription\n\n\nExample\n\n\n\n\n\n\nString\n\n\nstr\n\n\nSequence\n\n\nText\n\n\n“The Ohio State University”\n\n\n\n\nInteger\n\n\nint\n\n\nNumeric\n\n\nWhole numbers\n\n\n1870\n\n\n\n\nFloat\n\n\nfloat\n\n\nNumeric\n\n\nDecimal numbers\n\n\n3.14\n\n\n\n\nBoolean\n\n\nbool\n\n\nBoolean\n\n\nTrue/False values\n\n\nTrue\n\n\n\n\nList\n\n\nlist\n\n\nSequence\n\n\nOrdered, mutable collection\n\n\n[ “The Ohio State University” , 1870 ]\n\n\n\n\nDictionary\n\n\ndict\n\n\nMapping\n\n\nKey-value pairs\n\n\n{ “institution_name” : “The Ohio State University” , “year_founded” : 1870 }\n\n\n\n\nTuple\n\n\ntuple\n\n\nSequence\n\n\nOrdered, immutable collection\n\n\n(“The Ohio State University”, 1870)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#working-with-variables",
+    "href": "slides/python_basics_part1.html#working-with-variables",
+    "title": "Data Visualization",
+    "section": "Working with variables",
+    "text": "Working with variables\nVariables are created using the = operator.\n Naming Rules\n\nCan include letters, digits, and underscores.\nMust not start with a digit.\nCannot contain spaces or special characters (except _ )\nMust not use reserved Pythons keywords."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#osu-variables",
+    "href": "slides/python_basics_part1.html#osu-variables",
+    "title": "Data Visualization",
+    "section": "OSU variables",
+    "text": "OSU variables\ninstitution_name = \"The Ohio State University\"\nyear_founded = 1870\nuniversity_facts = {\"institution_name\" : \"The Ohio State University\", \"year_founded\" : 1870, \"school_colors\" : \"scarlet & grey\", \"mascot\" : \"Brutus Buckeye\" , \"students\" : 60046 , \"endowment\": 7.9 }\nfact_list = [\"The Ohio State University\" , 1870, \"scarlet & gray\" , \"Brutus Buckeye\", 60046, 7.9 ]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#reserved-keywords",
+    "href": "slides/python_basics_part1.html#reserved-keywords",
+    "title": "Data Visualization",
+    "section": "Reserved keywords",
+    "text": "Reserved keywords\n\nFalse, True, None, and, as, assert, async, await, def, del, elif, else, break, class, continue, except, finally, for, from, global, if, import, in, is, lambda, nonlocal, not, or, pass, raise, return, try, while, with, yield \n\n\nTo check a variable’s type, use the type() function.\n\ntype(university_facts)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#variables-1",
+    "href": "slides/python_basics_part1.html#variables-1",
+    "title": "Data Visualization",
+    "section": "Variables",
+    "text": "Variables\nPython supports a variety of built-in data types, each suited for different kinds of information.\n\n\n\n\n\nName\n\n\nAbbr\n\n\nType\n\n\nDescription\n\n\nExample\n\n\n\n\n\n\nString\n\n\nstr\n\n\nSequence\n\n\nText\n\n\n“The Ohio State University”\n\n\n\n\nInteger\n\n\nint\n\n\nNumeric\n\n\nWhole numbers\n\n\n1870\n\n\n\n\nFloat\n\n\nfloat\n\n\nNumeric\n\n\nDecimal numbers\n\n\n3.14\n\n\n\n\nBoolean\n\n\nbool\n\n\nBoolean\n\n\nTrue/False values\n\n\nTrue"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#basic-math-operators",
+    "href": "slides/python_basics_part1.html#basic-math-operators",
+    "title": "Data Visualization",
+    "section": "Basic math operators",
+    "text": "Basic math operators\n\n\n\n\n\nOperation\n\n\nExpression\n\n\nResult\n\n\n\n\n\n\nAddition\n\n\nx+y\n\n\nSum of x and y\n\n\n\n\nSubtraction\n\n\nx-y\n\n\nDifference of x and y\n\n\n\n\nMultiplication\n\n\nx*y\n\n\nProduct of x and y\n\n\n\n\nDivision\n\n\nx/y\n\n\nQuotient of x and y\n\n\n\n\nFloor Division\n\n\nx//y\n\n\nQuotient rounded down\n\n\n\n\nModulus\n\n\nx%y\n\n\nRemainder of x divided by y\n\n\n\n\nExponentiation\n\n\nx**y\n\n\nx raised to the power of y\n\n\n\n\nNegation\n\n\n-x\n\n\nNegative value of x\n\n\n\n\nAbsolute Value\n\n\nabs(x)\n\n\nAbsolute value of x\n\n\n\n\nConvert to Int\n\n\nint(x)\n\n\nConverts x to an integer\n\n\n\n\nConvert to Float\n\n\nfloat(x)\n\n\nConverts x to a float\n\n\n\n\nPower Function\n\n\npower(x,y)\n\n\nEquivalent to x**y"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#example",
+    "href": "slides/python_basics_part1.html#example",
+    "title": "Data Visualization",
+    "section": "Example",
+    "text": "Example\nx = 10\ny = 15\nz = x+y\nprint(z)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#working-with-strings",
+    "href": "slides/python_basics_part1.html#working-with-strings",
+    "title": "Data Visualization",
+    "section": "Working with strings",
+    "text": "Working with strings\nIn Python, strings represent textual data and are enclosed in either single (') or double (\") quotation marks:\n'this is a string'\n\"this is also a string\"\nThe opening and closing quotes must match. \nConsider:\n\"The Readers' Advisory Guide to Horror Fiction\"\n'\"Did you take the trash out?\" she asked.'"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#assigning-strings-to-variables",
+    "href": "slides/python_basics_part1.html#assigning-strings-to-variables",
+    "title": "Data Visualization",
+    "section": "Assigning strings to variables",
+    "text": "Assigning strings to variables\nYou can assign a string to a variable using the + operator.\nbanned_book = \"Brave New World\""
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#string-indexing-and-slicing",
+    "href": "slides/python_basics_part1.html#string-indexing-and-slicing",
+    "title": "Data Visualization",
+    "section": "String indexing and slicing",
+    "text": "String indexing and slicing\nPython uses zero-based indexing, meaning the first character of a string is at position 0.\nbanned_book[0]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#slice-a-substring",
+    "href": "slides/python_basics_part1.html#slice-a-substring",
+    "title": "Data Visualization",
+    "section": "Slice a substring",
+    "text": "Slice a substring\nTo extract a portion of a string, use the following syntax:\nstring[start index:end index]\n The start index is where the slice begins and the end index tells Python where to stopi, but does not include the character at that position.\n Example:\nSlice the word Brave from the string banned_book.\nbanned_book[0:5]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#negative-indexing",
+    "href": "slides/python_basics_part1.html#negative-indexing",
+    "title": "Data Visualization",
+    "section": "Negative indexing",
+    "text": "Negative indexing\nYou can also access characters from the end of a string using negative indices:\nlibrary = \"Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210\"\nzipcode = library [-5:]\n\nprint(zipcode)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#common-string-methods",
+    "href": "slides/python_basics_part1.html#common-string-methods",
+    "title": "Data Visualization",
+    "section": "Common string methods",
+    "text": "Common string methods\n\n\n\n\n\nMethod\n\n\nDescription\n\n\n\n\n\n\nstring.lower()\n\n\nConverts all characters to lowercase\n\n\n\n\nstring.upper()\n\n\nConverts all characters to uppercase\n\n\n\n\nstring.title()\n\n\nCapitalizes the first letter of each word\n\n\n\n\nstring.strip()\n\n\nRemoves leading and trailing white space\n\n\n\n\nstring.replace(‘old string’,‘new string’)\n\n\nReplaces all occurrences of old with new\n\n\n\n\nstring.split(‘delim’)\n\n\nSplits the string into a list using the specified delimiter\n\n\n\n\nstring.join(list)\n\n\nJoins elements of a list into a string using the specified delimiter\n\n\n\n\nstring.startswith(‘some string’)\n\n\nReturns True if the string starts with the specified text\n\n\n\n\nstring.endswith(‘some string’)\n\n\nReturns True if the string ends with the specified text\n\n\n\n\nstring.isspace()\n\n\nReturns True if the string contains only whitespace"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#replace-text-in-a-string",
+    "href": "slides/python_basics_part1.html#replace-text-in-a-string",
+    "title": "Data Visualization",
+    "section": "Replace text in a string",
+    "text": "Replace text in a string\nReplace the word praise in the first sentence of carmen_ohio with wonders using the replace method.\nBasic syntax\nstring.replace('old string', 'new string')\n\nExample:\nfirst_sentence = carmen_ohio[:32]\nrevised_first_sentence = first_sentence.replace('praise','wonders')\n\nprint(\"original first sentence: \" + first_sentence)\nprint(f\"revised first sentence: {revised_first_sentence}\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#normalize-case",
+    "href": "slides/python_basics_part1.html#normalize-case",
+    "title": "Data Visualization",
+    "section": "Normalize case",
+    "text": "Normalize case\nString methods like .lower() and .upper() are useful for standardizing text, especially when comparing values that may differ in capitalization.  Example:\nname1 = \"McMurty, Larry\"\nname2 = \"Mcmurty, Larry\"\nname3 = \"mcmurty, larry\"\n\n#Convert all names to uppercase for consistent comparison\nname1_rev = name1.upper()\nname2_rev = name2.upper()\nname3_rev = name3.upper()\n\nprint(name1_rev)\nprint(name2_rev)\nprint(name3_rev)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#splitting-strings",
+    "href": "slides/python_basics_part1.html#splitting-strings",
+    "title": "Data Visualization",
+    "section": "Splitting strings",
+    "text": "Splitting strings\nBy default, .split() separates strings by spaces. You can also specify a delimiter, such as newline \\n. This returns a list of lines, one for each row in the string.  Example:\nnewline_free_carmen = carmen_ohio.split('\\n')\nprint(newline_free_carmen)\n If the delimiter is blank, a list of words is returned:\ncarmen_split= carmen_ohio.split()\nprint(carmen_split[0:6])"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#brain-break",
+    "href": "slides/python_basics_part1.html#brain-break",
+    "title": "Data Visualization",
+    "section": "Brain Break",
+    "text": "Brain Break\n\n\n\nStand up\nTurn around\nTouch your nose\nTouch your toes"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#conditionals-and-comparisons",
+    "href": "slides/python_basics_part1.html#conditionals-and-comparisons",
+    "title": "Data Visualization",
+    "section": "Conditionals and Comparisons",
+    "text": "Conditionals and Comparisons\nConditionals allow you to control the flow of your program by executing code only when certain conditions are met. Python uses if, elif, and else statements to evaluate whether something is True or False."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#example-wilbur-the-pig",
+    "href": "slides/python_basics_part1.html#example-wilbur-the-pig",
+    "title": "Data Visualization",
+    "section": "Example: Wilbur the Pig",
+    "text": "Example: Wilbur the Pig\n\n\n\n\nLet’s say we want to:\n\nPrint Wilbur’s name if he’s a pig.\nCompliment him if he’s handsome.\nConfirm if Charlotte is his best friend.\n\n\nStep 1: Assign variables\nwilbur_species = 'pig'\nwilbur_handsome = 'handsome'\nwilbur_likes_charlotte = True"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#using-if-elif-and-else",
+    "href": "slides/python_basics_part1.html#using-if-elif-and-else",
+    "title": "Data Visualization",
+    "section": "Using if, elif, and else",
+    "text": "Using if, elif, and else\n\nif checks the first condition.\nelif (short for “else if”) checks additional conditions if the first is false.\nelse runs if none of the previous conditions are met.\n\nif wilbur_likes_charlotte == False:\n    print('no')\nelse:\n    print(\"Charlotte is Wilbur's best friend\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#comparison-operators",
+    "href": "slides/python_basics_part1.html#comparison-operators",
+    "title": "Data Visualization",
+    "section": "Comparison operators",
+    "text": "Comparison operators\n\n\n\n\n\nOperator\n\n\nMeaning\n\n\n\n\n\n\n==\n\n\nEqual to\n\n\n\n\n!=\n\n\nNot equal to\n\n\n\n\n&gt;\n\n\nGreater than\n\n\n\n\n&lt;\n\n\nLess than\n\n\n\n\n&gt;=\n\n\nGreater then or equal to\n\n\n\n\n&lt;=\n\n\nLess than or equal to"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#logical-operators",
+    "href": "slides/python_basics_part1.html#logical-operators",
+    "title": "Data Visualization",
+    "section": "Logical operators",
+    "text": "Logical operators\nUse these to combine multiple conditions\n\n\n\n\n\nOperator\n\n\nMeaning\n\n\n\n\n\n\nand\n\n\nTrue if both conditions are true\n\n\n\n\nor\n\n\nTrue if at least one condition is true\n\n\n\n\nnot\n\n\nTrue if the condition is not true\n\n\n\n\n\nExample:\nif wilbur_species == 'pig' and wilbur_handsome == 'handsome':\n    print('Wilbur is a handsome pig!')"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#is-this-wilbur",
+    "href": "slides/python_basics_part1.html#is-this-wilbur",
+    "title": "Data Visualization",
+    "section": "Is this Wilbur?",
+    "text": "Is this Wilbur?\n\n\n\n\ny='guinea pig'\n\nif not y:\n    print('Wilbur')\nelse:\n    print(y)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#using-the-in-keyword",
+    "href": "slides/python_basics_part1.html#using-the-in-keyword",
+    "title": "Data Visualization",
+    "section": "Using the in keyword",
+    "text": "Using the in keyword\nThe in keyword checks if a substring exists within a string\nif 'mouse' not in y:\n    print('Not a guinea pig')\n\nif 'guinea' in y:\n    print('It's a guinea pig!')"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#lists-and-loops",
+    "href": "slides/python_basics_part1.html#lists-and-loops",
+    "title": "Data Visualization",
+    "section": "Lists and loops",
+    "text": "Lists and loops\nA list is an ordered, mutable collection of items in Python. Lists are enclosed in square brackets [], and items are separated by commas.\ncharacters = ['Han Solo', 'Luke Skywalker', 'C3P0', 'R2D2']\ntype(characters)\n\nLists can contain any data type, even other lists or dictionaries.\nrandom_list = ['Halloween', 'monster', \n                2024, ['Snickers', 'M&Ms', 'Mars Bars'],\n                {'costume' : 'Han Solo', 'age': 7}]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#accessing-list-items",
+    "href": "slides/python_basics_part1.html#accessing-list-items",
+    "title": "Data Visualization",
+    "section": "Accessing list items",
+    "text": "Accessing list items\nLists use zero-based indexing, just like strings. You can use slicing to extract elements\nlist_name[start_index:stop_index:step]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#examples",
+    "href": "slides/python_basics_part1.html#examples",
+    "title": "Data Visualization",
+    "section": "Examples:",
+    "text": "Examples:\nExtract the first item from the list characters:\ncharacters[0]\n\nExtract the last 3 items from the list characters:\ncharacters[-3]\n\nExtract characters from the string han_solo:\nhan_solo = 'Han Solo'\nhan_only = han_solo[0:3]\nprint(han_only)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#common-list-methods",
+    "href": "slides/python_basics_part1.html#common-list-methods",
+    "title": "Data Visualization",
+    "section": "Common list methods",
+    "text": "Common list methods\n\n\n\n\n\nMethod\n\n\nDescription\n\n\n\n\n\n\nlist.append(another_item)\n\n\nAdds an item to the end of the list\n\n\n\n\nlist.extend(another_list)\n\n\nAdds all items from another list\n\n\n\n\nlist.remove(item)\n\n\nRemoves the first occurrence of the item\n\n\n\n\nlist.sort(reverse=False)\n\n\nSorts the list in ascending order\n\n\n\n\nlist.reverse()\n\n\nReverses the order of the list"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#examples-1",
+    "href": "slides/python_basics_part1.html#examples-1",
+    "title": "Data Visualization",
+    "section": "Examples:",
+    "text": "Examples:\ncharacters = ['Han Solo', 'Luke Skywalker', 'C3P0', 'R2D2']\ncharacters.append('Rey')\nprint(characters)\n\ncharacters.remove('Rey')\nprint(characters)\n\ncharacters_new = ['Rey','BB-8']\ncharacters.extend(characters_new)\nprint(characters)\n\ncharacters.sort(reverse=True)\nprint(characters)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#using-loops-with-lists",
+    "href": "slides/python_basics_part1.html#using-loops-with-lists",
+    "title": "Data Visualization",
+    "section": "Using loops with lists",
+    "text": "Using loops with lists\nWhen working with lists, it’s a good practice to use plural names for your list variables. This make your code easier to read and understand, especially when you’re iterating through each element.\nPython’s for loop allows you to iterate over items in a sequence, as a list, tuple, dictionary, or string, and execute a block of code for each item.\n Basic syntax\nfor item in sequence:\n    #Code to execute for each item"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#examples-2",
+    "href": "slides/python_basics_part1.html#examples-2",
+    "title": "Data Visualization",
+    "section": "Examples:",
+    "text": "Examples:\nLoop through the characters list.\nfor character in characters:\n    print(character)\n\nUse slicing to print names of the last 3 characters.\nfor character in characters[-3:]:\n    print(character)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#fcharacter-is-a-robot",
+    "href": "slides/python_basics_part1.html#fcharacter-is-a-robot",
+    "title": "Data Visualization",
+    "section": "f”{character} is a robot”",
+    "text": "f”{character} is a robot”\nA f-string is created by placing the letter f directly before the opening quotation mark of a string. This allows you to embed variables or expressions inside the string using curly braces {}. Python will automatically evaluate the expression and insert its value into the string."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#index-or-enumerate-list-items",
+    "href": "slides/python_basics_part1.html#index-or-enumerate-list-items",
+    "title": "Data Visualization",
+    "section": "Index or enumerate list items",
+    "text": "Index or enumerate list items\nThere are several ways to determine the index position of items in a list.\nindex()\nUsing a for loop with the built-in .index() method returns the first occurrence of a specified value in the list.\nfor president in presidents:\n    president_index_position = presidents.index(president)\n    president_index_position = president_index_position + 1\n    print(str(president_index_position)+' '+president)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#building-lists-with-loops",
+    "href": "slides/python_basics_part1.html#building-lists-with-loops",
+    "title": "Data Visualization",
+    "section": "Building lists with loops",
+    "text": "Building lists with loops\nYou can create new lists from existing ones by using a for loop along with the .append() method. This is a common and effective way to filter or transform data in Python.\n\nExample: Find U.S. States that border the Pacific Ocean\n\nSTART BY ASSIGNING AN EMPTY LIST TO A VARIABLE\npacific_states=[ ]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#counting-items-in-a-list",
+    "href": "slides/python_basics_part1.html#counting-items-in-a-list",
+    "title": "Data Visualization",
+    "section": "Counting items in a list",
+    "text": "Counting items in a list\nKnowing how many items are in a list is especially helpful when working data, such as extracting information from a website or querying a database.\nIn Python, you can determine the number of elements in a list using the built-in len() function.\nlen(united_states)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#counter-variables",
+    "href": "slides/python_basics_part1.html#counter-variables",
+    "title": "Data Visualization",
+    "section": "Counter variables",
+    "text": "Counter variables\nWhile Python provides built-in tools like the enumerate() function and the .index() method to find the position of items in a list, there are times when using a counter variable can be a simple and effective alternative. A counter variable allows you to manually track the position of items as you loop through a list. This can be especially useful when you need more control over how positions are counted or displayed.\ncount = 0\nfor state in states:\n    count += 1\n    print('Starting record '+str(count)+' '+state)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#list-comprehensions",
+    "href": "slides/python_basics_part1.html#list-comprehensions",
+    "title": "Data Visualization",
+    "section": "List comprehensions",
+    "text": "List comprehensions\nList comprehensions offer a compact way to create new lists by combing a for loop and an optional if condition in a single line of code.  Basic syntax:\n[expression for item in iterable if condition]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#brain-break-1",
+    "href": "slides/python_basics_part1.html#brain-break-1",
+    "title": "Data Visualization",
+    "section": "Brain Break",
+    "text": "Brain Break\n\n\n\nStand up\nTurn around\nTouch your nose\nTouch your toes"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#dictionaries",
+    "href": "slides/python_basics_part1.html#dictionaries",
+    "title": "Data Visualization",
+    "section": "Dictionaries",
+    "text": "Dictionaries\nA dictionary is a collection of unordered, changeable (mutable) key-value pairs. Each key is unique and maps to a specific value. Dictionaries are enclosed in curly braces {}, with a key and value separated by a colon : and each pair separated by a comma.\nuniversity_facts = {\"institution_name\" : \"The Ohio State University\",\n    \"year_founded\" : 1870,\n    \"school_colors\" : \"scarlet & gray\",\n    \"mascot\" : \"Brutus Buckeye\",\n    \"students\" : 60046,\n    \"endowment\" : 7.9 }\nprint(university_facts)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#accessing-dictionary-data",
+    "href": "slides/python_basics_part1.html#accessing-dictionary-data",
+    "title": "Data Visualization",
+    "section": "Accessing dictionary data",
+    "text": "Accessing dictionary data\nKeys\nUse .keys() to get a list of all keys.\nuniversity_facts.keys()\nValues\nUse .values() to get a list of all values.\nuniversity_facts.values()"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#access-a-value",
+    "href": "slides/python_basics_part1.html#access-a-value",
+    "title": "Data Visualization",
+    "section": "Access a value",
+    "text": "Access a value\nUse the key inside square brackets.\nfirst_president = {\"name\" : \"Edward Francis Baxter Orton Sr\",\n    \"tenure\" : \"1873-1881\"}\n\nprint(first_president[\"name\"])\nprint(first_president[\"tenure\"])"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#modifying-and-adding-data",
+    "href": "slides/python_basics_part1.html#modifying-and-adding-data",
+    "title": "Data Visualization",
+    "section": "Modifying and adding data",
+    "text": "Modifying and adding data\nExample 1: Add a new key-value pair\nfirst_president[\"rank\"] = \"first president\"\nprint(first_president)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#looping-through-a-dictionary",
+    "href": "slides/python_basics_part1.html#looping-through-a-dictionary",
+    "title": "Data Visualization",
+    "section": "Looping through a dictionary",
+    "text": "Looping through a dictionary\nPython provides several ways to iterate through the contents of a dictionary, depending on what you need to access:\nMethod 1: Loop through key-value pairs\nUse the .items() method to access both keys and their corresponding value.\nfor key, value in states.items():\n    print(f\"\\nKey: {key}\")\n    print(f\"\\nValue: {value}\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#access-a-nested-dictionary",
+    "href": "slides/python_basics_part1.html#access-a-nested-dictionary",
+    "title": "Data Visualization",
+    "section": "Access a nested dictionary",
+    "text": "Access a nested dictionary\nTo access the first state in the dictionary states, use the key for state1.\nstates[\"state1\"]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#access-a-nested-value",
+    "href": "slides/python_basics_part1.html#access-a-nested-value",
+    "title": "Data Visualization",
+    "section": "Access a nested value",
+    "text": "Access a nested value\nTo access the nicknames for the first state in the dictionary states, use the keys for state1 and nicknames.\nstates[\"state1\"][\"nicknames\"]"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#looping-through-a-nested-dictionary",
+    "href": "slides/python_basics_part1.html#looping-through-a-nested-dictionary",
+    "title": "Data Visualization",
+    "section": "Looping through a nested dictionary",
+    "text": "Looping through a nested dictionary\nWhen working with nested dictionaries, or dictionaries that contain other dictionaries as values, you can use a nested for loop to access the inner keys and values.\nfor outer_key, inner_dict in states.items():\n    for inner_key, inner_value in value.items():\n        print(f\"\\nKey: {key}\")\n        print(f\"\\nValue: {value}\")\nThe first loop for outer_key, inner_dict in states.items(): iterates through the outer dictionary.\nThe second loop for inner_key, inner_value in inner_dict.items(): goes through each inner dictionary"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#nesting-dictionaries",
+    "href": "slides/python_basics_part1.html#nesting-dictionaries",
+    "title": "Data Visualization",
+    "section": "Nesting dictionaries",
+    "text": "Nesting dictionaries\nDictionaries can contain other dictionaries, allowing for more complex data structures.\nstates={\n\"state1\" : {\"name\":\"Ohio\",\n            \"nicknames\" : [\"The Buckeye State\",\n                            \"Birthplace of Aviation\",\n                            \"The Heart of it All\"],\n            \"capital\" : \"Columbus\"\n            \"population\" : 11785935},\n\"state2\" : {\"name\" : \"Michigan\",\n            \"nicknames\" : [\"The Great Lake State\",\n                           \"The Wolverine State\",\n                           \"Water (Winter) Wonderland\"],\n            \"capital\" : \"Lansing\",\n            \"population\" : 10077331}\n}\n\nprint(states)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#functions-in-python",
+    "href": "slides/python_basics_part1.html#functions-in-python",
+    "title": "Data Visualization",
+    "section": "Functions in Python",
+    "text": "Functions in Python\nPython includes many built-in functions that help you perform common tasks, such as:\n\nprint() – displays output\ntype() – returns the data type of a value\nenumerate() – adds a counter to an iterable\n\nIn addition to these, you can also define your own functions to perform specific tasks. This is especially useful when you need to reuse the same block of code multiple times in a program."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#what-is-a-function",
+    "href": "slides/python_basics_part1.html#what-is-a-function",
+    "title": "Data Visualization",
+    "section": "What is a function?",
+    "text": "What is a function?\nA function is a reusable block of code designed to perform a particular task. Functions help make your code more organized, readable, and efficient."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#define-a-function",
+    "href": "slides/python_basics_part1.html#define-a-function",
+    "title": "Data Visualization",
+    "section": "Define a function",
+    "text": "Define a function\nTo define a function, use the def keyword, followed by the function name, parentheses () and a colon :. The code inside the function is indented.\ndef say_hello():\n  print(\"Hello\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#call-a-function",
+    "href": "slides/python_basics_part1.html#call-a-function",
+    "title": "Data Visualization",
+    "section": "Call a function",
+    "text": "Call a function\nTo call or execute a function, simply write the function name followed by parentheses.\nsay_hello()"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#arguments-and-parameters",
+    "href": "slides/python_basics_part1.html#arguments-and-parameters",
+    "title": "Data Visualization",
+    "section": "Arguments and parameters",
+    "text": "Arguments and parameters\nWhen defining a function, you can include parameters inside the parentheses. Parameters act as placeholders for values that will be passed into the function when it’s called. This allows your function to work dynamically with different inputs.\nIn this example:\n\nname is a parameter – a variable defined in the function header.\nWhen the function is called, you provide an argument – a specific value that replaces the parameter.\n\ndef say_hello(name):\n  print(f\"Hello, {name}\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#calling-a-function-with-an-argument",
+    "href": "slides/python_basics_part1.html#calling-a-function-with-an-argument",
+    "title": "Data Visualization",
+    "section": "Calling a function with an argument",
+    "text": "Calling a function with an argument\nsay_hello(\"Sarah\")\nThis makes your function flexible and reusable with different inputs."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#parameters-vs.-arguments",
+    "href": "slides/python_basics_part1.html#parameters-vs.-arguments",
+    "title": "Data Visualization",
+    "section": "Parameters vs. arguments",
+    "text": "Parameters vs. arguments\nA parameter is a variable listed inside the parentheses when defining a function. It acts as a placeholder for the value the function will receive.\ndef function_name(parameter):\n  # function body\nAn argument is the actual value you pass into a function when calling it.\nfunction_name(argument)\nIf the function is defined with a parameter, you must provide an argument when calling the function or Python will raise an error."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#positional-vs.-keyword-arguments",
+    "href": "slides/python_basics_part1.html#positional-vs.-keyword-arguments",
+    "title": "Data Visualization",
+    "section": "Positional vs. keyword arguments",
+    "text": "Positional vs. keyword arguments\nWhen calling a function in Python, you can pass arguments in two main ways: positional and keyword.\nPositional arguments\nBy default, Python matches arguments to parameters based on their position in the functional call. The first argument is assigned to the first parameter, the second to the second, and so on.\ndef describe_pet(animal_type, pet_name):\n    print(f\"\\nI have a {animal_type}\")\n    print(f\"\\n My {animal_type}'s name is {pet_name.title()}.\")"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#return-values-from-functions",
+    "href": "slides/python_basics_part1.html#return-values-from-functions",
+    "title": "Data Visualization",
+    "section": "Return values from functions",
+    "text": "Return values from functions\nSo far we’ve used print() to display output from functions. However, functions can also return values using the return statement. This allows you to store the results and use it later.\ndef format_name(first_name, last_name):\n    full_name=f\"{first_name} {last_name}\"\n    return full_name.title()\n\nname=format_name('sarah','murphy')\nprint(name)\nReturning values is useful when you want to process data and use the result elsewhere in your program."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#export-data-to-csv-file",
+    "href": "slides/python_basics_part1.html#export-data-to-csv-file",
+    "title": "Data Visualization",
+    "section": "Export data to CSV file",
+    "text": "Export data to CSV file\nYou can export data to a .csv file using either the built-in csv module or the powerful pandas library."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#csv-module",
+    "href": "slides/python_basics_part1.html#csv-module",
+    "title": "Data Visualization",
+    "section": "CSV module",
+    "text": "CSV module\nSTEP 1 - CREATE EMPTY DATASET AND DEFINE CSV HEADINGS\ndataSet=[] columns=['institution_name','year_founded','school_colors','mascot','students','endowment'] # for CSV headings \n\nSTEP 2 - DEFINE FUNCTION TO WRITE RESULTS TO CSV FILE\ndef writeto_csv(data,filename,columns): \n    with open(filename,'w+',newline='',encoding=\"UTF-8\") as file: \n    writer = csv.DictWriter(file,fieldnames=columns) \n    writer.writeheader() \n    writer = csv.writer(file) \n    for element in data: \n        writer.writerows([element])"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#pandas",
+    "href": "slides/python_basics_part1.html#pandas",
+    "title": "Data Visualization",
+    "section": "pandas",
+    "text": "pandas\nA pandas DataFrame is one of the most powerful and commonly used data strutures in Python for working with tabular data, or data that is organized in rows and columns, similar to a spreadsheet or SQL tables. Think of it like an Excel or Google sheet or a table in a database, with:\n\nRows (each representing an observation or record)\nColumns (each representing a variable or feature)\n\nimport pandas as pd\n\ndf = pd.DataFrame([data, index, columns, dtype, copy])"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#python-mastering-the-basics",
+    "href": "slides/python_basics_part2.html#python-mastering-the-basics",
+    "title": "Data Visualization",
+    "section": "Python Mastering the Basics",
+    "text": "Python Mastering the Basics\nPart 2: AS-Assisted Programming"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#getting-started",
+    "href": "slides/python_basics_part2.html#getting-started",
+    "title": "Data Visualization",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nCreate an empty file named python_workshop on your desktop\nGo to https://go.osu.edu/python_mastering_basics\nDownload and place in your python_workshop folder:\n\ncarmen_ohio.txt\ncarmen_ohio_revised.txt\npython_mastering_basics_workshop_exercises.py\n\nOpen Python Pocket Reference\nOpen Pandas Cheet Sheet"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#learning-objectives",
+    "href": "slides/python_basics_part2.html#learning-objectives",
+    "title": "Data Visualization",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nPython Fundamentals\n\nConstruct variables, manipulate strings, and loop through lists\nBuild and navigate dictionaries\nDefine and use functions\nExport data to CSV files\n\nAI-Assisted Programming\n\nDevelop effective plain-language AI-prompts to generate, explain, and refine Python code.\nAnalyze, test and refine AI-generated Python code."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#ai-can",
+    "href": "slides/python_basics_part2.html#ai-can",
+    "title": "Data Visualization",
+    "section": "AI can …",
+    "text": "AI can …\n\nExplain code in plain language\nHelp set up your environment and tools\nSimplify technical documentation\nGenerate and improve code documentation\nSupport debugging and troubleshooting\nIdentify, explain and help fix errors\nRecommend solutions and alternative approaches\nEnable rapid prototyping of ideas\nFacilitate learning through guided experimentation"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#mastering-the-basics-can-help-you",
+    "href": "slides/python_basics_part2.html#mastering-the-basics-can-help-you",
+    "title": "Data Visualization",
+    "section": "Mastering the basics can help you …",
+    "text": "Mastering the basics can help you …\n\nWrite clearer, more precise AI prompts\nAssess whether AI-generated code is correct and efficient\nTest, validate, and debug your assumptions\nRecognize bias in data, logic, and outputs\nRead, customize, and confidently reuse and apply shared code"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#quick-review",
+    "href": "slides/python_basics_part2.html#quick-review",
+    "title": "Data Visualization",
+    "section": "Quick review",
+    "text": "Quick review\n\nAbsolute vs. relative paths\nReading and writing files\nWorking with strings\nConditionals and comparisons\nLists and Loops\nDictionaries\nFunctions\nExport data to CSV file"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#pandas",
+    "href": "slides/python_basics_part2.html#pandas",
+    "title": "Data Visualization",
+    "section": "pandas",
+    "text": "pandas\nA pandas DataFrame is one of the most powerful and commonly used data strutures in Python for working with tabular data, or data that is organized in rows and columns, similar to a spreadsheet or SQL tables. Think of it like an Excel or Google sheet or a table in a database, with:\n\nRows (each representing an observation or record)\nColumns (each representing a variable or feature)\n\nimport pandas as pd\n\ndf = pd.DataFrame([data, index, columns, dtype, copy])"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#project",
+    "href": "slides/python_basics_part2.html#project",
+    "title": "Data Visualization",
+    "section": "PROJECT",
+    "text": "PROJECT\n\n\nWhen learning Python, it’s incredibly helpful to work with data that matters to you. To explore creating effective plain-language AI prompts to generate, explain, and refine Python code we will extract the Performers table found on the List of Rock and Roll Hall of Fame inductees webpage in Wikipedia. We will then assemble discographies for 2-3 of our favorite artists and store these discographies in a separate folder for each artist."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#project-1",
+    "href": "slides/python_basics_part2.html#project-1",
+    "title": "Data Visualization",
+    "section": "PROJECT",
+    "text": "PROJECT"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#webscraping-or-api-projects-basic-steps",
+    "href": "slides/python_basics_part2.html#webscraping-or-api-projects-basic-steps",
+    "title": "Data Visualization",
+    "section": "Webscraping or API projects: Basic steps",
+    "text": "Webscraping or API projects: Basic steps\n\nReview and understand copyright and terms of use\nCheck to see if an API is available\nExamine the URL\nInspect the elements\nIdentify Python libraries for project\nWrite and test code"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#effective-plain-language-ai-prompts",
+    "href": "slides/python_basics_part2.html#effective-plain-language-ai-prompts",
+    "title": "Data Visualization",
+    "section": "Effective plain-language AI prompts",
+    "text": "Effective plain-language AI prompts\n\nStrike a balance. Be specific without overwhelming detail.\nAsk for one step or solution at a time.\nSpecify the format of the response (ie. Python script, explanation, documentation).\nClearly define the desired output or outcome."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#copyright-terms-of-use",
+    "href": "slides/python_basics_part2.html#copyright-terms-of-use",
+    "title": "Data Visualization",
+    "section": "Copyright | Terms of Use",
+    "text": "Copyright | Terms of Use\nBefore starting any web scraping or API project, you must\nReview and understand the terms of use\n\nDo the terms of service include any restrictions or guidelines?\nAre permissions/licenses needed to scrape data?\nIs the information publicly available?\nIf a database, is the database protected by copyright? Or in the public domain?"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#inspect-the-elements",
+    "href": "slides/python_basics_part2.html#inspect-the-elements",
+    "title": "Data Visualization",
+    "section": "Inspect the elements",
+    "text": "Inspect the elements\nBoth XML and HTML are structured as trees, where elements are nested within one another. When you request a URL, the server returns an HTML or XML document. Your browser then downloads and parses this document to display it visually. Google Chrome’s Developer Tools (F12) allow us to explore and understand the structure of a webpage"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#brain-break",
+    "href": "slides/python_basics_part2.html#brain-break",
+    "title": "Data Visualization",
+    "section": "Brain Break",
+    "text": "Brain Break\n\n\n\nStand up\nTurn around\nTouch your nose\nTouch your toes"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#pandas-1",
+    "href": "slides/python_basics_part2.html#pandas-1",
+    "title": "Data Visualization",
+    "section": "pandas",
+    "text": "pandas\nA pandas DataFrame is one of the most powerful and commonly used data strutures in Python for working with tabular data, or data that is organized in rows and columns, similar to a spreadsheet or SQL tables. Think of it like an Excel or Google sheet or a table in a database, with:\n\nRows (each representing an observation or record)\nColumns (each representing a variable or feature)\n\nimport pandas as pd\n\ndf = pd.DataFrame([data, index, columns, dtype, copy])"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#pd.read_html",
+    "href": "slides/python_basics_part2.html#pd.read_html",
+    "title": "Data Visualization",
+    "section": "pd.read_html()",
+    "text": "pd.read_html()\nUse pandas to read HTML tables directly into DataFrames with .read_html(). This extremely useful tool extracts all tables present in a specified URL or file, allowing each table to be accessed using standard list indexing and slicing syntax.\nThe following code instructs Python to go to the Wikipedia List of states and territories of the United States and retrieve the second table.\nimport requests\nimport pandas as pd\nfrom io import String IO # Recommended to avoid FutureWarning.\n\nurl='https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States'\nheaders = {'User-Agent':'Mozilla/5.0'}\nresponse = requests.get(url, headers=headers).text\ntables = pd.read_html(StringIO(response))\ntables[1]"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#beautiful-soup",
+    "href": "slides/python_basics_part2.html#beautiful-soup",
+    "title": "Data Visualization",
+    "section": "Beautiful Soup",
+    "text": "Beautiful Soup\nBeautifulSoup parses HTML and XML documents, helping you search for and extract elements from the DOM. The first argument is the content to be parsed, and the second specifies the parsing library to use.\n\nhtml.parser – The default HTML parser\nlxml – a faster parser with more features\nxml – parses XML\nhtml5lib – for HTML5 parsing"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#using-beautifulsoup",
+    "href": "slides/python_basics_part2.html#using-beautifulsoup",
+    "title": "Data Visualization",
+    "section": "Using BeautifulSoup",
+    "text": "Using BeautifulSoup\nVarious methods and approaches may be used to gather and extract HTML elements using BeautifulSoup. First we ask BeautifulSoup to search the tree to find the element nodes we identified in Exercise 4.\n.find_all()\nGathers all instances of a tag (i.e. element) and returns a response object. Each instance of the tag is then examined using a for loop.\nfind_all(name, attrs, recursive, string, limit, **kwargs)"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#requests",
+    "href": "slides/python_basics_part2.html#requests",
+    "title": "Data Visualization",
+    "section": "requests",
+    "text": "requests\nThe requests library retrieves HTML or XML documents from a server and processes the response.\nimport requests\nurl = 'https://library.osu.edu' #INSERT URL HERE\nrespone = requests.get(url)\ntext = response.text #THIS RETURNS THE RESPONSE CODED AS TEXT\nbytes = response.content #THIS RETURNS THE RESPONSE CONTENT AS BYTES"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#example",
+    "href": "slides/python_basics_part2.html#example",
+    "title": "Data Visualization",
+    "section": "Example",
+    "text": "Example\nimport requests\nfrom bs4 import BeautifulSoup\n\nurl=\"https://en.wikipedia.org/wiki/Parliament_discography\"\nheaders = {'User-Agent': 'Mozilla/5.0'}\nresponse = requests.get(url, headers=headers)\nresponse.encoding = \"utf-8\"\ntext = response.text\nsoup = BeautifulSoup(text, 'html.parser')\ntable_titles = soup.find_all(\"h2\")\nfor table_title in table_titles:\n    title = table_title.string\n    print(title)\nNote that soup.find_all(\"h2\") is equivalent to soup.h2. Appending .string to table_title extracts the text between the tags for h2."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-1",
+    "href": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-1",
+    "title": "Data Visualization",
+    "section": "Effective plain-language AI prompts",
+    "text": "Effective plain-language AI prompts\n\nStrike a balance. Be specific without overwhelming detail.\nAsk for one step or solution at a time.\nSpecify the format of the response (ie. Python script, explanation, documentation).\nClearly define the desired output or outcome."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#problem-decomposition",
+    "href": "slides/python_basics_part2.html#problem-decomposition",
+    "title": "Data Visualization",
+    "section": "Problem decomposition",
+    "text": "Problem decomposition\nTASK 1: Extract the Performers table found on the List of Rock and Roll Hall of Fame inductees\n\nGo to List of Rock and Roll Hall of Fame inductees Wikipedia page\nExtract the Performers table"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-2",
+    "href": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-2",
+    "title": "Data Visualization",
+    "section": "Effective plain-language AI prompts",
+    "text": "Effective plain-language AI prompts\n\nStrike a balance. Be specific without overwhelming detail.\nAsk for one step or solution at a time.\nSpecify the format of the response (ie. Python script, explanation, documentation).\nClearly define the desired output or outcome."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#problem-decomposition-1",
+    "href": "slides/python_basics_part2.html#problem-decomposition-1",
+    "title": "Data Visualization",
+    "section": "Problem decomposition",
+    "text": "Problem decomposition\nTASK 2: Assemble discographies for 2-3 of your favorite artists on the Performers List\n\nbaseURL = “https://en.wikipedia.org/wiki”\nartists = [‘Cyndi_Lauper_discography’,‘Joe_Cocker_discography’, ‘The_White_Stripes_discography’]\nIterate through the selected artists Wikipedia discography pages, extract all tables, and assign each table a meaningful name based on the preceding HTML header."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#brain-break-1",
+    "href": "slides/python_basics_part2.html#brain-break-1",
+    "title": "Data Visualization",
+    "section": "Brain Break",
+    "text": "Brain Break\n\n\n\nStand up\nTurn around\nTouch your nose\nTouch your toes"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-3",
+    "href": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-3",
+    "title": "Data Visualization",
+    "section": "Effective plain-language AI prompts",
+    "text": "Effective plain-language AI prompts\n\nStrike a balance. Be specific without overwhelming detail.\nAsk for one step or solution at a time.\nSpecify the format of the response (ie. Python script, explanation, documentation).\nClearly define the desired output or outcome."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#problem-decomposition-2",
+    "href": "slides/python_basics_part2.html#problem-decomposition-2",
+    "title": "Data Visualization",
+    "section": "Problem decomposition",
+    "text": "Problem decomposition\nTASK 3: Store discography tables for each artist in your project folder\n\nMake a directory for each artist in my project folder\nSave each table as a .csv\nHandle duplicate table names safely(_1,_2, etc…)"
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#managing-files",
+    "href": "slides/python_basics_part2.html#managing-files",
+    "title": "Data Visualization",
+    "section": "Managing files",
+    "text": "Managing files\nThere are several best practices and considerations for effectively managing research data files. When extracting and locally storing data in individual files, using standardized file naming conventions not only helps you organize and utilize your files efficiently but also facilitates sharing and collaboration with others in future projects.\n\nUse short, descriptive names\nUse _ underscores or – dashes instead of spaces in your file names. Use leading zeros for sequential numbers to ensure proper sorting.\nUse all lowercase for directory and filenames if possible.\nAvoid using special characters, including ~!@#$%^&*()[]{}?:;&lt;&gt;|\\/\nUse standardized dates YYYYMMDD to track versions and updates.\nInclude version control numbers to keep track of projects."
+  },
+  {
+    "objectID": "slides/python_basics_part2.html#os-module",
+    "href": "slides/python_basics_part2.html#os-module",
+    "title": "Data Visualization",
+    "section": "os module",
+    "text": "os module\nThe os module tells Python where to find and save files.\n\nos.mkdir(‘path’)\nMakes a directory in your project folder or another folder your specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an OSError. Use a try-except block to handle the error."
   }
 ]
