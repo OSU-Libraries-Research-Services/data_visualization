@@ -16,7 +16,7 @@ format:
 ---
 
 ## Python Mastering the Basics 
-Part 2: AS-Assisted Programming
+Part 2: AI-Assisted Programming
 
 ![](research_commons_data_visualization.jpg){width="100%"}
 
@@ -672,8 +672,4 @@ except:
   <p>I want to __________ using _______. Ask me any questions you need to better understand my goal, then help me create a system prompt.
 </p>
 </div>
-
----
-add
-
 
