@@ -13,8 +13,6 @@ format:
     slide-number: true
     chalkboard: true
     multiplex: true
-      id: '3c50cd5bdb2f63b3e7d342973b5764d2197504aee4bcd7368e607fa4480dc1a3' 
-      secret: 'd269c66df6d149c0ed2c202f1c77c06b'
 
 ---
 
