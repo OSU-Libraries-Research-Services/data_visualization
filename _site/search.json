@@ -2940,5 +2940,12 @@
     "title": "Data Visualization",
     "section": "os module",
     "text": "os module\nThe os module tells Python where to find and save files.\n\nos.mkdir(‘path’)\nMakes a directory in your project folder or another folder your specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an OSError. Use a try-except block to handle the error."
+  },
+  {
+    "objectID": "slides/tableau_research.html#tableau-for-research",
+    "href": "slides/tableau_research.html#tableau-for-research",
+    "title": "Data Visualization",
+    "section": "Tableau for Research",
+    "text": "Tableau for Research"
   }
 ]

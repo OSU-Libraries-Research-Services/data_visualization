@@ -1,8 +1,8 @@
+# Data Visualization
+
 Stephen Few in __[Now You See It: Simple Visualization Techniques for Quantitative Analysis](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9911857524308506)__ defines data visualization as "all types of visual representations that support the exploration, examination, and communication of data". In essence, it's about turning raw data into visuals that help us understand and communicate insights more effectively.
 
 Visualizing data allows us to quickly summarize complex information, making it easier to digest and interpret. It helps reveal patterns and trends that might otherwise go unnoticed when examining raw numbers alone—such as those illustrated by __[Anscombe’s Quartet](https://en.wikipedia.org/wiki/Anscombe%27s_quartet)__. By transforming data into visual formats we can make information more accessible, meaningful, and easier to communicate to a wider audience.
-
-{{< video https://www.youtube.com/embed/YDT5ZPcMZWM >}}
 
 # Why visualize data?
 
