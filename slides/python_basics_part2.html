@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>Data Visualization – python_basics_part2</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -290,9 +293,9 @@
 <li><strong>Rows</strong> (each representing an observation or record)</li>
 <li><strong>Columns</strong> (each representing a variable or feature)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a></a></span>
-<span id="cb1-3"><a></a>df <span class="op">=</span> pd.DataFrame([data, index, columns, dtype, copy])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a aria-label="2"></a></span>
+<span id="cb1-3"><a aria-label="3"></a>df <span class="op">=</span> pd.DataFrame([data, index, columns, dtype, copy])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -443,13 +446,13 @@ Maia Kobabe”
 </tbody>
 </table>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb2-2"><a></a>&nbsp; &nbsp;               <span class="st">"year"</span> : <span class="dv">2025</span>,</span>
-<span id="cb2-3"><a></a>&nbsp; &nbsp;               <span class="st">"rank"</span> : [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>],</span>
-<span id="cb2-4"><a></a>&nbsp; &nbsp;               <span class="st">"title"</span> : [<span class="st">"Sold"</span>,<span class="st">"The Perks of Being a Wallflower"</span>,<span class="st">"Gender Queer"</span>,<span class="st">"Empire of Storms"</span>,<span class="st">"Last Night at the Telegraph Club"</span>,<span class="st">"Tricks"</span>],</span>
-<span id="cb2-5"><a></a>&nbsp; &nbsp;               <span class="st">"author"</span> : [<span class="st">"Patricia McCormick"</span>,<span class="st">"Stephen Chbosky"</span>,<span class="st">"Maia Kobabe"</span>,<span class="st">"Sarah J. Maas"</span>,<span class="st">"Malinda Lo"</span>,<span class="st">"Ellen Hopkins"</span>],</span>
-<span id="cb2-6"><a></a>&nbsp; &nbsp;               <span class="st">"number_challenges"</span> : [<span class="dv">36</span>,<span class="dv">33</span>,<span class="dv">25</span>,<span class="dv">24</span>,<span class="dv">23</span>,<span class="dv">23</span>]</span>
-<span id="cb2-7"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-2"><a aria-label="2"></a>&nbsp; &nbsp;               <span class="st">"year"</span> : <span class="dv">2025</span>,</span>
+<span id="cb2-3"><a aria-label="3"></a>&nbsp; &nbsp;               <span class="st">"rank"</span> : [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>],</span>
+<span id="cb2-4"><a aria-label="4"></a>&nbsp; &nbsp;               <span class="st">"title"</span> : [<span class="st">"Sold"</span>,<span class="st">"The Perks of Being a Wallflower"</span>,<span class="st">"Gender Queer"</span>,<span class="st">"Empire of Storms"</span>,<span class="st">"Last Night at the Telegraph Club"</span>,<span class="st">"Tricks"</span>],</span>
+<span id="cb2-5"><a aria-label="5"></a>&nbsp; &nbsp;               <span class="st">"author"</span> : [<span class="st">"Patricia McCormick"</span>,<span class="st">"Stephen Chbosky"</span>,<span class="st">"Maia Kobabe"</span>,<span class="st">"Sarah J. Maas"</span>,<span class="st">"Malinda Lo"</span>,<span class="st">"Ellen Hopkins"</span>],</span>
+<span id="cb2-6"><a aria-label="6"></a>&nbsp; &nbsp;               <span class="st">"number_challenges"</span> : [<span class="dv">36</span>,<span class="dv">33</span>,<span class="dv">25</span>,<span class="dv">24</span>,<span class="dv">23</span>,<span class="dv">23</span>]</span>
+<span id="cb2-7"><a aria-label="7"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="project" class="slide level2 smaller">
 <h2>PROJECT</h2>
@@ -603,32 +606,32 @@ Describe what you want to build in plain language. Then have Copilot ask follow-
 <li><strong>Rows</strong> (each representing an observation or record)</li>
 <li><strong>Columns</strong> (each representing a variable or feature)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-2"><a></a></span>
-<span id="cb3-3"><a></a>df <span class="op">=</span> pd.DataFrame([data, index, columns, dtype, copy])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-2"><a aria-label="2"></a></span>
+<span id="cb3-3"><a aria-label="3"></a>df <span class="op">=</span> pd.DataFrame([data, index, columns, dtype, copy])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pd.read_html" class="slide level2 smaller">
 <h2>pd.read_html()</h2>
 <p>Use <strong>pandas</strong> to read HTML tables directly into DataFrames with <code>.read_html()</code>. This extremely useful tool extracts all tables present in a specified URL or file, allowing each table to be accessed using standard list indexing and slicing syntax.</p>
 <p>The following code instructs Python to go to the Wikipedia <a href="https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States">List of states and territories of the United States</a> and retrieve the second table.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb4-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb4-3"><a></a><span class="im">from</span> io <span class="im">import</span> String IO <span class="co"># Recommended to avoid FutureWarning.</span></span>
-<span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a>url<span class="op">=</span><span class="st">'https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States'</span></span>
-<span id="cb4-6"><a></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>:<span class="st">'Mozilla/5.0'</span>}</span>
-<span id="cb4-7"><a></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers).text</span>
-<span id="cb4-8"><a></a>tables <span class="op">=</span> pd.read_html(StringIO(response))</span>
-<span id="cb4-9"><a></a>tables[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb4-2"><a aria-label="2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb4-3"><a aria-label="3"></a><span class="im">from</span> io <span class="im">import</span> String IO <span class="co"># Recommended to avoid FutureWarning.</span></span>
+<span id="cb4-4"><a aria-label="4"></a></span>
+<span id="cb4-5"><a aria-label="5"></a>url<span class="op">=</span><span class="st">'https://en.wikipedia.org/wiki/List_of_states_and_territories_of_the_United_States'</span></span>
+<span id="cb4-6"><a aria-label="6"></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>:<span class="st">'Mozilla/5.0'</span>}</span>
+<span id="cb4-7"><a aria-label="7"></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers).text</span>
+<span id="cb4-8"><a aria-label="8"></a>tables <span class="op">=</span> pd.read_html(StringIO(response))</span>
+<span id="cb4-9"><a aria-label="9"></a>tables[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="requests" class="slide level2">
 <h2>requests</h2>
 <p>The <strong>requests</strong> library retrieves HTML or XML documents from a server and processes the response.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb5-2"><a></a>url <span class="op">=</span> <span class="st">'https://library.osu.edu'</span> <span class="co">#INSERT URL HERE</span></span>
-<span id="cb5-3"><a></a>respone <span class="op">=</span> requests.get(url)</span>
-<span id="cb5-4"><a></a>text <span class="op">=</span> response.text <span class="co">#THIS RETURNS THE RESPONSE CODED AS TEXT</span></span>
-<span id="cb5-5"><a></a><span class="bu">bytes</span> <span class="op">=</span> response.content <span class="co">#THIS RETURNS THE RESPONSE CONTENT AS BYTES</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb5-2"><a aria-label="2"></a>url <span class="op">=</span> <span class="st">'https://library.osu.edu'</span> <span class="co">#INSERT URL HERE</span></span>
+<span id="cb5-3"><a aria-label="3"></a>respone <span class="op">=</span> requests.get(url)</span>
+<span id="cb5-4"><a aria-label="4"></a>text <span class="op">=</span> response.text <span class="co">#THIS RETURNS THE RESPONSE CODED AS TEXT</span></span>
+<span id="cb5-5"><a aria-label="5"></a><span class="bu">bytes</span> <span class="op">=</span> response.content <span class="co">#THIS RETURNS THE RESPONSE CONTENT AS BYTES</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="beautiful-soup" class="slide level2">
 <h2>Beautiful Soup</h2>
@@ -642,38 +645,38 @@ Describe what you want to build in plain language. Then have Copilot ask follow-
 </section>
 <section class="slide level2">
 
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb6-2"><a></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb6-3"><a></a></span>
-<span id="cb6-4"><a></a>url <span class="op">=</span> <span class="st">'https://library.osu.edu'</span> <span class="co">#INSERT URL HERE</span></span>
-<span id="cb6-5"><a></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>}</span>
-<span id="cb6-6"><a></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers)</span>
-<span id="cb6-7"><a></a>response.encoding <span class="op">=</span> <span class="st">"utf-8"</span></span>
-<span id="cb6-8"><a></a>text <span class="op">=</span> response.text</span>
-<span id="cb6-9"><a></a>soup <span class="op">=</span> BeautifulSoup(text, <span class="st">'html.parser'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb6-2"><a aria-label="2"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb6-3"><a aria-label="3"></a></span>
+<span id="cb6-4"><a aria-label="4"></a>url <span class="op">=</span> <span class="st">'https://library.osu.edu'</span> <span class="co">#INSERT URL HERE</span></span>
+<span id="cb6-5"><a aria-label="5"></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>}</span>
+<span id="cb6-6"><a aria-label="6"></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers)</span>
+<span id="cb6-7"><a aria-label="7"></a>response.encoding <span class="op">=</span> <span class="st">"utf-8"</span></span>
+<span id="cb6-8"><a aria-label="8"></a>text <span class="op">=</span> response.text</span>
+<span id="cb6-9"><a aria-label="9"></a>soup <span class="op">=</span> BeautifulSoup(text, <span class="st">'html.parser'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="using-beautifulsoup" class="slide level2">
 <h2>Using BeautifulSoup</h2>
 <p>Various methods and approaches may be used to gather and extract HTML elements using BeautifulSoup. First we ask BeautifulSoup to <a href="https://beautiful-soup-4.readthedocs.io/en/latest/#find-all">search the tree</a> to find the element nodes we identified in Exercise 4.</p>
 <h3 id="find_all">.find_all()</h3>
 <p>Gathers all instances of a tag (i.e.&nbsp;element) and returns a response object. Each instance of the tag is then examined using a <code>for</code> loop.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>find_all(name, attrs, recursive, string, limit, <span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a>find_all(name, attrs, recursive, string, limit, <span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb8-2"><a></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a>url<span class="op">=</span><span class="st">"https://en.wikipedia.org/wiki/Parliament_discography"</span></span>
-<span id="cb8-5"><a></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>}</span>
-<span id="cb8-6"><a></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers)</span>
-<span id="cb8-7"><a></a>response.encoding <span class="op">=</span> <span class="st">"utf-8"</span></span>
-<span id="cb8-8"><a></a>text <span class="op">=</span> response.text</span>
-<span id="cb8-9"><a></a>soup <span class="op">=</span> BeautifulSoup(text, <span class="st">'html.parser'</span>)</span>
-<span id="cb8-10"><a></a>table_titles <span class="op">=</span> soup.find_all(<span class="st">"h2"</span>)</span>
-<span id="cb8-11"><a></a><span class="cf">for</span> table_title <span class="kw">in</span> table_titles:</span>
-<span id="cb8-12"><a></a>&nbsp; &nbsp; title <span class="op">=</span> table_title.string</span>
-<span id="cb8-13"><a></a>&nbsp; &nbsp; <span class="bu">print</span>(title)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb8-2"><a aria-label="2"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
+<span id="cb8-3"><a aria-label="3"></a></span>
+<span id="cb8-4"><a aria-label="4"></a>url<span class="op">=</span><span class="st">"https://en.wikipedia.org/wiki/Parliament_discography"</span></span>
+<span id="cb8-5"><a aria-label="5"></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>: <span class="st">'Mozilla/5.0'</span>}</span>
+<span id="cb8-6"><a aria-label="6"></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers)</span>
+<span id="cb8-7"><a aria-label="7"></a>response.encoding <span class="op">=</span> <span class="st">"utf-8"</span></span>
+<span id="cb8-8"><a aria-label="8"></a>text <span class="op">=</span> response.text</span>
+<span id="cb8-9"><a aria-label="9"></a>soup <span class="op">=</span> BeautifulSoup(text, <span class="st">'html.parser'</span>)</span>
+<span id="cb8-10"><a aria-label="10"></a>table_titles <span class="op">=</span> soup.find_all(<span class="st">"h2"</span>)</span>
+<span id="cb8-11"><a aria-label="11"></a><span class="cf">for</span> table_title <span class="kw">in</span> table_titles:</span>
+<span id="cb8-12"><a aria-label="12"></a>&nbsp; &nbsp; title <span class="op">=</span> table_title.string</span>
+<span id="cb8-13"><a aria-label="13"></a>&nbsp; &nbsp; <span class="bu">print</span>(title)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Note</strong> that <code>soup.find_all("h2")</code> is equivalent to <code>soup.h2</code>. Appending <code>.string</code> to <code>table_title</code> extracts the text between the tags for <code>h2</code>.</p>
 </section>
 <section class="slide level2">
@@ -696,23 +699,23 @@ Learning to navigate tags with BeautifulSoup can be difficult at first. Try usin
 
 <h3 id="find">.find()</h3>
 <p>Gathers the first instance of a tag.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>find(name, attrs, recursive, string,<span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>find(name, attrs, recursive, string,<span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <h3 id="find_next-or-find_all_next">.find_next() or find_all_next()</h3>
 <h3 id="find_previous-or-find_all_previous">.find_previous() or find_all_previous()</h3>
 <p>Gathers the following or previous instances of a named tag.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>find_next(name, attrs, string,<span class="op">**</span>kwargs)</span>
-<span id="cb10-2"><a></a>find_all_next(name, attrs, string, limit, <span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>find_next(name, attrs, string,<span class="op">**</span>kwargs)</span>
+<span id="cb10-2"><a aria-label="2"></a>find_all_next(name, attrs, string, limit, <span class="op">**</span>kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="attributes">attributes</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>name[attr]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a>name[attr]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Tags can have any number of <a href="https://beautiful-soup-4.readthedocs.io/en/latest/#attributes">attributes</a>.</p>
 <p><br></p>
 <p><strong>Example:</strong></p>
 <p><code>href</code> is an attribute of a <code>&lt;a href="url"&gt;</code> tag. To find a <code>href</code> attribute value:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>a[<span class="st">'href'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>a[<span class="st">'href'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -749,15 +752,15 @@ I want to extract the Performers table from the <a href="https://en.wikipedia.or
 <img src="../images/python_mastering_basics_2_task_1.png" alt="Screenshot of Copilot response to prompt I want to extract the Performers table from the List of Rock and Roll Hall of Fame inductees Wikipedia page. Ask me any questions you need to better understand my goal, then help me create a system prompt that will guide you in selecting the right Python tools and libraries." style="vertical-align: middle;" class="r-stretch"></section>
 <section class="slide level2">
 
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="im">import</span> requests</span>
-<span id="cb13-2"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-3"><a></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
-<span id="cb13-4"><a></a></span>
-<span id="cb13-5"><a></a>url<span class="op">=</span><span class="st">'https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees'</span></span>
-<span id="cb13-6"><a></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>:<span class="st">'Mozilla/5.0'</span>}</span>
-<span id="cb13-7"><a></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers).text</span>
-<span id="cb13-8"><a></a>tables <span class="op">=</span> pd.read_html(StringIO(response))</span>
-<span id="cb13-9"><a></a>performers <span class="op">=</span> tables[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a><span class="im">import</span> requests</span>
+<span id="cb13-2"><a aria-label="2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-3"><a aria-label="3"></a><span class="im">from</span> io <span class="im">import</span> StringIO</span>
+<span id="cb13-4"><a aria-label="4"></a></span>
+<span id="cb13-5"><a aria-label="5"></a>url<span class="op">=</span><span class="st">'https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees'</span></span>
+<span id="cb13-6"><a aria-label="6"></a>headers <span class="op">=</span> {<span class="st">'User-Agent'</span>:<span class="st">'Mozilla/5.0'</span>}</span>
+<span id="cb13-7"><a aria-label="7"></a>response <span class="op">=</span> requests.get(url, headers<span class="op">=</span>headers).text</span>
+<span id="cb13-8"><a aria-label="8"></a>tables <span class="op">=</span> pd.read_html(StringIO(response))</span>
+<span id="cb13-9"><a aria-label="9"></a>performers <span class="op">=</span> tables[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -846,15 +849,15 @@ Makes a directory in your project folder or another folder your specify. If a di
 </section>
 <section class="slide level2">
 
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">import</span> os</span>
-<span id="cb14-2"><a></a>artist <span class="op">=</span> <span class="st">"Cyndi_Lauper"</span></span>
-<span id="cb14-3"><a></a></span>
-<span id="cb14-4"><a></a><span class="cf">try</span>:</span>
-<span id="cb14-5"><a></a>    os.mkdir(artist)</span>
-<span id="cb14-6"><a></a><span class="cf">except</span>:</span>
-<span id="cb14-7"><a></a>    <span class="bu">print</span>(<span class="ss">f"Directory for </span><span class="sc">{</span>artist<span class="sc">}</span><span class="ss"> already exists"</span>)</span>
-<span id="cb14-8"><a></a><span class="cf">except</span>:</span>
-<span id="cb14-9"><a></a>    <span class="bu">print</span>(<span class="ss">f"An error occurred: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a><span class="im">import</span> os</span>
+<span id="cb14-2"><a aria-label="2"></a>artist <span class="op">=</span> <span class="st">"Cyndi_Lauper"</span></span>
+<span id="cb14-3"><a aria-label="3"></a></span>
+<span id="cb14-4"><a aria-label="4"></a><span class="cf">try</span>:</span>
+<span id="cb14-5"><a aria-label="5"></a>    os.mkdir(artist)</span>
+<span id="cb14-6"><a aria-label="6"></a><span class="cf">except</span>:</span>
+<span id="cb14-7"><a aria-label="7"></a>    <span class="bu">print</span>(<span class="ss">f"Directory for </span><span class="sc">{</span>artist<span class="sc">}</span><span class="ss"> already exists"</span>)</span>
+<span id="cb14-8"><a aria-label="8"></a><span class="cf">except</span>:</span>
+<span id="cb14-9"><a aria-label="9"></a>    <span class="bu">print</span>(<span class="ss">f"An error occurred: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -907,7 +910,7 @@ I want to __________ using _______. Ask me any questions you need to better unde
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"cbe240c579efcfde7154fb88c55b8d7bb1b162094d59bd479c1ae6c2534481ef","url":"https://multiplex.up.railway.app/"},
+'multiplex': {"secret":null,"id":"3f9d4bfe4445a7fa72567fc8fb8af3731925856f526c160fa778b6ae5ce5b8df","url":"https://multiplex.up.railway.app/"},
 'smaller': false,
  
         // Display controls in the bottom right corner

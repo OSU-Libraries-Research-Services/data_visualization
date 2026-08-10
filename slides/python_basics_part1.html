@@ -7,8 +7,8 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.9.38">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <title>Data Visualization – python_basics_part1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,10 +20,13 @@
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
     */
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -278,19 +281,19 @@ Run and Debug</p>
 <section id="relative-paths" class="slide level2">
 <h2>Relative paths</h2>
 <p>If your files are stored in the same folder as your Python script, you can use a <strong>relative path</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>relative_filepath_of_text <span class="op">=</span> <span class="st">"text.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>relative_filepath_of_text <span class="op">=</span> <span class="st">"text.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> Python interprets this path relevant to the current working directory.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>carmen_ohio <span class="op">=</span> <span class="st">"carmen.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="st">"carmen.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="absolute-paths" class="slide level2">
 <h2>Absolute paths</h2>
 <p>If your files are stored elsewhere, use an <strong>absolute path</strong> to specify the full location:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>absolute_filepath_of_text <span class="op">=</span> <span class="st">"C:/path/to/your/directory/file.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>absolute_filepath_of_text <span class="op">=</span> <span class="st">"C:/path/to/your/directory/file.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="opening-a-file" class="slide level2">
 <h2>Opening a file</h2>
 <p>To work with a file in Python, you first need to <strong>open</strong> it. This returns a file object that allows you read from or write to the file.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a><span class="bu">open</span>(<span class="bu">file</span>, mode<span class="op">=</span><span class="st">'r'</span>, buffering<span class="op">=-</span><span class="dv">1</span>, encoding<span class="op">=</span><span class="va">None</span>, errors<span class="op">=</span><span class="va">None</span>, newline<span class="op">=</span><span class="va">None</span>, closed<span class="op">=</span><span class="va">True</span>, opener<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="bu">file</span>, mode<span class="op">=</span><span class="st">'r'</span>, buffering<span class="op">=-</span><span class="dv">1</span>, encoding<span class="op">=</span><span class="va">None</span>, errors<span class="op">=</span><span class="va">None</span>, newline<span class="op">=</span><span class="va">None</span>, closed<span class="op">=</span><span class="va">True</span>, opener<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><strong>file</strong>: The path to the file (absolute or relative)</li>
 <li><strong>mode</strong>: Optional. Specifies how the file is opened. Default is <code>r</code> (read mode).</li>
@@ -380,25 +383,25 @@ open for reading and writing
 <li><strong>utf-16</strong> – Uses 2 bytes per character, useful for some international text.</li>
 <li><strong>utf-32</strong> – Uses 4 bytes per characters; supports all Unicode characters directly.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
-<span id="cb5-2"><a></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb5-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="reading-a-file" class="slide level2">
 <h2>Reading a file</h2>
 <p>To read a file, open it in read mode <code>r</code> and use the <code>.read()</code> method.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
-<span id="cb6-2"><a></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
+<span id="cb6-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> <strong>Alternative</strong></p>
 <p>Use a with block to open the file in read mode and use the <code>.read()</code> method.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb7-2"><a></a>  content <span class="op">=</span> <span class="bu">file</span>.read()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb7-2"><a aria-label="2"></a>  content <span class="op">=</span> <span class="bu">file</span>.read()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="write-to-a-file" class="slide level2">
 <h2>Write to a file</h2>
 <p>To write to a file, open it in write mode <code>w</code>. This will <strong>overwrite</strong> the file if it already exists. If you don’t specify a mode, Python defaults to <code>r</code> (read mode), so it’s important to explicitly set <code>mode='w'</code> when writing.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> This create an object. To add text to a file, use the <code>.write( )</code> method.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)write(<span class="st">"Let's firm thy friendship again!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)write(<span class="st">"Let's firm thy friendship again!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -572,10 +575,10 @@ Ordered, immutable collection
 </section>
 <section id="osu-variables" class="slide level2">
 <h2>OSU variables</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>institution_name <span class="op">=</span> <span class="st">"The Ohio State University"</span></span>
-<span id="cb10-2"><a></a>year_founded <span class="op">=</span> <span class="dv">1870</span></span>
-<span id="cb10-3"><a></a>university_facts <span class="op">=</span> {<span class="st">"institution_name"</span> : <span class="st">"The Ohio State University"</span>, <span class="st">"year_founded"</span> : <span class="dv">1870</span>, <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; grey"</span>, <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span> , <span class="st">"students"</span> : <span class="dv">60046</span> , <span class="st">"endowment"</span>: <span class="fl">7.9</span> }</span>
-<span id="cb10-4"><a></a>fact_list <span class="op">=</span> [<span class="st">"The Ohio State University"</span> , <span class="dv">1870</span>, <span class="st">"scarlet &amp; gray"</span> , <span class="st">"Brutus Buckeye"</span>, <span class="dv">60046</span>, <span class="fl">7.9</span> ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>institution_name <span class="op">=</span> <span class="st">"The Ohio State University"</span></span>
+<span id="cb10-2"><a aria-label="2"></a>year_founded <span class="op">=</span> <span class="dv">1870</span></span>
+<span id="cb10-3"><a aria-label="3"></a>university_facts <span class="op">=</span> {<span class="st">"institution_name"</span> : <span class="st">"The Ohio State University"</span>, <span class="st">"year_founded"</span> : <span class="dv">1870</span>, <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; grey"</span>, <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span> , <span class="st">"students"</span> : <span class="dv">60046</span> , <span class="st">"endowment"</span>: <span class="fl">7.9</span> }</span>
+<span id="cb10-4"><a aria-label="4"></a>fact_list <span class="op">=</span> [<span class="st">"The Ohio State University"</span> , <span class="dv">1870</span>, <span class="st">"scarlet &amp; gray"</span> , <span class="st">"Brutus Buckeye"</span>, <span class="dv">60046</span>, <span class="fl">7.9</span> ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="reserved-keywords" class="slide level2">
 <h2>Reserved keywords</h2>
@@ -585,7 +588,7 @@ Ordered, immutable collection
 <p>
 To check a variable’s type, use the <code>type()</code> function.
 </p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="bu">type</span>(university_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a><span class="bu">type</span>(university_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="basic-math-operators" class="slide level2">
 <h2>Basic math operators</h2>
@@ -743,10 +746,10 @@ Equivalent to x**y
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb12-2"><a></a>y <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb12-3"><a></a>z <span class="op">=</span> x<span class="op">+</span>y</span>
-<span id="cb12-4"><a></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb12-2"><a aria-label="2"></a>y <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb12-3"><a aria-label="3"></a>z <span class="op">=</span> x<span class="op">+</span>y</span>
+<span id="cb12-4"><a aria-label="4"></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -761,49 +764,49 @@ Equivalent to x**y
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="bu">type</span>(institution_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a><span class="bu">type</span>(institution_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="working-with-strings" class="slide level2">
 <h2>Working with strings</h2>
 <p>In Python, strings represent textual data and are enclosed in either <strong>single (<code>'</code>)</strong> or <strong>double (<code>"</code>)</strong> quotation marks:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="co">'this is a string'</span></span>
-<span id="cb14-2"><a></a><span class="co">"this is also a string"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a><span class="co">'this is a string'</span></span>
+<span id="cb14-2"><a aria-label="2"></a><span class="co">"this is also a string"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The opening and closing quotes must match. <br></p>
 <p><strong>Consider:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a></a><span class="co">"The Readers' Advisory Guide to Horror Fiction"</span></span>
-<span id="cb15-2"><a></a><span class="co">'"Did you take the trash out?" she asked.'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a><span class="co">"The Readers' Advisory Guide to Horror Fiction"</span></span>
+<span id="cb15-2"><a aria-label="2"></a><span class="co">'"Did you take the trash out?" she asked.'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>To include special characters like quotes within a string, use a backslash <code>\</code> to escape them. This tells Python to ignore the character.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a></a><span class="co">'The Readers</span><span class="ch">\'</span><span class="co"> Advisory Guide to Horror Fiction'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-label="1"></a><span class="co">'The Readers</span><span class="ch">\'</span><span class="co"> Advisory Guide to Horror Fiction'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="assigning-strings-to-variables" class="slide level2">
 <h2>Assigning strings to variables</h2>
 <p>You can assign a string to a variable using the <code>+</code> operator.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a>banned_book <span class="op">=</span> <span class="st">"Brave New World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-label="1"></a>banned_book <span class="op">=</span> <span class="st">"Brave New World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="string-indexing-and-slicing" class="slide level2">
 <h2>String indexing and slicing</h2>
 <p>Python uses <strong>zero-based indexing</strong>, meaning the first character of a string is at position <code>0</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a>banned_book[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-label="1"></a>banned_book[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="slice-a-substring" class="slide level2">
 <h2>Slice a substring</h2>
 <p>To extract a portion of a string, use the following syntax:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>string[start index:end index]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-label="1"></a>string[start index:end index]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> The <strong>start index</strong> is where the slice begins and the <strong>end index</strong> tells Python where to stopi, but does not include the character at that position.</p>
 <p><br> <strong>Example:</strong></p>
 <p>Slice the word <code>Brave</code> from the string <strong>banned_book</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a>banned_book[<span class="dv">0</span>:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-label="1"></a>banned_book[<span class="dv">0</span>:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="negative-indexing" class="slide level2">
 <h2>Negative indexing</h2>
 <p>You can also access characters from the end of a string using negative indices:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a></a>library <span class="op">=</span> <span class="st">"Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210"</span></span>
-<span id="cb21-2"><a></a>zipcode <span class="op">=</span> library [<span class="op">-</span><span class="dv">5</span>:]</span>
-<span id="cb21-3"><a></a></span>
-<span id="cb21-4"><a></a><span class="bu">print</span>(zipcode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-label="1"></a>library <span class="op">=</span> <span class="st">"Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210"</span></span>
+<span id="cb21-2"><a aria-label="2"></a>zipcode <span class="op">=</span> library [<span class="op">-</span><span class="dv">5</span>:]</span>
+<span id="cb21-3"><a aria-label="3"></a></span>
+<span id="cb21-4"><a aria-label="4"></a><span class="bu">print</span>(zipcode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -821,18 +824,18 @@ Equivalent to x**y
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
-<span id="cb22-2"><a></a></span>
-<span id="cb22-3"><a></a><span class="co"># first 250 characters</span></span>
-<span id="cb22-4"><a></a>carmen_first_250 <span class="op">=</span> carmen_ohio[:<span class="dv">250</span>]</span>
-<span id="cb22-5"><a></a></span>
-<span id="cb22-6"><a></a><span class="co"># last 250 characters</span></span>
-<span id="cb22-7"><a></a>carmen_last_250 <span class="op">=</span> carmen_ohio[<span class="op">-</span><span class="dv">250</span>:]</span>
-<span id="cb22-8"><a></a><span class="bu">print</span>(carmen_sentence)</span>
-<span id="cb22-9"><a></a></span>
-<span id="cb22-10"><a></a><span class="co"># second sentence</span></span>
-<span id="cb22-11"><a></a>carmen_sentence <span class="op">=</span> carmen_ohio[<span class="dv">33</span>:<span class="dv">62</span>]</span>
-<span id="cb22-12"><a></a><span class="bu">print</span>(carmen_sentence)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
+<span id="cb22-2"><a aria-label="2"></a></span>
+<span id="cb22-3"><a aria-label="3"></a><span class="co"># first 250 characters</span></span>
+<span id="cb22-4"><a aria-label="4"></a>carmen_first_250 <span class="op">=</span> carmen_ohio[:<span class="dv">250</span>]</span>
+<span id="cb22-5"><a aria-label="5"></a></span>
+<span id="cb22-6"><a aria-label="6"></a><span class="co"># last 250 characters</span></span>
+<span id="cb22-7"><a aria-label="7"></a>carmen_last_250 <span class="op">=</span> carmen_ohio[<span class="op">-</span><span class="dv">250</span>:]</span>
+<span id="cb22-8"><a aria-label="8"></a><span class="bu">print</span>(carmen_sentence)</span>
+<span id="cb22-9"><a aria-label="9"></a></span>
+<span id="cb22-10"><a aria-label="10"></a><span class="co"># second sentence</span></span>
+<span id="cb22-11"><a aria-label="11"></a>carmen_sentence <span class="op">=</span> carmen_ohio[<span class="dv">33</span>:<span class="dv">62</span>]</span>
+<span id="cb22-12"><a aria-label="12"></a><span class="bu">print</span>(carmen_sentence)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="common-string-methods" class="slide level2">
 <h2>Common string methods</h2>
@@ -937,14 +940,14 @@ Returns <code>True</code> if the string contains only whitespace
 <h2>Replace text in a string</h2>
 <p>Replace the word <code>praise</code> in the first sentence of carmen_ohio with <code>wonders</code> using the <code>replace</code> method.</p>
 <p><strong>Basic syntax</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a>string.replace(<span class="st">'old string'</span>, <span class="st">'new string'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a aria-label="1"></a>string.replace(<span class="st">'old string'</span>, <span class="st">'new string'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p><strong>Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>first_sentence <span class="op">=</span> carmen_ohio[:<span class="dv">32</span>]</span>
-<span id="cb24-2"><a></a>revised_first_sentence <span class="op">=</span> first_sentence.replace(<span class="st">'praise'</span>,<span class="st">'wonders'</span>)</span>
-<span id="cb24-3"><a></a></span>
-<span id="cb24-4"><a></a><span class="bu">print</span>(<span class="st">"original first sentence: "</span> <span class="op">+</span> first_sentence)</span>
-<span id="cb24-5"><a></a><span class="bu">print</span>(<span class="ss">f"revised first sentence: </span><span class="sc">{</span>revised_first_sentence<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a aria-label="1"></a>first_sentence <span class="op">=</span> carmen_ohio[:<span class="dv">32</span>]</span>
+<span id="cb24-2"><a aria-label="2"></a>revised_first_sentence <span class="op">=</span> first_sentence.replace(<span class="st">'praise'</span>,<span class="st">'wonders'</span>)</span>
+<span id="cb24-3"><a aria-label="3"></a></span>
+<span id="cb24-4"><a aria-label="4"></a><span class="bu">print</span>(<span class="st">"original first sentence: "</span> <span class="op">+</span> first_sentence)</span>
+<span id="cb24-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="ss">f"revised first sentence: </span><span class="sc">{</span>revised_first_sentence<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -963,44 +966,44 @@ Returns <code>True</code> if the string contains only whitespace
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a></a>carmen_ohio<span class="op">=</span><span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
-<span id="cb25-2"><a></a></span>
-<span id="cb25-3"><a></a><span class="co">#isolate a sentence</span></span>
-<span id="cb25-4"><a></a>carmen_sentence<span class="op">=</span>carmen_ohio[:<span class="dv">333</span>]</span>
-<span id="cb25-5"><a></a></span>
-<span id="cb25-6"><a></a><span class="co">#print the isolated sentence</span></span>
-<span id="cb25-7"><a></a><span class="bu">print</span>(carmen_sentence)</span>
-<span id="cb25-8"><a></a></span>
-<span id="cb25-9"><a></a><span class="co">#create a new sentence and try replacing a word</span></span>
-<span id="cb25-10"><a></a>new_sentence<span class="op">=</span>carmen_sentence.replace(<span class="st">'gladdest'</span>,<span class="st">'happiest'</span>)</span>
-<span id="cb25-11"><a></a></span>
-<span id="cb25-12"><a></a><span class="co">#print the new sentence</span></span>
-<span id="cb25-13"><a></a><span class="bu">print</span>(new_sentence.upper()) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a aria-label="1"></a>carmen_ohio<span class="op">=</span><span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
+<span id="cb25-2"><a aria-label="2"></a></span>
+<span id="cb25-3"><a aria-label="3"></a><span class="co">#isolate a sentence</span></span>
+<span id="cb25-4"><a aria-label="4"></a>carmen_sentence<span class="op">=</span>carmen_ohio[:<span class="dv">333</span>]</span>
+<span id="cb25-5"><a aria-label="5"></a></span>
+<span id="cb25-6"><a aria-label="6"></a><span class="co">#print the isolated sentence</span></span>
+<span id="cb25-7"><a aria-label="7"></a><span class="bu">print</span>(carmen_sentence)</span>
+<span id="cb25-8"><a aria-label="8"></a></span>
+<span id="cb25-9"><a aria-label="9"></a><span class="co">#create a new sentence and try replacing a word</span></span>
+<span id="cb25-10"><a aria-label="10"></a>new_sentence<span class="op">=</span>carmen_sentence.replace(<span class="st">'gladdest'</span>,<span class="st">'happiest'</span>)</span>
+<span id="cb25-11"><a aria-label="11"></a></span>
+<span id="cb25-12"><a aria-label="12"></a><span class="co">#print the new sentence</span></span>
+<span id="cb25-13"><a aria-label="13"></a><span class="bu">print</span>(new_sentence.upper()) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="normalize-case" class="slide level2">
 <h2>Normalize case</h2>
 <p>String methods like <code>.lower()</code> and <code>.upper()</code> are useful for <strong>standardizing text</strong>, especially when comparing values that may differ in capitalization. <br><br> <strong>Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a></a>name1 <span class="op">=</span> <span class="st">"McMurty, Larry"</span></span>
-<span id="cb26-2"><a></a>name2 <span class="op">=</span> <span class="st">"Mcmurty, Larry"</span></span>
-<span id="cb26-3"><a></a>name3 <span class="op">=</span> <span class="st">"mcmurty, larry"</span></span>
-<span id="cb26-4"><a></a></span>
-<span id="cb26-5"><a></a><span class="co">#Convert all names to uppercase for consistent comparison</span></span>
-<span id="cb26-6"><a></a>name1_rev <span class="op">=</span> name1.upper()</span>
-<span id="cb26-7"><a></a>name2_rev <span class="op">=</span> name2.upper()</span>
-<span id="cb26-8"><a></a>name3_rev <span class="op">=</span> name3.upper()</span>
-<span id="cb26-9"><a></a></span>
-<span id="cb26-10"><a></a><span class="bu">print</span>(name1_rev)</span>
-<span id="cb26-11"><a></a><span class="bu">print</span>(name2_rev)</span>
-<span id="cb26-12"><a></a><span class="bu">print</span>(name3_rev)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a aria-label="1"></a>name1 <span class="op">=</span> <span class="st">"McMurty, Larry"</span></span>
+<span id="cb26-2"><a aria-label="2"></a>name2 <span class="op">=</span> <span class="st">"Mcmurty, Larry"</span></span>
+<span id="cb26-3"><a aria-label="3"></a>name3 <span class="op">=</span> <span class="st">"mcmurty, larry"</span></span>
+<span id="cb26-4"><a aria-label="4"></a></span>
+<span id="cb26-5"><a aria-label="5"></a><span class="co">#Convert all names to uppercase for consistent comparison</span></span>
+<span id="cb26-6"><a aria-label="6"></a>name1_rev <span class="op">=</span> name1.upper()</span>
+<span id="cb26-7"><a aria-label="7"></a>name2_rev <span class="op">=</span> name2.upper()</span>
+<span id="cb26-8"><a aria-label="8"></a>name3_rev <span class="op">=</span> name3.upper()</span>
+<span id="cb26-9"><a aria-label="9"></a></span>
+<span id="cb26-10"><a aria-label="10"></a><span class="bu">print</span>(name1_rev)</span>
+<span id="cb26-11"><a aria-label="11"></a><span class="bu">print</span>(name2_rev)</span>
+<span id="cb26-12"><a aria-label="12"></a><span class="bu">print</span>(name3_rev)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="splitting-strings" class="slide level2">
 <h2>Splitting strings</h2>
 <p>By default, <code>.split()</code> separates strings by spaces. You can also specify a delimiter, such as newline <code>\n</code>. This returns a <strong>list of lines</strong>, one for each row in the string. <br><br> <strong>Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a></a>newline_free_carmen <span class="op">=</span> carmen_ohio.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb27-2"><a></a><span class="bu">print</span>(newline_free_carmen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a aria-label="1"></a>newline_free_carmen <span class="op">=</span> carmen_ohio.split(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb27-2"><a aria-label="2"></a><span class="bu">print</span>(newline_free_carmen)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> If the delimiter is blank, a <strong>list of words</strong> is returned:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a>carmen_split<span class="op">=</span> carmen_ohio.split()</span>
-<span id="cb28-2"><a></a><span class="bu">print</span>(carmen_split[<span class="dv">0</span>:<span class="dv">6</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a aria-label="1"></a>carmen_split<span class="op">=</span> carmen_ohio.split()</span>
+<span id="cb28-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_split[<span class="dv">0</span>:<span class="dv">6</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="brain-break" class="slide level2">
 <h2>Brain Break</h2>
@@ -1034,23 +1037,23 @@ Returns <code>True</code> if the string contains only whitespace
 </ul>
 </div></div>
 <h3 id="step-1-assign-variables">Step 1: Assign variables</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>wilbur_species <span class="op">=</span> <span class="st">'pig'</span></span>
-<span id="cb29-2"><a></a>wilbur_handsome <span class="op">=</span> <span class="st">'handsome'</span></span>
-<span id="cb29-3"><a></a>wilbur_likes_charlotte <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a aria-label="1"></a>wilbur_species <span class="op">=</span> <span class="st">'pig'</span></span>
+<span id="cb29-2"><a aria-label="2"></a>wilbur_handsome <span class="op">=</span> <span class="st">'handsome'</span></span>
+<span id="cb29-3"><a aria-label="3"></a>wilbur_likes_charlotte <span class="op">=</span> <span class="va">True</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="step-2-create-conditional-statements">Step 2: Create conditional statements</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a></a><span class="cf">if</span> wilbur_species <span class="op">==</span> <span class="st">'pig'</span>:</span>
-<span id="cb30-2"><a></a>    <span class="bu">print</span>(<span class="st">'Wilbur'</span>)</span>
-<span id="cb30-3"><a></a></span>
-<span id="cb30-4"><a></a><span class="cf">if</span> wilbur_handsome <span class="op">==</span> <span class="st">'handsome'</span>:</span>
-<span id="cb30-5"><a></a>    <span class="bu">print</span>(<span class="st">"He's really cute!"</span>)</span>
-<span id="cb30-6"><a></a></span>
-<span id="cb30-7"><a></a><span class="cf">if</span> wilbur_likes_charlotte <span class="op">==</span> <span class="va">True</span>:</span>
-<span id="cb30-8"><a></a>    <span class="bu">print</span>(<span class="st">'Charlotte is Wilbur</span><span class="ch">\'</span><span class="st">s best friend'</span>)</span>
-<span id="cb30-9"><a></a><span class="cf">else</span>:</span>
-<span id="cb30-10"><a></a>    <span class="bu">print</span>(<span class="st">'no'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a aria-label="1"></a><span class="cf">if</span> wilbur_species <span class="op">==</span> <span class="st">'pig'</span>:</span>
+<span id="cb30-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="st">'Wilbur'</span>)</span>
+<span id="cb30-3"><a aria-label="3"></a></span>
+<span id="cb30-4"><a aria-label="4"></a><span class="cf">if</span> wilbur_handsome <span class="op">==</span> <span class="st">'handsome'</span>:</span>
+<span id="cb30-5"><a aria-label="5"></a>    <span class="bu">print</span>(<span class="st">"He's really cute!"</span>)</span>
+<span id="cb30-6"><a aria-label="6"></a></span>
+<span id="cb30-7"><a aria-label="7"></a><span class="cf">if</span> wilbur_likes_charlotte <span class="op">==</span> <span class="va">True</span>:</span>
+<span id="cb30-8"><a aria-label="8"></a>    <span class="bu">print</span>(<span class="st">'Charlotte is Wilbur</span><span class="ch">\'</span><span class="st">s best friend'</span>)</span>
+<span id="cb30-9"><a aria-label="9"></a><span class="cf">else</span>:</span>
+<span id="cb30-10"><a aria-label="10"></a>    <span class="bu">print</span>(<span class="st">'no'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="using-if-elif-and-else" class="slide level2">
 <h2>Using if, elif, and else</h2>
@@ -1059,10 +1062,10 @@ Returns <code>True</code> if the string contains only whitespace
 <li><code>elif</code> (short for “else if”) checks additional conditions if the first is false.</li>
 <li><code>else</code> runs if none of the previous conditions are met.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a></a><span class="cf">if</span> wilbur_likes_charlotte <span class="op">==</span> <span class="va">False</span>:</span>
-<span id="cb31-2"><a></a>    <span class="bu">print</span>(<span class="st">'no'</span>)</span>
-<span id="cb31-3"><a></a><span class="cf">else</span>:</span>
-<span id="cb31-4"><a></a>    <span class="bu">print</span>(<span class="st">"Charlotte is Wilbur's best friend"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a aria-label="1"></a><span class="cf">if</span> wilbur_likes_charlotte <span class="op">==</span> <span class="va">False</span>:</span>
+<span id="cb31-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="st">'no'</span>)</span>
+<span id="cb31-3"><a aria-label="3"></a><span class="cf">else</span>:</span>
+<span id="cb31-4"><a aria-label="4"></a>    <span class="bu">print</span>(<span class="st">"Charlotte is Wilbur's best friend"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="comparison-operators" class="slide level2">
 <h2>Comparison operators</h2>
@@ -1136,9 +1139,9 @@ Less than or equal to
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 4: Conditions and Comparisons</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a>wilbur_age <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb32-2"><a></a>charlotte_age <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb32-3"><a></a>farmer_age <span class="op">=</span> <span class="dv">42</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a aria-label="1"></a>wilbur_age <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb32-2"><a aria-label="2"></a>charlotte_age <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb32-3"><a aria-label="3"></a>farmer_age <span class="op">=</span> <span class="dv">42</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> Is Wilbur older than Charlotte? Verify Wilbur’s age with a conditional statement.</p>
 </section>
 <section class="slide level2">
@@ -1146,16 +1149,16 @@ Less than or equal to
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a></a>wilbur_age <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb33-2"><a></a>charlotte_age <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb33-3"><a></a>farmer_age <span class="op">=</span> <span class="dv">42</span></span>
-<span id="cb33-4"><a></a></span>
-<span id="cb33-5"><a></a><span class="bu">print</span>(<span class="st">'IS WILBUR OLDER THAN CHARLOTTE?'</span>)</span>
-<span id="cb33-6"><a></a></span>
-<span id="cb33-7"><a></a><span class="cf">if</span> wilbur_age <span class="op">&gt;</span> charlotte_age:</span>
-<span id="cb33-8"><a></a>    <span class="bu">print</span>(<span class="st">"Wilbur is older than Charlotte"</span>)</span>
-<span id="cb33-9"><a></a><span class="cf">else</span>:</span>
-<span id="cb33-10"><a></a>    <span class="bu">print</span>(<span class="st">"Wilbur is younger than Charlotte"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a aria-label="1"></a>wilbur_age <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb33-2"><a aria-label="2"></a>charlotte_age <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb33-3"><a aria-label="3"></a>farmer_age <span class="op">=</span> <span class="dv">42</span></span>
+<span id="cb33-4"><a aria-label="4"></a></span>
+<span id="cb33-5"><a aria-label="5"></a><span class="bu">print</span>(<span class="st">'IS WILBUR OLDER THAN CHARLOTTE?'</span>)</span>
+<span id="cb33-6"><a aria-label="6"></a></span>
+<span id="cb33-7"><a aria-label="7"></a><span class="cf">if</span> wilbur_age <span class="op">&gt;</span> charlotte_age:</span>
+<span id="cb33-8"><a aria-label="8"></a>    <span class="bu">print</span>(<span class="st">"Wilbur is older than Charlotte"</span>)</span>
+<span id="cb33-9"><a aria-label="9"></a><span class="cf">else</span>:</span>
+<span id="cb33-10"><a aria-label="10"></a>    <span class="bu">print</span>(<span class="st">"Wilbur is younger than Charlotte"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="logical-operators" class="slide level2">
 <h2>Logical operators</h2>
@@ -1201,8 +1204,8 @@ True if the condition is <strong>not</strong> true
 </table>
 </div>
 <p><strong>Example:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a><span class="cf">if</span> wilbur_species <span class="op">==</span> <span class="st">'pig'</span> <span class="kw">and</span> wilbur_handsome <span class="op">==</span> <span class="st">'handsome'</span>:</span>
-<span id="cb34-2"><a></a>    <span class="bu">print</span>(<span class="st">'Wilbur is a handsome pig!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a aria-label="1"></a><span class="cf">if</span> wilbur_species <span class="op">==</span> <span class="st">'pig'</span> <span class="kw">and</span> wilbur_handsome <span class="op">==</span> <span class="st">'handsome'</span>:</span>
+<span id="cb34-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="st">'Wilbur is a handsome pig!'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="is-this-wilbur" class="slide level2">
 <h2>Is this Wilbur?</h2>
@@ -1210,51 +1213,51 @@ True if the condition is <strong>not</strong> true
 <div class="column" style="width:30%;">
 <p><img data-src="../images/guineapig.jpg" style="width:50.0%"></p>
 </div><div class="column" style="width:70%;">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a></a>y<span class="op">=</span><span class="st">'guinea pig'</span></span>
-<span id="cb35-2"><a></a></span>
-<span id="cb35-3"><a></a><span class="cf">if</span> <span class="kw">not</span> y:</span>
-<span id="cb35-4"><a></a>    <span class="bu">print</span>(<span class="st">'Wilbur'</span>)</span>
-<span id="cb35-5"><a></a><span class="cf">else</span>:</span>
-<span id="cb35-6"><a></a>    <span class="bu">print</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a aria-label="1"></a>y<span class="op">=</span><span class="st">'guinea pig'</span></span>
+<span id="cb35-2"><a aria-label="2"></a></span>
+<span id="cb35-3"><a aria-label="3"></a><span class="cf">if</span> <span class="kw">not</span> y:</span>
+<span id="cb35-4"><a aria-label="4"></a>    <span class="bu">print</span>(<span class="st">'Wilbur'</span>)</span>
+<span id="cb35-5"><a aria-label="5"></a><span class="cf">else</span>:</span>
+<span id="cb35-6"><a aria-label="6"></a>    <span class="bu">print</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></div>
 </section>
 <section id="using-the-in-keyword" class="slide level2">
 <h2>Using the in keyword</h2>
 <p>The <code>in</code> keyword checks if a substring exists within a string</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a><span class="cf">if</span> <span class="st">'mouse'</span> <span class="kw">not</span> <span class="kw">in</span> y:</span>
-<span id="cb36-2"><a></a>    <span class="bu">print</span>(<span class="st">'Not a guinea pig'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a aria-label="1"></a><span class="cf">if</span> <span class="st">'mouse'</span> <span class="kw">not</span> <span class="kw">in</span> y:</span>
+<span id="cb36-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="st">'Not a guinea pig'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a></a><span class="cf">if</span> <span class="st">'guinea'</span> <span class="kw">in</span> y:</span>
-<span id="cb37-2"><a></a>    <span class="bu">print</span>(<span class="st">'It'</span>s a guinea pig<span class="op">!</span><span class="st">')</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a aria-label="1"></a><span class="cf">if</span> <span class="st">'guinea'</span> <span class="kw">in</span> y:</span>
+<span id="cb37-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="st">'It'</span>s a guinea pig<span class="op">!</span><span class="st">')</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="lists-and-loops" class="slide level2">
 <h2>Lists and loops</h2>
 <p>A <strong>list</strong> is an ordered, mutable collection of items in Python. Lists are enclosed in square brackets <code>[]</code>, and items are separated by commas.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span>
-<span id="cb38-2"><a></a><span class="bu">type</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a aria-label="1"></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span>
+<span id="cb38-2"><a aria-label="2"></a><span class="bu">type</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p>Lists can contain any data type, even other lists or dictionaries.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a></a>random_list <span class="op">=</span> [<span class="st">'Halloween'</span>, <span class="st">'monster'</span>, </span>
-<span id="cb39-2"><a></a>                <span class="dv">2024</span>, [<span class="st">'Snickers'</span>, <span class="st">'M&amp;Ms'</span>, <span class="st">'Mars Bars'</span>],</span>
-<span id="cb39-3"><a></a>                {<span class="st">'costume'</span> : <span class="st">'Han Solo'</span>, <span class="st">'age'</span>: <span class="dv">7</span>}]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a aria-label="1"></a>random_list <span class="op">=</span> [<span class="st">'Halloween'</span>, <span class="st">'monster'</span>, </span>
+<span id="cb39-2"><a aria-label="2"></a>                <span class="dv">2024</span>, [<span class="st">'Snickers'</span>, <span class="st">'M&amp;Ms'</span>, <span class="st">'Mars Bars'</span>],</span>
+<span id="cb39-3"><a aria-label="3"></a>                {<span class="st">'costume'</span> : <span class="st">'Han Solo'</span>, <span class="st">'age'</span>: <span class="dv">7</span>}]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="accessing-list-items" class="slide level2">
 <h2>Accessing list items</h2>
 <p>Lists use <strong>zero-based indexing</strong>, just like strings. You can use slicing to extract elements</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a>list_name[start_index:stop_index:step]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a aria-label="1"></a>list_name[start_index:stop_index:step]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="examples" class="slide level2">
 <h2>Examples:</h2>
 <p>Extract the first item from the list <strong>characters:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a>characters[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a aria-label="1"></a>characters[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p>Extract the last 3 items from the list <strong>characters:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a></a>characters[<span class="op">-</span><span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a aria-label="1"></a>characters[<span class="op">-</span><span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p>Extract characters from the string <strong>han_solo:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a>han_solo <span class="op">=</span> <span class="st">'Han Solo'</span></span>
-<span id="cb43-2"><a></a>han_only <span class="op">=</span> han_solo[<span class="dv">0</span>:<span class="dv">3</span>]</span>
-<span id="cb43-3"><a></a><span class="bu">print</span>(han_only)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a aria-label="1"></a>han_solo <span class="op">=</span> <span class="st">'Han Solo'</span></span>
+<span id="cb43-2"><a aria-label="2"></a>han_only <span class="op">=</span> han_solo[<span class="dv">0</span>:<span class="dv">3</span>]</span>
+<span id="cb43-3"><a aria-label="3"></a><span class="bu">print</span>(han_only)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1262,16 +1265,16 @@ True if the condition is <strong>not</strong> true
 <p><img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 5: Extract list items</p>
 </div>
 <p>Is there another method to extract the last 3 items from the list <strong>characters</strong>?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a aria-label="1"></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span>
-<span id="cb45-2"><a></a>last_3_characters_alternative <span class="op">=</span> characters[<span class="dv">1</span>:]</span>
-<span id="cb45-3"><a></a><span class="bu">print</span>(last_3_characters_alternative)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a aria-label="1"></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span>
+<span id="cb45-2"><a aria-label="2"></a>last_3_characters_alternative <span class="op">=</span> characters[<span class="dv">1</span>:]</span>
+<span id="cb45-3"><a aria-label="3"></a><span class="bu">print</span>(last_3_characters_alternative)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1279,15 +1282,15 @@ True if the condition is <strong>not</strong> true
 <p><img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 6: Step through a list</p>
 </div>
 <p>Extract every second item from the list <strong>numbers</strong>?</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a aria-label="1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a></a>numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>]</span>
-<span id="cb47-2"><a></a>even_numbers <span class="op">=</span> numbers[<span class="dv">1</span>::<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a aria-label="1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>]</span>
+<span id="cb47-2"><a aria-label="2"></a>even_numbers <span class="op">=</span> numbers[<span class="dv">1</span>::<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="common-list-methods" class="slide level2">
 <h2>Common list methods</h2>
@@ -1350,62 +1353,62 @@ Reverses the order of the list
 </section>
 <section id="examples-1" class="slide level2">
 <h2>Examples:</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span>
-<span id="cb48-2"><a></a>characters.append(<span class="st">'Rey'</span>)</span>
-<span id="cb48-3"><a></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a aria-label="1"></a>characters <span class="op">=</span> [<span class="st">'Han Solo'</span>, <span class="st">'Luke Skywalker'</span>, <span class="st">'C3P0'</span>, <span class="st">'R2D2'</span>]</span>
+<span id="cb48-2"><a aria-label="2"></a>characters.append(<span class="st">'Rey'</span>)</span>
+<span id="cb48-3"><a aria-label="3"></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a></a>characters.remove(<span class="st">'Rey'</span>)</span>
-<span id="cb49-2"><a></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a aria-label="1"></a>characters.remove(<span class="st">'Rey'</span>)</span>
+<span id="cb49-2"><a aria-label="2"></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a></a>characters_new <span class="op">=</span> [<span class="st">'Rey'</span>,<span class="st">'BB-8'</span>]</span>
-<span id="cb50-2"><a></a>characters.extend(characters_new)</span>
-<span id="cb50-3"><a></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a aria-label="1"></a>characters_new <span class="op">=</span> [<span class="st">'Rey'</span>,<span class="st">'BB-8'</span>]</span>
+<span id="cb50-2"><a aria-label="2"></a>characters.extend(characters_new)</span>
+<span id="cb50-3"><a aria-label="3"></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a>characters.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb51-2"><a></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a aria-label="1"></a>characters.sort(reverse<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb51-2"><a aria-label="2"></a><span class="bu">print</span>(characters)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="using-loops-with-lists" class="slide level2">
 <h2>Using loops with lists</h2>
 <p>When working with lists, it’s a good practice to use <strong>plural names</strong> for your list variables. This make your code easier to read and understand, especially when you’re iterating through each element.</p>
 <p>Python’s <code>for</code> loop allows you to iterate over items in a <strong>sequence</strong>, as a list, tuple, dictionary, or string, and execute a block of code for each item.</p>
 <p><br> <strong>Basic syntax</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a></a><span class="cf">for</span> item <span class="kw">in</span> sequence:</span>
-<span id="cb52-2"><a></a>    <span class="co">#Code to execute for each item</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a aria-label="1"></a><span class="cf">for</span> item <span class="kw">in</span> sequence:</span>
+<span id="cb52-2"><a aria-label="2"></a>    <span class="co">#Code to execute for each item</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="examples-2" class="slide level2">
 <h2>Examples:</h2>
 <p>Loop through the characters list.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
-<span id="cb53-2"><a></a>    <span class="bu">print</span>(character)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a aria-label="1"></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
+<span id="cb53-2"><a aria-label="2"></a>    <span class="bu">print</span>(character)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
 <p>Use slicing to print names of the last 3 characters.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a><span class="cf">for</span> character <span class="kw">in</span> characters[<span class="op">-</span><span class="dv">3</span>:]:</span>
-<span id="cb54-2"><a></a>    <span class="bu">print</span>(character)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a aria-label="1"></a><span class="cf">for</span> character <span class="kw">in</span> characters[<span class="op">-</span><span class="dv">3</span>:]:</span>
+<span id="cb54-2"><a aria-label="2"></a>    <span class="bu">print</span>(character)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>Use conditional statements to add a comment for each character.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
-<span id="cb55-2"><a></a>    <span class="cf">if</span> character <span class="op">==</span> <span class="st">'BB-8'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'R2D2'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'C3P0'</span>:</span>
-<span id="cb55-3"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>character<span class="sc">}</span><span class="ss"> is a robot"</span>)</span>
-<span id="cb55-4"><a></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Luke Skywalker'</span>:</span>
-<span id="cb55-5"><a></a>        <span class="bu">print</span>(<span class="st">'Luke is Leia</span><span class="ch">\'</span><span class="st">s brother'</span>)</span>
-<span id="cb55-6"><a></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Han Solo'</span>:</span>
-<span id="cb55-7"><a></a>        <span class="bu">print</span>(<span class="st">'Chewbacca is Han Solo</span><span class="ch">\'</span><span class="st">s friend'</span>)</span>
-<span id="cb55-8"><a></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Rey'</span>:</span>
-<span id="cb55-9"><a></a>        <span class="bu">print</span>(<span class="st">"Rey rocks"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a aria-label="1"></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
+<span id="cb55-2"><a aria-label="2"></a>    <span class="cf">if</span> character <span class="op">==</span> <span class="st">'BB-8'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'R2D2'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'C3P0'</span>:</span>
+<span id="cb55-3"><a aria-label="3"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>character<span class="sc">}</span><span class="ss"> is a robot"</span>)</span>
+<span id="cb55-4"><a aria-label="4"></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Luke Skywalker'</span>:</span>
+<span id="cb55-5"><a aria-label="5"></a>        <span class="bu">print</span>(<span class="st">'Luke is Leia</span><span class="ch">\'</span><span class="st">s brother'</span>)</span>
+<span id="cb55-6"><a aria-label="6"></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Han Solo'</span>:</span>
+<span id="cb55-7"><a aria-label="7"></a>        <span class="bu">print</span>(<span class="st">'Chewbacca is Han Solo</span><span class="ch">\'</span><span class="st">s friend'</span>)</span>
+<span id="cb55-8"><a aria-label="8"></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Rey'</span>:</span>
+<span id="cb55-9"><a aria-label="9"></a>        <span class="bu">print</span>(<span class="st">"Rey rocks"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
-<span id="cb56-2"><a></a>    <span class="cf">if</span> character <span class="op">==</span> <span class="st">'BB-8'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'R2D2'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'C3P0'</span>:</span>
-<span id="cb56-3"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>character<span class="sc">}</span><span class="ss"> is a robot"</span>)</span>
-<span id="cb56-4"><a></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Luke Skywalker'</span>:</span>
-<span id="cb56-5"><a></a>        <span class="bu">print</span>(<span class="st">'Luke is Leia</span><span class="ch">\'</span><span class="st">s brother'</span>)</span>
-<span id="cb56-6"><a></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Han Solo'</span>:</span>
-<span id="cb56-7"><a></a>        <span class="bu">print</span>(<span class="st">'Chewbacca is Han Solo</span><span class="ch">\'</span><span class="st">s friend'</span>)</span>
-<span id="cb56-8"><a></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Rey'</span>:</span>
-<span id="cb56-9"><a></a>        <span class="bu">print</span>(<span class="st">"Rey rocks"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56" data-code-line-numbers="3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a aria-label="1"></a><span class="cf">for</span> character <span class="kw">in</span> characters:</span>
+<span id="cb56-2"><a aria-label="2"></a>    <span class="cf">if</span> character <span class="op">==</span> <span class="st">'BB-8'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'R2D2'</span> <span class="kw">or</span> character <span class="op">==</span> <span class="st">'C3P0'</span>:</span>
+<span id="cb56-3"><a aria-label="3"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>character<span class="sc">}</span><span class="ss"> is a robot"</span>)</span>
+<span id="cb56-4"><a aria-label="4"></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Luke Skywalker'</span>:</span>
+<span id="cb56-5"><a aria-label="5"></a>        <span class="bu">print</span>(<span class="st">'Luke is Leia</span><span class="ch">\'</span><span class="st">s brother'</span>)</span>
+<span id="cb56-6"><a aria-label="6"></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Han Solo'</span>:</span>
+<span id="cb56-7"><a aria-label="7"></a>        <span class="bu">print</span>(<span class="st">'Chewbacca is Han Solo</span><span class="ch">\'</span><span class="st">s friend'</span>)</span>
+<span id="cb56-8"><a aria-label="8"></a>    <span class="cf">elif</span> character <span class="op">==</span> <span class="st">'Rey'</span>:</span>
+<span id="cb56-9"><a aria-label="9"></a>        <span class="bu">print</span>(<span class="st">"Rey rocks"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Note the line <code>f"{character} is a robot"</code> in the first conditional statement of the loop. This is known as a <code>f-string</code>, short for formatted string literal.</p>
 <p>A <code>f-string</code> is created by placing the letter <code>f</code> directly before the opening quotation mark of a string. This allows you to embed variables or expressions inside the string using curly braces <code>{}</code>. Python will automatically evaluate the expression and insert its value into the string.</p>
 </section>
@@ -1415,36 +1418,36 @@ Reverses the order of the list
 <p><img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 7: Loops</p>
 </div>
 <p>Print the name of each president of The Ohio State University.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a>presidents<span class="op">=</span>[<span class="st">"Edward Francis Baxter Orton Sr"</span>,<span class="st">"Walter Quincy Scott"</span>,</span>
-<span id="cb57-2"><a></a>            <span class="st">"William Henry Scott"</span>,<span class="st">"James Hulme Canfield"</span>,</span>
-<span id="cb57-3"><a></a>            <span class="st">"William Oxley Thompson"</span>,<span class="st">"George Washington Rightmire"</span>,</span>
-<span id="cb57-4"><a></a>            <span class="st">"William McPherson"</span>,<span class="st">"Howard Landis Bevis"</span>,</span>
-<span id="cb57-5"><a></a>            <span class="st">"Novice Gail Fawcett"</span>,<span class="st">"Harold Leroy Enarson"</span>,</span>
-<span id="cb57-6"><a></a>            <span class="st">"Edward Harrington Jennings"</span>,<span class="st">"E. Gordon Gee"</span>,</span>
-<span id="cb57-7"><a></a>            <span class="st">"John Richard Sisson"</span>,<span class="st">"William English Kirwan"</span>,</span>
-<span id="cb57-8"><a></a>            <span class="st">"Edward Harrington Jennings"</span>,<span class="st">"Karen Ann Holbrook"</span>,</span>
-<span id="cb57-9"><a></a>            <span class="st">"Joseph A. Alutto"</span>,<span class="st">"E. Gordon Gee"</span>,<span class="st">"Joseph A. Alutto"</span>,</span>
-<span id="cb57-10"><a></a>            <span class="st">"Michael V. Drake"</span>,<span class="st">"Kristina M. Johnson"</span>,</span>
-<span id="cb57-11"><a></a>            <span class="st">"Peter J. Mohler"</span>,<span class="st">'Walter "Ted" Carter, Jr.'</span>,</span>
-<span id="cb57-12"><a></a>            <span class="st">"Ravi Bellamkonda"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a aria-label="1"></a>presidents<span class="op">=</span>[<span class="st">"Edward Francis Baxter Orton Sr"</span>,<span class="st">"Walter Quincy Scott"</span>,</span>
+<span id="cb57-2"><a aria-label="2"></a>            <span class="st">"William Henry Scott"</span>,<span class="st">"James Hulme Canfield"</span>,</span>
+<span id="cb57-3"><a aria-label="3"></a>            <span class="st">"William Oxley Thompson"</span>,<span class="st">"George Washington Rightmire"</span>,</span>
+<span id="cb57-4"><a aria-label="4"></a>            <span class="st">"William McPherson"</span>,<span class="st">"Howard Landis Bevis"</span>,</span>
+<span id="cb57-5"><a aria-label="5"></a>            <span class="st">"Novice Gail Fawcett"</span>,<span class="st">"Harold Leroy Enarson"</span>,</span>
+<span id="cb57-6"><a aria-label="6"></a>            <span class="st">"Edward Harrington Jennings"</span>,<span class="st">"E. Gordon Gee"</span>,</span>
+<span id="cb57-7"><a aria-label="7"></a>            <span class="st">"John Richard Sisson"</span>,<span class="st">"William English Kirwan"</span>,</span>
+<span id="cb57-8"><a aria-label="8"></a>            <span class="st">"Edward Harrington Jennings"</span>,<span class="st">"Karen Ann Holbrook"</span>,</span>
+<span id="cb57-9"><a aria-label="9"></a>            <span class="st">"Joseph A. Alutto"</span>,<span class="st">"E. Gordon Gee"</span>,<span class="st">"Joseph A. Alutto"</span>,</span>
+<span id="cb57-10"><a aria-label="10"></a>            <span class="st">"Michael V. Drake"</span>,<span class="st">"Kristina M. Johnson"</span>,</span>
+<span id="cb57-11"><a aria-label="11"></a>            <span class="st">"Peter J. Mohler"</span>,<span class="st">'Walter "Ted" Carter, Jr.'</span>,</span>
+<span id="cb57-12"><a aria-label="12"></a>            <span class="st">"Ravi Bellamkonda"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a><span class="cf">for</span> president <span class="kw">in</span> presidents:</span>
-<span id="cb58-2"><a></a>    <span class="bu">print</span>(president)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a aria-label="1"></a><span class="cf">for</span> president <span class="kw">in</span> presidents:</span>
+<span id="cb58-2"><a aria-label="2"></a>    <span class="bu">print</span>(president)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="index-or-enumerate-list-items" class="slide level2">
 <h2>Index or enumerate list items</h2>
 <p>There are several ways to determine the index position of items in a list.</p>
 <h3 id="index">index()</h3>
 <p>Using a <code>for</code> loop with the built-in <code>.index()</code> method returns the <strong>first occurrence</strong> of a specified value in the list.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a></a><span class="cf">for</span> president <span class="kw">in</span> presidents:</span>
-<span id="cb59-2"><a></a>    president_index_position <span class="op">=</span> presidents.index(president)</span>
-<span id="cb59-3"><a></a>    president_index_position <span class="op">=</span> president_index_position <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb59-4"><a></a>    <span class="bu">print</span>(<span class="bu">str</span>(president_index_position)<span class="op">+</span><span class="st">' '</span><span class="op">+</span>president) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a aria-label="1"></a><span class="cf">for</span> president <span class="kw">in</span> presidents:</span>
+<span id="cb59-2"><a aria-label="2"></a>    president_index_position <span class="op">=</span> presidents.index(president)</span>
+<span id="cb59-3"><a aria-label="3"></a>    president_index_position <span class="op">=</span> president_index_position <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb59-4"><a aria-label="4"></a>    <span class="bu">print</span>(<span class="bu">str</span>(president_index_position)<span class="op">+</span><span class="st">' '</span><span class="op">+</span>president) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1464,11 +1467,11 @@ Reverses the order of the list
 <section class="slide level2">
 
 <p>This example asks Python to return two variables from the presidents list, the <strong>index</strong> position and the <strong>president</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a></a><span class="cf">for</span> index, president <span class="kw">in</span> <span class="bu">enumerate</span>(presidents):</span>
-<span id="cb60-2"><a></a>    <span class="bu">print</span>(index, president)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a aria-label="1"></a><span class="cf">for</span> index, president <span class="kw">in</span> <span class="bu">enumerate</span>(presidents):</span>
+<span id="cb60-2"><a aria-label="2"></a>    <span class="bu">print</span>(index, president)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This example uses a f-string to make the returned print statement more clear.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a></a><span class="cf">for</span> index, president <span class="kw">in</span> <span class="bu">enumerate</span>(presidents):</span>
-<span id="cb61-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>president<span class="sc">}</span><span class="ss"> was the </span><span class="sc">{</span>index<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> president of The Ohio State University"</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a aria-label="1"></a><span class="cf">for</span> index, president <span class="kw">in</span> <span class="bu">enumerate</span>(presidents):</span>
+<span id="cb61-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>president<span class="sc">}</span><span class="ss"> was the </span><span class="sc">{</span>index<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> president of The Ohio State University"</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Keep in mind that Python uses <strong>zero-based indexing</strong>, meaning the first item in a list as an index of <code>0</code>. To make the output more user-friendly, especially when displaying positions, you can <strong>add 1</strong> (<code>+1</code>) to each index so that counting starts at <code>1</code>.</p>
 </section>
 <section class="slide level2">
@@ -1476,18 +1479,18 @@ Reverses the order of the list
 <p>
 To enhance the script further, you can use a <strong>conditional statement</strong> to add a <strong>superscript</strong> to each number (like 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, etc.), making the output more polished and readable.
 </p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a></a><span class="cf">for</span> index, president <span class="kw">in</span> <span class="bu">enumerate</span>(presidents):</span>
-<span id="cb62-2"><a></a>    index <span class="op">=</span> index<span class="op">+</span><span class="dv">1</span></span>
-<span id="cb62-3"><a></a>    <span class="cf">if</span> index <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> index <span class="op">==</span> <span class="dv">21</span>:</span>
-<span id="cb62-4"><a></a>        superscript <span class="op">=</span> <span class="st">'st'</span></span>
-<span id="cb62-5"><a></a>    <span class="cf">elif</span> index <span class="op">==</span> <span class="dv">2</span> <span class="kw">or</span> index <span class="op">==</span> <span class="dv">22</span>:</span>
-<span id="cb62-6"><a></a>        superscript <span class="op">=</span> <span class="st">'nd'</span></span>
-<span id="cb62-7"><a></a>    <span class="cf">elif</span> index <span class="op">==</span> <span class="dv">3</span> <span class="kw">or</span> index <span class="op">==</span> <span class="dv">23</span>:</span>
-<span id="cb62-8"><a></a>        superscript <span class="op">=</span> <span class="st">'rd'</span></span>
-<span id="cb62-9"><a></a>    <span class="cf">elif</span> index <span class="op">&gt;=</span> <span class="dv">4</span> <span class="kw">and</span> index <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
-<span id="cb62-10"><a></a>        superscript <span class="op">=</span> <span class="st">'th'</span>  </span>
-<span id="cb62-11"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>president<span class="sc">}</span><span class="ss"> was the </span><span class="sc">{</span>index<span class="sc">}{</span>superscript<span class="sc">}</span><span class="ss"> president of The Ohio</span></span>
-<span id="cb62-12"><a></a><span class="er">        State University")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a aria-label="1"></a><span class="cf">for</span> index, president <span class="kw">in</span> <span class="bu">enumerate</span>(presidents):</span>
+<span id="cb62-2"><a aria-label="2"></a>    index <span class="op">=</span> index<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb62-3"><a aria-label="3"></a>    <span class="cf">if</span> index <span class="op">==</span> <span class="dv">1</span> <span class="kw">or</span> index <span class="op">==</span> <span class="dv">21</span>:</span>
+<span id="cb62-4"><a aria-label="4"></a>        superscript <span class="op">=</span> <span class="st">'st'</span></span>
+<span id="cb62-5"><a aria-label="5"></a>    <span class="cf">elif</span> index <span class="op">==</span> <span class="dv">2</span> <span class="kw">or</span> index <span class="op">==</span> <span class="dv">22</span>:</span>
+<span id="cb62-6"><a aria-label="6"></a>        superscript <span class="op">=</span> <span class="st">'nd'</span></span>
+<span id="cb62-7"><a aria-label="7"></a>    <span class="cf">elif</span> index <span class="op">==</span> <span class="dv">3</span> <span class="kw">or</span> index <span class="op">==</span> <span class="dv">23</span>:</span>
+<span id="cb62-8"><a aria-label="8"></a>        superscript <span class="op">=</span> <span class="st">'rd'</span></span>
+<span id="cb62-9"><a aria-label="9"></a>    <span class="cf">elif</span> index <span class="op">&gt;=</span> <span class="dv">4</span> <span class="kw">and</span> index <span class="op">&lt;=</span> <span class="dv">20</span>:</span>
+<span id="cb62-10"><a aria-label="10"></a>        superscript <span class="op">=</span> <span class="st">'th'</span>  </span>
+<span id="cb62-11"><a aria-label="11"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>president<span class="sc">}</span><span class="ss"> was the </span><span class="sc">{</span>index<span class="sc">}{</span>superscript<span class="sc">}</span><span class="ss"> president of The Ohio</span></span>
+<span id="cb62-12"><a aria-label="12"></a><span class="er">        State University")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="building-lists-with-loops" class="slide level2">
 <h2>Building lists with loops</h2>
@@ -1496,61 +1499,61 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <p><strong>Example:</strong> Find U.S. States that border the Pacific Ocean</p>
 <p><br></p>
 <p>START BY ASSIGNING AN EMPTY LIST TO A VARIABLE</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a></a>pacific_states<span class="op">=</span>[ ]  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a aria-label="1"></a>pacific_states<span class="op">=</span>[ ]  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>NEXT WE NEED A LIST OF ALL THE STATES</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a></a>united_states<span class="op">=</span>[<span class="st">"Alabama"</span>,<span class="st">"Alaska"</span>,<span class="st">"Arizona"</span>,<span class="st">"Arkansas"</span>,<span class="st">"California"</span>,</span>
-<span id="cb64-2"><a></a><span class="st">"Colorado"</span>,<span class="st">"Connecticut"</span>,<span class="st">"Delaware"</span>,<span class="st">"Florida"</span>,<span class="st">"Georgia"</span>,<span class="st">"Hawaii"</span>,</span>
-<span id="cb64-3"><a></a><span class="st">"Idaho"</span>,<span class="st">"Illinois"</span>,<span class="st">"Indiana"</span>,<span class="st">"Iowa"</span>,<span class="st">"Kansas"</span>,<span class="st">"Kentucky"</span>,<span class="st">"Louisiana"</span>,</span>
-<span id="cb64-4"><a></a><span class="st">"Maine"</span>,<span class="st">"Maryland"</span>,<span class="st">"Massachusetts"</span>,<span class="st">"Michigan"</span>,<span class="st">"Minnesota"</span>,</span>
-<span id="cb64-5"><a></a><span class="st">"Mississippi"</span>,<span class="st">"Missouri"</span>,<span class="st">"Montana"</span>,<span class="st">"Nebraska"</span>, <span class="st">"Nevada"</span>,</span>
-<span id="cb64-6"><a></a><span class="st">"New Hampshire"</span>,<span class="st">"New Jersey"</span>,<span class="st">"New Mexico"</span>,<span class="st">"New York"</span>,</span>
-<span id="cb64-7"><a></a><span class="st">"North Carolina"</span>,<span class="st">"North Dakota"</span>, <span class="st">"Ohio"</span>,<span class="st">"Oklahoma"</span>,<span class="st">"Oregon"</span>,</span>
-<span id="cb64-8"><a></a><span class="st">"Pennsylvania"</span>,<span class="st">"Rhode Island"</span>,<span class="st">"South Carolina"</span>,<span class="st">"South Dakota"</span>,</span>
-<span id="cb64-9"><a></a><span class="st">"Tennessee"</span>,<span class="st">"Texas"</span>,<span class="st">"Utah"</span>,<span class="st">"Vermont"</span>,<span class="st">"Virginia"</span>,<span class="st">"Washington"</span>,</span>
-<span id="cb64-10"><a></a><span class="st">"West Virginia"</span>,<span class="st">"Wisconsin"</span>,<span class="st">"Wyoming"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a aria-label="1"></a>united_states<span class="op">=</span>[<span class="st">"Alabama"</span>,<span class="st">"Alaska"</span>,<span class="st">"Arizona"</span>,<span class="st">"Arkansas"</span>,<span class="st">"California"</span>,</span>
+<span id="cb64-2"><a aria-label="2"></a><span class="st">"Colorado"</span>,<span class="st">"Connecticut"</span>,<span class="st">"Delaware"</span>,<span class="st">"Florida"</span>,<span class="st">"Georgia"</span>,<span class="st">"Hawaii"</span>,</span>
+<span id="cb64-3"><a aria-label="3"></a><span class="st">"Idaho"</span>,<span class="st">"Illinois"</span>,<span class="st">"Indiana"</span>,<span class="st">"Iowa"</span>,<span class="st">"Kansas"</span>,<span class="st">"Kentucky"</span>,<span class="st">"Louisiana"</span>,</span>
+<span id="cb64-4"><a aria-label="4"></a><span class="st">"Maine"</span>,<span class="st">"Maryland"</span>,<span class="st">"Massachusetts"</span>,<span class="st">"Michigan"</span>,<span class="st">"Minnesota"</span>,</span>
+<span id="cb64-5"><a aria-label="5"></a><span class="st">"Mississippi"</span>,<span class="st">"Missouri"</span>,<span class="st">"Montana"</span>,<span class="st">"Nebraska"</span>, <span class="st">"Nevada"</span>,</span>
+<span id="cb64-6"><a aria-label="6"></a><span class="st">"New Hampshire"</span>,<span class="st">"New Jersey"</span>,<span class="st">"New Mexico"</span>,<span class="st">"New York"</span>,</span>
+<span id="cb64-7"><a aria-label="7"></a><span class="st">"North Carolina"</span>,<span class="st">"North Dakota"</span>, <span class="st">"Ohio"</span>,<span class="st">"Oklahoma"</span>,<span class="st">"Oregon"</span>,</span>
+<span id="cb64-8"><a aria-label="8"></a><span class="st">"Pennsylvania"</span>,<span class="st">"Rhode Island"</span>,<span class="st">"South Carolina"</span>,<span class="st">"South Dakota"</span>,</span>
+<span id="cb64-9"><a aria-label="9"></a><span class="st">"Tennessee"</span>,<span class="st">"Texas"</span>,<span class="st">"Utah"</span>,<span class="st">"Vermont"</span>,<span class="st">"Virginia"</span>,<span class="st">"Washington"</span>,</span>
+<span id="cb64-10"><a aria-label="10"></a><span class="st">"West Virginia"</span>,<span class="st">"Wisconsin"</span>,<span class="st">"Wyoming"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>THEN WE USE A FOR LOOP WITH A CONDITIONAL STATEMENT TO FIND THE WESTERN STATES</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a></a><span class="cf">for</span> state <span class="kw">in</span> united_states:</span>
-<span id="cb65-2"><a></a><span class="cf">if</span> state<span class="op">==</span><span class="st">"Alaska"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"California"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Hawaii"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Oregon"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Washington"</span>:</span>
-<span id="cb65-3"><a></a>    pacific_states.append(state)</span>
-<span id="cb65-4"><a></a>    </span>
-<span id="cb65-5"><a></a><span class="bu">print</span>(pacific_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a aria-label="1"></a><span class="cf">for</span> state <span class="kw">in</span> united_states:</span>
+<span id="cb65-2"><a aria-label="2"></a><span class="cf">if</span> state<span class="op">==</span><span class="st">"Alaska"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"California"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Hawaii"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Oregon"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Washington"</span>:</span>
+<span id="cb65-3"><a aria-label="3"></a>    pacific_states.append(state)</span>
+<span id="cb65-4"><a aria-label="4"></a>    </span>
+<span id="cb65-5"><a aria-label="5"></a><span class="bu">print</span>(pacific_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="counting-items-in-a-list" class="slide level2">
 <h2>Counting items in a list</h2>
 <p>Knowing how many items are in a list is especially helpful when working data, such as extracting information from a website or querying a database.</p>
 <p>In Python, you can determine the number of elements in a list using the built-in <code>len()</code> function.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a></a><span class="bu">len</span>(united_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a aria-label="1"></a><span class="bu">len</span>(united_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="counter-variables" class="slide level2">
 <h2>Counter variables</h2>
 <p>While Python provides built-in tools like the <code>enumerate()</code> function and the <code>.index()</code> method to find the position of items in a list, there are times when using a <strong>counter variable</strong> can be a simple and effective alternative. A counter variable allows you to manually track the position of items as you loop through a list. This can be especially useful when you need more control over how positions are counted or displayed.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a></a>count <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb67-2"><a></a><span class="cf">for</span> state <span class="kw">in</span> states:</span>
-<span id="cb67-3"><a></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb67-4"><a></a>    <span class="bu">print</span>(<span class="st">'Starting record '</span><span class="op">+</span><span class="bu">str</span>(count)<span class="op">+</span><span class="st">' '</span><span class="op">+</span>state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb67"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a aria-label="1"></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb67-2"><a aria-label="2"></a><span class="cf">for</span> state <span class="kw">in</span> states:</span>
+<span id="cb67-3"><a aria-label="3"></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb67-4"><a aria-label="4"></a>    <span class="bu">print</span>(<span class="st">'Starting record '</span><span class="op">+</span><span class="bu">str</span>(count)<span class="op">+</span><span class="st">' '</span><span class="op">+</span>state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="list-comprehensions" class="slide level2">
 <h2>List comprehensions</h2>
 <p><strong>List comprehensions</strong> offer a compact way to create new lists by combing a <code>for</code> loop and an optional if condition in a single line of code. <br><br> <strong>Basic syntax:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a></a>[expression <span class="cf">for</span> item <span class="kw">in</span> iterable <span class="cf">if</span> condition]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a aria-label="1"></a>[expression <span class="cf">for</span> item <span class="kw">in</span> iterable <span class="cf">if</span> condition]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>Instead of writing this longer version:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a></a><span class="cf">for</span> state <span class="kw">in</span> united_states:</span>
-<span id="cb69-2"><a></a><span class="cf">if</span> state<span class="op">==</span><span class="st">"Alaska"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"California"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Hawaii"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Oregon"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Washington"</span>:</span>
-<span id="cb69-3"><a></a>    pacific_states.append(state)</span>
-<span id="cb69-4"><a></a>    </span>
-<span id="cb69-5"><a></a><span class="bu">print</span>(pacific_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb69"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a aria-label="1"></a><span class="cf">for</span> state <span class="kw">in</span> united_states:</span>
+<span id="cb69-2"><a aria-label="2"></a><span class="cf">if</span> state<span class="op">==</span><span class="st">"Alaska"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"California"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Hawaii"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Oregon"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Washington"</span>:</span>
+<span id="cb69-3"><a aria-label="3"></a>    pacific_states.append(state)</span>
+<span id="cb69-4"><a aria-label="4"></a>    </span>
+<span id="cb69-5"><a aria-label="5"></a><span class="bu">print</span>(pacific_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br> You can simplify with a list comprehension.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a></a>list_pacific_states<span class="op">=</span>[<span class="st">"Alaska"</span>,<span class="st">"California"</span>,<span class="st">"Hawaii"</span>,<span class="st">"Oregon"</span>,<span class="st">"Washington"</span>]</span>
-<span id="cb70-2"><a></a>pacific_states<span class="op">=</span>[state <span class="cf">for</span> state <span class="kw">in</span> united states <span class="cf">if</span> state <span class="kw">in</span> list_pacific_states]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a aria-label="1"></a>list_pacific_states<span class="op">=</span>[<span class="st">"Alaska"</span>,<span class="st">"California"</span>,<span class="st">"Hawaii"</span>,<span class="st">"Oregon"</span>,<span class="st">"Washington"</span>]</span>
+<span id="cb70-2"><a aria-label="2"></a>pacific_states<span class="op">=</span>[state <span class="cf">for</span> state <span class="kw">in</span> united states <span class="cf">if</span> state <span class="kw">in</span> list_pacific_states]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="brain-break-1" class="slide level2">
 <h2>Brain Break</h2>
@@ -1569,148 +1572,148 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <section id="dictionaries" class="slide level2">
 <h2>Dictionaries</h2>
 <p>A <strong>dictionary</strong> is a collection of unordered, changeable (mutable) key-value pairs. Each key is unique and maps to a specific value. Dictionaries are enclosed in curly braces <code>{}</code>, with a key and value separated by a colon : and each pair separated by a comma.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a></a>university_facts <span class="op">=</span> {<span class="st">"institution_name"</span> : <span class="st">"The Ohio State University"</span>,</span>
-<span id="cb71-2"><a></a>    <span class="st">"year_founded"</span> : <span class="dv">1870</span>,</span>
-<span id="cb71-3"><a></a>    <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; gray"</span>,</span>
-<span id="cb71-4"><a></a>    <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span>,</span>
-<span id="cb71-5"><a></a>    <span class="st">"students"</span> : <span class="dv">60046</span>,</span>
-<span id="cb71-6"><a></a>    <span class="st">"endowment"</span> : <span class="fl">7.9</span> }</span>
-<span id="cb71-7"><a></a><span class="bu">print</span>(university_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb71"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a aria-label="1"></a>university_facts <span class="op">=</span> {<span class="st">"institution_name"</span> : <span class="st">"The Ohio State University"</span>,</span>
+<span id="cb71-2"><a aria-label="2"></a>    <span class="st">"year_founded"</span> : <span class="dv">1870</span>,</span>
+<span id="cb71-3"><a aria-label="3"></a>    <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; gray"</span>,</span>
+<span id="cb71-4"><a aria-label="4"></a>    <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span>,</span>
+<span id="cb71-5"><a aria-label="5"></a>    <span class="st">"students"</span> : <span class="dv">60046</span>,</span>
+<span id="cb71-6"><a aria-label="6"></a>    <span class="st">"endowment"</span> : <span class="fl">7.9</span> }</span>
+<span id="cb71-7"><a aria-label="7"></a><span class="bu">print</span>(university_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="accessing-dictionary-data" class="slide level2">
 <h2>Accessing dictionary data</h2>
 <h3 id="keys">Keys</h3>
 <p>Use <code>.keys()</code> to get a list of all keys.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a></a>university_facts.keys()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a aria-label="1"></a>university_facts.keys()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="values">Values</h3>
 <p>Use <code>.values()</code> to get a list of all values.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a></a>university_facts.values()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb73"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a aria-label="1"></a>university_facts.values()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="access-a-value" class="slide level2">
 <h2>Access a value</h2>
 <p>Use the key inside square brackets.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a></a>first_president <span class="op">=</span> {<span class="st">"name"</span> : <span class="st">"Edward Francis Baxter Orton Sr"</span>,</span>
-<span id="cb74-2"><a></a>    <span class="st">"tenure"</span> : <span class="st">"1873-1881"</span>}</span>
-<span id="cb74-3"><a></a></span>
-<span id="cb74-4"><a></a><span class="bu">print</span>(first_president[<span class="st">"name"</span>])</span>
-<span id="cb74-5"><a></a><span class="bu">print</span>(first_president[<span class="st">"tenure"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a aria-label="1"></a>first_president <span class="op">=</span> {<span class="st">"name"</span> : <span class="st">"Edward Francis Baxter Orton Sr"</span>,</span>
+<span id="cb74-2"><a aria-label="2"></a>    <span class="st">"tenure"</span> : <span class="st">"1873-1881"</span>}</span>
+<span id="cb74-3"><a aria-label="3"></a></span>
+<span id="cb74-4"><a aria-label="4"></a><span class="bu">print</span>(first_president[<span class="st">"name"</span>])</span>
+<span id="cb74-5"><a aria-label="5"></a><span class="bu">print</span>(first_president[<span class="st">"tenure"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="modifying-and-adding-data" class="slide level2">
 <h2>Modifying and adding data</h2>
 <h3 id="example-1-add-a-new-key-value-pair">Example 1: Add a new key-value pair</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a></a>first_president[<span class="st">"rank"</span>] <span class="op">=</span> <span class="st">"first president"</span></span>
-<span id="cb75-2"><a></a><span class="bu">print</span>(first_president)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a aria-label="1"></a>first_president[<span class="st">"rank"</span>] <span class="op">=</span> <span class="st">"first president"</span></span>
+<span id="cb75-2"><a aria-label="2"></a><span class="bu">print</span>(first_president)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="example-2-start-with-an-empty-dictionary">Example 2: Start with an empty dictionary</h3>
 <p>You can beging with an empty dictionary and add key-value pairs as needed.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a></a>state_facts <span class="op">=</span> {}</span>
-<span id="cb76-2"><a></a>state_facts[<span class="st">"state"</span>] <span class="op">=</span> <span class="st">"Ohio"</span></span>
-<span id="cb76-3"><a></a>state_facts[<span class="st">"nicknames"</span>] <span class="op">=</span> [<span class="st">"The Buckeye State"</span>,</span>
-<span id="cb76-4"><a></a>                            <span class="st">"Birthplace of Aviation"</span>,</span>
-<span id="cb76-5"><a></a>                            <span class="st">"The Heart of it All"</span>]</span>
-<span id="cb76-6"><a></a>state_facts[<span class="st">"capital"</span>] <span class="op">=</span> <span class="st">"Columbus"</span></span>
-<span id="cb76-7"><a></a>state_facts[<span class="st">"population"</span>] <span class="op">=</span> <span class="dv">11785935</span></span>
-<span id="cb76-8"><a></a></span>
-<span id="cb76-9"><a></a>state_facts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a aria-label="1"></a>state_facts <span class="op">=</span> {}</span>
+<span id="cb76-2"><a aria-label="2"></a>state_facts[<span class="st">"state"</span>] <span class="op">=</span> <span class="st">"Ohio"</span></span>
+<span id="cb76-3"><a aria-label="3"></a>state_facts[<span class="st">"nicknames"</span>] <span class="op">=</span> [<span class="st">"The Buckeye State"</span>,</span>
+<span id="cb76-4"><a aria-label="4"></a>                            <span class="st">"Birthplace of Aviation"</span>,</span>
+<span id="cb76-5"><a aria-label="5"></a>                            <span class="st">"The Heart of it All"</span>]</span>
+<span id="cb76-6"><a aria-label="6"></a>state_facts[<span class="st">"capital"</span>] <span class="op">=</span> <span class="st">"Columbus"</span></span>
+<span id="cb76-7"><a aria-label="7"></a>state_facts[<span class="st">"population"</span>] <span class="op">=</span> <span class="dv">11785935</span></span>
+<span id="cb76-8"><a aria-label="8"></a></span>
+<span id="cb76-9"><a aria-label="9"></a>state_facts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="example-3-modify-an-existing-value">Example 3: Modify an existing value</h3>
 <p>To update a value in a dictionary, use the dictionary name followed by the key in square brackets <code>["key"]</code>, then assign a new value using the <code>=</code> sign.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a></a>state_facts[<span class="st">"state"</span>] <span class="op">=</span> <span class="st">"Michigan"</span></span>
-<span id="cb77-2"><a></a>state_facts[<span class="st">"nicknames"</span>] <span class="op">=</span> [<span class="st">"The Great Lake State"</span>,</span>
-<span id="cb77-3"><a></a>                            <span class="st">"The Wolverine State"</span>,</span>
-<span id="cb77-4"><a></a>                            <span class="st">"Water (Winter) Wonderland"</span>]</span>
-<span id="cb77-5"><a></a>state_facts[<span class="st">"capital"</span>] <span class="op">=</span> <span class="st">"Lansing"</span></span>
-<span id="cb77-6"><a></a>state_facts[<span class="st">"population"</span>] <span class="op">=</span> <span class="dv">10077331</span></span>
-<span id="cb77-7"><a></a></span>
-<span id="cb77-8"><a></a>state_facts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb77"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a aria-label="1"></a>state_facts[<span class="st">"state"</span>] <span class="op">=</span> <span class="st">"Michigan"</span></span>
+<span id="cb77-2"><a aria-label="2"></a>state_facts[<span class="st">"nicknames"</span>] <span class="op">=</span> [<span class="st">"The Great Lake State"</span>,</span>
+<span id="cb77-3"><a aria-label="3"></a>                            <span class="st">"The Wolverine State"</span>,</span>
+<span id="cb77-4"><a aria-label="4"></a>                            <span class="st">"Water (Winter) Wonderland"</span>]</span>
+<span id="cb77-5"><a aria-label="5"></a>state_facts[<span class="st">"capital"</span>] <span class="op">=</span> <span class="st">"Lansing"</span></span>
+<span id="cb77-6"><a aria-label="6"></a>state_facts[<span class="st">"population"</span>] <span class="op">=</span> <span class="dv">10077331</span></span>
+<span id="cb77-7"><a aria-label="7"></a></span>
+<span id="cb77-8"><a aria-label="8"></a>state_facts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="nesting-dictionaries" class="slide level2">
 <h2>Nesting dictionaries</h2>
 <p>Dictionaries can contain other dictionaries, allowing for more complex data structures.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a></a>states<span class="op">=</span>{</span>
-<span id="cb78-2"><a></a><span class="st">"state1"</span> : {<span class="st">"name"</span>:<span class="st">"Ohio"</span>,</span>
-<span id="cb78-3"><a></a>            <span class="st">"nicknames"</span> : [<span class="st">"The Buckeye State"</span>,</span>
-<span id="cb78-4"><a></a>                            <span class="st">"Birthplace of Aviation"</span>,</span>
-<span id="cb78-5"><a></a>                            <span class="st">"The Heart of it All"</span>],</span>
-<span id="cb78-6"><a></a>            <span class="st">"capital"</span> : <span class="st">"Columbus"</span></span>
-<span id="cb78-7"><a></a>            <span class="st">"population"</span> : <span class="dv">11785935</span>},</span>
-<span id="cb78-8"><a></a><span class="st">"state2"</span> : {<span class="st">"name"</span> : <span class="st">"Michigan"</span>,</span>
-<span id="cb78-9"><a></a>            <span class="st">"nicknames"</span> : [<span class="st">"The Great Lake State"</span>,</span>
-<span id="cb78-10"><a></a>                           <span class="st">"The Wolverine State"</span>,</span>
-<span id="cb78-11"><a></a>                           <span class="st">"Water (Winter) Wonderland"</span>],</span>
-<span id="cb78-12"><a></a>            <span class="st">"capital"</span> : <span class="st">"Lansing"</span>,</span>
-<span id="cb78-13"><a></a>            <span class="st">"population"</span> : <span class="dv">10077331</span>}</span>
-<span id="cb78-14"><a></a>}</span>
-<span id="cb78-15"><a></a></span>
-<span id="cb78-16"><a></a><span class="bu">print</span>(states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a aria-label="1"></a>states<span class="op">=</span>{</span>
+<span id="cb78-2"><a aria-label="2"></a><span class="st">"state1"</span> : {<span class="st">"name"</span>:<span class="st">"Ohio"</span>,</span>
+<span id="cb78-3"><a aria-label="3"></a>            <span class="st">"nicknames"</span> : [<span class="st">"The Buckeye State"</span>,</span>
+<span id="cb78-4"><a aria-label="4"></a>                            <span class="st">"Birthplace of Aviation"</span>,</span>
+<span id="cb78-5"><a aria-label="5"></a>                            <span class="st">"The Heart of it All"</span>],</span>
+<span id="cb78-6"><a aria-label="6"></a>            <span class="st">"capital"</span> : <span class="st">"Columbus"</span></span>
+<span id="cb78-7"><a aria-label="7"></a>            <span class="st">"population"</span> : <span class="dv">11785935</span>},</span>
+<span id="cb78-8"><a aria-label="8"></a><span class="st">"state2"</span> : {<span class="st">"name"</span> : <span class="st">"Michigan"</span>,</span>
+<span id="cb78-9"><a aria-label="9"></a>            <span class="st">"nicknames"</span> : [<span class="st">"The Great Lake State"</span>,</span>
+<span id="cb78-10"><a aria-label="10"></a>                           <span class="st">"The Wolverine State"</span>,</span>
+<span id="cb78-11"><a aria-label="11"></a>                           <span class="st">"Water (Winter) Wonderland"</span>],</span>
+<span id="cb78-12"><a aria-label="12"></a>            <span class="st">"capital"</span> : <span class="st">"Lansing"</span>,</span>
+<span id="cb78-13"><a aria-label="13"></a>            <span class="st">"population"</span> : <span class="dv">10077331</span>}</span>
+<span id="cb78-14"><a aria-label="14"></a>}</span>
+<span id="cb78-15"><a aria-label="15"></a></span>
+<span id="cb78-16"><a aria-label="16"></a><span class="bu">print</span>(states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="access-a-nested-dictionary" class="slide level2">
 <h2>Access a nested dictionary</h2>
 <p>To access the first state in the dictionary states, use the key for <code>state1</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a></a>states[<span class="st">"state1"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb79"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a aria-label="1"></a>states[<span class="st">"state1"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="access-a-nested-value" class="slide level2">
 <h2>Access a nested value</h2>
 <p>To access the nicknames for the first state in the dictionary states, use the keys for <code>state1</code> and <code>nicknames</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a></a>states[<span class="st">"state1"</span>][<span class="st">"nicknames"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a aria-label="1"></a>states[<span class="st">"state1"</span>][<span class="st">"nicknames"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="looping-through-a-dictionary" class="slide level2">
 <h2>Looping through a dictionary</h2>
 <p>Python provides several ways to iterate through the contents of a dictionary, depending on what you need to access:</p>
 <h3 id="method-1-loop-through-key-value-pairs">Method 1: Loop through key-value pairs</h3>
 <p>Use the <code>.items()</code> method to access both keys and their corresponding value.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a></a><span class="cf">for</span> key, value <span class="kw">in</span> states.items():</span>
-<span id="cb81-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb81-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Value: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb81"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a aria-label="1"></a><span class="cf">for</span> key, value <span class="kw">in</span> states.items():</span>
+<span id="cb81-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb81-3"><a aria-label="3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Value: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="method-2-loop-through-keys-only">Method 2: Loop through keys only</h3>
 <p>Use the <code>.keys()</code> method to iterate over just the keys.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a></a><span class="cf">for</span> key <span class="kw">in</span> states.keys():</span>
-<span id="cb82-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a aria-label="1"></a><span class="cf">for</span> key <span class="kw">in</span> states.keys():</span>
+<span id="cb82-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="ss">f"Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <h3 id="method-3-loop-through-the-values-only">Method 3: Loop through the values only</h3>
 <p>Use the <code>.values()</code> method to iterate over just the values.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a></a><span class="cf">for</span> value <span class="kw">in</span> states.values():</span>
-<span id="cb83-2"><a></a>  <span class="bu">print</span>(<span class="ss">f"Value: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a aria-label="1"></a><span class="cf">for</span> value <span class="kw">in</span> states.values():</span>
+<span id="cb83-2"><a aria-label="2"></a>  <span class="bu">print</span>(<span class="ss">f"Value: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Each method gives you flexibility depending on whether you need the keys, the values, or both.</p>
 </section>
 <section id="looping-through-a-nested-dictionary" class="slide level2">
 <h2>Looping through a nested dictionary</h2>
 <p>When working with nested dictionaries, or dictionaries that contain other dictionaries as values, you can use a nested for loop to access the inner keys and values.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a></a><span class="cf">for</span> outer_key, inner_dict <span class="kw">in</span> states.items():</span>
-<span id="cb84-2"><a></a>    <span class="cf">for</span> inner_key, inner_value <span class="kw">in</span> value.items():</span>
-<span id="cb84-3"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb84-4"><a></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Value: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a aria-label="1"></a><span class="cf">for</span> outer_key, inner_dict <span class="kw">in</span> states.items():</span>
+<span id="cb84-2"><a aria-label="2"></a>    <span class="cf">for</span> inner_key, inner_value <span class="kw">in</span> value.items():</span>
+<span id="cb84-3"><a aria-label="3"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Key: </span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb84-4"><a aria-label="4"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Value: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The first loop <code>for outer_key, inner_dict in states.items():</code> iterates through the outer dictionary.</p>
 <p>The second loop <code>for inner_key, inner_value in inner_dict.items():</code> goes through each inner dictionary</p>
 </section>
 <section class="slide level2">
 
 <h3 id="examples-3">Examples:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a></a><span class="cf">for</span> key <span class="kw">in</span> states.keys():</span>
-<span id="cb85-2"><a></a>    <span class="bu">print</span>(state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb85"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a aria-label="1"></a><span class="cf">for</span> key <span class="kw">in</span> states.keys():</span>
+<span id="cb85-2"><a aria-label="2"></a>    <span class="bu">print</span>(state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a></a><span class="cf">for</span> key <span class="kw">in</span> states.values():</span>
-<span id="cb86-2"><a></a>    <span class="cf">for</span> each_state <span class="kw">in</span> state.keys():</span>
-<span id="cb86-3"><a></a>        <span class="bu">print</span>(each_state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a aria-label="1"></a><span class="cf">for</span> key <span class="kw">in</span> states.values():</span>
+<span id="cb86-2"><a aria-label="2"></a>    <span class="cf">for</span> each_state <span class="kw">in</span> state.keys():</span>
+<span id="cb86-3"><a aria-label="3"></a>        <span class="bu">print</span>(each_state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb87"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a></a><span class="cf">for</span> key <span class="kw">in</span> states.values():</span>
-<span id="cb87-2"><a></a>    <span class="cf">for</span> each_state <span class="kw">in</span> state.values():</span>
-<span id="cb87-3"><a></a>        <span class="bu">print</span>(each_state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb87"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a aria-label="1"></a><span class="cf">for</span> key <span class="kw">in</span> states.values():</span>
+<span id="cb87-2"><a aria-label="2"></a>    <span class="cf">for</span> each_state <span class="kw">in</span> state.values():</span>
+<span id="cb87-3"><a aria-label="3"></a>        <span class="bu">print</span>(each_state)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="examples-4">Examples:</h3>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a></a><span class="cf">for</span> each_dictionary <span class="kw">in</span> states:</span>
-<span id="cb88-2"><a></a>    <span class="bu">print</span>(each_dictionary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a aria-label="1"></a><span class="cf">for</span> each_dictionary <span class="kw">in</span> states:</span>
+<span id="cb88-2"><a aria-label="2"></a>    <span class="bu">print</span>(each_dictionary)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb89"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a></a><span class="cf">for</span> key <span class="kw">in</span> states:</span>
-<span id="cb89-2"><a></a>    <span class="bu">print</span>(states[<span class="st">'each_dictionary'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb89"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a aria-label="1"></a><span class="cf">for</span> key <span class="kw">in</span> states:</span>
+<span id="cb89-2"><a aria-label="2"></a>    <span class="bu">print</span>(states[<span class="st">'each_dictionary'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="functions-in-python" class="slide level2">
 <h2>Functions in Python</h2>
@@ -1729,13 +1732,13 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <section id="define-a-function" class="slide level2">
 <h2>Define a function</h2>
 <p>To define a function, use the <code>def</code> keyword, followed by the function name, parentheses <code>()</code> and a colon <code>:</code>. The code inside the function is indented.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a></a><span class="kw">def</span> say_hello():</span>
-<span id="cb90-2"><a></a>  <span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a aria-label="1"></a><span class="kw">def</span> say_hello():</span>
+<span id="cb90-2"><a aria-label="2"></a>  <span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="call-a-function" class="slide level2">
 <h2>Call a function</h2>
 <p>To <strong>call</strong> or execute a function, simply write the function name followed by parentheses.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb91"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a></a>say_hello()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb91"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a aria-label="1"></a>say_hello()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="arguments-and-parameters" class="slide level2">
 <h2>Arguments and parameters</h2>
@@ -1745,21 +1748,21 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <li><code>name</code> is a <strong>parameter</strong> – a variable defined in the function header.</li>
 <li>When the function is called, you provide an <strong>argument</strong> – a specific value that replaces the parameter.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a></a><span class="kw">def</span> say_hello(name):</span>
-<span id="cb92-2"><a></a>  <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a aria-label="1"></a><span class="kw">def</span> say_hello(name):</span>
+<span id="cb92-2"><a aria-label="2"></a>  <span class="bu">print</span>(<span class="ss">f"Hello, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="calling-a-function-with-an-argument" class="slide level2">
 <h2>Calling a function with an argument</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a></a>say_hello(<span class="st">"Sarah"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a aria-label="1"></a>say_hello(<span class="st">"Sarah"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This makes your function flexible and reusable with different inputs.</p>
 </section>
 <section id="parameters-vs.-arguments" class="slide level2">
 <h2>Parameters vs.&nbsp;arguments</h2>
 <p>A <strong>parameter</strong> is a variable listed inside the parentheses when defining a function. It acts as a placeholder for the value the function will receive.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a></a><span class="kw">def</span> function_name(parameter):</span>
-<span id="cb94-2"><a></a>  <span class="co"># function body</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a aria-label="1"></a><span class="kw">def</span> function_name(parameter):</span>
+<span id="cb94-2"><a aria-label="2"></a>  <span class="co"># function body</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>An <strong>argument</strong> is the actual value you pass into a function when calling it.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a></a>function_name(argument)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a aria-label="1"></a>function_name(argument)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If the function is defined with a parameter, you must provide an argument when calling the function or Python will raise an error.</p>
 </section>
 <section id="positional-vs.-keyword-arguments" class="slide level2">
@@ -1767,29 +1770,29 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <p>When calling a function in Python, you can pass arguments in two main ways: <strong>positional</strong> and <strong>keyword</strong>.</p>
 <h3 id="positional-arguments">Positional arguments</h3>
 <p>By default, Python matches arguments to parameters based on their <strong>position</strong> in the functional call. The first argument is assigned to the first parameter, the second to the second, and so on.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a></a><span class="kw">def</span> describe_pet(animal_type, pet_name):</span>
-<span id="cb96-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">I have a </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb96-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss"> My </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">'s name is </span><span class="sc">{</span>pet_name<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a aria-label="1"></a><span class="kw">def</span> describe_pet(animal_type, pet_name):</span>
+<span id="cb96-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">I have a </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb96-3"><a aria-label="3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss"> My </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">'s name is </span><span class="sc">{</span>pet_name<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <h3 id="keyword-arguments">Keyword arguments</h3>
 <p>With keyword arguments, you explicitly specify which value goes to which parameter using the <code>parameter=value</code> syntax. This removes the dependency on the order of arguments.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a></a><span class="kw">def</span> describe_pet(pet_name<span class="op">=</span><span class="st">"name"</span>,animal_type<span class="op">=</span><span class="st">"species"</span>):</span>
-<span id="cb97-2"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">I have a </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb97-3"><a></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss"> My </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">'s name is </span><span class="sc">{</span>pet_name<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">."</span>)</span>
-<span id="cb97-4"><a></a></span>
-<span id="cb97-5"><a></a>pet_description <span class="op">=</span> describe_pet(pet_name<span class="op">=</span><span class="st">'Charlotte'</span>, animal_type<span class="op">=</span><span class="st">'spider'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb97"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a aria-label="1"></a><span class="kw">def</span> describe_pet(pet_name<span class="op">=</span><span class="st">"name"</span>,animal_type<span class="op">=</span><span class="st">"species"</span>):</span>
+<span id="cb97-2"><a aria-label="2"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">I have a </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb97-3"><a aria-label="3"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss"> My </span><span class="sc">{</span>animal_type<span class="sc">}</span><span class="ss">'s name is </span><span class="sc">{</span>pet_name<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb97-4"><a aria-label="4"></a></span>
+<span id="cb97-5"><a aria-label="5"></a>pet_description <span class="op">=</span> describe_pet(pet_name<span class="op">=</span><span class="st">'Charlotte'</span>, animal_type<span class="op">=</span><span class="st">'spider'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="return-values-from-functions" class="slide level2">
 <h2>Return values from functions</h2>
 <p>So far we’ve used <code>print()</code> to display output from functions. However, functions can also <strong>return values</strong> using the <code>return</code> statement. This allows you to store the results and use it later.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb98"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a></a><span class="kw">def</span> format_name(first_name, last_name):</span>
-<span id="cb98-2"><a></a>    full_name<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>first_name<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>last_name<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb98-3"><a></a>    <span class="cf">return</span> full_name.title()</span>
-<span id="cb98-4"><a></a></span>
-<span id="cb98-5"><a></a>name<span class="op">=</span>format_name(<span class="st">'sarah'</span>,<span class="st">'murphy'</span>)</span>
-<span id="cb98-6"><a></a><span class="bu">print</span>(name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb98"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a aria-label="1"></a><span class="kw">def</span> format_name(first_name, last_name):</span>
+<span id="cb98-2"><a aria-label="2"></a>    full_name<span class="op">=</span><span class="ss">f"</span><span class="sc">{</span>first_name<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>last_name<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb98-3"><a aria-label="3"></a>    <span class="cf">return</span> full_name.title()</span>
+<span id="cb98-4"><a aria-label="4"></a></span>
+<span id="cb98-5"><a aria-label="5"></a>name<span class="op">=</span>format_name(<span class="st">'sarah'</span>,<span class="st">'murphy'</span>)</span>
+<span id="cb98-6"><a aria-label="6"></a><span class="bu">print</span>(name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Returning values is useful when you want to process data and use the result elsewhere in your program.</p>
 </section>
 <section class="slide level2">
@@ -1798,23 +1801,23 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <p><img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 9: Functions</p>
 </div>
 <p>Make a function that tranforms a book title to lower case, then call your function.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a></a><span class="co"># define your function first. Give it a name and assign a parameter.</span></span>
-<span id="cb99-2"><a></a><span class="kw">def</span> function_name(parameter):</span>
-<span id="cb99-3"><a></a>    <span class="co"># your code block here</span></span>
-<span id="cb99-4"><a></a>    <span class="cf">return</span> <span class="co">#your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb99"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a aria-label="1"></a><span class="co"># define your function first. Give it a name and assign a parameter.</span></span>
+<span id="cb99-2"><a aria-label="2"></a><span class="kw">def</span> function_name(parameter):</span>
+<span id="cb99-3"><a aria-label="3"></a>    <span class="co"># your code block here</span></span>
+<span id="cb99-4"><a aria-label="4"></a>    <span class="cf">return</span> <span class="co">#your code here</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a></a><span class="kw">def</span> lowercase(title):</span>
-<span id="cb100-2"><a></a>    lowercase_title <span class="op">=</span> title.lower()</span>
-<span id="cb100-3"><a></a>    <span class="cf">return</span> lowercase_title  </span>
-<span id="cb100-4"><a></a></span>
-<span id="cb100-5"><a></a>book <span class="op">=</span> <span class="st">"Lonesome Dove"</span></span>
-<span id="cb100-6"><a></a></span>
-<span id="cb100-7"><a></a><span class="bu">print</span>(lowercase(book))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb100"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a aria-label="1"></a><span class="kw">def</span> lowercase(title):</span>
+<span id="cb100-2"><a aria-label="2"></a>    lowercase_title <span class="op">=</span> title.lower()</span>
+<span id="cb100-3"><a aria-label="3"></a>    <span class="cf">return</span> lowercase_title  </span>
+<span id="cb100-4"><a aria-label="4"></a></span>
+<span id="cb100-5"><a aria-label="5"></a>book <span class="op">=</span> <span class="st">"Lonesome Dove"</span></span>
+<span id="cb100-6"><a aria-label="6"></a></span>
+<span id="cb100-7"><a aria-label="7"></a><span class="bu">print</span>(lowercase(book))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="export-data-to-csv-file" class="slide level2">
 <h2>Export data to CSV file</h2>
@@ -1823,31 +1826,31 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <section id="csv-module" class="slide level2">
 <h2>CSV module</h2>
 <p>STEP 1 - CREATE EMPTY DATASET AND DEFINE CSV HEADINGS</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb101"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a></a>dataSet<span class="op">=</span>[] columns<span class="op">=</span>[<span class="st">'institution_name'</span>,<span class="st">'year_founded'</span>,<span class="st">'school_colors'</span>,<span class="st">'mascot'</span>,<span class="st">'students'</span>,<span class="st">'endowment'</span>] <span class="co"># for CSV headings </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb101"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a aria-label="1"></a>dataSet<span class="op">=</span>[] columns<span class="op">=</span>[<span class="st">'institution_name'</span>,<span class="st">'year_founded'</span>,<span class="st">'school_colors'</span>,<span class="st">'mascot'</span>,<span class="st">'students'</span>,<span class="st">'endowment'</span>] <span class="co"># for CSV headings </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br></p>
 <p>STEP 2 - DEFINE FUNCTION TO WRITE RESULTS TO CSV FILE</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a></a><span class="kw">def</span> writeto_csv(data,filename,columns): </span>
-<span id="cb102-2"><a></a>    <span class="cf">with</span> <span class="bu">open</span>(filename,<span class="st">'w+'</span>,newline<span class="op">=</span><span class="st">''</span>,encoding<span class="op">=</span><span class="st">"UTF-8"</span>) <span class="im">as</span> <span class="bu">file</span>: </span>
-<span id="cb102-3"><a></a>    writer <span class="op">=</span> csv.DictWriter(<span class="bu">file</span>,fieldnames<span class="op">=</span>columns) </span>
-<span id="cb102-4"><a></a>    writer.writeheader() </span>
-<span id="cb102-5"><a></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>) </span>
-<span id="cb102-6"><a></a>    <span class="cf">for</span> element <span class="kw">in</span> data: </span>
-<span id="cb102-7"><a></a>        writer.writerows([element])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb102"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a aria-label="1"></a><span class="kw">def</span> writeto_csv(data,filename,columns): </span>
+<span id="cb102-2"><a aria-label="2"></a>    <span class="cf">with</span> <span class="bu">open</span>(filename,<span class="st">'w+'</span>,newline<span class="op">=</span><span class="st">''</span>,encoding<span class="op">=</span><span class="st">"UTF-8"</span>) <span class="im">as</span> <span class="bu">file</span>: </span>
+<span id="cb102-3"><a aria-label="3"></a>    writer <span class="op">=</span> csv.DictWriter(<span class="bu">file</span>,fieldnames<span class="op">=</span>columns) </span>
+<span id="cb102-4"><a aria-label="4"></a>    writer.writeheader() </span>
+<span id="cb102-5"><a aria-label="5"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>) </span>
+<span id="cb102-6"><a aria-label="6"></a>    <span class="cf">for</span> element <span class="kw">in</span> data: </span>
+<span id="cb102-7"><a aria-label="7"></a>        writer.writerows([element])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>STEP 3 - ADD A ROW OF DATA</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a></a>institution_name<span class="op">=</span> <span class="st">"The Ohio State University"</span> </span>
-<span id="cb103-2"><a></a>year_founded <span class="op">=</span> <span class="dv">1870</span> </span>
-<span id="cb103-3"><a></a>school_colors <span class="op">=</span> <span class="st">"scarlet &amp; gray"</span> </span>
-<span id="cb103-4"><a></a>mascot <span class="op">=</span> <span class="st">"Brutus Buckeye"</span> </span>
-<span id="cb103-5"><a></a>students <span class="op">=</span> <span class="dv">60046</span> </span>
-<span id="cb103-6"><a></a>endowment <span class="op">=</span> <span class="fl">7.9</span> </span>
-<span id="cb103-7"><a></a></span>
-<span id="cb103-8"><a></a>dataSet.append([institution_name,year_founded,school_colors,mascot,students,endowment]) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb103"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a aria-label="1"></a>institution_name<span class="op">=</span> <span class="st">"The Ohio State University"</span> </span>
+<span id="cb103-2"><a aria-label="2"></a>year_founded <span class="op">=</span> <span class="dv">1870</span> </span>
+<span id="cb103-3"><a aria-label="3"></a>school_colors <span class="op">=</span> <span class="st">"scarlet &amp; gray"</span> </span>
+<span id="cb103-4"><a aria-label="4"></a>mascot <span class="op">=</span> <span class="st">"Brutus Buckeye"</span> </span>
+<span id="cb103-5"><a aria-label="5"></a>students <span class="op">=</span> <span class="dv">60046</span> </span>
+<span id="cb103-6"><a aria-label="6"></a>endowment <span class="op">=</span> <span class="fl">7.9</span> </span>
+<span id="cb103-7"><a aria-label="7"></a></span>
+<span id="cb103-8"><a aria-label="8"></a>dataSet.append([institution_name,year_founded,school_colors,mascot,students,endowment]) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br></p>
 <p>STEP 4 - EXPORT TO CSV</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb104"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a></a>writeto_csv(dataSet,<span class="st">'data/university_facts.csv'</span>,columns)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb104"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a aria-label="1"></a>writeto_csv(dataSet,<span class="st">'data/university_facts.csv'</span>,columns)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="pandas" class="slide level2">
 <h2>pandas</h2>
@@ -1856,22 +1859,22 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <li><strong>Rows</strong> (each representing an observation or record)</li>
 <li><strong>Columns</strong> (each representing a variable or feature)</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb105-2"><a></a></span>
-<span id="cb105-3"><a></a>df <span class="op">=</span> pd.DataFrame([data, index, columns, dtype, copy])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb105"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb105-2"><a aria-label="2"></a></span>
+<span id="cb105-3"><a aria-label="3"></a>df <span class="op">=</span> pd.DataFrame([data, index, columns, dtype, copy])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>STEP 1 – CREATE A LIST OF DICTIONARIES.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb106"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb106-2"><a></a></span>
-<span id="cb106-3"><a></a>data <span class="op">=</span> [{<span class="st">"institution_name"</span>: <span class="st">"The Ohio State University"</span>, <span class="st">"year_founded"</span> : <span class="dv">1870</span>, <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; gray"</span>, <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span>, <span class="st">"students"</span> : <span class="dv">60046</span>, <span class="st">"endowment"</span>: <span class="fl">7.9</span> },<span class="st">" institution_name"</span>: <span class="st">"University of Michigan"</span>, <span class="st">"year_founded"</span> : <span class="dv">1817</span>, <span class="st">"school_colors"</span> : <span class="st">"maize &amp; blue"</span>, <span class="st">"mascot"</span> : <span class="st">"Biff, the MichiganWolverine"</span>, <span class="st">"students"</span> : <span class="dv">53488</span>, <span class="st">"endowment"</span>: <span class="fl">21.2</span> }] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb106"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a aria-label="1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb106-2"><a aria-label="2"></a></span>
+<span id="cb106-3"><a aria-label="3"></a>data <span class="op">=</span> [{<span class="st">"institution_name"</span>: <span class="st">"The Ohio State University"</span>, <span class="st">"year_founded"</span> : <span class="dv">1870</span>, <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; gray"</span>, <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span>, <span class="st">"students"</span> : <span class="dv">60046</span>, <span class="st">"endowment"</span>: <span class="fl">7.9</span> },<span class="st">" institution_name"</span>: <span class="st">"University of Michigan"</span>, <span class="st">"year_founded"</span> : <span class="dv">1817</span>, <span class="st">"school_colors"</span> : <span class="st">"maize &amp; blue"</span>, <span class="st">"mascot"</span> : <span class="st">"Biff, the MichiganWolverine"</span>, <span class="st">"students"</span> : <span class="dv">53488</span>, <span class="st">"endowment"</span>: <span class="fl">21.2</span> }] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Notes:</strong> Each dictionary is a row <br><br></p>
 <p>STEP 2 - CREATE DATAFRAME TO STORE ROWS</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb107"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a></a>university_facts_df<span class="op">=</span>pd.DataFrame(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb107"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb107-1"><a aria-label="1"></a>university_facts_df<span class="op">=</span>pd.DataFrame(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br><br></p>
 <p>STEP 3 - EXPORT THE RESULTS DATAFRAME TO A CSV FILE</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb108"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a></a>university_facts_df.to_csv(<span class="st">'data/university_facts.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb108"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a aria-label="1"></a>university_facts_df.to_csv(<span class="st">'data/university_facts.csv'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -2022,13 +2025,13 @@ Maia Kobabe”
 </tbody>
 </table>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb109"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a></a>df <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb109-2"><a></a>&nbsp; &nbsp;               <span class="st">"year"</span> : <span class="dv">2025</span>,</span>
-<span id="cb109-3"><a></a>&nbsp; &nbsp;               <span class="st">"rank"</span> : [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>],</span>
-<span id="cb109-4"><a></a>&nbsp; &nbsp;               <span class="st">"title"</span> : [<span class="st">"Sold"</span>,<span class="st">"The Perks of Being a Wallflower"</span>,<span class="st">"Gender Queer"</span>,<span class="st">"Empire of Storms"</span>,<span class="st">"Last Night at the Telegraph Club"</span>,<span class="st">"Tricks"</span>],</span>
-<span id="cb109-5"><a></a>&nbsp; &nbsp;               <span class="st">"author"</span> : [<span class="st">"Patricia McCormick"</span>,<span class="st">"Stephen Chbosky"</span>,<span class="st">"Maia Kobabe"</span>,<span class="st">"Sarah J. Maas"</span>,<span class="st">"Malinda Lo"</span>,<span class="st">"Ellen Hopkins"</span>],</span>
-<span id="cb109-6"><a></a>&nbsp; &nbsp;               <span class="st">"number_challenges"</span> : [<span class="dv">36</span>,<span class="dv">33</span>,<span class="dv">25</span>,<span class="dv">24</span>,<span class="dv">23</span>,<span class="dv">23</span>]</span>
-<span id="cb109-7"><a></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb109"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a aria-label="1"></a>df <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb109-2"><a aria-label="2"></a>&nbsp; &nbsp;               <span class="st">"year"</span> : <span class="dv">2025</span>,</span>
+<span id="cb109-3"><a aria-label="3"></a>&nbsp; &nbsp;               <span class="st">"rank"</span> : [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">5</span>],</span>
+<span id="cb109-4"><a aria-label="4"></a>&nbsp; &nbsp;               <span class="st">"title"</span> : [<span class="st">"Sold"</span>,<span class="st">"The Perks of Being a Wallflower"</span>,<span class="st">"Gender Queer"</span>,<span class="st">"Empire of Storms"</span>,<span class="st">"Last Night at the Telegraph Club"</span>,<span class="st">"Tricks"</span>],</span>
+<span id="cb109-5"><a aria-label="5"></a>&nbsp; &nbsp;               <span class="st">"author"</span> : [<span class="st">"Patricia McCormick"</span>,<span class="st">"Stephen Chbosky"</span>,<span class="st">"Maia Kobabe"</span>,<span class="st">"Sarah J. Maas"</span>,<span class="st">"Malinda Lo"</span>,<span class="st">"Ellen Hopkins"</span>],</span>
+<span id="cb109-6"><a aria-label="6"></a>&nbsp; &nbsp;               <span class="st">"number_challenges"</span> : [<span class="dv">36</span>,<span class="dv">33</span>,<span class="dv">25</span>,<span class="dv">24</span>,<span class="dv">23</span>,<span class="dv">23</span>]</span>
+<span id="cb109-7"><a aria-label="7"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -2077,7 +2080,7 @@ Maia Kobabe”
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"e458f5b9039ad0652b69d172741d19077ce181f5ffd1128abfffbef3142805cb","url":"https://multiplex.up.railway.app/"},
+'multiplex': {"secret":null,"id":"952211887046cd7f642797521e88479fe6be27679702083ef0c1d1ab9436a07b","url":"https://multiplex.up.railway.app/"},
 'smaller': false,
  
         // Display controls in the bottom right corner
