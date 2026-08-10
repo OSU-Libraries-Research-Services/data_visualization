@@ -7,7 +7,7 @@ project:
 website:
   title: "Data Visualization"
   favicon: images/favicon.ico
-  repo-url: https://github.com/Murphy465/data_visualization_test
+  repo-url: https://osu-libraries-research-services.github.io/data_visualization/
   google-analytics: "G-BJ38N1FLJT"
   page-navigation: true
   page-footer: 
