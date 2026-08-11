@@ -1,5 +1,6 @@
 /.quarto/
 **/*.quarto_ipynb
-slides/tableau_research-speaker.html
+slides/tableau_research_day1-speaker.html
+slides/tableau_research_day2-speaker.html
 slides/python_basics_part1-speaker.html
 slides/python_basics_part2-speaker.html
