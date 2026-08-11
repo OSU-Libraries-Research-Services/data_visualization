@@ -2012,6 +2012,4 @@ df = pd.DataFrame({
 })
 ```
 
----
 
-## Adjustment

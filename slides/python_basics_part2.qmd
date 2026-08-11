@@ -673,6 +673,4 @@ except:
 </p>
 </div>
 
----
 
-## Adjustment
