@@ -2953,14 +2953,14 @@
     "href": "slides/tableau_research.html#getting-started",
     "title": "Data Visualization",
     "section": "Getting Started",
-    "text": "Getting Started\n\nCreate an empty file named tableau_research on your desktop.\nGo to https://go.osu.edu/tableau_research\nDownload and place in tableau_research folder:\n\nrock_n_roll_performers.csv\nrock_n_roll_studio_albums.csv"
+    "text": "Getting Started\n\nCreate an empty file named tableau_research on your desktop.\nGo to https://go.osu.edu/tableau_research\nDownload and place in tableau_research folder:\n\nrock_n_roll_performers.csv\nrock_n_roll_studio_albums.csv\nODNR_fish_stocking.csv"
   },
   {
     "objectID": "slides/tableau_research.html#drama-framework",
     "href": "slides/tableau_research.html#drama-framework",
     "title": "Data Visualization",
     "section": "DRAMA Framework",
-    "text": "DRAMA Framework\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?"
+    "text": "DRAMA Framework\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?\n\n(Primeau, n.d.)"
   },
   {
     "objectID": "slides/tableau_research.html#drama-framework-1",
@@ -3073,5 +3073,481 @@
     "title": "Data Visualization",
     "section": "Adjustment",
     "text": "Adjustment"
+  },
+  {
+    "objectID": "slides/tableau_research.html#welcome-to-tableau-for-research-day-2",
+    "href": "slides/tableau_research.html#welcome-to-tableau-for-research-day-2",
+    "title": "Data Visualization",
+    "section": "Welcome to Tableau for Research Day 2",
+    "text": "Welcome to Tableau for Research Day 2"
+  },
+  {
+    "objectID": "slides/tableau_research.html#tableau-for-research-day-2",
+    "href": "slides/tableau_research.html#tableau-for-research-day-2",
+    "title": "Data Visualization",
+    "section": "Tableau for Research Day 2",
+    "text": "Tableau for Research Day 2"
+  },
+  {
+    "objectID": "slides/tableau_research.html#tableau-for-research---day-2",
+    "href": "slides/tableau_research.html#tableau-for-research---day-2",
+    "title": "Data Visualization",
+    "section": "Tableau for Research - Day 2",
+    "text": "Tableau for Research - Day 2"
+  },
+  {
+    "objectID": "slides/tableau_research.html#groups-and-hierarchies",
+    "href": "slides/tableau_research.html#groups-and-hierarchies",
+    "title": "Data Visualization",
+    "section": "Groups and Hierarchies",
+    "text": "Groups and Hierarchies\nWhy group data in Tableau?\n\nNormalize values – Combine similar entries to ensure consistency (e.g., merging “OH” and “Ohio”).\nCorrect errors – Fix inconsistencies or typs in category names.\nSimplify categories – Consolidate detailed values into braoder, more meaningful groups."
+  },
+  {
+    "objectID": "slides/tableau_research.html#the-start-page",
+    "href": "slides/tableau_research.html#the-start-page",
+    "title": "Data Visualization",
+    "section": "The Start Page",
+    "text": "The Start Page"
+  },
+  {
+    "objectID": "slides/tableau_research.html#the-data-source-page",
+    "href": "slides/tableau_research.html#the-data-source-page",
+    "title": "Data Visualization",
+    "section": "The Data Source Page",
+    "text": "The Data Source Page"
+  },
+  {
+    "objectID": "slides/tableau_research.html#the-tableau-workspace",
+    "href": "slides/tableau_research.html#the-tableau-workspace",
+    "title": "Data Visualization",
+    "section": "The Tableau Workspace",
+    "text": "The Tableau Workspace"
+  },
+  {
+    "objectID": "slides/tableau_research.html#creating-custom-hierarchies",
+    "href": "slides/tableau_research.html#creating-custom-hierarchies",
+    "title": "Data Visualization",
+    "section": "Creating Custom Hierarchies",
+    "text": "Creating Custom Hierarchies\nCustom hierarchies save space and add interactivity by allowing users to drill down to more detailed levels of data.\nDate Hierarchies\nWhen a date field is added to the view, Tableau automatically creates a hierachy —YEAR, QUARTER, MONTH, and DAY. You can expand this hierachy using the + symbol.\nCustom Hierarchies\nYou can create your own hierarchies by stacking one dimension or one measure onto another in the Data Pane."
+  },
+  {
+    "objectID": "slides/tableau_research.html#the-data-source-page-visibilityhidden",
+    "href": "slides/tableau_research.html#the-data-source-page-visibilityhidden",
+    "title": "Data Visualization",
+    "section": "{#The Data Source Page visibility=“hidden”}",
+    "text": "{#The Data Source Page visibility=“hidden”}"
+  },
+  {
+    "objectID": "slides/tableau_research.html#applying-formatting-in-tableau",
+    "href": "slides/tableau_research.html#applying-formatting-in-tableau",
+    "title": "Data Visualization",
+    "section": "Applying Formatting in Tableau",
+    "text": "Applying Formatting in Tableau\nFormat the entire workbook:\n\nGo to the Format menu and select Workbook. This allows you to apply consistent styles across all sheets.\n\nFormat an individual worksheet:\n\nUse the Format pane by selecting Font, Alignment, Shading, Borders, or Lines from the Format toolbar.\nAlternatively, right-click on a pill and choose Format."
+  },
+  {
+    "objectID": "slides/tableau_research.html#table-calculations",
+    "href": "slides/tableau_research.html#table-calculations",
+    "title": "Data Visualization",
+    "section": "Table Calculations",
+    "text": "Table Calculations\nTable caculations enhance Tableau’s performance and efficiency by limiting the scope of computation to what’s displayed in the view, rather than the entire dataset."
+  },
+  {
+    "objectID": "slides/tableau_research.html#common-table-calculations",
+    "href": "slides/tableau_research.html#common-table-calculations",
+    "title": "Data Visualization",
+    "section": "Common Table Calculations",
+    "text": "Common Table Calculations\n\nRunning Total\nDifference\nPercent Difference\nPercent of Total\nRank\nPercentile\nMoving Average\nYear-to-Date (YTD) Total\nCompound Growth Rate\nYear-over-Year (YoY) Growth\nYTD Growth"
+  },
+  {
+    "objectID": "slides/tableau_research.html#data-ohio",
+    "href": "slides/tableau_research.html#data-ohio",
+    "title": "Data Visualization",
+    "section": "Data Ohio",
+    "text": "Data Ohio"
+  },
+  {
+    "objectID": "slides/tableau_research.html#ohio-fish-stocking-records",
+    "href": "slides/tableau_research.html#ohio-fish-stocking-records",
+    "title": "Data Visualization",
+    "section": "Ohio Fish Stocking Records",
+    "text": "Ohio Fish Stocking Records\n\nOhio considers data a shared strategic asset. The resource is designed to help anglers:\n\nIdentify fishing locations where specific species have been stocked.\nExplore detailed stocking histories for waters they frequently fish or are particularly interested in."
+  },
+  {
+    "objectID": "slides/tableau_research.html#choose-an-effective-visual",
+    "href": "slides/tableau_research.html#choose-an-effective-visual",
+    "title": "Data Visualization",
+    "section": "Choose an effective visual",
+    "text": "Choose an effective visual\nThe Financial Times Visual Vocabulary offers a categorized collection of chart types. It is a useful reference for selecting the right chart for the needs and expectations of your audience."
+  },
+  {
+    "objectID": "slides/tableau_research.html#part-to-whole-relationships",
+    "href": "slides/tableau_research.html#part-to-whole-relationships",
+    "title": "Data Visualization",
+    "section": "Part-to-whole Relationships",
+    "text": "Part-to-whole Relationships"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#tableau-for-research---day-2",
+    "href": "slides/tableau_research_day2.html#tableau-for-research---day-2",
+    "title": "Data Visualization",
+    "section": "Tableau for Research - Day 2",
+    "text": "Tableau for Research - Day 2"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#practice-matters",
+    "href": "slides/tableau_research_day2.html#practice-matters",
+    "title": "Data Visualization",
+    "section": "Practice Matters",
+    "text": "Practice Matters\nInspiration and examples\n\nTableau Public Viz of the Day\nFlowing Data\n\nExplore data journalism\n\nCNN\nThe New York Times\nThe Washington Post"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#groups-and-hierarchies",
+    "href": "slides/tableau_research_day2.html#groups-and-hierarchies",
+    "title": "Data Visualization",
+    "section": "Groups and Hierarchies",
+    "text": "Groups and Hierarchies\nWhy group data in Tableau?\n\nNormalize values – Combine similar entries to ensure consistency (e.g., merging “OH” and “Ohio”).\nCorrect errors – Fix inconsistencies or typs in category names.\nSimplify categories – Consolidate detailed values into braoder, more meaningful groups."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#creating-custom-hierarchies",
+    "href": "slides/tableau_research_day2.html#creating-custom-hierarchies",
+    "title": "Data Visualization",
+    "section": "Creating Custom Hierarchies",
+    "text": "Creating Custom Hierarchies\nCustom hierarchies save space and add interactivity by allowing users to drill down to more detailed levels of data.\nDate Hierarchies\nWhen a date field is added to the view, Tableau automatically creates a hierachy —YEAR, QUARTER, MONTH, and DAY. You can expand this hierachy using the + symbol.\nCustom Hierarchies\nYou can create your own hierarchies by stacking one dimension or one measure onto another in the Data Pane."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#applying-formatting-in-tableau",
+    "href": "slides/tableau_research_day2.html#applying-formatting-in-tableau",
+    "title": "Data Visualization",
+    "section": "Applying Formatting in Tableau",
+    "text": "Applying Formatting in Tableau\nFormat the entire workbook:\n\nGo to the Format menu and select Workbook. This allows you to apply consistent styles across all sheets.\n\nFormat an individual worksheet:\n\nUse the Format pane by selecting Font, Alignment, Shading, Borders, or Lines from the Format toolbar.\nAlternatively, right-click on a pill and choose Format."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#table-calculations",
+    "href": "slides/tableau_research_day2.html#table-calculations",
+    "title": "Data Visualization",
+    "section": "Table Calculations",
+    "text": "Table Calculations\nTable caculations enhance Tableau’s performance and efficiency by limiting the scope of computation to what’s displayed in the view, rather than the entire dataset."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#common-table-calculations",
+    "href": "slides/tableau_research_day2.html#common-table-calculations",
+    "title": "Data Visualization",
+    "section": "Common Table Calculations",
+    "text": "Common Table Calculations\n\nRunning Total\nDifference\nPercent Difference\nPercent of Total\nRank\nPercentile\nMoving Average\nYear-to-Date (YTD) Total\nCompound Growth Rate\nYear-over-Year (YoY) Growth\nYTD Growth"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#data-ohio",
+    "href": "slides/tableau_research_day2.html#data-ohio",
+    "title": "Data Visualization",
+    "section": "Data Ohio",
+    "text": "Data Ohio"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#ohio-fish-stocking-records",
+    "href": "slides/tableau_research_day2.html#ohio-fish-stocking-records",
+    "title": "Data Visualization",
+    "section": "Ohio Fish Stocking Records",
+    "text": "Ohio Fish Stocking Records\n\nOhio considers data a shared strategic asset. The resource is designed to help anglers:\n\nIdentify fishing locations where specific species have been stocked.\nExplore detailed stocking histories for waters they frequently fish or are particularly interested in."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#choose-an-effective-visual",
+    "href": "slides/tableau_research_day2.html#choose-an-effective-visual",
+    "title": "Data Visualization",
+    "section": "Choose an effective visual",
+    "text": "Choose an effective visual\n\nhttps://ft-interactive.github.io/visual-vocabulary/"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#part-to-whole-relationships",
+    "href": "slides/tableau_research_day2.html#part-to-whole-relationships",
+    "title": "Data Visualization",
+    "section": "Part-to-whole Relationships",
+    "text": "Part-to-whole Relationships\n\nPie chart\n\n\n\nData visualization experts often discourage using pie charts because humans struggle to accurately compare angles and areas.\n\n\nThere are situations, however, where a pie chart may be appropriate—such as when the audience expects it or when it provides a clear and immediate visual impact.\n\n\nLet’s return to our rock_n_roll_performers.csv dataset to explore the pie chart."
+  },
+  {
+    "objectID": "slides/tableau_research.html#ranking",
+    "href": "slides/tableau_research.html#ranking",
+    "title": "Data Visualization",
+    "section": "Ranking",
+    "text": "Ranking\n\nThe Bar Chart\n\n\n\nOne task, multiple approaches"
+  },
+  {
+    "objectID": "slides/tableau_research.html#change-over-time",
+    "href": "slides/tableau_research.html#change-over-time",
+    "title": "Data Visualization",
+    "section": "Change over time",
+    "text": "Change over time\n\nThe Line Chart\n\n\nDiscrete vs. continuous dates\nBlue vs. green pills"
+  },
+  {
+    "objectID": "slides/tableau_research.html#correlation",
+    "href": "slides/tableau_research.html#correlation",
+    "title": "Data Visualization",
+    "section": "Correlation",
+    "text": "Correlation\n\nThe Scatterplot\n\n\n\nTableau automatically displays data at the highest level-of-detail available when creating a view. This behavior is especially noticeable when using scatterplots to analyze relationships between two or more measures."
+  },
+  {
+    "objectID": "slides/tableau_research.html#formatting",
+    "href": "slides/tableau_research.html#formatting",
+    "title": "Data Visualization",
+    "section": "Formatting",
+    "text": "Formatting\n\nFormatting\n\n\n\nSmall adjustments can significantly improve the clarity and aesthetic appeal of your visualization"
+  },
+  {
+    "objectID": "slides/tableau_research.html#text-table",
+    "href": "slides/tableau_research.html#text-table",
+    "title": "Data Visualization",
+    "section": "Text table",
+    "text": "Text table\n\nText Table\n\n\n\nA text table is not a data visualization. However, a text table can complement visual elements and enhance the overall understanding of your data by providing:\n\n\nPrecisce values,\n\n\nDetailed comparisons, or\n\n\nSupporting context."
+  },
+  {
+    "objectID": "slides/tableau_research.html#callout-numbers",
+    "href": "slides/tableau_research.html#callout-numbers",
+    "title": "Data Visualization",
+    "section": "Callout numbers",
+    "text": "Callout numbers\n\nCallout numbers\n\nSometimes one large, single number can make the most powerful statement in a data visualization.\nCallout numbers are used to highlight key takeaways and can be easily created in Tableau with a few formatting steps."
+  },
+  {
+    "objectID": "slides/tableau_research.html#example",
+    "href": "slides/tableau_research.html#example",
+    "title": "Data Visualization",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#drama-frameworkprimeau",
+    "href": "slides/tableau_research_day2.html#drama-frameworkprimeau",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework(Primeau, n.d.)",
+    "text": "DRAMA Framework(Primeau, n.d.)\nThe DRAMA Framework, first introduced on Day 1, is also useful for critically evaluating data visualizations\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#references",
+    "href": "slides/tableau_research_day2.html#references",
+    "title": "Data Visualization",
+    "section": "References",
+    "text": "References\n\n\nPrimeau, Hanna. n.d. “Taking the Drama Out of Source Evaluation.” In Librarian Yarns. https://www.librarianyarns.com/drama-source-eval."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#drama-framework",
+    "href": "slides/tableau_research_day2.html#drama-framework",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework",
+    "text": "DRAMA Framework\nThe DRAMA Framework, first introduced on Day 1, is also useful for critically evaluating data visualizations. (Primeau, n.d.)\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?"
+  },
+  {
+    "objectID": "slides/tableau_research.html#references",
+    "href": "slides/tableau_research.html#references",
+    "title": "Data Visualization",
+    "section": "References",
+    "text": "References\n\n\nPrimeau, Hanna. n.d. “Taking the Drama Out of Source Evaluation.” In Librarian Yarns. https://www.librarianyarns.com/drama-source-eval."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#donut-chart",
+    "href": "slides/tableau_research_day2.html#donut-chart",
+    "title": "Data Visualization",
+    "section": "Donut chart",
+    "text": "Donut chart\n\nDonut chart"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#dual-axis-combination-chart",
+    "href": "slides/tableau_research_day2.html#dual-axis-combination-chart",
+    "title": "Data Visualization",
+    "section": "Dual-axis Combination Chart",
+    "text": "Dual-axis Combination Chart\n\nDual-axis chart\n\nA dual-axis combination chart lets you display two different data fields on the same graph, either to save space or to highlight comparisons more effectively. You can also enhance your visual analysis by layering multiple mark types (like bars and lines) in a single view.\nLet’s dive back into our rock_n_roll_performers dataset to create a dual-axis chart that highlights our favorite albums and their peak U.S. chart positions."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#pareto-chart",
+    "href": "slides/tableau_research_day2.html#pareto-chart",
+    "title": "Data Visualization",
+    "section": "Pareto Chart",
+    "text": "Pareto Chart\nPareto charts illustrate the Pareto Principle, which suggests that roughly 80% of outcomes result from 20% of causes. In Tableau, these charts are built using table calculations. Individual values are displayed as bars in descending order, while a cumulative percentage line overlays the bars to show the proportion each category contributes to the total."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#calculated-fields",
+    "href": "slides/tableau_research_day2.html#calculated-fields",
+    "title": "Data Visualization",
+    "section": "Calculated fields",
+    "text": "Calculated fields\nCalculated fields empower you to transform your data directly within Tableau. You can use calculated fields to:\n\nClean and organize data,\nDefine custom segments,\nAdd interactivity, or\nPerform statistical and mathematical calculations."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#calculated-fields.smaller",
+    "href": "slides/tableau_research_day2.html#calculated-fields.smaller",
+    "title": "Data Visualization",
+    "section": "Calculated fields.{smaller}",
+    "text": "Calculated fields.{smaller}\n\nCalculated fields\n\nLet’s take a closer look at how calculated fields work by analyzing RIAA certifications for our favorite albums.\nOver time, the Recording Industry Association of America (RIAA) has updated its certification standards to reflect changes in how music is consumed. Originally based solely on album sales, certifications now account for digital downloads and streaming activity."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#riaa-certification-levels",
+    "href": "slides/tableau_research_day2.html#riaa-certification-levels",
+    "title": "Data Visualization",
+    "section": "RIAA Certification Levels",
+    "text": "RIAA Certification Levels\nTo keep things simple, we’ll use the current criteria for album-level awards, as defined by the RIAA in February 2016 to categorize albums by their certification level based on total units.\n🎵 RIAA Certification Levels\n\nGold: 500,000 units\nPlatinum: 1,000,000 units\nMulti-Platinum: 2,000,000+ units (in 1,000,000-unit increments)\nDiamond: 10,000,000 units\n\n💽 What Counts as a Unit? A single unit can be any of the following:\n\nOne full digital or physical album sale\n10 track downloads from the same album\n1,500 on-demand audio or video streams from the album"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#calculated-fields-1",
+    "href": "slides/tableau_research_day2.html#calculated-fields-1",
+    "title": "Data Visualization",
+    "section": "Calculated fields",
+    "text": "Calculated fields\n\nCalculated fields\n\nLet’s take a closer look at how calculated fields work by analyzing RIAA certifications for our favorite albums.\nOver time, the Recording Industry Association of America (RIAA) has updated its certification standards to reflect changes in how music is consumed. Originally based solely on album sales, certifications now account for digital downloads and streaming activity."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#parameters",
+    "href": "slides/tableau_research_day2.html#parameters",
+    "title": "Data Visualization",
+    "section": "Parameters",
+    "text": "Parameters\nIn Tableau, parameters:\n\nReplace constant values such as numbers, dates, or text strings in calculations, filters, or reference lines, making your dashboards more flexible and dynamic.\nEnhance interactivity by allowing users to control what data is displayed or how it’s calculated, depending on how the parameter is integrated into the view."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#parameters-1",
+    "href": "slides/tableau_research_day2.html#parameters-1",
+    "title": "Data Visualization",
+    "section": "Parameters",
+    "text": "Parameters\n\nParameters\n\nLet’s take our CalculatedFields text table and transform it into a bar chart. Then we will create a parameter to highlight specific albums."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#example",
+    "href": "slides/tableau_research_day2.html#example",
+    "title": "Data Visualization",
+    "section": "Example",
+    "text": "Example\nif [Certification Riaa Status]='Gold' then 500000\nelseif [Certification Riaa Status]='Platinum' then 1000000\nelseif [Certification Riaa Status]='Multiplatinum' then 2000000\nelseif [Certification Riaa Status]='Diamond' then 10000000\nend"
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#basic-mapping",
+    "href": "slides/tableau_research_day2.html#basic-mapping",
+    "title": "Data Visualization",
+    "section": "Basic Mapping",
+    "text": "Basic Mapping\n\nBasic mapping\n\nThe ODNR_fish_stocking.csv dataset includes latitude and longitude for each stocking location. Let’s turn this data into a meaningful map."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#dashboards",
+    "href": "slides/tableau_research_day2.html#dashboards",
+    "title": "Data Visualization",
+    "section": "Dashboards",
+    "text": "Dashboards\nCreating effective dashboards is both an art and a science and is a skill that develops with time, experience, and thoughtful practice. Great dashboards are tailored to a specific audience, provide clear context and guidance, encourage interaction, and follow visual best practices."
+  },
+  {
+    "objectID": "slides/tableau_research_day2.html#example-1",
+    "href": "slides/tableau_research_day2.html#example-1",
+    "title": "Data Visualization",
+    "section": "Example",
+    "text": "Example\n[Certification Riaa Status]=[Highlight album]\n\n# This expression returns True for albums that match the selected certification in the parameter."
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#welcome-to-tableau-for-research",
+    "href": "slides/tableau_research_day1.html#welcome-to-tableau-for-research",
+    "title": "Data Visualization",
+    "section": "Welcome to Tableau for Research",
+    "text": "Welcome to Tableau for Research"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#getting-started",
+    "href": "slides/tableau_research_day1.html#getting-started",
+    "title": "Data Visualization",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nCreate an empty file named tableau_research on your desktop.\nGo to https://go.osu.edu/tableau_research\nDownload and place in tableau_research folder:\n\nrock_n_roll_performers.csv\nrock_n_roll_studio_albums.csv\nODNR_fish_stocking.csv"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#drama-framework",
+    "href": "slides/tableau_research_day1.html#drama-framework",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework",
+    "text": "DRAMA Framework\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?\n\n(Primeau, n.d.)"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#the-start-page",
+    "href": "slides/tableau_research_day1.html#the-start-page",
+    "title": "Data Visualization",
+    "section": "The Start Page",
+    "text": "The Start Page"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#the-data-source-page",
+    "href": "slides/tableau_research_day1.html#the-data-source-page",
+    "title": "Data Visualization",
+    "section": "The Data Source Page",
+    "text": "The Data Source Page"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#wide-data",
+    "href": "slides/tableau_research_day1.html#wide-data",
+    "title": "Data Visualization",
+    "section": "Wide Data",
+    "text": "Wide Data"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#tall-data",
+    "href": "slides/tableau_research_day1.html#tall-data",
+    "title": "Data Visualization",
+    "section": "Tall Data",
+    "text": "Tall Data\n\n\n\n\n\nName\n\n\nDimension\n\n\nMeasure\n\n\n\n\n\n\nHelen\n\n\nAge\n\n\n68\n\n\n\n\nHelen\n\n\nVisits\n\n\n15\n\n\n\n\nRob\n\n\nAge\n\n\n15\n\n\n\n\nRob\n\n\nVisits\n\n\n1\n\n\n\n\nAnna\n\n\nAge\n\n\n43\n\n\n\n\nAnna\n\n\nVisits\n\n\n6"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#the-tableau-workspace",
+    "href": "slides/tableau_research_day1.html#the-tableau-workspace",
+    "title": "Data Visualization",
+    "section": "The Tableau Workspace",
+    "text": "The Tableau Workspace"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#choose-an-effective-visual",
+    "href": "slides/tableau_research_day1.html#choose-an-effective-visual",
+    "title": "Data Visualization",
+    "section": "Choose an effective visual",
+    "text": "Choose an effective visual\nThe Financial Times Visual Vocabulary offers a categorized collection of chart types. It is a useful reference for selecting the right chart for the needs and expectations of your audience."
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#ranking",
+    "href": "slides/tableau_research_day1.html#ranking",
+    "title": "Data Visualization",
+    "section": "Ranking",
+    "text": "Ranking\n\nThe Bar Chart\n\n\n\nOne task, multiple approaches"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#change-over-time",
+    "href": "slides/tableau_research_day1.html#change-over-time",
+    "title": "Data Visualization",
+    "section": "Change over time",
+    "text": "Change over time\n\nThe Line Chart\n\n\nDiscrete vs. continuous dates\nBlue vs. green pills"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#correlation",
+    "href": "slides/tableau_research_day1.html#correlation",
+    "title": "Data Visualization",
+    "section": "Correlation",
+    "text": "Correlation\n\nThe Scatterplot\n\n\n\nTableau automatically displays data at the highest level-of-detail available when creating a view. This behavior is especially noticeable when using scatterplots to analyze relationships between two or more measures."
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#formatting",
+    "href": "slides/tableau_research_day1.html#formatting",
+    "title": "Data Visualization",
+    "section": "Formatting",
+    "text": "Formatting\n\nFormatting\n\n\n\nSmall adjustments can significantly improve the clarity and aesthetic appeal of your visualization"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#text-table",
+    "href": "slides/tableau_research_day1.html#text-table",
+    "title": "Data Visualization",
+    "section": "Text table",
+    "text": "Text table\n\nText Table\n\n\n\nA text table is not a data visualization. However, a text table can complement visual elements and enhance the overall understanding of your data by providing:\n\n\nPrecisce values,\n\n\nDetailed comparisons, or\n\n\nSupporting context."
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#callout-numbers",
+    "href": "slides/tableau_research_day1.html#callout-numbers",
+    "title": "Data Visualization",
+    "section": "Callout numbers",
+    "text": "Callout numbers\n\nCallout numbers\n\nSometimes one large, single number can make the most powerful statement in a data visualization.\nCallout numbers are used to highlight key takeaways and can be easily created in Tableau with a few formatting steps."
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#example",
+    "href": "slides/tableau_research_day1.html#example",
+    "title": "Data Visualization",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "slides/tableau_research_day1.html#references",
+    "href": "slides/tableau_research_day1.html#references",
+    "title": "Data Visualization",
+    "section": "References",
+    "text": "References\n\n\nPrimeau, Hanna. n.d. “Taking the Drama Out of Source Evaluation.” In Librarian Yarns. https://www.librarianyarns.com/drama-source-eval."
   }
 ]
