@@ -2947,5 +2947,117 @@
     "title": "Data Visualization",
     "section": "Tableau for Research",
     "text": "Tableau for Research"
+  },
+  {
+    "objectID": "slides/tableau_research.html#getting-started",
+    "href": "slides/tableau_research.html#getting-started",
+    "title": "Data Visualization",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nCreate an empty file named tableau_research on your desktop.\nGo to https://go.osu.edu/tableau_research\nDownload and place in tableau_research folder:\n\nrock_n_roll_performers.csv\nrock_n_roll_studio_albums.csv"
+  },
+  {
+    "objectID": "slides/tableau_research.html#drama-framework",
+    "href": "slides/tableau_research.html#drama-framework",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework",
+    "text": "DRAMA Framework\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?"
+  },
+  {
+    "objectID": "slides/tableau_research.html#drama-framework-1",
+    "href": "slides/tableau_research.html#drama-framework-1",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework",
+    "text": "DRAMA Framework\n\n\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?"
+  },
+  {
+    "objectID": "slides/tableau_research.html#welcome-to-tableau-for-research",
+    "href": "slides/tableau_research.html#welcome-to-tableau-for-research",
+    "title": "Data Visualization",
+    "section": "Welcome to Tableau for Research",
+    "text": "Welcome to Tableau for Research"
+  },
+  {
+    "objectID": "slides/tableau_research.html#httpsft-interactive.github.iovisual-vocabulary",
+    "href": "slides/tableau_research.html#httpsft-interactive.github.iovisual-vocabulary",
+    "title": "Data Visualization",
+    "section": "https://ft-interactive.github.io/visual-vocabulary/",
+    "text": "https://ft-interactive.github.io/visual-vocabulary/"
+  },
+  {
+    "objectID": "slides/tableau_research.html#practice-matters",
+    "href": "slides/tableau_research.html#practice-matters",
+    "title": "Data Visualization",
+    "section": "Practice Matters",
+    "text": "Practice Matters\nInspiration and examples\n\nTableau Public Viz of the Day\nFlowing Data\n\nExplore data journalism\n\nCNN\nThe New York Times\nThe Washington Post"
+  },
+  {
+    "objectID": "slides/tableau_research.html#drama-framework-2",
+    "href": "slides/tableau_research.html#drama-framework-2",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework",
+    "text": "DRAMA Framework\n\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?  \n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?  \n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?  \n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?  \n\n\nAuthority\n\n\nWho collected the data and are they credible?"
+  },
+  {
+    "objectID": "slides/tableau_research.html#wide-data",
+    "href": "slides/tableau_research.html#wide-data",
+    "title": "Data Visualization",
+    "section": "Wide Data",
+    "text": "Wide Data"
+  },
+  {
+    "objectID": "slides/tableau_research.html#tall-data",
+    "href": "slides/tableau_research.html#tall-data",
+    "title": "Data Visualization",
+    "section": "Tall Data",
+    "text": "Tall Data\n\n\n\n\n\nName\n\n\nDimension\n\n\nMeasure\n\n\n\n\n\n\nHelen\n\n\nAge\n\n\n68\n\n\n\n\nHelen\n\n\nVisits\n\n\n15\n\n\n\n\nRob\n\n\nAge\n\n\n15\n\n\n\n\nRob\n\n\nVisits\n\n\n1\n\n\n\n\nAnna\n\n\nAge\n\n\n43\n\n\n\n\nAnna\n\n\nVisits\n\n\n6"
+  },
+  {
+    "objectID": "slides/tableau_research.html#tall-data-1",
+    "href": "slides/tableau_research.html#tall-data-1",
+    "title": "Data Visualization",
+    "section": "Tall Data",
+    "text": "Tall Data\n\n\n\n\n\nName\n\n\nDimension\n\n\nMeasure\n\n\n\n\n\n\nHelen\n\n\nAge\n\n\n68\n\n\n\n\nHelen\n\n\nVisits\n\n\n15\n\n\n\n\nRob\n\n\nAge\n\n\n15\n\n\n\n\nRob\n\n\nVisits\n\n\n1\n\n\n\n\nAnna\n\n\nAge\n\n\n43\n\n\n\n\nAnna\n\n\nVisits\n\n\n6"
+  },
+  {
+    "objectID": "slides/tableau_research_2.html#welcome-to-tableau-for-research",
+    "href": "slides/tableau_research_2.html#welcome-to-tableau-for-research",
+    "title": "Data Visualization",
+    "section": "Welcome to Tableau for Research",
+    "text": "Welcome to Tableau for Research"
+  },
+  {
+    "objectID": "slides/tableau_research_2.html#getting-started",
+    "href": "slides/tableau_research_2.html#getting-started",
+    "title": "Data Visualization",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nCreate an empty file named tableau_research on your desktop.\nGo to https://go.osu.edu/tableau_research\nDownload and place in tableau_research folder:\n\nrock_n_roll_performers.csv\nrock_n_roll_studio_albums.csv"
+  },
+  {
+    "objectID": "slides/tableau_research_2.html#drama-framework",
+    "href": "slides/tableau_research_2.html#drama-framework",
+    "title": "Data Visualization",
+    "section": "DRAMA Framework",
+    "text": "DRAMA Framework\n\n\n\nDate\n\n\nIs the data current and up to date? Does it reflect current trends?\n\n\nRelevance\n\n\nIs the dataset appropriate for your research question, population, and intended use?\n\n\nAccuracy\n\n\nIs the data reliable, valid and consistently collected?\n\n\nMotivation\n\n\nWhy was the data collected, and are there any potential biases or important omissions?\n\n\nAuthority\n\n\nWho collected the data and are they credible?"
+  },
+  {
+    "objectID": "slides/tableau_research_2.html#wide-data",
+    "href": "slides/tableau_research_2.html#wide-data",
+    "title": "Data Visualization",
+    "section": "Wide Data",
+    "text": "Wide Data"
+  },
+  {
+    "objectID": "slides/tableau_research_2.html#tall-data",
+    "href": "slides/tableau_research_2.html#tall-data",
+    "title": "Data Visualization",
+    "section": "Tall Data",
+    "text": "Tall Data\n\n\n\n\n\nName\n\n\nDimension\n\n\nMeasure\n\n\n\n\n\n\nHelen\n\n\nAge\n\n\n68\n\n\n\n\nHelen\n\n\nVisits\n\n\n15\n\n\n\n\nRob\n\n\nAge\n\n\n15\n\n\n\n\nRob\n\n\nVisits\n\n\n1\n\n\n\n\nAnna\n\n\nAge\n\n\n43\n\n\n\n\nAnna\n\n\nVisits\n\n\n6"
+  },
+  {
+    "objectID": "slides/tableau_research_2.html#practice-matters",
+    "href": "slides/tableau_research_2.html#practice-matters",
+    "title": "Data Visualization",
+    "section": "Practice Matters",
+    "text": "Practice Matters\nInspiration and examples\n\nTableau Public Viz of the Day\nFlowing Data\n\nExplore data journalism\n\nCNN\nThe New York Times\nThe Washington Post"
   }
 ]

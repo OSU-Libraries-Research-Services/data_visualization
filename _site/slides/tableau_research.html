@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../images/favicon.ico" rel="icon">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <title>Data Visualization – tableau_research</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2740581606dc327e82f18f789b69d8a0.css">
+  <link rel="stylesheet" href="slides.css">
+  <link rel="stylesheet" href="../styles/custom.scss">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5/dist/simplex/bootstrap.min.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+  <script type="text/javascript">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+  </script>
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="welcome-to-tableau-for-research" class="slide level2">
+<h2>Welcome to Tableau for Research</h2>
+
+<img data-src="../images/tableau_getting_started.png" style="width:100.0%" alt="A computer with a screen showing a survey" class="r-stretch"></section>
+<section id="getting-started" class="slide level2">
+<h2>Getting Started</h2>
+<ol type="1">
+<li>Create an empty file named <strong>tableau_research</strong> on your desktop.</li>
+<li>Go to <a href="https://go.osu.edu/tableau_research">https://go.osu.edu/tableau_research</a></li>
+<li>Download and place in <strong>tableau_research</strong> folder:
+<ul>
+<li>rock_n_roll_performers.csv</li>
+<li>rock_n_roll_studio_albums.csv</li>
+</ul></li>
+</ol>
+</section>
+<section id="drama-framework" class="slide level2">
+<h2>DRAMA Framework</h2>
+<div class="list-group">
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>D</strong>ate
+</p>
+</div>
+<small>Is the data current and up to date? Does it reflect current trends?</small>
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>R</strong>elevance
+</p>
+</div>
+<small>Is the dataset appropriate for your research question, population, and intended use?</small>
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>A</strong>ccuracy
+</p>
+</div>
+<small>Is the data reliable, valid and consistently collected?</small>
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>M</strong>otivation
+</p>
+</div>
+<small>Why was the data collected, and are there any potential biases or important omissions?</small>
+<div class="d-flex w-100 justify-content-between">
+<p class="mb-1">
+<strong>A</strong>uthority
+</p>
+</div>
+<p><small>Who collected the data and are they credible?</small></p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="slide_images/tableau_public_start_page.png" style="width:100.0%" alt="Screenshot of Tableau Desktop Public Edition interface showing data connection options and recent workbooks. Left panel lists file types like Microsoft Excel and JSON for data connection, center displays Open recent workbooks message, and right panel features What's New updates and learning resources." class="r-stretch"></section>
+<section class="slide level2">
+
+
+<img data-src="slide_images/tableau_public_data_source_window.png" style="width:100.0%" alt="Screenshot of Tableau Desktop Public Edition interface showing the data source workspace. The layout includes a Connections pane on the left listing data sources, a Metadata grid in the center displaying field names and types, and a Data grid on the right with survey data rows" class="r-stretch"></section>
+<section id="wide-data" class="slide level2">
+<h2>Wide Data</h2>
+
+<img data-src="slide_images/tableau_wide_data.png" style="width:100.0%" alt="Two tables compare dimensions and measures a wide data structure. The left table lists fruits with corresponding quantities in each row, while the right table shows names, ages, and visit counts, highlighting age as either a dimension or measure with a red oval." class="r-stretch"></section>
+<section id="tall-data" class="slide level2">
+<h2>Tall Data</h2>
+<div>
+<table class="table">
+<thead>
+<tr>
+<th>
+Name
+</th>
+<th>
+Dimension
+</th>
+<th>
+Measure
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+Helen
+</td>
+<td>
+Age
+</td>
+<td>
+68
+</td>
+</tr>
+<tr>
+<td>
+Helen
+</td>
+<td>
+Visits
+</td>
+<td>
+15
+</td>
+</tr>
+<tr>
+<td>
+Rob
+</td>
+<td>
+Age
+</td>
+<td>
+15
+</td>
+</tr>
+<tr>
+<td>
+Rob
+</td>
+<td>
+Visits
+</td>
+<td>
+1
+</td>
+</tr>
+<tr>
+<td>
+Anna
+</td>
+<td>
+Age
+</td>
+<td>
+43
+</td>
+</tr>
+<tr>
+<td>
+Anna
+</td>
+<td>
+Visits
+</td>
+<td>
+6
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1: Transform data to a tall format
+</div>
+<div>
+<small>
+<p>
+Try transforming the <code>rock_n_roll_performers.csv</code> dataset from <strong>wide</strong> to <strong>tall</strong> format using Tableau’s pivot feature.
+</p>
+<table class="table">
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+In the <strong>data grid</strong>, click to highlight the <strong>Year</strong> column.
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Hold the <strong>Shift</strong> key, scroll to the right, and click to highlight the <strong>Artist Url</strong> column.
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+Click the ▼ caret on right side of the <strong>Artist Url</strong> column and select <strong>Pivot</strong>.
+</td>
+</tr>
+<tr>
+<td>
+4.
+</td>
+<td>
+To undo the pivot, press <strong>Ctrl+Z</strong> (Windows) or <strong>Cmd+Z</strong> (Mac).
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2: Relate Datasets</p>
+</div>
+<div>
+<small>
+<p>
+Let’s enhance the <code>rock_n_roll_performers.csv</code> dataset by relating it to <code>rock_n_roll_studio_albums.csv</code> using the <strong>Artist</strong> field as a common key.
+</p>
+<table class="table">
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+In the <strong>Connections</strong> pane locate:
+</td>
+<td>
+<code>rock_n_roll_studio_albums.csv</code>
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Drag and drop the table onto the canvas.
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+In the <strong>relationship settings</strong>, set the relationship as:
+</td>
+<td>
+<code>Artist</code> = <code>Artist1</code>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="slide_images/tableau_public_workspace.png" style="width:100.0%" alt="Screenshot of Tableau Desktop interface showing a blank worksheet setup for data visualization. Key components include Data and Analytics pane on left for selecting fields, Format and Filter options below it, at top for arranging data, and a central View area prompting to add data to create visuals." class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 2.4rem;">
+<img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;"><strong>Multiple ways to accomplish a task!!!</strong>
+</div>
+<div class="card-body">
+<img src="../images/tableau_logo.svg" class="mx-auto d-block" alt="" aria-hidden="true" style="vertical-align: middle; margin-right: 0.5rem; padding: 1rem;">
+<p>
+<small>The more you use Tableau, the more you’ll notice there’s often more than one way to accomplish the same task!!!</small>
+</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Change measure to dimension</p>
+</div>
+<p>Drag the <strong>Index</strong> field above the gray line to categorize <strong>Index</strong> as a dimension.</p>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<img src="../images/star_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;"> <strong>Important! Null Values and Misclassified Data Types</strong>
+<p>
+<small>Be especially careful with null values and checking data types. Nulls can skew calculations like averages or medians. Misclassified data types, such as dates stored as integers, can lead to errors in analysis.</small>
+</p>
+<p>
+<small><strong>Always verify that each column has the correct and consistent data types before building your visualizations.</strong></small>
+</p>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="../images/ft_thumbnail.png" style="width:100.0%" alt="A detailed infographic chart titled Visual Vocabulary categorizes various data visualization types into ten groups: Deviation, Correlation, Ranking, Distribution, Change over Time, Magnitude, Part-to-whole, Spatial, and Flow. Each category includes labeled examples with small colored thumbnails and brief descriptions, highlighting key visual elements and use cases, with a clean layout using distinct background colors for each section to aid differentiation." class="r-stretch"><p><a href="https://ft-interactive.github.io/visual-vocabulary/">https://ft-interactive.github.io/visual-vocabulary/</a></p>
+</section>
+<section class="slide level2">
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 2.4rem;">
+<img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Worksheet Names
+</div>
+<div class="card-body">
+<p>
+<small>Always give your worksheets clear, meaningful names. This makes it much easier to organize and navigate your dashboards or stories later on.</small>
+</p>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 4: Bar Chart</p>
+</div>
+<div>
+<small>
+<table class="table">
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+Open a new worksheet<img src="../images/tableau_worksheet_icon.png" alt="">
+</td>
+<td>
+Click the <strong>worksheet icon</strong> next to your Barchart1 tab in the lower-left corner of the Tableau workspace.
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Rename the sheet
+</td>
+<td>
+Right-click on <strong>Sheet2</strong> and rename it <strong>BarChart2</strong>.
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+Build your bar chart
+</td>
+<td>
+Use the <strong>album_title</strong> dimension and the <strong>Peak US</strong> measure to create a bar chart showing chart positions for each album.
+</td>
+</tr>
+<tr>
+<td>
+4.
+</td>
+<td>
+Experiment with layout<img src="../images/tableau_swap.png" alt="">
+</td>
+<td>
+Click the <strong>Swap</strong> button in the toolbar (horizontal ↔︎ vertical orientation).
+</td>
+</tr>
+<tr>
+<td>
+5.
+</td>
+<td>
+Sort the bars<img src="../images/tableau_sort_ascend.png" alt="">
+</td>
+<td>
+Use the <strong>Sort ascending</strong> button in the toolbar to arrange bars from lowest to highest chart position.
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 5: Bar Chart</p>
+</div>
+<div>
+<small>
+<table>
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+Open a new worksheet and rename it:
+</td>
+<td>
+<ul>
+<li>
+<strong>BarChart3</strong>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Build the initial view.
+</td>
+<td>
+<ul>
+<li>
+Drag <strong>Release date</strong> to the Columns shelf.
+</li>
+<li>
+Drag <strong>rock_n_roll_studio_albums.csv (Count)</strong> to the <strong>Rows</strong> shelf. <strong>Note:</strong> Tableau automatically creates a <strong>line chart</strong>, because <strong>Release date</strong> is recognized as a <strong>date field</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+Change the chart type.
+</td>
+<td>
+<ul>
+<li>
+On the <strong>Marks Card</strong>, click the dropdown next to <strong>Automatic</strong> and select <strong>Bar</strong>.
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 6: Scatterplots</p>
+</div>
+<div>
+<small>
+<p>
+Create a scatterplot to compare the <strong>Peak US</strong> and <strong>Peak UK</strong> chart positions for albums released by your favorite artist inducted into the <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">Rock and Roll Hall of Fame.</a>
+</p>
+<table>
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+Open a new worksheet and rename it:
+</td>
+<td>
+<ul>
+<li>
+<strong>Scatterplot1</strong>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Build the scatterplot:
+</td>
+<td>
+<ul>
+<li>
+Drag <strong>Peak US</strong> to the Columns shelf.
+</li>
+<li>
+Drag <strong>Peak UK</strong> to the Rows shelf.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+Filter by artist:
+</td>
+<td>
+<ul>
+<li>
+Drag <strong>Artist</strong> to the <strong>Filters</strong> shelf and select your favorite artist.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+4.
+</td>
+<td>
+Add detail:
+</td>
+<td>
+<ul>
+<li>
+Drag <strong>album_title</strong> to <strong>Detail</strong> on the <strong>Marks card</strong>.
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 2.4rem;">
+<img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Outliers
+</div>
+<div class="card-body">
+<p>
+<small>Outliers can significantly distort the results of a scatterplot, so it’s important to handle them thoughtfully. Tableau makes it easy to exclude outlier data points: simply click on a mark to open the tooptip and select <span class="text-primary">🛇 Exclude</span>, or right-click the mark and choose <span class="text-primary">X Exclude</span>.
+</small></p><small>
+<p>
+However, always be sure to <strong>document your approach</strong> for handling outliers. Transparency in your data-cleaning decisions is essential for maintaining the integrity and reproducibility of your analysis.
+</p>
+</small>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+<div class="card-header" style="font-size: 2.4rem;">
+<img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip - Set Default Properties
+</div>
+<div class="card-body">
+<small>
+<p>
+To save time and ensure consistency, try setting <strong>Default Properties</strong> for dimensions and measures before starting a Tableau project.
+</p>
+<img src="../images/tableau_default_properties.png" alt="Show default properties that can be set for a measure, including comment, color, number format, aggregation" style="max-width: 100%;">
+<ol>
+<li>
+<strong>Right-click</strong> on each measure that begins with <strong>“Peak”</strong>.
+</li>
+<li>
+Scroll to <strong>Default Properties</strong>, and select <strong>Number Format</strong>.
+</li>
+<li>
+Choose <strong>Number Standard</strong> from the formatting options.
+</li>
+<p>
+This ensures that all selected measures display in a consistent numeric format throughout your workbook, reducing the need for repetitive formatting later on.
+</p>
+</ol>
+</small>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="../images/nonprofit_impact_matters.png" style="width:100.0%" alt="Infographic titled Nonprofit Impact Matters presents key statistics about nonprofits. It highlights that 92% of nonprofits are small, community-based, with 88% spending less than $500,000; over 10% employ more than 10% of private workforce in specific industries; and less than 3% lobby to advance missions despite legal rights." class="r-stretch"></section>
+<section id="practice-matters" class="slide level2">
+<h2>Practice Matters</h2>
+<h3 id="inspiration-and-examples">Inspiration and examples</h3>
+<ul>
+<li><a href="https://public.tableau.com/app/discover/viz-of-the-day">Tableau Public Viz of the Day</a></li>
+<li><a href="https://flowingdata.com/category/visualization/">Flowing Data</a></li>
+</ul>
+<h3 id="explore-data-journalism">Explore data journalism</h3>
+<ul>
+<li><a href="https://www.cnn.com/">CNN</a></li>
+<li><a href="https://www.nytimes.com/">The New York Times</a></li>
+<li><a href="https://www.washingtonpost.com/">The Washington Post</a></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 7: Group data</p>
+</div>
+<div>
+<small>
+<p>
+Create a text table showing the <strong>peak US chart positions</strong> for albums by five of your favorite artists.
+</p>
+<table>
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+Start a new worksheet and rename it:
+</td>
+<td>
+<ul>
+<li>
+<strong>FavoriteArtistAlbum</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Select the relevant fields
+</td>
+<td>
+<ul>
+<li>
+Drag <strong>Artist</strong> to the <strong>Rows shelf</strong>.
+</li>
+<li>
+Place <strong>Peak US</strong> on the <strong>Columns shelf</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+Open Show Me and select Text Tables<img src="../images/tableau_show_me.png" alt="">
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+4.
+</td>
+<td>
+Select your top 5 favorite artists.
+</td>
+<td>
+<ul>
+<li>
+Click on your first favorite artist.
+</li>
+<li>
+Hold <strong> Ctrl + Click</strong> to select the others.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+5.
+</td>
+<td>
+Click the paperclip icon 📎 on the tooltip for the last artist selected.
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div>
+<small>
+<table>
+<tbody>
+<tr>
+<td>
+6.
+</td>
+<td>
+Edit group alias.
+</td>
+<td>
+<ul>
+<li>
+Right-click the first artist.
+</li>
+<li>
+Select <strong> Edit Alias</strong>.
+</li>
+<li>
+Rename to <strong>Favorite artists.</strong>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+7.
+</td>
+<td>
+Right-click Favorite artists and choose:
+</td>
+<td>
+<ul>
+<li>
+✔ Keep only.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+8.
+</td>
+<td>
+Adjust fields.
+</td>
+<td>
+<ul>
+<li>
+Drag <strong>Artist</strong> to the <strong>Rows shelf</strong>.
+</li>
+<li>
+Drag <strong>album_title</strong> to the <strong>Rows shelf</strong>.
+</li>
+<li>
+Remove <strong>Favorite artists</strong> from the <strong>Rows shelf</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+9.
+</td>
+<td>
+Rename group.
+</td>
+<td>
+<ul>
+<li>
+Right-click <strong>Artist (group) 1 </strong> in the <strong>Data Pane</strong>.
+</li>
+<li>
+Select <strong>Rename</strong> and type <strong>Favorite artists</strong>.
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div class="alert alert-dismissible alert-primary">
+<p><img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 8: Group data</p>
+</div>
+<div>
+<small>
+<p>
+On the <strong>FavoriteArtistAlbum</strong> sheet, use the <strong>Data Pane</strong> to group 10 of your <strong>Favorite albums</strong> into a single group.
+</p>
+<table class="table">
+<tbody>
+<tr>
+<td>
+1.
+</td>
+<td>
+Right-click <strong>album_title</strong> and select:
+</td>
+<td>
+<ul>
+<li>
+<strong>Create &gt; Group</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+2.
+</td>
+<td>
+Rename the group:
+</td>
+<td>
+<ul>
+<li>
+<strong>Favorite albums</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+3.
+</td>
+<td>
+Find and add albums to the group.
+</td>
+<td>
+<ul>
+<li>
+Click <strong>Find &gt;&gt;</strong> to search for the first album title.
+</li>
+<li>
+Under <strong>Find members</strong>, type the name of your first favorite album title and click <strong>Find All</strong>.
+</li>
+<li>
+When the album appears in the list, select it and click <strong>Group</strong>.
+</li>
+<li>
+Alias the group <strong>Favorite albums</strong>.
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+</section>
+<section class="slide level2">
+
+<div>
+<small>
+<table class="table">
+<tbody>
+<tr>
+<td>
+4.
+</td>
+<td>
+Repeat the process for each additional album.
+</td>
+<td>
+<ul>
+<li>
+Type the album name under <strong>Find members</strong>, then click <strong>Find All</strong>.
+</li>
+<li>
+Select the album.
+</li>
+<li>
+Use the <strong>Add to:</strong> dropdown to add each adidtional album to <strong>Favorite albums</strong>.
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+5.
+</td>
+<td>
+✔ Include ‘Other’ to consolidate non-favorite titles.
+</td>
+<td>
+</td>
+</tr>
+</tbody>
+</table>
+</small><p><small></small></p>
+</div>
+
+
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="slide_images/osu_libraries.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../site_libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="../site_libs/revealjs/plugin/multiplex/multiplex.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'multiplex': {"secret":null,"id":"3a0762d4bb0fd0956be22ab30da7fdb1bb42e3069e16133c65a23751dbea6566","url":"https://multiplex.up.railway.app/"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
