@@ -1,0 +1,411 @@
+---
+format:
+  revealjs:
+    theme: white
+    css: 
+      - slides.css
+      - ../styles/custom.scss
+      - https://cdn.jsdelivr.net/npm/bootswatch@5/dist/simplex/bootstrap.min.css
+
+    include-in-header:
+      - ../styles/osu-fonts.html
+    logo: ../images/osu_libraries.png
+    slide-number: true
+    chalkboard: true
+    multiplex: true
+bibliography: ../references.bib
+
+---
+
+## Welcome to Tableau for Research
+
+![](../images/tableau_getting_started.png){width="100%" fig-align="center" fig-alt="A computer with a screen showing a survey"}
+
+---
+
+## Getting Started
+
+1. Create an empty file named **tableau_research** on your desktop.
+2. Go to [https://go.osu.edu/tableau_research](https://go.osu.edu/tableau_research)
+3. Download and place in **tableau_research** folder:
+    - rock_n_roll_performers.csv
+    - rock_n_roll_studio_albums.csv
+    - ODNR_fish_stocking.csv
+
+---
+
+## DRAMA Framework
+
+<div class="list-group">
+<div class="d-flex w-100 justify-content-between"><p class="mb-1"><strong>D</strong>ate</p></div><small>Is the data current and up to date? Does it reflect current trends?</small>
+<div class="d-flex w-100 justify-content-between"><p class="mb-1"><strong>R</strong>elevance</p></div><small>Is the dataset appropriate for your research question, population, and intended use?</small>
+<div class="d-flex w-100 justify-content-between"><p class="mb-1"><strong>A</strong>ccuracy</p></div><small>Is the data reliable, valid and consistently collected?</small>
+<div class="d-flex w-100 justify-content-between"><p class="mb-1"><strong>M</strong>otivation</p></div><small>Why was the data collected, and are there any potential biases or important omissions?</small>
+<div class="d-flex w-100 justify-content-between"><p class="mb-1"><strong>A</strong>uthority</p></div><small>Who collected the data and are they credible?</small>
+</div>
+
+[@primeau]
+
+---
+
+## The Start Page{.smaller}
+![](../images/tableau_public_start_page.png){width="100%" fig-align="center" fig-alt="Screenshot of Tableau Desktop Public Edition interface showing data connection options and recent workbooks. Left panel lists file types like Microsoft Excel and JSON for data connection, center displays Open recent workbooks message, and right panel features What's New updates and learning resources."}
+
+---
+
+## The Data Source Page{.smaller}
+![](../images/tableau_public_data_source_window.png){width="100%" fig-alt="Screenshot of Tableau Desktop Public Edition interface showing the data source workspace. The layout includes a Connections pane on the left listing data sources, a Metadata grid in the center displaying field names and types, and a Data grid on the right with survey data rows"} 
+
+---
+
+## Wide Data
+
+![](../images/tableau_wide_data.png){width="100%" fig-alt="Two tables compare dimensions and measures a wide data structure. The left table lists fruits with corresponding quantities in each row, while the right table shows names, ages, and visit counts, highlighting age as either a dimension or measure with a red oval."}
+
+---
+
+## Tall Data
+
+<div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Dimension</th>
+            <th>Measure</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Helen</td>
+            <td>Age</td>
+            <td>68</td>
+        </tr>
+        <tr>
+            <td>Helen</td>
+            <td>Visits</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Rob</td>
+            <td>Age</td>
+            <td>15</td>
+        </tr>
+        <tr>
+            <td>Rob</td>
+            <td>Visits</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>Anna</td>
+            <td>Age</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>Anna</td>
+            <td>Visits</td>
+            <td>6</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary"><img src="../images/guidepost_standard_icon.png" alt="guidepost icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1: Transform data to a tall format</div>
+
+<div>
+<small>
+<p>Try transforming the <code>rock_n_roll_performers.csv</code> dataset from <strong>wide</strong> to <strong>tall</strong> format using Tableau's pivot feature.</p>
+<table class="table">
+<tbody>
+    <tr>
+        <td>1.</td>
+        <td>In the <strong>data grid</strong>, click to highlight the <strong>Year</strong> column.</td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>Hold the <strong>Shift</strong> key, scroll to the right, and click to highlight the <strong>Artist Url</strong> column.</td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Click the ▼ caret on right side of the <strong>Artist Url</strong> column and select <strong>Pivot</strong>.</td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>To undo the pivot, press <strong>Ctrl+Z</strong> (Windows) or <strong>Cmd+Z</strong> (Mac).</td>
+    </tr>
+</tbody>
+</table>
+</small>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2: Relate Datasets
+</div>
+
+<div>
+<small><p>Let's enhance the <code>rock_n_roll_performers.csv</code> dataset by relating it to <code>rock_n_roll_studio_albums.csv</code> using the <strong>Artist</strong> field as a common key.</p>
+<table class="table">
+  <tbody>
+    <tr>
+    <td>1.</td><td>In the <strong>Connections</strong> pane locate:<br><ul><li><code>rock_n_roll_studio_albums.csv</code></li></ul></td>
+    </tr>
+    <tr>
+    <td>2.</td><td>Drag and drop the table onto the canvas.</td>
+    </tr>
+    <tr>
+    <td>3.</td><td>In the <strong>relationship settings</strong>, set the relationship as:<br><ul><li><code>Artist</code> = <code>Artist1</code></li></ul></td>
+    </tr>
+    </tbody>
+</table>
+</small>
+</div>
+
+---
+
+## The Tableau Workspace{.smaller}
+![](../images/tableau_public_workspace.png){width="100%" fig-alt="Screenshot of Tableau Desktop interface showing a blank worksheet setup for data visualization. Key components include Data and Analytics pane on left for selecting fields, Format and Filter options below it, at top for arranging data, and a central View area prompting to add data to create visuals."}
+
+---
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;"><strong>Multiple ways to accomplish a task!!!</strong></div>
+  <div class="card-body"><img src="../images/tableau_logo.svg" class="mx-auto d-block" alt="" aria-hidden="true" style="vertical-align: middle; margin-right: 0.5rem; padding: 1rem;"><p><small>The more you use Tableau, the more you'll notice there’s often more than one way to accomplish the same task!!!</small></p>
+  </div>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Change measure to dimension
+</div>
+
+Drag the **Index** field above the gray line to categorize **Index** as a dimension.
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/star_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">
+  <strong>Important! Null Values and Misclassified Data Types</strong>
+  <p><small>Be especially careful with null values and checking data types. Nulls can skew calculations like averages or medians. Misclassified data types, such as dates stored as integers, can lead to errors in analysis.</small></p>
+  <p><small>**Always verify that each column has the correct and consistent data types before building your visualizations.**</small></p>
+</div>
+
+---
+
+## Choose an effective visual{.smaller}
+
+The [Financial Times Visual Vocabulary](https://ft-interactive.github.io/visual-vocabulary/) offers a categorized collection of chart types. It is a useful reference for selecting the right chart for the needs and expectations of your audience. 
+
+![](../images/ft_thumbnail.png){width="100%" fig-align="center" fig-alt="A detailed infographic chart titled Visual Vocabulary categorizes various data visualization types into ten groups: Deviation, Correlation, Ranking, Distribution, Change over Time, Magnitude, Part-to-whole, Spatial, and Flow. Each category includes labeled examples with small colored thumbnails and brief descriptions, highlighting key visual elements and use cases, with a clean layout using distinct background colors for each section to aid differentiation."}
+
+---
+
+## Ranking
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/walk_through_example.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">The Bar Chart
+</div>
+
+<div>
+<p>One task, multiple approaches</p>
+</div>
+
+---
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Worksheet Names</div>
+  <div class="card-body"><p><small>Always give your worksheets clear, meaningful names. This makes it much easier to organize and navigate your dashboards or stories later on.</small></p>
+  </div>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 4: Bar Chart
+</div>
+
+<div>
+<small>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>1.</td>
+      <td><img src="../images/tableau_worksheet_icon.png" alt=""></td>
+      <td>Open a new worksheet<br><ul><li>Click the <strong>worksheet icon</strong> next to your Barchart1 tab in the lower-left corner of the Tableau workspace.</li></ul></td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td></td>
+      <td>Rename the sheet<br><ul><li>Right-click on <strong>Sheet2</strong> and rename it <strong>BarChart2</strong>.</li></ul></td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td></td>
+      <td>Build your bar chart<br><ul><li>Use the <strong>album_title</strong> dimension and the <strong>Peak US</strong> measure to create a bar chart showing chart positions for each album.</li></ul></td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td><img src="../images/tableau_swap.png" alt=""></td>
+      <td>Experiment with layout<br><ul><li>Click the <strong>Swap</strong> button in the toolbar (horizontal ↔︎ vertical orientation).</li></ul></td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td><img src="../images/tableau_sort_ascend.png" alt=""></td>
+      <td>Sort the bars<br><ul><li>Use the <strong>Sort ascending</strong> button in the toolbar to arrange bars from lowest to highest chart position.</li></ul> </td>
+    </tr>
+  </tbody>
+</table>
+</small>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 5: Bar Chart
+</div>
+
+<div>
+<small>
+<table>
+<tbody>
+    <tr>
+        <td>1.</td>
+        <td>Open a new worksheet and rename it:<br><ul><li><strong>BarChart3</strong></li></ul></td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>Build the initial view.<br><ul><li>Drag <strong>Release date</strong> to the Columns shelf.</li><li>Drag <strong>rock_n_roll_studio_albums.csv (Count)</strong> to the <strong>Rows</strong> shelf. <strong>Note:</strong> Tableau automatically creates a <strong>line chart</strong>, because <strong>Release date</strong> is recognized as a <strong>date field</strong>. </li></ul></td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Change the chart type.<br><ul><li>On the <strong>Marks Card</strong>, click the dropdown next to <strong>Automatic</strong> and select <strong>Bar</strong>.</li></ul></td>
+    </tr>
+</tbody>
+</table>
+</small>
+</div>
+
+---
+
+## Change over time
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/walk_through_example.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">The Line Chart
+</div>
+
+- Discrete vs. continuous dates
+- Blue vs. green pills
+
+---
+
+## Correlation
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/walk_through_example.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">The Scatterplot
+</div>
+
+<div>
+<p>Tableau automatically displays data at the <strong>highest level-of-detail</strong> available when creating a view. This behavior is especially noticeable when using <strong>scatterplots</strong> to analyze relationships between two or more measures.</p>
+</div>
+
+---
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/guidepost_standard_icon.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Exercise 6: Scatterplots
+</div>
+
+<div>
+<small>
+<p>Create a scatterplot to compare the <strong>Peak US</strong> and <strong>Peak UK</strong> chart positions for albums released by your favorite artist inducted into the <a href="https://en.wikipedia.org/wiki/List_of_Rock_and_Roll_Hall_of_Fame_inductees">Rock and Roll Hall of Fame.</a></p>
+<table>
+<tbody>
+    <tr>
+        <td>1.</td>
+        <td>Open a new worksheet and rename it:</td>
+        <td><ul><li><strong>Scatterplot1</strong></li></ul></td>
+    </tr>
+    <tr>
+        <td>2.</td>
+        <td>Build the scatterplot:</td>
+        <td><ul><li>Drag <strong>Peak US</strong> to the Columns shelf.</li><li>Drag <strong>Peak UK</strong> to the Rows shelf.</li></ul></td>
+    </tr>
+    <tr>
+        <td>3.</td>
+        <td>Filter by artist:</td>
+        <td><ul><li>Drag <strong>Artist</strong> to the <strong>Filters</strong> shelf and select your favorite artist.</li></ul></td>
+    </tr>
+    <tr>
+        <td>4.</td>
+        <td>Add detail:</td>
+        <td><ul><li>Drag <strong>album_title</strong> to <strong>Detail</strong> on the <strong>Marks card</strong>.</li></ul></td>
+    </tr>
+
+</tbody>
+</table>
+</small>
+</div>
+
+---
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Outliers</div>
+  <div class="card-body"><p><small>Outliers can significantly distort the results of a scatterplot, so it's important to handle them thoughtfully. Tableau makes it easy to exclude outlier data points: simply click on a mark to open the tooptip and select <span class="text-primary">🛇 Exclude</span>, or right-click the mark and choose <span class="text-primary">X Exclude</span>.</p><p>However, always be sure to <strong>document your approach</strong> for handling outliers. Transparency in your data-cleaning decisions is essential for maintaining the integrity and reproducibility of your analysis.</p></small>
+  </div>
+</div>
+
+---
+
+## Formatting
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/walk_through_example.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Formatting
+</div>
+
+<div><p>Small adjustments can significantly improve the clarity and aesthetic appeal of your visualization</p></div>
+
+---
+
+## Text table
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/walk_through_example.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Text Table
+</div>
+
+<div><p>A text table is <strong>not</strong> a data visualization. However, a text table can complement visual elements and enhance the overall understanding of your data by providing:<ul><li>Precisce values,</li><li>Detailed comparisons, or</li><li>Supporting context.</li></ul></p></div>
+
+---
+
+<div class="card border-primary mb-3 p-1" style="max-width: 100%;">
+  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip - Set Default Properties</div>
+  <div class="card-body"><small><p>To save time and ensure consistency, try setting <strong>Default Properties</strong> for dimensions and measures before starting a Tableau project.</p><img src="../images/tableau_default_properties.png" alt="Show default properties that can be set for a measure, including comment, color, number format, aggregation" style="max-width: 100%;"><ol><li><strong>Right-click</strong> on each measure that begins with <strong>"Peak"</strong>.</li><li>Scroll to <strong>Default Properties</strong>, and select <strong>Number Format</strong>.</li><li>Choose <strong>Number Standard</strong> from the formatting options.</li><p>This ensures that all selected measures display in a consistent numeric format throughout your workbook, reducing the need for repetitive formatting later on.</p></ol></small>
+  </div>
+</div>
+
+---
+
+## Callout numbers
+
+<div class="alert alert-dismissible alert-primary">
+  <img src="../images/walk_through_example.png" alt="" style="height: 5rem; vertical-align: middle; margin-right: 0.25rem;">Callout numbers
+</div>
+
+Sometimes one large, single number can make the most powerful statement in a data visualization.
+
+**Callout numbers** are used to highlight key takeaways and can be easily created in Tableau with a few formatting steps.
+
+---
+
+## Example
+
+![](../images/nonprofit_impact_matters.png){width="100%" fig-alt="Infographic titled Nonprofit Impact Matters presents key statistics about nonprofits. It highlights that 92% of nonprofits are small, community-based, with 88% spending less than $500,000; over 10% employ more than 10% of private workforce in specific industries; and less than 3% lobby to advance missions despite legal rights."}
+
+---
+
+## References
+
+::: {#refs}
+:::
