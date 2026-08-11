@@ -85,6 +85,10 @@ website:
             - tableau_research_read_interpret_evaluate.ipynb
             - tableau_communicate.ipynb
             - tableau_continue_learning.ipynb
+        - section: "TABLEAU AND SURVEYS"
+          contents:
+            - text: "Introduction"
+              href: tableau_and_surveys.qmd 
 
 format:
   html:
