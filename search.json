@@ -2730,13 +2730,6 @@
     "text": "pandas\nA pandas DataFrame is one of the most powerful and commonly used data strutures in Python for working with tabular data, or data that is organized in rows and columns, similar to a spreadsheet or SQL tables. Think of it like an Excel or Google sheet or a table in a database, with:\n\nRows (each representing an observation or record)\nColumns (each representing a variable or feature)\n\nimport pandas as pd\n\ndf = pd.DataFrame([data, index, columns, dtype, copy])"
   },
   {
-    "objectID": "slides/python_basics_part1.html#adjustment",
-    "href": "slides/python_basics_part1.html#adjustment",
-    "title": "Data Visualization",
-    "section": "Adjustment",
-    "text": "Adjustment"
-  },
-  {
     "objectID": "slides/python_basics_part2.html#python-mastering-the-basics",
     "href": "slides/python_basics_part2.html#python-mastering-the-basics",
     "title": "Data Visualization",
@@ -2931,12 +2924,5 @@
     "title": "Data Visualization",
     "section": "os module",
     "text": "os module\nThe os module tells Python where to find and save files.\n\nos.mkdir(‘path’)\nMakes a directory in your project folder or another folder your specify. If a directory by the same name already exists in the path specified, os.mkdir will raise an OSError. Use a try-except block to handle the error."
-  },
-  {
-    "objectID": "slides/python_basics_part2.html#adjustment",
-    "href": "slides/python_basics_part2.html#adjustment",
-    "title": "Data Visualization",
-    "section": "Adjustment",
-    "text": "Adjustment"
   }
 ]
