@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Lesson 3. Read, Interpret, and Evaluate Data – Data Visualization</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -24,7 +30,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -55,15 +60,14 @@ div.csl-indent {
 <link href="./images/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-67b71551836c0a20811b5c17e14f32cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-248cc1151c53761f67a575ee0c083256.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -113,11 +117,11 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="https://osu-libraries-research-services.github.io/data_visualization/" class="navbar-brand navbar-brand-logo">
     <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
     <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="https://osu-libraries-research-services.github.io/data_visualization/">
     <span class="navbar-title">Data Visualization</span>
     </a>
   </div>
@@ -212,6 +216,29 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
   <div class="sidebar-item-container"> 
   <a href="./tableau_continue_learning.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">🚀 Continue Learning Tableau</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">TABLEAU AND SURVEYS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys_lesson_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1. Prepare Your Data</span></a>
   </div>
 </li>
       </ul>
@@ -328,7 +355,7 @@ gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
 </section>
 <section id="the-drama-framework" class="level1">
 <h1>The DRAMA framework</h1>
-<p>The <strong><strong><a href="https://www.librarianyarns.com/drama-source-eval#:~:text=DRAMA%20stands%20for%20Date%2C%20Relevance,in%20a%20one%20shot%20session.">DRAMA Framework</a></strong></strong>, first introducted in <a href="./tableau_research_getting_started.html">Lesson 1</a>, is also useful for critically evaluating data visualizations. <span class="citation" data-cites="primeau">(<a href="#ref-primeau" role="doc-biblioref">Primeau, n.d.</a>)</span> It encourages you to consider five key dimensions about the source and integrity of the visual:</p>
+<p>The <strong><strong><a href="https://www.librarianyarns.com/drama-source-eval#:~:text=DRAMA%20stands%20for%20Date%2C%20Relevance,in%20a%20one%20shot%20session.">DRAMA Framework</a></strong></strong>, first introduced in <a href="./tableau_research_getting_started.html">Lesson 1</a>, is also useful for critically evaluating data visualizations. <span class="citation" data-cites="primeau">(<a href="#ref-primeau" role="doc-biblioref">Primeau, n.d.</a>)</span> It encourages you to consider five key dimensions about the source and integrity of the visual:</p>
 <div class="list-group">
 <a href="https://www.librarianyarns.com/drama-source-eval" class="list-group-item list-group-item-action flex-column align-items-start active">
 <div class="d-flex w-100 justify-content-between">
@@ -389,7 +416,7 @@ DRAMA Framework
 <div class="card-body">
 <img src="images/tableau_logo.svg" class="mx-auto d-block" alt="" aria-hidden="true" style="vertical-align: middle; margin-right: 0.5rem; padding: 1rem;">
 <p>
-Groups are another great example where there more than one way to accomplish the same task!!!
+Groups are another great example where there is more than one way to accomplish the same task!!!
 </p>
 </div>
 </div>
@@ -579,7 +606,7 @@ Video showing steps 1-4 in exercise 2
 </section>
 <section id="creating-custom-hierarchies" class="level2">
 <h2 class="anchored" data-anchor-id="creating-custom-hierarchies">Creating custom hierarchies</h2>
-<p>Custom hierarchies help save space on a view and add interactivity by allowing users to drill down into more detailed levels of data. In <a href="./tableau_research_choose_effective_visual.html">Lesson 2</a>, you saw how Tableau automatically creates a date hierarchy—<strong>YEAR</strong>, <strong>QUARTER</strong>, <strong>MONTH</strong>, and <strong>DAY</strong>—which can be expanded using the <code>+</code> symbol.</p>
+<p>Custom hierarchies save space and add interactivity by allowing users to drill down to detailed levels of data. In <a href="./tableau_research_choose_effective_visual.html">Lesson 2</a>, you saw how Tableau automatically creates a date hierarchy—<strong>YEAR</strong>, <strong>QUARTER</strong>, <strong>MONTH</strong>, and <strong>DAY</strong>—which can be expanded using the <code>+</code> symbol.</p>
 <p>You can create your own hierarchies by stacking one dimension onto another in the <strong>Data Pane</strong> (or one measure onto another).</p>
 <p>Let’s walk through an example:</p>
 <ol type="1">
@@ -768,7 +795,7 @@ Double click the worksheet title <strong>Barchart1</strong>.
 On the first line enter: <em>Average Peak US Chart Position</em>
 </li>
 <li>
-On the second line enter: <em> 025 Rock n Roll Hall of Fame Inductees</em>
+On the second line enter: <em> 2025 Rock n Roll Hall of Fame Inductees</em>
 </li>
 <li>
 Adjust font sizes and styling as needed. <img src="images/tableau_format_title.png" alt="Shows title typed into Edit Title dialog" style="max-width: 100%; border-radius: 8px; padding: 1rem">
@@ -822,7 +849,7 @@ Save the image as <strong>Scalable Vector Graphics (*.svg)</strong> for high-qua
 </section>
 <section id="table-calculations" class="level1">
 <h1>Table calculations</h1>
-<p>Table calculations enhance Tableau performance and efficiency by limiting the scope of computation to what’s displayed in the view, rather than the entire dataset.</p>
+<p>Table calculations enhance Tableau’s performance and efficiency by limiting the scope of computation to what’s displayed in the view, rather than the entire dataset.</p>
 <p>Common types of table calculations include:</p>
 <ul>
 <li>Running Total</li>
@@ -927,8 +954,7 @@ Save the image as <strong>Scalable Vector Graphics (*.svg)</strong> for high-qua
 <h2 class="anchored" data-anchor-id="part-to-whole-relationships">Part-to-Whole Relationships</h2>
 <section id="pie-chart" class="level3">
 <h3 class="anchored" data-anchor-id="pie-chart">Pie chart</h3>
-<p>Pie charts are commonly used to illustrate how individual parts contribute to a whole. However, data visualization experts often discourage their use because humans struggle to accurately compare angles and areas, making interpretation less precise than other chart types.</p>
-<p>That said, there are situations where a pie chart may be appropriate—such as when the audience expects it or when it provides a clear and immediate visual impact.</p>
+<p>Data visualization experts often discourage using pie charts because humans struggle to accurately compare angles and areas, making interpretation less precise than other chart types. There are situations, however, where a pie chart may be appropriate, such as when the audience expects it or when it provides a clear and immediate visual impact.</p>
 <p>Let’s return to our <code>rock_n_roll_performers</code> dataset to explore the pie chart.</p>
 <ol type="1">
 <li><strong>Start a new worksheet</strong> and rename it <strong>PieChart</strong></li>
@@ -1092,7 +1118,7 @@ Drag the slider to the right to increase the size of the white circle.
 From the <strong>Format</strong> toolbar, select <strong>Lines</strong>.
 </li>
 <li>
-On the <strong>Rows</strong> tab set:
+On the <strong>Rows</strong> tab:
 <ul>
 <li>
 Set <strong>Zero Lines</strong> to <strong>None</strong>.
@@ -1104,7 +1130,7 @@ Set <strong>Zero Lines</strong> to <strong>None</strong>.
 </ul>
 </li>
 <li>
-<strong>Remove borders:</strong>
+<strong>Remove borders</strong>
 <ul>
 <li>
 From the <strong>Formatting Pane</strong> select <strong>Borders</strong>.
@@ -1113,17 +1139,17 @@ From the <strong>Formatting Pane</strong> select <strong>Borders</strong>.
 On the <strong>Sheet</strong> tab, set:
 <ul>
 <li>
-<strong>Row Divider</strong> to <strong>None</strong> on <strong>Pane:</strong>.
+<strong>Row Divider</strong> to <strong>None</strong> on <strong>Pane</strong>.
 </li>
 <li>
-<strong>Column Divider</strong> to <strong>None</strong> on <strong>Pane:</strong>.
+<strong>Column Divider</strong> to <strong>None</strong> on <strong>Pane</strong>.
 </li>
 </ul>
 </li>
 </ul>
 </li>
 <li>
-<strong>Remove headers:</strong>
+<strong>Remove headers</strong>
 <ul>
 <li>
 Right-click the <strong>left avg(0)</strong> axis and uncheck <strong>Show Header</strong>.
@@ -1159,7 +1185,7 @@ Video showing steps 1-7 above
 <div id="ex5-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex5-headingOne" data-bs-parent="#accordionExercise5">
 <div class="accordion-body fs-4">
 <p>
-Quickly convert the <strong>Donut Chart</strong> created in Exercise 4.
+Quickly convert the <strong>Donut Chart</strong> created in Exercise 4 to <strong>Tree Map</strong>.
 </p>
 <ol>
 <li>
@@ -1280,9 +1306,9 @@ Thousand Oaks, California: SAGE Publications, 2020
 
 
 </section>
-</section></section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+</section></section></section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-primeau" class="csl-entry" role="listitem">
-Primeau, Hanna. n.d. <span>“Taking the Drama Out of Source Evaluation.”</span> <em>Librarian Yarns</em>. <a href="https://www.librarianyarns.com/drama-source-eval">https://www.librarianyarns.com/drama-source-eval</a>.
+Primeau, Hanna. n.d. <span>“Taking the Drama Out of Source Evaluation.”</span> In <em>Librarian Yarns</em>. <a href="https://www.librarianyarns.com/drama-source-eval">https://www.librarianyarns.com/drama-source-eval</a>.
 </div>
 </div></section></div></main></div>
 
@@ -1386,6 +1412,11 @@ Primeau, Hanna. n.d. <span>“Taking the Drama Out of Source Evaluation.”</spa
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
