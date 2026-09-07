@@ -24,7 +24,7 @@ Part 1: Python Fundamentals
 
 --- 
 
-## Getting Started
+## Getting Started{.smaller}
 
 1. Create an empty file named **python_workshop** on your desktop
 2. Go to [https://go.osu.edu/python_mastering_basics_ai_files](https://go.osu.edu/python_mastering_basics_ai_files)
