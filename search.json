@@ -2524,7 +2524,7 @@
     "href": "slides/python_basics_part1.html#getting-started",
     "title": "Data Visualization",
     "section": "Getting Started",
-    "text": "Getting Started\n\nCreate an empty file named python_workshop on your desktop\nGo to https://go.osu.edu/python_mastering_basics\nDownload and place in your python_workshop folder:\n\ncarmen_ohio.txt\ncarmen_ohio_revised.txt\npython_mastering_basics_workshop_exercises.py"
+    "text": "Getting Started\n\nCreate an empty file named python_workshop on your desktop\nGo to https://go.osu.edu/python_mastering_basics_ai_files\nDownload and place in your python_workshop folder:\n\ncarmen_ohio.txt\ncarmen_ohio_revised.txt\npython_mastering_basics_workshop_exercises.py\n\nGo to https://go.osu.edu/python_mastering_basics_ai_slides and place slides on second screen."
   },
   {
     "objectID": "slides/python_basics_part1.html#learning-objectives",
