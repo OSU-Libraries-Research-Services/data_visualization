@@ -27,12 +27,13 @@ Part 1: Python Fundamentals
 ## Getting Started
 
 1. Create an empty file named **python_workshop** on your desktop
-2. Go to [https://go.osu.edu/python_mastering_basics](https://go.osu.edu/python_mastering_basics)
+2. Go to [https://go.osu.edu/python_mastering_basics_ai_files](https://go.osu.edu/python_mastering_basics_ai_files)
 3. Download and place in your **python_workshop** folder:
 
       - carmen_ohio.txt
       - carmen_ohio_revised.txt
       - python_mastering_basics_workshop_exercises.py
+4. Go to [https://go.osu.edu/python_mastering_basics_ai_slides](https://go.osu.edu/python_mastering_basics_ai_slides) and place slides on second screen.
 
 --- 
 
