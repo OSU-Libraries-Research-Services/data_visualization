@@ -131,7 +131,7 @@
     "href": "slides/python_basics_part2.html#getting-started",
     "title": "Data Visualization",
     "section": "Getting Started",
-    "text": "Getting Started\n\nCreate an empty file named python_workshop on your desktop\nGo to https://go.osu.edu/python_mastering_basics\nDownload and place in your python_workshop folder:\n\ncarmen_ohio.txt\ncarmen_ohio_revised.txt\npython_mastering_basics_workshop_exercises.py\n\nOpen Python Pocket Reference\nOpen Pandas Cheet Sheet"
+    "text": "Getting Started\n\nOpen https://go.osu.edu/python_mastering_basics_ai_slides\nOpen https://go.osu.edu/python_mastering_basics_day2\nDownload and place in your python_workshop folder:\n\ncarmen_ohio.txt\ncarmen_ohio_revised.txt\npython_mastering_basics_workshop_exercises.py"
   },
   {
     "objectID": "slides/python_basics_part2.html#learning-objectives",
@@ -204,13 +204,6 @@
     "text": "Inspect the elements\nBoth XML and HTML are structured as trees, where elements are nested within one another. When you request a URL, the server returns an HTML or XML document. Your browser then downloads and parses this document to display it visually. Google Chrome’s Developer Tools (F12) allow us to explore and understand the structure of a webpage"
   },
   {
-    "objectID": "slides/python_basics_part2.html#brain-break",
-    "href": "slides/python_basics_part2.html#brain-break",
-    "title": "Data Visualization",
-    "section": "Brain Break",
-    "text": "Brain Break\n\n\n\nStand up\nTurn around\nTouch your nose\nTouch your toes"
-  },
-  {
     "objectID": "slides/python_basics_part2.html#pandas-1",
     "href": "slides/python_basics_part2.html#pandas-1",
     "title": "Data Visualization",
@@ -279,13 +272,6 @@
     "title": "Data Visualization",
     "section": "Problem decomposition",
     "text": "Problem decomposition\nTASK 2: Assemble discographies for 2-3 of your favorite artists on the Performers List\n\nbaseURL = “https://en.wikipedia.org/wiki”\nartists = [‘Cyndi_Lauper_discography’,‘Joe_Cocker_discography’, ‘The_White_Stripes_discography’]\nIterate through the selected artists Wikipedia discography pages, extract all tables, and assign each table a meaningful name based on the preceding HTML header."
-  },
-  {
-    "objectID": "slides/python_basics_part2.html#brain-break-1",
-    "href": "slides/python_basics_part2.html#brain-break-1",
-    "title": "Data Visualization",
-    "section": "Brain Break",
-    "text": "Brain Break\n\n\n\nStand up\nTurn around\nTouch your nose\nTouch your toes"
   },
   {
     "objectID": "slides/python_basics_part2.html#effective-plain-language-ai-prompts-3",
@@ -2601,7 +2587,7 @@
     "href": "slides/python_basics_part1.html#write-to-a-file",
     "title": "Data Visualization",
     "section": "Write to a file",
-    "text": "Write to a file\nTo write to a file, open it in write mode w. This will overwrite the file if it already exists. If you don’t specify a mode, Python defaults to r (read mode), so it’s important to explicitly set mode='w' when writing.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')\n This create an object. To add text to a file, use the .write( ) method.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')write(\"Let's firm thy friendship again!\")"
+    "text": "Write to a file\nTo write to a file, open it in write mode w. This will overwrite the file if it already exists. If you don’t specify a mode, Python defaults to r (read mode), so it’s important to explicitly set mode='w' when writing.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')\n This create an object. To add text to a file, use the .write( ) method.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8').write(\"Let's firm thy friendship again!\")"
   },
   {
     "objectID": "slides/python_basics_part1.html#variables",
