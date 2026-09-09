@@ -88,7 +88,11 @@ website:
         - section: "TABLEAU AND SURVEYS"
           contents:
             - text: "Introduction"
-              href: tableau_and_surveys.qmd 
+              href: tableau_and_surveys.qmd
+            - tableau_and_surveys_lesson_1.qmd
+            - tableau_and_surveys_lesson_2.qmd
+            - tableau_and_surveys_lesson_3.qmd
+            - tableau_and_surveys_lesson_4.qmd
 
 format:
   html:

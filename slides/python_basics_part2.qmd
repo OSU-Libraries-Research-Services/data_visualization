@@ -24,16 +24,13 @@ Part 2: AI-Assisted Programming
 
 ## Getting Started
 
-1. Create an empty file named **python_workshop** on your desktop
-2. Go to [https://go.osu.edu/python_mastering_basics](https://go.osu.edu/python_mastering_basics)
+1. Open [https://go.osu.edu/python_mastering_basics_ai_slides](https://go.osu.edu/python_mastering_basics_ai_slides)
+2. Open [https://go.osu.edu/python_mastering_basics_day2](https://go.osu.edu/python_mastering_basics_day2)
 3. Download and place in your **python_workshop** folder:
 
       - carmen_ohio.txt
       - carmen_ohio_revised.txt
       - python_mastering_basics_workshop_exercises.py
-
-4. Open [Python Pocket Reference](https://static.realpython.com/python-cheatsheet.pdf)
-5. Open [Pandas Cheet Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
 
 --- 
 
@@ -330,7 +327,7 @@ Go to the discography page for each artist you selected. Are there differences i
 
 ---
 
-## Brain Break
+<!-- ## Brain Break
 
 :::: {.columns}
 
@@ -347,7 +344,7 @@ Go to the discography page for each artist you selected. Are there differences i
 
 ::::
 
----
+--- -->
 
 ## pandas
 
@@ -585,7 +582,7 @@ performers = tables[0]
 </p>
 </div>
 
----
+<!-- ---
 
 ## Brain Break
 
@@ -602,7 +599,7 @@ performers = tables[0]
 ![](../images/brain_break_1.png){width="100%"}
 :::
 
-::::
+:::: -->
 
 ---
 

@@ -234,7 +234,7 @@ open('carmen_ohio_revised.txt', mode='w', encoding='utf-8')
 This create an object. To add text to a file, use the `.write( )` method.
 
 ```{.python}
-open('carmen_ohio_revised.txt', mode='w', encoding='utf-8')write("Let's firm thy friendship again!")
+open('carmen_ohio_revised.txt', mode='w', encoding='utf-8').write("Let's firm thy friendship again!")
 ```
 
 ---
