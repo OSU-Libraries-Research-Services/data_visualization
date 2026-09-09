@@ -116,7 +116,7 @@ bibliography: ../references.bib
 
 <div>
 <small>
-<p>Try transforming the <code>rock_n_roll_performers.csv</code> dataset from <strong>wide</strong> to <strong>tall</strong> format using Tableau's pivot feature.</p>
+<p>Try transforming the <code>rock_n_roll_performers.csv</code> dataset from <strong>wide</strong> (many columns, fewer rows) to <strong>tall</strong> (fewer columns, many rows) format using Tableau's pivot feature.</p>
 <table class="table">
 <tbody>
     <tr>

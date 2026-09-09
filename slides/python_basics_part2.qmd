@@ -327,25 +327,6 @@ Go to the discography page for each artist you selected. Are there differences i
 
 ---
 
-<!-- ## Brain Break
-
-:::: {.columns}
-
-::: {.column width="40%"}
-- Stand up
-- Turn around
-- Touch your nose
-- Touch your toes
-:::
-
-::: {.column width="60%"}
-![](../images/brain_break_1.png){width="100%"}
-:::
-
-::::
-
---- -->
-
 ## pandas
 
 A pandas **DataFrame** is one of the most powerful and commonly used data strutures in Python for working with **tabular data**, or data that is organized in rows and columns, similar to a spreadsheet or SQL tables. Think of it like an Excel or Google sheet or a table in a database, with:
@@ -581,25 +562,6 @@ performers = tables[0]
   <p>I want to __________ using _______. Ask me any questions you need to better understand my goal, then help me create a system prompt.
 </p>
 </div>
-
-<!-- ---
-
-## Brain Break
-
-:::: {.columns}
-
-::: {.column width="40%"}
-- Stand up
-- Turn around
-- Touch your nose
-- Touch your toes
-:::
-
-::: {.column width="60%"}
-![](../images/brain_break_1.png){width="100%"}
-:::
-
-:::: -->
 
 ---
 
