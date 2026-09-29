@@ -742,25 +742,6 @@ print(carmen_split[0:6])
 
 ---
 
-## Brain Break
-
-:::: {.columns}
-
-::: {.column width="40%"}
-- Stand up
-- Turn around
-- Touch your nose
-- Touch your toes
-:::
-
-::: {.column width="60%"}
-![](../images/brain_break_1.png){width="100%"}
-:::
-
-::::
-
----
-
 ## Conditionals and Comparisons
 
 Conditionals allow you to control the flow of your program by executing code **only when certain conditions are met**. Python uses `if`, `elif`, and `else` statements to evaluate whether something is `True` or `False`.
@@ -1446,25 +1427,6 @@ list_pacific_states=["Alaska","California","Hawaii","Oregon","Washington"]
 pacific_states=[state for state in united states if state in list_pacific_states]
 
 ```
-
----
-
-## Brain Break
-
-:::: {.columns}
-
-::: {.column width="40%"}
-- Stand up
-- Turn around
-- Touch your nose
-- Touch your toes
-:::
-
-::: {.column width="60%"}
-![](../images/brain_break_1.png){width="100%"}
-:::
-
-::::
 
 ---
 
