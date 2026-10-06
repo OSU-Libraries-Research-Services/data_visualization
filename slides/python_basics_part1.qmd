@@ -1370,8 +1370,8 @@ united_states=["Alabama","Alaska","Arizona","Arkansas","California",
 THEN WE USE A FOR LOOP WITH A CONDITIONAL STATEMENT TO FIND THE WESTERN STATES
 ```{.python}
 for state in united_states:
-if state=="Alaska" or state=="California" or state=="Hawaii" or state=="Oregon" or state=="Washington":
-	pacific_states.append(state)
+  if state=="Alaska" or state=="California" or state=="Hawaii" or state=="Oregon" or state=="Washington":
+    pacific_states.append(state)
 	
 print(pacific_states)
 ```
@@ -1493,7 +1493,7 @@ print(first_president)
 ---
 
 ### Example 2: Start with an empty dictionary
-You can beging with an empty dictionary and add key-value pairs as needed.
+You can begin with an empty dictionary and add key-value pairs as needed.
 
 ```{.python}
 state_facts = {}
@@ -1504,7 +1504,7 @@ state_facts["nicknames"] = ["The Buckeye State",
 state_facts["capital"] = "Columbus"
 state_facts["population"] = 11785935
 
-state_facts
+print(state_facts)
 ```
 
 ---
@@ -1520,7 +1520,7 @@ state_facts["nicknames"] = ["The Great Lake State",
 state_facts["capital"] = "Lansing"
 state_facts["population"] = 10077331
 
-state_facts
+print(state_facts)
 ```
 
 ---
