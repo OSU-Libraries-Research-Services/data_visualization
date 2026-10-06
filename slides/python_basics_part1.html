@@ -274,146 +274,6 @@ Run and Debug</p>
 <p><strong>Jupyter Variables</strong></p>
 </div></div>
 </section>
-<section id="absolute-vs-relative-paths" class="slide level2">
-<h2>Absolute vs Relative Paths</h2>
-<p>When you run a Python script, the folder it runs from is set as the <strong>current working directory (cwd)</strong>. This is where Python looks for files to read and write by default. <br><br> In <strong>VS Code</strong>, you can set the working directory by clicking the <strong>Explorer</strong> icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files.</p>
-</section>
-<section id="relative-paths" class="slide level2">
-<h2>Relative paths</h2>
-<p>If your files are stored in the same folder as your Python script, you can use a <strong>relative path</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>relative_filepath_of_text <span class="op">=</span> <span class="st">"text.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><br> Python interprets this path relevant to the current working directory.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="st">"carmen.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="absolute-paths" class="slide level2">
-<h2>Absolute paths</h2>
-<p>If your files are stored elsewhere, use an <strong>absolute path</strong> to specify the full location:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>absolute_filepath_of_text <span class="op">=</span> <span class="st">"C:/path/to/your/directory/file.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="opening-a-file" class="slide level2">
-<h2>Opening a file</h2>
-<p>To work with a file in Python, you first need to <strong>open</strong> it. This returns a file object that allows you read from or write to the file.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="bu">file</span>, mode<span class="op">=</span><span class="st">'r'</span>, buffering<span class="op">=-</span><span class="dv">1</span>, encoding<span class="op">=</span><span class="va">None</span>, errors<span class="op">=</span><span class="va">None</span>, newline<span class="op">=</span><span class="va">None</span>, closed<span class="op">=</span><span class="va">True</span>, opener<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li><strong>file</strong>: The path to the file (absolute or relative)</li>
-<li><strong>mode</strong>: Optional. Specifies how the file is opened. Default is <code>r</code> (read mode).</li>
-</ul>
-</section>
-<section id="common-file-modes" class="slide level2">
-<h2>Common file modes</h2>
-<p>Python supports a variety of built-in dtaa types, each suited for different kinds of information.</p>
-<div class="table-responsive">
-<table class="table table-hover" style="font-size:0.7em;">
-<thead>
-<tr class="table-primary">
-<th>
-Character
-</th>
-<th>
-Meaning
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<code>r</code>
-</td>
-<td>
-open for reading (default)
-</td>
-</tr>
-<tr>
-<td>
-<code>w</code>
-</td>
-<td>
-open for writing, truncating the file first
-</td>
-</tr>
-<tr>
-<td>
-<code>x</code>
-</td>
-<td>
-open for exclusive creation, failing if the file already exists
-</td>
-</tr>
-<tr>
-<td>
-<code>a</code>
-</td>
-<td>
-open for writing, appending to the end of a file if it exists
-</td>
-</tr>
-<tr>
-<td>
-<code>b</code>
-</td>
-<td>
-binary mode
-</td>
-</tr>
-<tr>
-<td>
-<code>t</code>
-</td>
-<td>
-text mode (default)
-</td>
-</tr>
-<tr>
-<td>
-<code>+</code>
-</td>
-<td>
-open for reading and writing
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<section id="encoding" class="slide level2">
-<h2>Encoding</h2>
-<p>Use the encoding parameter when working in <strong>text mode</strong> to specify how characters are interpreted. Common encodings include:</p>
-<ul>
-<li><strong>utf-8</strong> – Most commonly used and recommended.</li>
-<li><strong>utf-16</strong> – Uses 2 bytes per character, useful for some international text.</li>
-<li><strong>utf-32</strong> – Uses 4 bytes per characters; supports all Unicode characters directly.</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
-<span id="cb5-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="reading-a-file" class="slide level2">
-<h2>Reading a file</h2>
-<p>To read a file, open it in read mode <code>r</code> and use the <code>.read()</code> method.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
-<span id="cb6-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><br> <strong>Alternative</strong></p>
-<p>Use a with block to open the file in read mode and use the <code>.read()</code> method.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb7-2"><a aria-label="2"></a>  content <span class="op">=</span> <span class="bu">file</span>.read()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="write-to-a-file" class="slide level2">
-<h2>Write to a file</h2>
-<p>To write to a file, open it in write mode <code>w</code>. This will <strong>overwrite</strong> the file if it already exists. If you don’t specify a mode, Python defaults to <code>r</code> (read mode), so it’s important to explicitly set <code>mode='w'</code> when writing.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><br> This create an object. To add text to a file, use the <code>.write( )</code> method.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).write(<span class="st">"Let's firm thy friendship again!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section class="slide level2">
-
-<div class="card border-primary mb-3 p-1">
-<div class="card-header" style="font-size: 2.4rem;">
-<img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Rename Output File
-</div>
-<div class="card-body">
-To avoid accidentally overwriting your original file, consider renaming the output file before writing to it.
-</div>
-</div>
-</section>
 <section id="variables" class="slide level2">
 <h2>Variables</h2>
 <p>Python supports a variety of built-in data types, each suited for different kinds of information.</p>
@@ -575,10 +435,10 @@ Ordered, immutable collection
 </section>
 <section id="osu-variables" class="slide level2">
 <h2>OSU variables</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>institution_name <span class="op">=</span> <span class="st">"The Ohio State University"</span></span>
-<span id="cb10-2"><a aria-label="2"></a>year_founded <span class="op">=</span> <span class="dv">1870</span></span>
-<span id="cb10-3"><a aria-label="3"></a>university_facts <span class="op">=</span> {<span class="st">"institution_name"</span> : <span class="st">"The Ohio State University"</span>, <span class="st">"year_founded"</span> : <span class="dv">1870</span>, <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; grey"</span>, <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span> , <span class="st">"students"</span> : <span class="dv">60046</span> , <span class="st">"endowment"</span>: <span class="fl">7.9</span> }</span>
-<span id="cb10-4"><a aria-label="4"></a>fact_list <span class="op">=</span> [<span class="st">"The Ohio State University"</span> , <span class="dv">1870</span>, <span class="st">"scarlet &amp; gray"</span> , <span class="st">"Brutus Buckeye"</span>, <span class="dv">60046</span>, <span class="fl">7.9</span> ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a aria-label="1"></a>institution_name <span class="op">=</span> <span class="st">"The Ohio State University"</span></span>
+<span id="cb1-2"><a aria-label="2"></a>year_founded <span class="op">=</span> <span class="dv">1870</span></span>
+<span id="cb1-3"><a aria-label="3"></a>university_facts <span class="op">=</span> {<span class="st">"institution_name"</span> : <span class="st">"The Ohio State University"</span>, <span class="st">"year_founded"</span> : <span class="dv">1870</span>, <span class="st">"school_colors"</span> : <span class="st">"scarlet &amp; grey"</span>, <span class="st">"mascot"</span> : <span class="st">"Brutus Buckeye"</span> , <span class="st">"students"</span> : <span class="dv">60046</span> , <span class="st">"endowment"</span>: <span class="fl">7.9</span> }</span>
+<span id="cb1-4"><a aria-label="4"></a>fact_list <span class="op">=</span> [<span class="st">"The Ohio State University"</span> , <span class="dv">1870</span>, <span class="st">"scarlet &amp; gray"</span> , <span class="st">"Brutus Buckeye"</span>, <span class="dv">60046</span>, <span class="fl">7.9</span> ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="reserved-keywords" class="slide level2">
 <h2>Reserved keywords</h2>
@@ -588,7 +448,7 @@ Ordered, immutable collection
 <p>
 To check a variable’s type, use the <code>type()</code> function.
 </p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a><span class="bu">type</span>(university_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a aria-label="1"></a><span class="bu">type</span>(university_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="basic-math-operators" class="slide level2">
 <h2>Basic math operators</h2>
@@ -746,10 +606,10 @@ Equivalent to x**y
 </section>
 <section id="example" class="slide level2">
 <h2>Example</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb12-2"><a aria-label="2"></a>y <span class="op">=</span> <span class="dv">15</span></span>
-<span id="cb12-3"><a aria-label="3"></a>z <span class="op">=</span> x<span class="op">+</span>y</span>
-<span id="cb12-4"><a aria-label="4"></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a aria-label="1"></a>x <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-2"><a aria-label="2"></a>y <span class="op">=</span> <span class="dv">15</span></span>
+<span id="cb3-3"><a aria-label="3"></a>z <span class="op">=</span> x<span class="op">+</span>y</span>
+<span id="cb3-4"><a aria-label="4"></a><span class="bu">print</span>(z)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -764,49 +624,189 @@ Equivalent to x**y
 <div class="alert alert-dismissible alert-primary">
 <p><img src="../images/magnifying_glass_standard_icon.png" alt="magnifying glass icon" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</p>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a><span class="bu">type</span>(institution_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a aria-label="1"></a><span class="bu">type</span>(institution_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="working-with-strings" class="slide level2">
 <h2>Working with strings</h2>
 <p>In Python, strings represent textual data and are enclosed in either <strong>single (<code>'</code>)</strong> or <strong>double (<code>"</code>)</strong> quotation marks:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a><span class="co">'this is a string'</span></span>
-<span id="cb14-2"><a aria-label="2"></a><span class="co">"this is also a string"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a aria-label="1"></a><span class="co">'this is a string'</span></span>
+<span id="cb5-2"><a aria-label="2"></a><span class="co">"this is also a string"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>The opening and closing quotes must match. <br></p>
 <p><strong>Consider:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a><span class="co">"The Readers' Advisory Guide to Horror Fiction"</span></span>
-<span id="cb15-2"><a aria-label="2"></a><span class="co">'"Did you take the trash out?" she asked.'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a aria-label="1"></a><span class="co">"The Readers' Advisory Guide to Horror Fiction"</span></span>
+<span id="cb6-2"><a aria-label="2"></a><span class="co">'"Did you take the trash out?" she asked.'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
 <p>To include special characters like quotes within a string, use a backslash <code>\</code> to escape them. This tells Python to ignore the character.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-label="1"></a><span class="co">'The Readers</span><span class="ch">\'</span><span class="co"> Advisory Guide to Horror Fiction'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a aria-label="1"></a><span class="co">'The Readers</span><span class="ch">\'</span><span class="co"> Advisory Guide to Horror Fiction'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="assigning-strings-to-variables" class="slide level2">
 <h2>Assigning strings to variables</h2>
 <p>You can assign a string to a variable using the <code>+</code> operator.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-label="1"></a>banned_book <span class="op">=</span> <span class="st">"Brave New World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a aria-label="1"></a>banned_book <span class="op">=</span> <span class="st">"Brave New World"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="string-indexing-and-slicing" class="slide level2">
 <h2>String indexing and slicing</h2>
 <p>Python uses <strong>zero-based indexing</strong>, meaning the first character of a string is at position <code>0</code>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-label="1"></a>banned_book[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a aria-label="1"></a>banned_book[<span class="dv">0</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="slice-a-substring" class="slide level2">
 <h2>Slice a substring</h2>
 <p>To extract a portion of a string, use the following syntax:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-label="1"></a>string[start index:end index]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a aria-label="1"></a>string[start index:end index]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br> The <strong>start index</strong> is where the slice begins and the <strong>end index</strong> tells Python where to stopi, but does not include the character at that position.</p>
 <p><br> <strong>Example:</strong></p>
 <p>Slice the word <code>Brave</code> from the string <strong>banned_book</strong>.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-label="1"></a>banned_book[<span class="dv">0</span>:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a aria-label="1"></a>banned_book[<span class="dv">0</span>:<span class="dv">5</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="negative-indexing" class="slide level2">
 <h2>Negative indexing</h2>
 <p>You can also access characters from the end of a string using negative indices:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-label="1"></a>library <span class="op">=</span> <span class="st">"Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210"</span></span>
-<span id="cb21-2"><a aria-label="2"></a>zipcode <span class="op">=</span> library [<span class="op">-</span><span class="dv">5</span>:]</span>
-<span id="cb21-3"><a aria-label="3"></a></span>
-<span id="cb21-4"><a aria-label="4"></a><span class="bu">print</span>(zipcode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a aria-label="1"></a>library <span class="op">=</span> <span class="st">"Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210"</span></span>
+<span id="cb12-2"><a aria-label="2"></a>zipcode <span class="op">=</span> library [<span class="op">-</span><span class="dv">5</span>:]</span>
+<span id="cb12-3"><a aria-label="3"></a></span>
+<span id="cb12-4"><a aria-label="4"></a><span class="bu">print</span>(zipcode)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="absolute-vs-relative-paths" class="slide level2">
+<h2>Absolute vs Relative Paths</h2>
+<p>When you run a Python script, the folder it runs from is set as the <strong>current working directory (cwd)</strong>. This is where Python looks for files to read and write by default. <br><br> In <strong>VS Code</strong>, you can set the working directory by clicking the <strong>Explorer</strong> icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files.</p>
+</section>
+<section id="relative-paths" class="slide level2">
+<h2>Relative paths</h2>
+<p>If your files are stored in the same folder as your Python script, you can use a <strong>relative path</strong>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a aria-label="1"></a>relative_filepath_of_text <span class="op">=</span> <span class="st">"text.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><br> Python interprets this path relevant to the current working directory.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="st">"carmen.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="absolute-paths" class="slide level2">
+<h2>Absolute paths</h2>
+<p>If your files are stored elsewhere, use an <strong>absolute path</strong> to specify the full location:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a aria-label="1"></a>absolute_filepath_of_text <span class="op">=</span> <span class="st">"C:/path/to/your/directory/file.txt"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="opening-a-file" class="slide level2">
+<h2>Opening a file</h2>
+<p>To work with a file in Python, you first need to <strong>open</strong> it. This returns a file object that allows you read from or write to the file.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="bu">file</span>, mode<span class="op">=</span><span class="st">'r'</span>, buffering<span class="op">=-</span><span class="dv">1</span>, encoding<span class="op">=</span><span class="va">None</span>, errors<span class="op">=</span><span class="va">None</span>, newline<span class="op">=</span><span class="va">None</span>, closed<span class="op">=</span><span class="va">True</span>, opener<span class="op">=</span><span class="va">None</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><strong>file</strong>: The path to the file (absolute or relative)</li>
+<li><strong>mode</strong>: Optional. Specifies how the file is opened. Default is <code>r</code> (read mode).</li>
+</ul>
+</section>
+<section id="common-file-modes" class="slide level2">
+<h2>Common file modes</h2>
+<p>Python supports a variety of built-in dtaa types, each suited for different kinds of information.</p>
+<div class="table-responsive">
+<table class="table table-hover" style="font-size:0.7em;">
+<thead>
+<tr class="table-primary">
+<th>
+Character
+</th>
+<th>
+Meaning
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<code>r</code>
+</td>
+<td>
+open for reading (default)
+</td>
+</tr>
+<tr>
+<td>
+<code>w</code>
+</td>
+<td>
+open for writing, truncating the file first
+</td>
+</tr>
+<tr>
+<td>
+<code>x</code>
+</td>
+<td>
+open for exclusive creation, failing if the file already exists
+</td>
+</tr>
+<tr>
+<td>
+<code>a</code>
+</td>
+<td>
+open for writing, appending to the end of a file if it exists
+</td>
+</tr>
+<tr>
+<td>
+<code>b</code>
+</td>
+<td>
+binary mode
+</td>
+</tr>
+<tr>
+<td>
+<code>t</code>
+</td>
+<td>
+text mode (default)
+</td>
+</tr>
+<tr>
+<td>
+<code>+</code>
+</td>
+<td>
+open for reading and writing
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="encoding" class="slide level2">
+<h2>Encoding</h2>
+<p>Use the encoding parameter when working in <strong>text mode</strong> to specify how characters are interpreted. Common encodings include:</p>
+<ul>
+<li><strong>utf-8</strong> – Most commonly used and recommended.</li>
+<li><strong>utf-16</strong> – Uses 2 bytes per character, useful for some international text.</li>
+<li><strong>utf-32</strong> – Uses 4 bytes per characters; supports all Unicode characters directly.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb17-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="reading-a-file" class="slide level2">
+<h2>Reading a file</h2>
+<p>To read a file, open it in read mode <code>r</code> and use the <code>.read()</code> method.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a aria-label="1"></a>carmen_ohio <span class="op">=</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).read()</span>
+<span id="cb18-2"><a aria-label="2"></a><span class="bu">print</span>(carmen_ohio)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><br> <strong>Alternative</strong></p>
+<p>Use a with block to open the file in read mode and use the <code>.read()</code> method.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a aria-label="1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">'carmen_ohio.txt'</span>, mode<span class="op">=</span><span class="st">'r'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb19-2"><a aria-label="2"></a>  content <span class="op">=</span> <span class="bu">file</span>.read()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="write-to-a-file" class="slide level2">
+<h2>Write to a file</h2>
+<p>To write to a file, open it in write mode <code>w</code>. This will <strong>overwrite</strong> the file if it already exists. If you don’t specify a mode, Python defaults to <code>r</code> (read mode), so it’s important to explicitly set <code>mode='w'</code> when writing.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><br> This create an object. To add text to a file, use the <code>.write( )</code> method.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a aria-label="1"></a><span class="bu">open</span>(<span class="st">'carmen_ohio_revised.txt'</span>, mode<span class="op">=</span><span class="st">'w'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>).write(<span class="st">"Let's firm thy friendship again!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section class="slide level2">
+
+<div class="card border-primary mb-3 p-1">
+<div class="card-header" style="font-size: 2.4rem;">
+<img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Rename Output File
+</div>
+<div class="card-body">
+To avoid accidentally overwriting your original file, consider renaming the output file before writing to it.
+</div>
+</div>
 </section>
 <section class="slide level2">
 
@@ -2048,7 +2048,7 @@ Maia Kobabe”
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"f4c58016fe8d6f7ec30c93e151cbc155c272e242d0d2942d6ae8092f6225f600","url":"https://multiplex.up.railway.app/"},
+'multiplex': {"secret":null,"id":"b62c334ebf9f035cbcb8670cc4d2b01122d3fab85af5268ba3c389b4d3a4bd23","url":"https://multiplex.up.railway.app/"},
 'smaller': false,
  
         // Display controls in the bottom right corner

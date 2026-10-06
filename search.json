@@ -1591,62 +1591,6 @@
     "text": "Tour your IDE\n\n\nPrimary Side Bar\nFile Explorer\n▢ Outline\nSource Control\nExtensions\n▢ Python\n▢ Jupyter\n▢ Pylance\nRun and Debug\n\nCommand Palette\n▢ Ctrl+Shift+P\n▢ &gt; Python: Select Interpreter\nEditor\nTerminal\nChat (close)\nInteractive Explorer\nJupyter Variables"
   },
   {
-    "objectID": "slides/python_basics_part1.html#absolute-vs-relative-paths",
-    "href": "slides/python_basics_part1.html#absolute-vs-relative-paths",
-    "title": "Data Visualization",
-    "section": "Absolute vs Relative Paths",
-    "text": "Absolute vs Relative Paths\nWhen you run a Python script, the folder it runs from is set as the current working directory (cwd). This is where Python looks for files to read and write by default.  In VS Code, you can set the working directory by clicking the Explorer icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files."
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#relative-paths",
-    "href": "slides/python_basics_part1.html#relative-paths",
-    "title": "Data Visualization",
-    "section": "Relative paths",
-    "text": "Relative paths\nIf your files are stored in the same folder as your Python script, you can use a relative path.\nrelative_filepath_of_text = \"text.txt\"\n Python interprets this path relevant to the current working directory.\ncarmen_ohio = \"carmen.txt\""
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#absolute-paths",
-    "href": "slides/python_basics_part1.html#absolute-paths",
-    "title": "Data Visualization",
-    "section": "Absolute paths",
-    "text": "Absolute paths\nIf your files are stored elsewhere, use an absolute path to specify the full location:\nabsolute_filepath_of_text = \"C:/path/to/your/directory/file.txt\""
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#opening-a-file",
-    "href": "slides/python_basics_part1.html#opening-a-file",
-    "title": "Data Visualization",
-    "section": "Opening a file",
-    "text": "Opening a file\nTo work with a file in Python, you first need to open it. This returns a file object that allows you read from or write to the file.\nopen(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)\n\nfile: The path to the file (absolute or relative)\nmode: Optional. Specifies how the file is opened. Default is r (read mode)."
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#common-file-modes",
-    "href": "slides/python_basics_part1.html#common-file-modes",
-    "title": "Data Visualization",
-    "section": "Common file modes",
-    "text": "Common file modes\nPython supports a variety of built-in dtaa types, each suited for different kinds of information.\n\n\n\n\n\nCharacter\n\n\nMeaning\n\n\n\n\n\n\nr\n\n\nopen for reading (default)\n\n\n\n\nw\n\n\nopen for writing, truncating the file first\n\n\n\n\nx\n\n\nopen for exclusive creation, failing if the file already exists\n\n\n\n\na\n\n\nopen for writing, appending to the end of a file if it exists\n\n\n\n\nb\n\n\nbinary mode\n\n\n\n\nt\n\n\ntext mode (default)\n\n\n\n\n+\n\n\nopen for reading and writing"
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#encoding",
-    "href": "slides/python_basics_part1.html#encoding",
-    "title": "Data Visualization",
-    "section": "Encoding",
-    "text": "Encoding\nUse the encoding parameter when working in text mode to specify how characters are interpreted. Common encodings include:\n\nutf-8 – Most commonly used and recommended.\nutf-16 – Uses 2 bytes per character, useful for some international text.\nutf-32 – Uses 4 bytes per characters; supports all Unicode characters directly.\n\ncarmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8')\nprint(carmen_ohio)"
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#reading-a-file",
-    "href": "slides/python_basics_part1.html#reading-a-file",
-    "title": "Data Visualization",
-    "section": "Reading a file",
-    "text": "Reading a file\nTo read a file, open it in read mode r and use the .read() method.\ncarmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()\nprint(carmen_ohio)\n Alternative\nUse a with block to open the file in read mode and use the .read() method.\nwith open('carmen_ohio.txt', mode='r', encoding='utf-8') as file:\n  content = file.read()"
-  },
-  {
-    "objectID": "slides/python_basics_part1.html#write-to-a-file",
-    "href": "slides/python_basics_part1.html#write-to-a-file",
-    "title": "Data Visualization",
-    "section": "Write to a file",
-    "text": "Write to a file\nTo write to a file, open it in write mode w. This will overwrite the file if it already exists. If you don’t specify a mode, Python defaults to r (read mode), so it’s important to explicitly set mode='w' when writing.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')\n This create an object. To add text to a file, use the .write( ) method.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8').write(\"Let's firm thy friendship again!\")"
-  },
-  {
     "objectID": "slides/python_basics_part1.html#variables",
     "href": "slides/python_basics_part1.html#variables",
     "title": "Data Visualization",
@@ -1722,6 +1666,62 @@
     "title": "Data Visualization",
     "section": "Negative indexing",
     "text": "Negative indexing\nYou can also access characters from the end of a string using negative indices:\nlibrary = \"Thompson Library, 1858 Neil Avenue Mall, Columbus, OH 43210\"\nzipcode = library [-5:]\n\nprint(zipcode)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#absolute-vs-relative-paths",
+    "href": "slides/python_basics_part1.html#absolute-vs-relative-paths",
+    "title": "Data Visualization",
+    "section": "Absolute vs Relative Paths",
+    "text": "Absolute vs Relative Paths\nWhen you run a Python script, the folder it runs from is set as the current working directory (cwd). This is where Python looks for files to read and write by default.  In VS Code, you can set the working directory by clicking the Explorer icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#relative-paths",
+    "href": "slides/python_basics_part1.html#relative-paths",
+    "title": "Data Visualization",
+    "section": "Relative paths",
+    "text": "Relative paths\nIf your files are stored in the same folder as your Python script, you can use a relative path.\nrelative_filepath_of_text = \"text.txt\"\n Python interprets this path relevant to the current working directory.\ncarmen_ohio = \"carmen.txt\""
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#absolute-paths",
+    "href": "slides/python_basics_part1.html#absolute-paths",
+    "title": "Data Visualization",
+    "section": "Absolute paths",
+    "text": "Absolute paths\nIf your files are stored elsewhere, use an absolute path to specify the full location:\nabsolute_filepath_of_text = \"C:/path/to/your/directory/file.txt\""
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#opening-a-file",
+    "href": "slides/python_basics_part1.html#opening-a-file",
+    "title": "Data Visualization",
+    "section": "Opening a file",
+    "text": "Opening a file\nTo work with a file in Python, you first need to open it. This returns a file object that allows you read from or write to the file.\nopen(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)\n\nfile: The path to the file (absolute or relative)\nmode: Optional. Specifies how the file is opened. Default is r (read mode)."
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#common-file-modes",
+    "href": "slides/python_basics_part1.html#common-file-modes",
+    "title": "Data Visualization",
+    "section": "Common file modes",
+    "text": "Common file modes\nPython supports a variety of built-in dtaa types, each suited for different kinds of information.\n\n\n\n\n\nCharacter\n\n\nMeaning\n\n\n\n\n\n\nr\n\n\nopen for reading (default)\n\n\n\n\nw\n\n\nopen for writing, truncating the file first\n\n\n\n\nx\n\n\nopen for exclusive creation, failing if the file already exists\n\n\n\n\na\n\n\nopen for writing, appending to the end of a file if it exists\n\n\n\n\nb\n\n\nbinary mode\n\n\n\n\nt\n\n\ntext mode (default)\n\n\n\n\n+\n\n\nopen for reading and writing"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#encoding",
+    "href": "slides/python_basics_part1.html#encoding",
+    "title": "Data Visualization",
+    "section": "Encoding",
+    "text": "Encoding\nUse the encoding parameter when working in text mode to specify how characters are interpreted. Common encodings include:\n\nutf-8 – Most commonly used and recommended.\nutf-16 – Uses 2 bytes per character, useful for some international text.\nutf-32 – Uses 4 bytes per characters; supports all Unicode characters directly.\n\ncarmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8')\nprint(carmen_ohio)"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#reading-a-file",
+    "href": "slides/python_basics_part1.html#reading-a-file",
+    "title": "Data Visualization",
+    "section": "Reading a file",
+    "text": "Reading a file\nTo read a file, open it in read mode r and use the .read() method.\ncarmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()\nprint(carmen_ohio)\n Alternative\nUse a with block to open the file in read mode and use the .read() method.\nwith open('carmen_ohio.txt', mode='r', encoding='utf-8') as file:\n  content = file.read()"
+  },
+  {
+    "objectID": "slides/python_basics_part1.html#write-to-a-file",
+    "href": "slides/python_basics_part1.html#write-to-a-file",
+    "title": "Data Visualization",
+    "section": "Write to a file",
+    "text": "Write to a file\nTo write to a file, open it in write mode w. This will overwrite the file if it already exists. If you don’t specify a mode, Python defaults to r (read mode), so it’s important to explicitly set mode='w' when writing.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8')\n This create an object. To add text to a file, use the .write( ) method.\nopen('carmen_ohio_revised.txt', mode='w', encoding='utf-8').write(\"Let's firm thy friendship again!\")"
   },
   {
     "objectID": "slides/python_basics_part1.html#common-string-methods",
