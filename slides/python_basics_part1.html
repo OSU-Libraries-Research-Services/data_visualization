@@ -1505,7 +1505,7 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 
 <p>THEN WE USE A FOR LOOP WITH A CONDITIONAL STATEMENT TO FIND THE WESTERN STATES</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a aria-label="1"></a><span class="cf">for</span> state <span class="kw">in</span> united_states:</span>
-<span id="cb65-2"><a aria-label="2"></a><span class="cf">if</span> state<span class="op">==</span><span class="st">"Alaska"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"California"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Hawaii"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Oregon"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Washington"</span>:</span>
+<span id="cb65-2"><a aria-label="2"></a>  <span class="cf">if</span> state<span class="op">==</span><span class="st">"Alaska"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"California"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Hawaii"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Oregon"</span> <span class="kw">or</span> state<span class="op">==</span><span class="st">"Washington"</span>:</span>
 <span id="cb65-3"><a aria-label="3"></a>    pacific_states.append(state)</span>
 <span id="cb65-4"><a aria-label="4"></a>    </span>
 <span id="cb65-5"><a aria-label="5"></a><span class="bu">print</span>(pacific_states)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1579,7 +1579,7 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <section class="slide level2">
 
 <h3 id="example-2-start-with-an-empty-dictionary">Example 2: Start with an empty dictionary</h3>
-<p>You can beging with an empty dictionary and add key-value pairs as needed.</p>
+<p>You can begin with an empty dictionary and add key-value pairs as needed.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a aria-label="1"></a>state_facts <span class="op">=</span> {}</span>
 <span id="cb76-2"><a aria-label="2"></a>state_facts[<span class="st">"state"</span>] <span class="op">=</span> <span class="st">"Ohio"</span></span>
 <span id="cb76-3"><a aria-label="3"></a>state_facts[<span class="st">"nicknames"</span>] <span class="op">=</span> [<span class="st">"The Buckeye State"</span>,</span>
@@ -1588,7 +1588,7 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <span id="cb76-6"><a aria-label="6"></a>state_facts[<span class="st">"capital"</span>] <span class="op">=</span> <span class="st">"Columbus"</span></span>
 <span id="cb76-7"><a aria-label="7"></a>state_facts[<span class="st">"population"</span>] <span class="op">=</span> <span class="dv">11785935</span></span>
 <span id="cb76-8"><a aria-label="8"></a></span>
-<span id="cb76-9"><a aria-label="9"></a>state_facts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb76-9"><a aria-label="9"></a><span class="bu">print</span>(state_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section class="slide level2">
 
@@ -1601,7 +1601,7 @@ To enhance the script further, you can use a <strong>conditional statement</stro
 <span id="cb77-5"><a aria-label="5"></a>state_facts[<span class="st">"capital"</span>] <span class="op">=</span> <span class="st">"Lansing"</span></span>
 <span id="cb77-6"><a aria-label="6"></a>state_facts[<span class="st">"population"</span>] <span class="op">=</span> <span class="dv">10077331</span></span>
 <span id="cb77-7"><a aria-label="7"></a></span>
-<span id="cb77-8"><a aria-label="8"></a>state_facts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb77-8"><a aria-label="8"></a><span class="bu">print</span>(state_facts)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="nesting-dictionaries" class="slide level2">
 <h2>Nesting dictionaries</h2>
@@ -2048,7 +2048,7 @@ Maia Kobabe”
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'multiplex': {"secret":null,"id":"39d277f193d6330e81717db6e57a4c5fc259fc69c139e2c81bac2f2e17864e39","url":"https://multiplex.up.railway.app/"},
+'multiplex': {"secret":null,"id":"1681eb86564bc8f35cef355c2a2124c707e4144caa68c8135b30bc92e97ce99d","url":"https://multiplex.up.railway.app/"},
 'smaller': false,
  
         // Display controls in the bottom right corner
