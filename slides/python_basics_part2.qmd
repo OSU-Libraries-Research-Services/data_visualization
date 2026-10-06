@@ -30,7 +30,7 @@ Part 2: AI-Assisted Programming
 
       - carmen_ohio.txt
       - carmen_ohio_revised.txt
-      - python_mastering_basics_workshop_exercises.py
+
 
 --- 
 
