@@ -1644,7 +1644,7 @@
     "href": "slides/python_basics_part1.html#assigning-strings-to-variables",
     "title": "Data Visualization",
     "section": "Assigning strings to variables",
-    "text": "Assigning strings to variables\nYou can assign a string to a variable using the + operator.\nbanned_book = \"Brave New World\""
+    "text": "Assigning strings to variables\nYou can assign a string to a variable using the = operator.\nbanned_book = \"Brave New World\""
   },
   {
     "objectID": "slides/python_basics_part1.html#string-indexing-and-slicing",
