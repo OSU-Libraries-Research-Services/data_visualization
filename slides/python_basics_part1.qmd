@@ -349,7 +349,7 @@ To include special characters like quotes within a string, use a backslash `\` t
 
 ## Assigning strings to variables
 
-You can assign a string to a variable using the `+` operator.
+You can assign a string to a variable using the `=` operator.
 
 ```{.python}
 banned_book = "Brave New World"
