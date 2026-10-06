@@ -95,157 +95,7 @@ Run and Debug
 
 --- 
 
-## Absolute vs Relative Paths
-When you run a Python script, the folder it runs from is set as the **current working directory (cwd)**. This is where Python looks for files to read and write by default.
-<br><br>
-In **VS Code**, you can set the working directory by clicking the **Explorer** icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files.
 
----
-
-## Relative paths
-
-If your files are stored in the same folder as your Python script, you can use a **relative path**.
-
-```{.python}
-relative_filepath_of_text = "text.txt"
-```
-<br>
-Python interprets this path relevant to the current working directory.
-
-```{.python}
-carmen_ohio = "carmen.txt"
-```
-
----
-
-## Absolute paths
-
-If your files are stored elsewhere, use an **absolute path** to specify the full location:
-
-```{.python}
-absolute_filepath_of_text = "C:/path/to/your/directory/file.txt"
-```
-
----
-
-## Opening a file
-To work with a file in Python, you first need to **open** it. This returns a file object that allows you read from or write to the file.
-
-```{.python}
-open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)
-
-```
-
-- **file**: The path to the file (absolute or relative)
-- **mode**: Optional. Specifies how the file is opened. Default is `r` (read mode).
-
----
-
-## Common file modes
-
-Python supports a variety of built-in dtaa types, each suited for different kinds of information.
-
-<div class="table-responsive">
-  <table class="table table-hover" style="font-size:0.7em;">
-    <thead>
-      <tr class="table-primary">
-        <th>Character</th>
-        <th>Meaning</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>r</code></td>
-        <td>open for reading (default)</td>
-      </tr>
-      <tr>
-        <td><code>w</code></td>
-        <td>open for writing, truncating the file first</td>
-      </tr>
-      <tr>
-        <td><code>x</code></td>
-        <td>open for exclusive creation, failing if the file already exists</td>
-      </tr>
-      <tr>
-        <td><code>a</code></td>
-        <td>open for writing, appending to the end of a file if it exists</td>
-      </tr>
-      <tr>
-        <td><code>b</code></td>
-        <td>binary mode</td>
-      </tr>
-      <tr>
-        <td><code>t</code></td>
-        <td>text mode (default)</td>
-      </tr>
-      <tr>
-        <td><code>+</code></td>
-        <td>open for reading and writing</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
----
-
-## Encoding
-
-Use the encoding parameter when working in **text mode** to specify how characters are interpreted. Common encodings include:
-
-- **utf-8** – Most commonly used and recommended.
-- **utf-16** – Uses 2 bytes per character, useful for some international text.
-- **utf-32** – Uses 4 bytes per characters; supports all Unicode characters directly.
-
-```{.python}
-carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8')
-print(carmen_ohio)
-```
-
----
-
-## Reading a file
-
-To read a file, open it in read mode `r` and use the `.read()` method.
-
-```{.python}
-carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()
-print(carmen_ohio)
-```
-<br>
-**Alternative**
-
-Use a with block to open the file in read mode and use the `.read()` method.
-
-```{.python}
-with open('carmen_ohio.txt', mode='r', encoding='utf-8') as file:
-  content = file.read()
-```
-
----
-
-## Write to a file
-
-To write to a file, open it in write mode `w`. This will **overwrite** the file if it already exists. If you don't specify a mode, Python defaults to `r` (read mode), so it's important to explicitly set `mode='w'` when writing.
-
-```{.python}
-open('carmen_ohio_revised.txt', mode='w', encoding='utf-8')
-```
-<br>
-This create an object. To add text to a file, use the `.write( )` method.
-
-```{.python}
-open('carmen_ohio_revised.txt', mode='w', encoding='utf-8').write("Let's firm thy friendship again!")
-```
-
----
-
-<div class="card border-primary mb-3 p-1">
-  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Rename Output File</div>
-  <div class="card-body">To avoid accidentally overwriting your original file, consider renaming the output file before writing to it.
-  </div>
-</div>
-
----
 
 ## Variables
 
@@ -467,6 +317,8 @@ type(institution_name)
 ```
 ---
 
+
+
 ## Working with strings
 
 In Python, strings represent textual data and are enclosed in either **single (`'`)** or **double (`"`)** quotation marks:
@@ -547,6 +399,158 @@ zipcode = library [-5:]
 print(zipcode)
 
 ```
+
+---
+
+## Absolute vs Relative Paths
+When you run a Python script, the folder it runs from is set as the **current working directory (cwd)**. This is where Python looks for files to read and write by default.
+<br><br>
+In **VS Code**, you can set the working directory by clicking the **Explorer** icon on the top left of the Activity Bar. Open or create a file in your project folder, and Python will treat that location as the base for storing and accessing files.
+
+---
+
+## Relative paths
+
+If your files are stored in the same folder as your Python script, you can use a **relative path**.
+
+```{.python}
+relative_filepath_of_text = "text.txt"
+```
+<br>
+Python interprets this path relevant to the current working directory.
+
+```{.python}
+carmen_ohio = "carmen.txt"
+```
+
+---
+
+## Absolute paths
+
+If your files are stored elsewhere, use an **absolute path** to specify the full location:
+
+```{.python}
+absolute_filepath_of_text = "C:/path/to/your/directory/file.txt"
+```
+
+---
+
+## Opening a file
+To work with a file in Python, you first need to **open** it. This returns a file object that allows you read from or write to the file.
+
+```{.python}
+open(file, mode='r', buffering=-1, encoding=None, errors=None, newline=None, closed=True, opener=None)
+
+```
+
+- **file**: The path to the file (absolute or relative)
+- **mode**: Optional. Specifies how the file is opened. Default is `r` (read mode).
+
+---
+
+## Common file modes
+
+Python supports a variety of built-in dtaa types, each suited for different kinds of information.
+
+<div class="table-responsive">
+  <table class="table table-hover" style="font-size:0.7em;">
+    <thead>
+      <tr class="table-primary">
+        <th>Character</th>
+        <th>Meaning</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>r</code></td>
+        <td>open for reading (default)</td>
+      </tr>
+      <tr>
+        <td><code>w</code></td>
+        <td>open for writing, truncating the file first</td>
+      </tr>
+      <tr>
+        <td><code>x</code></td>
+        <td>open for exclusive creation, failing if the file already exists</td>
+      </tr>
+      <tr>
+        <td><code>a</code></td>
+        <td>open for writing, appending to the end of a file if it exists</td>
+      </tr>
+      <tr>
+        <td><code>b</code></td>
+        <td>binary mode</td>
+      </tr>
+      <tr>
+        <td><code>t</code></td>
+        <td>text mode (default)</td>
+      </tr>
+      <tr>
+        <td><code>+</code></td>
+        <td>open for reading and writing</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+---
+
+## Encoding
+
+Use the encoding parameter when working in **text mode** to specify how characters are interpreted. Common encodings include:
+
+- **utf-8** – Most commonly used and recommended.
+- **utf-16** – Uses 2 bytes per character, useful for some international text.
+- **utf-32** – Uses 4 bytes per characters; supports all Unicode characters directly.
+
+```{.python}
+carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8')
+print(carmen_ohio)
+```
+
+---
+
+## Reading a file
+
+To read a file, open it in read mode `r` and use the `.read()` method.
+
+```{.python}
+carmen_ohio = open('carmen_ohio.txt', mode='r', encoding='utf-8').read()
+print(carmen_ohio)
+```
+<br>
+**Alternative**
+
+Use a with block to open the file in read mode and use the `.read()` method.
+
+```{.python}
+with open('carmen_ohio.txt', mode='r', encoding='utf-8') as file:
+  content = file.read()
+```
+
+---
+
+## Write to a file
+
+To write to a file, open it in write mode `w`. This will **overwrite** the file if it already exists. If you don't specify a mode, Python defaults to `r` (read mode), so it's important to explicitly set `mode='w'` when writing.
+
+```{.python}
+open('carmen_ohio_revised.txt', mode='w', encoding='utf-8')
+```
+<br>
+This create an object. To add text to a file, use the `.write( )` method.
+
+```{.python}
+open('carmen_ohio_revised.txt', mode='w', encoding='utf-8').write("Let's firm thy friendship again!")
+```
+
+---
+
+<div class="card border-primary mb-3 p-1">
+  <div class="card-header" style="font-size: 2.4rem;"><img src="../images/idea_standard_icon.png" alt="" aria-hidden="true" style="height: 5rem; vertical-align: middle; margin-right: 0.5rem;">Tip: Rename Output File</div>
+  <div class="card-body">To avoid accidentally overwriting your original file, consider renaming the output file before writing to it.
+  </div>
+</div>
 
 ---
 
