@@ -26,7 +26,8 @@ Part 2: AI-Assisted Programming
 
 1. Open [https://go.osu.edu/python_mastering_basics_ai_slides](https://go.osu.edu/python_mastering_basics_ai_slides)
 2. Open [https://go.osu.edu/python_mastering_basics_day2](https://go.osu.edu/python_mastering_basics_day2)
-3. Download and place in your **python_workshop** folder:
+3. Open [https://go.osu.edu/python_mastering_bascis_ai_files](https://go.osu.edu/python_mastering_bascis_ai_files)
+4. Download and place in your **python_workshop** folder:
 
       - carmen_ohio.txt
       - carmen_ohio_revised.txt
