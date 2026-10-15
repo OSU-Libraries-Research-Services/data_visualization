@@ -1,0 +1,13 @@
+---
+title: "Lesson 2. Demographic Data"
+format:
+  html:
+    toc: true
+    toc-expand: 2
+    toc-title: CONTENTS
+bibliography:
+  - references.bib
+---
+
+👷🚧 This page is under construction 🚧👷
+
