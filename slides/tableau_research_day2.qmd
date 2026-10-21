@@ -23,6 +23,19 @@ bibliography: ../references.bib
 
 ---
 
+## Getting Started
+
+1. Create an empty file named **tableau_research** on your desktop.
+2. Go to [https://go.osu.edu/tableau_research](https://go.osu.edu/tableau_research)
+3. Download and place in **tableau_research** folder:
+    - rock_n_roll_performers.csv
+    - rock_n_roll_studio_albums.csv
+    - ODNR_fish_stocking.csv
+4. Slides [https://go.osu.edu/tableau_research_day1](https://go.osu.edu/tableau_research_day1)
+5. Slides [https://go.osu.edu/tableau_research_day2](https://go.osu.edu/tableau_research_day2)
+
+---
+
 ## Practice Matters
 
 ### Inspiration and examples
