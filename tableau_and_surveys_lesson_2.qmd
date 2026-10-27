@@ -11,3 +11,14 @@ bibliography:
 
 👷🚧 This page is under construction 🚧👷
 
+INSERT INTRODUCTORY TEXT
+
+## Learning Objectives
+
+1.	**Summarize demographic survey data** using engaging visuals;
+2.	**Iterate** to improve visualizations and apply best practices;
+3.	**Identify alternatives** for displaying part-to-whole relationships;
+
+This tutorial supports The Ohio State University Libraries Research Commons [Tableau and Surveys](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) workshop series. Building on concepts introduced in the [Tableau for Research](./tableau_for_research.ipynb) workshops, it introduces **INTERMEDIATE** Tableau users to techniques for working with, analyzing, and communicating survey data in Tableau. 
+
+# LESSON 2

@@ -10,3 +10,15 @@ bibliography:
 ---
 
 👷🚧 This page is under construction 🚧👷
+
+INSERT INTRODUCTORY TEXT
+
+## Learning Objectives
+
+1. **Visualize complex survey responses** using a variety of chart types.
+2. **Combine multiple visualizations** to clearly communicate insights and provide context.
+3. **Apply visualization techniques** to display comparisons, distributions, and sentiment.
+
+This tutorial supports The Ohio State University Libraries Research Commons [Tableau and Surveys](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) workshop series. Building on concepts introduced in the [Tableau for Research](./tableau_for_research.ipynb) workshops, it introduces **INTERMEDIATE** Tableau users to techniques for working with, analyzing, and communicating survey data in Tableau. 
+
+# LESSON 3

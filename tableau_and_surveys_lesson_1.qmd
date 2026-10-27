@@ -1,0 +1,418 @@
+---
+title: "Lesson 1. Prepare Survey Data"
+format:
+  html:
+    toc: true
+    toc-expand: 3
+    toc-title: CONTENTS
+bibliography:
+  - references.bib
+---
+
+👷🚧 This page is under construction 🚧👷
+
+This lesson introduces a practical workflow for preparing survey data for analysis and visualization in Tableau. Using the *2024 Citywide Mobility Survey* from [New York City's OpenData](https://opendata.cityofnewyork.us/), it explores how to assess survey structure and documentation, identify dimensions and measures, and clean and reshape data to support effective analysis. 
+
+## Learning Objectives
+
+1.	**Evaluate survey datasets and metadata** to understand survey structure, questions, and response formats.
+2.	**Create and document a data dictionary** that describes survey variables, response options, and coding schemes.
+3.	**Apply common data cleaning and preparation techniques** required for survey analysis and visualization.
+4.	**Pivot and reshape survey data** to support analysis and visualization in Tableau.
+
+This tutorial supports The Ohio State University Libraries Research Commons [Tableau and Surveys](https://library.osu.edu/events?combine=&tid=All&field_location_code_value=10&sort_bef_combine=field_end_date_value_ASC) workshop series. Building on concepts introduced in the [Tableau for Research](./tableau_for_research.ipynb) workshops, it introduces **INTERMEDIATE** Tableau users to techniques for working with, analyzing, and communicating survey data in Tableau. 
+
+# LESSON 1
+
+## Step 1. Clarify research question
+
+![](images/TTM-BicyclesBike.png){fig-align="center" width=250px}
+
+ The first step for any survey analysis and visualization project is to clarify your research question or analysis goal. Because the Citywide Mobility Survey is so large and complex, let's focus on a single mode of transportation: **Bicycles**. 
+ 
+<div class="accordion" id="accordionExample">
+
+  <div class="accordion-item"><h2 class="accordion-header" id="ex1-headingOne"><button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseOne" aria-expanded="true" aria-controls="ex1-collapseOne"><img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1. Clarify research question</button></h2><div id="ex1-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex1-headingOne" data-bs-parent="#accordionExample"><div class="accordion-body fs-4"><p>The <strong>Citywide Mobility Survey 2024</strong> includes questions about bicycle ownership, bicycle use, e-bikes, and barriers to cycling. What research questions might a data analyst working for The New York City Department of Transportation consider to help inform bicycle infrastructure needs, such as the addition of bike lanes, bicycle parking, and support for e-bikes?</p>
+  </div></div>
+  </div>
+
+  <div class="accordion-item"><h2 class="accordion-header" id="ex1-headingTwo"><button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseTwo" aria-expanded="false" aria-controls="ex1-collapseTwo"><img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</button></h2><div id="ex1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex1-headingTwo" data-bs-parent="#accordionExample"> <div class="accordion-body"><strong>Research Questions</strong><ul><li>Who is most likely to ride a bicycle in New York City?</li><li>How does bicycle use vary by age, income, employment status, or education level?</li><li>What are the most common reasons for riding a bicycle?</li><li>What factors prevent residents from biking more often?</li><li>How has bicycle use increased or decreased for different groups of residents?</li><li>Are e-bike owners different from traditional bicycle owners?</li></ul></div>
+  </div>
+  </div>
+
+</div>
+
+## Step 2. Evaluate dataset
+
+The next step is to critically evaluate the dataset, its context, and structure. Look for a description of the dataset and consider:
+
+- Who created the dataset and why?
+- What procedures were used to collect the data? 
+- What information is included, and what is missing?
+- Are there any potential sources of bias in the data that have not been disclosed?
+- When was the data collected or last updated?
+- Does the data still reflect current trends?
+
+Consider whether the dataset contains the information needed to answer your question(s) and whether the data collection methods are appropriate for your field or area of study. If the dataset does not adequately support your objectives, you may need to identify a different data source or combine it with additional datasets.
+
+<div class="accordion" id="accordionExample">
+
+  <div class="accordion-item"><h2 class="accordion-header" id="ex2-headingOne"><button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseOne" aria-expanded="true" aria-controls="ex2-collapseOne"><img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2. Critically evaluate dataset</button></h2><div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="headingOne" data-bs-parent="#accordionExample2"><div class="accordion-body fs-4"><p>Locate the <strong><em>2024 Citywide Mobility Survey</em></strong> in the <a href="https://opendata.cityofnewyork.us/">NYC OpenData</a> portal. Review the dataset description and documentation, then use the questions in <a href="#step-2.-evaluate-dataset">Step 2</a> to critically evaluate the dataset.</p>
+  </div></div>
+  </div>
+
+</div>
+
+## Step 3. Evaluate metadata
+
+Review the survey’s metadata and underlying data structure. [Metadata](https://en.wikipedia.org/wiki/Metadata), or data about data, documents variable definitions, units of measurement, data types, survey question types, and relationships among files. Understanding this information upfront is essential for efficient analysis, accurate interpretations and effective visualization. 
+
+Review the survey questions to identify the **dimensions** (categorical variables) and **measures** (quantitative variables) relevant to your research question. Pay close attention to how each variable is defined and how survey responses are coded. For example, are numeric values used to represent text responses?
+
+Within the survey dataset itself, consider the following questions:
+
+- What field serves as the unique identifier for each survey response?
+- Are datatypes consistent within a column or series?
+- How are Null or missing values handled?
+- Are survey weights included, and if so, how should they be applied?
+- If the survey data is stored across multiple tables or files, how are the relationships between them defined?
+
+Finally, examine the structure of the dataset. Is the dataset organized in **wide**  format (many columns and fewer rows) or a **tall** format (fewer columns and more rows)? Will the data need to be pivoted or reshaped before it can be analyzed in Tableau?
+
+### Wide data
+
+In **wide** data, each respondent is represented by a single row, with survey responses stored across multiple columns. 
+
+| Name | Age   | Number of Visits| Last Visit Date |
+| :----- | :-----: | :---------------: | :---------------: |
+| Helen | 68 | 15 | 8/13/2026 |
+| Rob | 15 | 1 | 4/1/2025 |
+| Anna | 43 | 6 | 11/6/2025 |
+| Jan | 35 | 22 | 6/10/2026 |
+
+### Tall data
+
+In **tall** data, responses are stored in separate rows, with each row representing a single dimension-measure pair. As a result, a single respondent may be represented by multiple rows.
+
+| Name | Dimension   | Measure|
+| :----- | :----- | :---------------: | 
+| Helen | Age | 68 |
+| Helen | Number of Visits | 15 |
+| Helen | Last Visit Date | 8/13/2026 |
+| Rob | Age | 15 |
+| Rob | Number of Visits | 1 |
+| Rob | Last Visit Date | 4/1/2025 |
+| Anna | Age | 43 |
+| Anna | Number of Visits | 6 |
+| Anna | Last Visit Date | 11/6/2025 |
+| Jan | Age | 35 |
+| Jan | Number of Visits | 22 |
+| Jan | Last Visit Date | 6/10/2026 |
+
+
+Tableau is optimized for **tall** data, so datasets often need to be reshaped from wide to tall format before analysis. This structure provides greater flexibility for filtering, aggregating, and visualizing data.
+
+<div class="accordion" id="accordionExercise3">
+
+  <div class="accordion-item"><h2 class="accordion-header" id="ex3-headingOne"><button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseOne" aria-expanded="true" aria-controls="ex3-collapseOne"><img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Review metadata and survey structure  </button></h2><div id="ex3-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex3-headingOne" data-bs-parent="#accordionExercise3"> <div class="accordion-body fs-4"><p>Download and review the survey documentation, metadata, and dataset files for the <strong>2024 Citywide Mobility Survey</strong> including:</p><ul><li><a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Day-2024/naav-ygga/about_data">Citywide Mobility  Survey - Day 2024</a></li><li><a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Household-2024/5mb3-padx/about_data">Citywide Mobility  Survey - Household 2024</a></li><li><a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Person-2024/i2im-iqtt/about_data">Citywide Mobility  Survey - Person 2024</a></li><li><a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Trip-2024/wgnh-qwsg/about_data">Citywide Mobility  Survey - Trip 2024</a></li><li><a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Vehicle-2024/qhkz-4dqm/about_data">Citywide Mobility  Survey - Vehicle 2024</a></li><li><a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/593f8f55-e40e-4fa9-a88c-c9fbee816279?download=true&filename=NYC%20Citywide%20Mobility%20Survey%202024%20Questionnaire.pdf">NYC_Citywide_Mobility_Survey_2024_Questionnaire.pdf</a></li><li><a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx">Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx</a></li><li><a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/1272677e-34ae-44f5-ab2f-cbaf87b8c07e?download=true&filename=CMS_Survey_User_Guide_2024_final.pdf">CMS_Survey_User_Guide_2024_final.pdf</a></li></ul><p>Use the questions below to evaluate the dataset's structure and prepare it for analysis in Tableau:</p><ol><li>Review the survey questionnaire and metadata. Identify dimensions needed to answer 1-2 research questions outlined in <a href="#ex1-headingTwo">Exercise 1</a>. How is each dimension defined?</li><li>Identify measures needed to answer 1-2 research questions outlined in <a href="#ex1-headingTwo">Exercise 1</a>. How is each measure defined?</li><li>How are the survey responses coded? Are any text responses represented by numerical values? Provide one or two examples</li><li>What field serves as the unique identifier in each dataset (HOUSHOLD, PERSON, TRIP, and VEHICLE)?</li><li>How are null, blank, or missing values represented in the dataset?</li><li>Are survey weights included? If so, what documentation explains how they should be applied?</li><li>How are the HOUSEHOLD, PERSON, TRIP, and VEHICLE datasets related? Which fields are used to join or relate them?</li><li>Is the dataset organized in a <strong>wide</strong> (many columns, fewer rows) or <strong>tall</strong> (fewer columns, more rows) format?</li><li>Based on your review, what data preparation steps would you recommend before beginning analysis?Would the dataset need to be reshaped (pivoted) before analysis in Tableau? Why or why not? How might you filter visualizations or aggregate data?</li></ol></div></div>
+  </div>
+
+  <div class="accordion-item"><h2 class="accordion-header" id="ex3-headingTwo"><button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseTwo" aria-expanded="false" aria-controls="ex3-collapseTwo"><img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:</button></h2><div id="ex3-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex3-headingTwo" data-bs-parent="#accordionExercise3"> <div class="accordion-body"><ol><li>The Table of Contents for the <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/593f8f55-e40e-4fa9-a88c-c9fbee816279?download=true&filename=NYC%20Citywide%20Mobility%20Survey%202024%20Questionnaire.pdf">2024 Citywide Mobility Survey Questionnaire</a> links each question to a variable name included in the <strong>Columns Information</strong> tab in the <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx">2024 Citywide Mobility Survey Data Dictionary</a>. The <strong>HOUSEHOLD</strong>, <strong>PERSON</strong>, and <strong>TRIP</strong> datasets host the relevant dimensions and measures needed for our project.<br></li><li>Dimensions and measure that may answer the research questions you selected are listed in <a href="#step-4.-select-dimensions-and-measures">Step 4. Select dimensions and measures</a></li><li>Text responses are represented by numerical values. These values are defined in the <strong>Expected/Allowed Values</strong> column on the <strong>Column Information</strong> tab in the data dictionary.</li><li>The <code>hh_id</code> or <em>Household Id</em> serves as the unique identifier for each row in the <strong>HOUSEHOLD</strong> dataset. The <code>person_id</code> or <em>Person Id</em> serves as the unique identifier for each row in the <strong>PERSON</strong> and <strong>TRIP</strong> dataset.</li><li>Null values are represented by the values<ul><li>995 - Missing response</li><li>996 - Not applicable</li><li>997 - Missing response</li><li>998 - Don't know</li><li>999 - Prefer not to answer</li><li>Null</li></ul> For additional information, see page 15 of <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/1272677e-34ae-44f5-ab2f-cbaf87b8c07e?download=true&filename=CMS_Survey_User_Guide_2024_final.pdf">2024 Citywide Mobility Survey User Guide</a></li><li>Survey weights are present in each dataset. Information about survey weights is provided in the user guide<ul><li><strong>HOUSEHOLD</strong><ul><li><code>hh_weight_citywide</code></li><li><code>hh_weight_zonal</code></li></ul></li><li><strong>PERSON</strong><ul><li><code>person_weight_citywide</code></li><li><code>person_weight_zonal</code></li></ul></li><li><strong>TRIP</strong><ul><li><code>trip_weight_citywide</code></li><li><code>trip_weight_zonal</code></li></ul></li></ul></li><li>Relationships between each dataset are defined on the <strong>Relational Diagram</strong> tab in the data dictionary</li><li>Each dataset is organized in wide format. Each row represents a household, person, trip, or vehicle, with survey responses stored across many columns.</li><li>Both wide and tall data is needed for analysis. Some variables may need to be pivoted into a tall fomrat to make them easier to analyze and visualize in Tableau. Demographic variables can remain in a wide table and be related to reshaped survey responses using the <code>person_id</code></li></ol>
+  </div>
+  </div>
+  </div>
+
+</div>
+
+## Step 4. Select dimensions and measures
+
+Dimensions and measures that may answer the research questions introduced in [Exercise 1](#step-1.-research-question) include:
+
+| Household | Person | Trip | Demographics |
+|------------|------------|------------|------------|
+| bicycle_type_1 | age | bike_park_loc | age |
+| bicycle_type_2 | bike_freq | citi_bike_alt_mode | education |
+| bicycle_type_3 | bike_purp_1 | d_cms_zone | employment |
+| bicycle_type_4 | bike_purp_2 | d_purpose | ethnicity |
+| bicycle_type_997 | bike_purp_3 | hh_id | gender |
+| bike_change | bike_purp_4 | mode_priority | hh_id |
+| ebike_new | bike_purp_5 | mode_type | income_broad |
+| ebike_new_no_1 | bike_purp_6 | o_cms_zone | industry |
+| ebike_new_no_2 | bike_purp_7 | o_purpose | race |
+| ebike_new_no_3 | bike_purp_997 | person_id | relationship |
+| ebike_new_no_4 | bike_stolen | purpose_app | student |
+| ebike_new_no_5 | bike_stolen_followup | transit_access | |
+| ebike_new_no_6 | citi_bike_freq | transit_egress | |
+| ebike_new_no_997 | citi_bike_pay | trip_id | |
+| hh_id | citi_bike_type | trip_weight_citywide | |
+| hh_weight_citywide | education | trip_weight_zonal | |
+| hh_weight_zonal | employment | | |
+| increased_bike_1 | ethnicity | | |
+| increased_bike_2 | gender | | |
+| increased_bike_3 | hh_id | | |
+| increased_bike_4 | industry | | |
+| increased_bike_5 | no_bike_nyc_1 | | |
+| increased_bike_6 | no_bike_nyc_10 | | |
+| increased_bike_7 | no_bike_nyc_11 | | |
+| increased_bike_997 | no_bike_nyc_2 | | |
+| income_broad | no_bike_nyc_3 | | |
+| num_bicycles | no_bike_nyc_4 | | |
+| reduced_bike_1 | no_bike_nyc_5 | | |
+| reduced_bike_2 | no_bike_nyc_6 | | |
+| reduced_bike_3 | no_bike_nyc_7 | | |
+| reduced_bike_4 | no_bike_nyc_8 | | |
+| reduced_bike_5 | no_bike_nyc_9 | | |
+| reduced_bike_6 | no_bike_nyc_997 | | |
+| reduced_bike_7 | no_bike_share_1 | | |
+| reduced_bike_997 | no_bike_share_2 | | |
+| | no_bike_share_3 | | |
+| | no_bike_share_4 | | |
+| | no_bike_share_5 | | |
+| | no_bike_share_6 | | |
+| | no_bike_share_7 | | |
+| | no_bike_share_8 | | |
+| | no_bike_share_997 | | |
+| | person_id | | |
+| | person_weight_citywide | | |
+| | person_weight_zonal | | |
+| | race | | |
+| | relationship | | |
+| | school_bike_park | | |
+| | school_mode | | |
+| | school_mode_bike | | |
+| | school_type | | |
+| | student | | |
+| | work_bike_park | | |
+| | work_mode | | |
+| | work_mode_bike | | |
+
+## Step 5. Prepare data
+
+Taking time to identify necessary data preparation steps before beginning analysis and visualization can save considerable time and frustration later. Before reshaping any data, determine whether to clean it in Tableau, or before you connect the data to Tableau. If only a few changes are needed, Tableau’s data grouping and calculated fields features are often sufficient. If extensive cleaning or transformation is required, however, it is generally more efficient to prepare the data before importing it into Tableau. This approach can improve Tableau workbook performance, simplify your workflow, and help keep your Tableau workbook organized.
+
+Some common data preparation tasks include:
+
+- **Standardizing** names, locations, and formats (“OH” = “Ohio”)
+- **Removing** unnecessary punctuation, including leading and trailing spaces
+- **Eliminating** duplicate rows, when appropriate
+- **Converting** text to consistent case (e.g. all lowercase)
+- **Replacing** null values with zeros or other meaningful defaults
+- **Standardizing** dates and time formats
+- **Splitting or unmerging** columns
+- **Verifying and correcting** data types
+- **Pivoting** or reshaping data from *wide* to *tall* to support analysis and visualization
+
+There are many tools available for data preparation. Simple tasks can often be completed in **Excel** or **Google Sheets**, while more complex workflows may be better handled with **Tableau Prep, R,** or **Python**. The best choice depends on the size and complexity of your dataset, the transformations you need to perform, and the tools you're most comfortable using.
+
+### ![](images/tableau_prep.png) Tableau Prep
+
+Tableau Prep is a visual, drag-and-drop tool used to clean, combine, and transform data from multiple sources. Tableau Prep is particularly useful for preparing survey data, as the tool documents each step taken to prepare data for analysis. 
+
+To prepare the **2024 Citywide Mobility Survey** data to answer the research questions introduced in [Exercise 1](#step-1.-research-question) using Tableau Prep, start by connecting the data in Tableau Prep Builder.
+
+<!-- **STEP 5_1: Connect to data** -->
+### Step 5.1. Connect to data
+
+On Tableau Prep's **Start Page**
+
+1. In the **Connections** pane, click the `+` to create a new connection.
+2. Connect to the HOUSEHOLD, PERSON, AND TRIP files downloaded in [Exercise 3](#ex3-headingOne). 
+3. As each file is added, right-click the input and rename it as follows:
+  - `Citywide_Mobility_Survey_-_Household_2024.csv` → **HOUSEHOLD**
+  - `Citywide_Mobility_Survey_-_Person_2024.csv` → **PERSON**
+  - `Citywide_Mobility_Survey_-_Trip_2024.csv` → **TRIP**
+4. The three input tables will appear in the **Flow pane**. Selecting an input table displays its contents in the **Input pane** directly below the **Flow pane**. Use the **^** on the right side of the **Flow pane** to expand or collapse the pane as needed.
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_1_connect_data.mp4" type="video/mp4">
+</video>
+
+### Step 5.2. Isolate variables
+<!-- **STEP 5_2: Isolate variables** -->
+
+For **each input table**, retain only the dimensions and measures identified in [Step 4](#step-4.-select-dimensions-and-measures) Removing unnecessary fields reduces the size of the dataset, simplifies preparation, and improves Tableau workbook performance.
+
+- **Shift** + **click** to select a range of consecutive rows.
+- **Ctrl** + **click** (Windows) or **Cmd** + **click** (Mac) to select multiple individual, non-adjacent rows
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_2_isolate_variables.mp4" type="video/mp4">
+</video>
+
+### Step 5.3. Reshape data
+<!-- **STEP 5_3. Reshape data** -->
+
+To optimize survey data for analysis in Tableau, create **demographic** and **weights** tables in a wide format and a **survey response** table in a long (pivoted) format. The demographic and weights tables should contain **one row per Respondent ID**, while the survey response table should contain **multiple rows per Respondent ID**, with one row for each survey question and response. These tables can then be related using the **Respondent ID** field.
+
+Keeping demographic and weight data in a wide format preserves a single record for each respondent, making it easier to filter, group, segment, and properly weight variables without introducing duplicate records or affecting aggregations. Survey question responses should be pivoted into a long format to support flexible analysis and visualization across many questions. This structure provides an effective balance of performance, usability, and analytical flexibility in Tableau.
+
+#### Demographics
+
+To create the **DEMOGRAPHICS** table:
+
+1. Click the **+** sign to the right of the **HOUSEHOLD** table and select **Clean Step**. This creates a branch from the HOUSEHOLD table where you can filter, rename, and transform fields without modifying the original table.
+2. In the **Input pane**, switch from **Profile** view to **Field List** view  by clicking the ![](images/tableau_prep_show_field_list.png) **Show Field List** icon to the left of the Search Box.
+3. Retain only the fields:
+    - **hh_id** (this is the [Respondent ID])
+    - **income_broad**
+4. In the **Flow Pane**, right-click the **Clean Step** and rename to **H_DEMOGRAPHICS**. 
+5. Repeat Steps 2-4 for the **PERSON** table. Retain only the following fields:
+    - **hh_id**
+    - **person_id**
+    - **age**
+    - **can_drive**
+    - **education**
+    - **employment**
+    - **ethnicity**
+    - **gender**
+    - **industry**
+    - **race**
+    - **relationship**
+    - **student**
+
+    Rename the resulting step **P_DEMOGRAPHICS**.
+6. Drag **P_DEMOGRAPHICS** onto **H_DEMOGRAPHICS** and drop it on the **Join** icon when it appears. The **Join Profile** will open in the **Input pane**. Verify the **Join Clause** is **H_DEMOGRAPHICS hh_id** = **P_DEMOGRAPHICS hh_id** and the **Join Type** is **Inner**. Switch from **Profile** view to **Field List** view and remove the duplicate **hh_id (hh_id_-1)**.  Rename the resulting step **DEMOGRAPHICS**
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_3_demographics.mp4" type="video/mp4">
+</video>
+
+#### Weights
+
+To create the **WEIGHTS** tables:
+
+1. Create a new branch from the **HOUSEHOLD** table by clicking the **+** sign to the right of **HOUSEHOLD** and selecting **Clean Step**. ***IMPORTANT***: Be sure to select the **+** sign attached directly to the **HOUSEHOLD** household table. Selecting the **+** icon on an existing black flow line will add a new step to the **H_DEMOGRAPHICS** branch.
+2. Rename the step **H_WEIGHTS**
+3. Retain the following fields:
+    - hh_id
+    - hh_weight_zonal
+    - hh_weight_citywide
+4. Create a new branch from the **PERSON**  table, rename the step **P_WEIGHTS** and retain the following fields:
+    - hh_id
+    - person_id
+    - person_weight_zonal
+    - person_weight_citywide
+5. Create a new branch from the **TRIP**  table, rename the step **T_WEIGHTS** and retain the following fields:
+    - hh_id
+    - person_id
+    - trip_id
+    - trip_weight_zonal
+    - trip_weight_citywide
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_4_weights.mp4" type="video/mp4">
+</video>
+
+#### Survey Responses
+
+To create the **SURVEY_RESPONSES** table:
+
+1.  Create a new branch from the **HOUSEHOLD** table by clicking the **+** sign to the right of **HOUSEHOLD** and selecting **Clean Step**. Rename the step **S_HOUSEHOLD** and retain all fields except:
+    - **hh_weight_zonal**
+    - **hh_weight_citywide**
+2. Repeat Step 1 for the **PERSON** table, renaming the step **S_PERSON** and retaining all fields except:
+    - **person_weight_zonal**
+    - **person_weight_citywide**
+3. Repeat Step 1 for the **TRIP** table, renaming the step **S_TRIP** and retaining all fields except:
+    - **trip_weight_zonal**
+    - **trip_weight_citywide**
+4. Union the three survey response tables by dragging **S_PERSON** onto **S_HOUSEHOLD** and dropping it on the **Union** icon when it appears. Then drag **S_TRIP** onto the resulting union and drop it on the **Add to Union** icon. Remove the **Table Names** field. Rename the resulting step **SURVEY_RESPONSES**.
+5. Pivot the survey response table. Click the **+** sign to the right of the **SURVEY_RESPONSES** step and select **Pivot**. Drop all fields into the **Pivot Fields** pane except:
+    - hh_id
+    - person_id
+6. Rename:
+    - **Pivot1 Values** → **column_abbreviation**
+    - **Pivot1 Names** → **numeric_value**
+7. Filter the **numeric_value** field to exclude **Null** values.
+8. Rename the pivot step **SURVEY_RESPONSES_PIVOT**. The **SURVEY_RESPONSES_PIVOT** table now contains one row per respondent per survey question
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_5_survey_responses.mp4" type="video/mp4">
+</video>
+
+### Step 5.4. Output files
+<!-- **STEP 5_4. Output files** -->
+
+1. Click the **+** sign to the right of the **DEMOGRAPHICS** step and select **Output Step**. Rename the output step **D_OUTPUT** and select **Comma Separated Values (.csv)** as the **Output Type**. Click **Browse** to select a location to save the file, name the file `demographics.csv`, and click **Accept**.  Then click **Run Flow**. This will create the `demographics.csv` file in the location you specified.
+2. Repeat Step 1 for each **WEIGHTS** step. 
+    - For **H_WEIGHTS**, name the output file `household_weights.csv`
+    - For **P_WEIGHTS**, name the output file `person_weights.csv`
+    - For **T_WEIGHTS**, name the output file `trip_weights.csv`
+
+    Click **Run Flow** to create the output.
+3. Repeat Step 1 for the **SURVEY_RESPONSES_PIVOT** step and name the output file `survey_responses.csv`. Click **Run Flow** to create the output.
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_6_output.mp4" type="video/mp4">
+</video>
+
+The following `.csv` files are now ready for analysis in Tableau:
+
+- `demographics.csv`
+- `household_weights.csv`
+- `person_weights.csv`
+- `trip_weights.csv`
+- `survey_responses.csv`
+
+## Step 6. Modify|Create data dictionary
+
+The [Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx](https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx") file provides an overview of HOUSEHOLD, PERSON, DAY, TRIP, and VEHICLE datasets. It documents the purpose of each table, defines the variables contained within them, and explains the coding used for the survey responses. A relationship diagram illustrating how each table is connected using the household, person, and day identifiers is also included, as well as a tab disclosing the dataset's revision history.
+
+After pivoting the survey response fields, we can use the column abbreviation with the numeric value variables to relate our survey responses to the original survey questions and their corresponding text values. To support this process, however, the **Column Information** worksheet in the [Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx](https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx") file must be restrctured into a more analysis-friendly data dictionary.
+
+To update the **Column Information** worksheet:
+
+- Remove the **Citywide Mobility Survey Tables** title row so that the column headers in row 2 become the first row of the worksheet.
+- Restructure the worksheet so that it contains **one row for each survey question-response combination**.
+- Split the existing **Expected/Allowed Values** field into two separate columns:
+    - **numeric_value**: the numeric code associated with the response.
+    - **column_abbreviation**: the correspnding survey response variable abbreviation (column name). 
+- Using the [NYC_Citywide_Mobility_Survey_2024_Questionnaire](https://data.cityofnewyork.us/api/views/naav-ygga/files/593f8f55-e40e-4fa9-a88c-c9fbee816279?download=true&filename=NYC%20Citywide%20Mobility%20Survey%202024%20Questionnaire.pdf), lookup each survey variable abbreviation and add:
+    - **question_number**: the survey question number.
+    - **question_text**: the full text of the survey question.
+- For matrix questions, add a **row_item** column containing the full text of the matrix row associated with each response. 
+
+For example, the matrix question *"What are the reasons you do not ride a bicycle more often?"* has multiple row items, including *"I do not own a bicycle"* and *"I do not feel safe riding a bicycle."* Each item should be recorded in the **row_item** column alongside its corresponding survey response.
+
+The [data_dictionary_bikes.csv](data/data_dictionary_bikes.csv) file contains a preprocessed version of the data dictionary that includes the variables needed to answer the research questions introduced in [Exercise 1](#step-1.-research-question). Each record represents a single survey question-response combination and includes the question number, question text, row item (when applicable), column abbreviation, and numeric value. 
+
+## Step 7. Relate datasets
+
+The final step in preparing the survey data for analysis in Tableau is to relate the demographic, weights, survey response, and data dictionary tables. 
+
+1. Open Tableau Desktop and connect to the five `.csv` files created in [Step 5](#step-5.-prepare-data) and the [data_dictionary_bikes.csv](data/data_dictionary_bikes.csv) file.
+    - [survey_responses.csv](data/survey_responses.csv)
+    - [data_dictionary.csv](data/data_dictionary_bikes.csv)
+    - [demographics.csv](data/demographics.csv)
+    - [household_weights.csv](data/household_weights.csv)
+    - [person_weights.csv](data/person_weights.csv)
+    - [trip_weights.csv](data/trip_weights.csv)
+2. Drag and drop the **survey_response.csv** table to the canvas. Then create a relationship by dragging the **data_dictionary_bikes.csv** table to the canvas. When you see the blue *"noodle"* between the two tables, drop  **data_dictionary_bikes.csv**. In the **relationship settings**, set the relationship as:
+    - `Column Abbreviation` = `Column Abbreviation`
+    - `Numeric Value` = `Numeric Value`
+3. Repeat step 2 to relate **demographics.csv** to the **survey_responses.csv** table and set the relationship as:
+    - `Hh Id` = `Hh Id`
+    - `Person Id` = `Person Id`
+    - **Note**: You may need to select **Edit Calculation** to change the data type for **Person Id** from string to integer.
+4. Repeat step 2 to relate **household_weights.csv** to the **survey_responses.csv** table and set the relationship as:
+    - `Hh Id` = `Hh Id`
+5. Repeat step 2 to relate **person_weights.csv** to the **survey_responses.csv** table and sset the relationship as:
+    - `Hh Id` = `Hh Id`
+    - `Person Id` = `Person Id`
+6. Repeat step 2 to relate **trip_weights.csv** to the **survey_responses.csv** table and set the relationship as:
+    - `Hh Id` = `Hh Id`
+    - `Person Id` = `Person Id`
+
+<video autoplay muted controls width="100%">
+  <source src="videos/tableau_prep_7_relate_datasets.mp4" type="video/mp4">
+</video>
+
+
+With the survey data prepared and related in Tableau, the foundation is now in place for analysis and visualization. The next lesson explores various approaches to effectively and efficiently visualize demographic data.
+
+## References
+
+::: {#refs}
+:::
+
+

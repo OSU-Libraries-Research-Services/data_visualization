@@ -10,3 +10,12 @@ bibliography:
 ---
 
 👷🚧 This page is under construction 🚧👷
+
+INSERT INTRODUCTORY TEXT
+
+## Learning Objectives
+
+1. **Organize and transform qualitative data** for analysis.
+2. **Represent sequences, durations and journeys** through effective visualizations.
+3. **Incorporate visual and interactive elements** to provide context and enhance engagement.
+4. **Summarize open-ended responses** using text-based visualizations.

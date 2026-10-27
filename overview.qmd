@@ -17,8 +17,8 @@ format:
   <div class="card-body"><img src="images/cover_schwabish_data_visualization.png" alt="better data visualizations book cover" class="d-block mx-auto">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507">Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</a></h4></li>
-    <li class="list-group-item">by Jonathan Schwabish</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/rr4vai/alma991085487354008507">Better Data Visualizations: A Guide for Scholars, Researchers, and Wonks</a></h3></li>
+    <li class="list-group-item"><strong>by Jonathan Schwabish</strong></li>
     <li class="list-group-item">New York : Columbia University Press, 2021.</li>
   </ul>
 </div>
@@ -31,8 +31,8 @@ format:
   <div class="card-body"><img src="images/cover_evergreen.png" alt="effective data visualization book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-      <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data</a></h4></li>
-    <li class="list-group-item">by Stephanie Evergreen</li>
+      <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085549207608507">Effective Data Visualization: The Right Chart for the Right Data</a></h3></li>
+    <li class="list-group-item"><strong>by Stephanie Evergreen</strong></li>
     <li class="list-group-item">Thousand Oaks, California: SAGE Publications, 2020</li>
   </ul>
 </div>
@@ -45,8 +45,8 @@ format:
   <div class="card-body"><img src="images/cover_knaflic.png" alt="storytelling with data book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085424573708507">Storytelling with Data: A Data Visualization Guide for Business Professionals</a></h4></li>
-    <li class="list-group-item">by Cole Nussbaumer Knaflic</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085424573708507">Storytelling with Data: A Data Visualization Guide for Business Professionals</a></h3></li>
+    <li class="list-group-item"><strong>by Cole Nussbaumer Knaflic</strong></li>
     <li class="list-group-item">Hoboken, New Jersey: Wiley, 2015.</li>
   </ul>
 </div>
@@ -59,8 +59,8 @@ format:
   <div class="card-body"><img src="images/cover_duarte_data_story.jpg" alt="data story book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910477434908506">Data Story: Explain Data and Inspire Action Through Story</a></h4></li>
-    <li class="list-group-item">by Nancy Duarte</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910477434908506">Data Story: Explain Data and Inspire Action Through Story</a></h3></li>
+    <li class="list-group-item"><strong>by Nancy Duarte</strong></li>
     <li class="list-group-item">Oakton, Virginia: Ideapress Publishing, 2019.</li>
   </ul>
 </div>
@@ -77,8 +77,8 @@ format:
   <div class="card-body"><img src="images/cover_lima_book_of_circles.png" alt="the book of circles book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma991061671169708507">The Book of Circles: Visualizing Spheres of Knowledge</a></h4></li>
-    <li class="list-group-item">by Manuel Lima</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma991061671169708507">The Book of Circles: Visualizing Spheres of Knowledge</a></h3></li>
+    <li class="list-group-item"><strong>by Manuel Lima</strong></li>
     <li class="list-group-item">New York, New York: Princeton Architectural Press, 2017.</li>
   </ul>
 </div>
@@ -91,8 +91,8 @@ format:
   <div class="card-body"><img src="images/cover_lima_book_of_trees.png" alt="the book of trees book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910255715008506">The Book of Trees: Visualizing Branches of Knowledge</a></h4></li>
-    <li class="list-group-item">by Manuel Lima</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910255715008506">The Book of Trees: Visualizing Branches of Knowledge</a></h3></li>
+    <li class="list-group-item"><strong>by Manuel Lima</strong></li>
     <li class="list-group-item">New York, New York: Princeton Architectural Press, 2014.</li>
   </ul>
 </div>
@@ -105,8 +105,8 @@ format:
   <div class="card-body"><img src="images/cover_wexler_big_book_dashboards.png" alt="big book of dashboards book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/ocdk1k/cdi_safari_books_v2_9781119282716">The Big Book of Dashboards: Visualizing Your Data Using Real-World Business Scenarios</a></h4></li>
-    <li class="list-group-item">by Steve Wexler, Jeffrey Shaffer, Andy Cotgreave</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/ocdk1k/cdi_safari_books_v2_9781119282716">The Big Book of Dashboards: Visualizing Your Data Using Real-World Business Scenarios</a></h3></li>
+    <li class="list-group-item"><strong>by Steve Wexler, Jeffrey Shaffer, Andy Cotgreave</strong></li>
     <li class="list-group-item">Hoboken, New Jersey : Wiley, 2017.</li>
   </ul>
 </div>
@@ -124,8 +124,8 @@ format:
   <div class="card-body"><img src="images/cover_tufte_visual_display.jpg" alt="the visual display of quantitative information book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991048472539708507">The Visual Display of Quantitative Information</a></h4></li>
-    <li class="list-group-item">by Edward R. Tufte</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991048472539708507">The Visual Display of Quantitative Information</a></h3></li>
+    <li class="list-group-item"><strong>by Edward R. Tufte</strong></li>
     <li class="list-group-item">Cheshire, Conn. : Graphic Press, 1983.</li>
   </ul>
 </div>
@@ -138,8 +138,8 @@ format:
   <div class="card-body"><img src="images/cover_tufte_beautiful_evidence.jpg" alt="beautiful evidence book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/h2gfgs/alma991055492639708507">Beautiful Evidence</a></h4></li>
-    <li class="list-group-item">by Edward R. Tufte</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/h2gfgs/alma991055492639708507">Beautiful Evidence</a></h3></li>
+    <li class="list-group-item"><strong>by Edward R. Tufte</strong></li>
     <li class="list-group-item">Cheshire, Conn. : Graphic Press, 2006.</li>
   </ul>
 </div>
@@ -157,8 +157,8 @@ format:
   <div class="card-body"><img src="images/cover_knaflic_practice.png" alt="storytelling with data let's practice book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/h2gfgs/alma991085522205508507">Storytelling With Data: Let's Practice!</a></h4></li>
-    <li class="list-group-item">by Cole Nussbaumer Knaflic</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/h2gfgs/alma991085522205508507">Storytelling With Data: Let's Practice!</a></h3></li>
+    <li class="list-group-item"><strong>by Cole Nussbaumer Knaflic</strong></li>
     <li class="list-group-item">Hoboken, New Jersey : Wiley, 2020.</li>
   </ul>
 </div>
@@ -171,8 +171,8 @@ format:
   <div class="card-body"><img src="images/cover_evergreen_sketchbook.png" alt="the data visualization sketchbook book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;">
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910518170608506">The Data Visualization Sketch Book</a></h4></li>
-    <li class="list-group-item">by Stephanie D. H. Evergreen</li>
+    <li class="list-group-item"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/b5bq8j/alma9910518170608506">The Data Visualization Sketch Book</a></h3></li>
+    <li class="list-group-item"><strong>by Stephanie D. H. Evergreen</strong></li>
     <li class="list-group-item">Thousand Oaks : SAGE Publications, 2019.</li>
   </ul>
 </div>

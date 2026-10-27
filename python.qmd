@@ -17,10 +17,10 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">CULTURAL ANALYTICS & PYTHON</div>
-  <div class="card-body"><img src="images/intro_ca_logo.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html">Introduction to Cultural Analytics & Python</a></h4><p><br> </p>
+  <div class="card-body"><img src="images/intro_ca_logo.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://melaniewalsh.github.io/Intro-Cultural-Analytics/welcome.html">Introduction to Cultural Analytics & Python</a></h3><p><br> </p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">by Melanie Walsh, 2024.</li>
+    <li class="list-group-item"><strong>by Melanie Walsh, 2024.</strong></li>
     <li class="list-group-item">🥇Winner of "Best DH Training Material" 2021.</li>
   </ul>
 </div>
@@ -30,10 +30,10 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">PYTHON FOR DIGIAL HUMANISTS</div>
-  <div class="card-body"><img src="images/python_humanists.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://github.com/wjbmattingly/python_for_dh">Introduction to Python for Digital Humanists</a></h4>
+  <div class="card-body"><img src="images/python_humanists.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://github.com/wjbmattingly/python_for_dh">Introduction to Python for Digital Humanists</a></h3>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://github.com/wjbmattingly/python_for_dh"><img src="images/github-mark.png" alt="github logo"></a> by William J.B. Mattingly</li>
+    <li class="list-group-item"><a href="https://github.com/wjbmattingly/python_for_dh"><img src="images/github-mark.png" alt="github logo"></a><strong> by William J.B. Mattingly</strong></li>
     <li class="list-group-item">Boca Raton : CRC Press, 2023.</li>
   </ul>
 </div>
@@ -43,10 +43,10 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">PYTHON FOR DATA SCIENCE</div>
-  <div class="card-body"><img src="images/python4ds.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://aeturrell.github.io/python4DS/">Python for Data Science</a></h4>
+  <div class="card-body"><img src="images/python4ds.png" alt="decorative logo" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://aeturrell.github.io/python4DS/">Python for Data Science</a></h3>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><a href="https://github.com/aeturrell/python4DS"><img src="images/github-mark.png" alt="github logo"></a> by The Py4DS Community.</li>
+    <li class="list-group-item"><a href="https://github.com/aeturrell/python4DS"><img src="images/github-mark.png" alt="github logo"></a><strong> by The Py4DS Community.</strong></li>
   </ul>
 </div>
 
@@ -57,45 +57,59 @@ Explore a collection of open-access, discipline-specific textbooks that are comp
 # Books
 
 ::: {.grid .g-4}
-::: {.g-col-12 .g-col-md-6} 
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">PYTHON CRASH COURSE</div>
-  <div class="card-body"><img src="images/cover_pythoncrashcourse.png" alt="python crash course book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085770430608507">Python crash course : a hands-on, project-based introduction to programming, 3rd edition</a></h4>
+  <div class="card-body"><img src="images/cover_pythoncrashcourse.png" alt="python crash course book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma991085770430608507">Python crash course, 3rd edition</a></h3>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">by Eric Matthes<br>San Francisco: No Starch Press, 2023.</li>
+    <li class="list-group-item"><strong>by Eric Matthes, 2023.</strong></li>
     <li class="list-group-item">This beginner-friendly book uses clear, accessible language and practical coding examples to introduce core Python concepts—like variables, data types, methods, and functions—while encouraging you to actively apply what you learn through hands-on practice.</li>
   </ul>
 </div>
 
 :::
 
-::: {.g-col-12 .g-col-md-6}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
   <div class="card-header">AUTOMATE THE BORING STUFF</div>
-  <div class="card-body"><img src="images/cover_automateboringstuff.png" alt="automate the boring stuff book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma9927214990108506">Automate the boring stuff with Python : practical programming for total beginners, 3rd edition</a></h4>
+  <div class="card-body"><img src="images/cover_automateboringstuff.png" alt="automate the boring stuff book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1n8rc7n/alma9927214990108506">Automate the boring stuff with Python, 3rd edition</a></h3>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">by Al Sweigart<br>San Francisco: No Starch Press, 2025.</li>
+    <li class="list-group-item"><strong>by Al Sweigart, 2025.</strong></li>
     <li class="list-group-item">This book starts with the basics, then dives into real-world tasks like  web scraping, pattern matching with regular expressions, reading documents, handling `.csv` and `.json` files, scheduling tasks, manipulating images, and much more. Each chapter includes hands-on practice questions to help reinforce your skills and boost your confidence as a programmer.</li>
   </ul>
 </div>
 
 :::
 
-::: {.g-col-12 .g-col-md-6}
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
 <div class="card bg-secondary mb-3" style="max-width: 20rem;">
-  <div class="card-header">PYTHON TOOLS FOR SCIENTISTS</div>
-  <div class="card-body"><img src="images/cover_pythontoolsscientists.png" alt="python tools for scientists book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h4 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991085500459808507">Python tools for scientists : an introduction to using Anaconda, Jupyterlab, and Python's scientific libraries</a></h4><p>by Lee Vaughan<br>San Francisco: No Starch Press, 2023.</p>
+  <div class="card-header">EFFECTIVE PYTHON</div>
+  <div class="card-body"><img src="images/cover_slatkin_effective_python.jpg" alt="python crash course book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/8tpq94/cdi_safari_books_v2_9780138172398">Effective Python: 125 Specific Ways to Write Better Python, 3rd edition</a></h3>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">by Lee Vaughan<br>San Francisco: No Starch Press, 2023.</li>
+    <li class="list-group-item"><strong>by Brett Slatkin, 2024.</strong></li>
+    <li class="list-group-item">With practical examples and expanded content, this comprehensive book outlines best practices for writing Python code. Suitable for both intermediate and experienced programmers, the book explores modern Python features and proven techniques for developing robust, maintainable, and efficient code.</li>
+  </ul>
+</div>
+
+:::
+
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4}
+<div class="card bg-secondary mb-3" style="max-width: 20rem;">
+  <div class="card-header">PYTHON TOOLS FOR SCIENTISTS</div>
+  <div class="card-body"><img src="images/cover_pythontoolsscientists.png" alt="python tools for scientists book cover" class="d-block mx-auto" style="max-width: 100%; height: auto;"><h3 class="card-title"><a href="https://search.library.osu.edu/permalink/01OHIOLINK_OSU/1oqfg3i/alma991085500459808507">Python tools for scientists : an introduction to using Anaconda, Jupyterlab, and Python's scientific libraries</a></h3></div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>by Lee Vaughan, 2023.</strong></li>
   </ul>
 </div>
 
 :::
 
 :::
+
 
 # O'Reilly Online Learning
 For additional books and learning materials, the __[O'Reilly Online Learning: Academic/Public Library Edition](https://search.library.osu.edu/permalink/01OHIOLINK_OSU/2g3e0k/alma991060545609708507)__ collection provides extensive access to eBooks and videos in computer science, IT, business, and related subjects. This resource is provided by University Libraries and is available to all Ohio State faculty, students, and staff with a valid osu.edu email address.
