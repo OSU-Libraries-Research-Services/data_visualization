@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lesson 1. Prepare Survey Data – Data Visualization</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./tableau_and_surveys_lesson_2.html" rel="next">
+<link href="./tableau_and_surveys.html" rel="prev">
+<link href="./images/favicon.ico" rel="icon">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f756efce342d6620561cc19ee46528e7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BJ38N1FLJT"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BJ38N1FLJT', { 'anonymize_ip': true});
+</script>
+<link rel="stylesheet" href="https://assets.bux.osu.edu/bux-webfonts2/bux-webfonts2.css">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://osu-libraries-research-services.github.io/data_visualization/" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo light-content">
+    <img src="./images/home_standard_icon.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="https://osu-libraries-research-services.github.io/data_visualization/">
+    <span class="navbar-title">Data Visualization</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./overview.html"> 
+<span class="menu-text">Library Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_basics.html"> 
+<span class="menu-text">Python Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tableau_for_research.html" aria-current="page"> 
+<span class="menu-text">Tableau Tutorials</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/OSU-Libraries-Research-Services/data_visualization"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_and_surveys.html">TABLEAU AND SURVEYS</a></li><li class="breadcrumb-item"><a href="./tableau_and_surveys_lesson_1.html">Lesson 1. Prepare Survey Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">TABLEAU FOR RESEARCH</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_for_research.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_getting_started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 1. Getting Started</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_choose_effective_visual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2. Choose an Effective Visual</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_research_read_interpret_evaluate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Read, Interpret, and Evaluate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_communicate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4. Communicate Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_continue_learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🚀 Continue Learning Tableau</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">TABLEAU AND SURVEYS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys_lesson_1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lesson 1. Prepare Survey Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys_lesson_2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 2. Demographic Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys_lesson_3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 3. Complex Questions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tableau_and_surveys_lesson_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lesson 4. Open Response | Qualitative Data</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">CONTENTS</h2>
+   
+  <ul>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#lesson-1" id="toc-lesson-1" class="nav-link" data-scroll-target="#lesson-1">LESSON 1</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-clarify-research-question" id="toc-step-1.-clarify-research-question" class="nav-link" data-scroll-target="#step-1.-clarify-research-question">Step 1. Clarify research question</a></li>
+  <li><a href="#step-2.-evaluate-dataset" id="toc-step-2.-evaluate-dataset" class="nav-link" data-scroll-target="#step-2.-evaluate-dataset">Step 2. Evaluate dataset</a></li>
+  <li><a href="#step-3.-evaluate-metadata" id="toc-step-3.-evaluate-metadata" class="nav-link" data-scroll-target="#step-3.-evaluate-metadata">Step 3. Evaluate metadata</a>
+  <ul class="collapse">
+  <li><a href="#wide-data" id="toc-wide-data" class="nav-link" data-scroll-target="#wide-data">Wide data</a></li>
+  <li><a href="#tall-data" id="toc-tall-data" class="nav-link" data-scroll-target="#tall-data">Tall data</a></li>
+  </ul></li>
+  <li><a href="#step-4.-select-dimensions-and-measures" id="toc-step-4.-select-dimensions-and-measures" class="nav-link" data-scroll-target="#step-4.-select-dimensions-and-measures">Step 4. Select dimensions and measures</a></li>
+  <li><a href="#step-5.-prepare-data" id="toc-step-5.-prepare-data" class="nav-link" data-scroll-target="#step-5.-prepare-data">Step 5. Prepare data</a>
+  <ul class="collapse">
+  <li><a href="#tableau-prep" id="toc-tableau-prep" class="nav-link" data-scroll-target="#tableau-prep"><img src="images/tableau_prep.png" class="img-fluid"> Tableau Prep</a></li>
+  <li><a href="#step-5.1.-connect-to-data" id="toc-step-5.1.-connect-to-data" class="nav-link" data-scroll-target="#step-5.1.-connect-to-data">Step 5.1. Connect to data</a></li>
+  <li><a href="#step-5.2.-isolate-variables" id="toc-step-5.2.-isolate-variables" class="nav-link" data-scroll-target="#step-5.2.-isolate-variables">Step 5.2. Isolate variables</a></li>
+  <li><a href="#step-5.3.-reshape-data" id="toc-step-5.3.-reshape-data" class="nav-link" data-scroll-target="#step-5.3.-reshape-data">Step 5.3. Reshape data</a></li>
+  <li><a href="#step-5.4.-output-files" id="toc-step-5.4.-output-files" class="nav-link" data-scroll-target="#step-5.4.-output-files">Step 5.4. Output files</a></li>
+  </ul></li>
+  <li><a href="#step-6.-modifycreate-data-dictionary" id="toc-step-6.-modifycreate-data-dictionary" class="nav-link" data-scroll-target="#step-6.-modifycreate-data-dictionary">Step 6. Modify|Create data dictionary</a></li>
+  <li><a href="#step-7.-relate-datasets" id="toc-step-7.-relate-datasets" class="nav-link" data-scroll-target="#step-7.-relate-datasets">Step 7. Relate datasets</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tableau_and_surveys.html">TABLEAU AND SURVEYS</a></li><li class="breadcrumb-item"><a href="./tableau_and_surveys_lesson_1.html">Lesson 1. Prepare Survey Data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lesson 1. Prepare Survey Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>👷🚧 This page is under construction 🚧👷</p>
+<p>This lesson introduces a practical workflow for preparing survey data for analysis and visualization in Tableau. Using the <em>2024 Citywide Mobility Survey</em> from <a href="https://opendata.cityofnewyork.us/">New York City’s OpenData</a>, it explores how to assess survey structure and documentation, identify dimensions and measures, and clean and reshape data to support effective analysis.</p>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<ol type="1">
+<li><strong>Evaluate survey datasets and metadata</strong> to understand survey structure, questions, and response formats.</li>
+<li><strong>Create and document a data dictionary</strong> that describes survey variables, response options, and coding schemes.</li>
+<li><strong>Apply common data cleaning and preparation techniques</strong> required for survey analysis and visualization.</li>
+<li><strong>Pivot and reshape survey data</strong> to support analysis and visualization in Tableau.</li>
+</ol>
+<p>This tutorial supports The Ohio State University Libraries Research Commons <a href="https://library.osu.edu/events?combine=&amp;tid=All&amp;field_location_code_value=10&amp;sort_bef_combine=field_end_date_value_ASC">Tableau and Surveys</a> workshop series. Building on concepts introduced in the <a href="./tableau_for_research.html">Tableau for Research</a> workshops, it introduces <strong>INTERMEDIATE</strong> Tableau users to techniques for working with, analyzing, and communicating survey data in Tableau.</p>
+</section>
+<section id="lesson-1" class="level1">
+<h1>LESSON 1</h1>
+<section id="step-1.-clarify-research-question" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-clarify-research-question">Step 1. Clarify research question</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/TTM-BicyclesBike.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="250"></p>
+</figure>
+</div>
+<p>The first step for any survey analysis and visualization project is to clarify your research question or analysis goal. Because the Citywide Mobility Survey is so large and complex, let’s focus on a single mode of transportation: <strong>Bicycles</strong>.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseOne" aria-expanded="true" aria-controls="ex1-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 1. Clarify research question
+</button>
+</h2>
+<div id="ex1-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex1-headingOne" data-bs-parent="#accordionExample">
+<div class="accordion-body fs-4">
+<p>
+The <strong>Citywide Mobility Survey 2024</strong> includes questions about bicycle ownership, bicycle use, e-bikes, and barriers to cycling. What research questions might a data analyst working for The New York City Department of Transportation consider to help inform bicycle infrastructure needs, such as the addition of bike lanes, bicycle parking, and support for e-bikes?
+</p>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex1-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex1-collapseTwo" aria-expanded="false" aria-controls="ex1-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex1-headingTwo" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+<strong>Research Questions</strong>
+<ul>
+<li>
+Who is most likely to ride a bicycle in New York City?
+</li>
+<li>
+How does bicycle use vary by age, income, employment status, or education level?
+</li>
+<li>
+What are the most common reasons for riding a bicycle?
+</li>
+<li>
+What factors prevent residents from biking more often?
+</li>
+<li>
+How has bicycle use increased or decreased for different groups of residents?
+</li>
+<li>
+Are e-bike owners different from traditional bicycle owners?
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-2.-evaluate-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-evaluate-dataset">Step 2. Evaluate dataset</h2>
+<p>The next step is to critically evaluate the dataset, its context, and structure. Look for a description of the dataset and consider:</p>
+<ul>
+<li>Who created the dataset and why?</li>
+<li>What procedures were used to collect the data?</li>
+<li>What information is included, and what is missing?</li>
+<li>Are there any potential sources of bias in the data that have not been disclosed?</li>
+<li>When was the data collected or last updated?</li>
+<li>Does the data still reflect current trends?</li>
+</ul>
+<p>Consider whether the dataset contains the information needed to answer your question(s) and whether the data collection methods are appropriate for your field or area of study. If the dataset does not adequately support your objectives, you may need to identify a different data source or combine it with additional datasets.</p>
+<div id="accordionExample" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex2-headingOne">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex2-collapseOne" aria-expanded="true" aria-controls="ex2-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 2. Critically evaluate dataset
+</button>
+</h2>
+<div id="ex2-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="headingOne" data-bs-parent="#accordionExample2">
+<div class="accordion-body fs-4">
+<p>
+Locate the <strong><em>2024 Citywide Mobility Survey</em></strong> in the <a href="https://opendata.cityofnewyork.us/">NYC OpenData</a> portal. Review the dataset description and documentation, then use the questions in <a href="#step-2.-evaluate-dataset">Step 2</a> to critically evaluate the dataset.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="step-3.-evaluate-metadata" class="level2">
+<h2 class="anchored" data-anchor-id="step-3.-evaluate-metadata">Step 3. Evaluate metadata</h2>
+<p>Review the survey’s metadata and underlying data structure. <a href="https://en.wikipedia.org/wiki/Metadata">Metadata</a>, or data about data, documents variable definitions, units of measurement, data types, survey question types, and relationships among files. Understanding this information upfront is essential for efficient analysis, accurate interpretations and effective visualization.</p>
+<p>Review the survey questions to identify the <strong>dimensions</strong> (categorical variables) and <strong>measures</strong> (quantitative variables) relevant to your research question. Pay close attention to how each variable is defined and how survey responses are coded. For example, are numeric values used to represent text responses?</p>
+<p>Within the survey dataset itself, consider the following questions:</p>
+<ul>
+<li>What field serves as the unique identifier for each survey response?</li>
+<li>Are datatypes consistent within a column or series?</li>
+<li>How are Null or missing values handled?</li>
+<li>Are survey weights included, and if so, how should they be applied?</li>
+<li>If the survey data is stored across multiple tables or files, how are the relationships between them defined?</li>
+</ul>
+<p>Finally, examine the structure of the dataset. Is the dataset organized in <strong>wide</strong> format (many columns and fewer rows) or a <strong>tall</strong> format (fewer columns and more rows)? Will the data need to be pivoted or reshaped before it can be analyzed in Tableau?</p>
+<section id="wide-data" class="level3">
+<h3 class="anchored" data-anchor-id="wide-data">Wide data</h3>
+<p>In <strong>wide</strong> data, each respondent is represented by a single row, with survey responses stored across multiple columns.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: center;">Age</th>
+<th style="text-align: center;">Number of Visits</th>
+<th style="text-align: center;">Last Visit Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Helen</td>
+<td style="text-align: center;">68</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">8/13/2026</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rob</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4/1/2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anna</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">11/6/2025</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jan</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">6/10/2026</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tall-data" class="level3">
+<h3 class="anchored">Tall data</h3>
+<p>In <strong>tall</strong> data, responses are stored in separate rows, with each row representing a single dimension-measure pair. As a result, a single respondent may be represented by multiple rows.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: center;">Measure</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Helen</td>
+<td style="text-align: left;">Age</td>
+<td style="text-align: center;">68</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Helen</td>
+<td style="text-align: left;">Number of Visits</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Helen</td>
+<td style="text-align: left;">Last Visit Date</td>
+<td style="text-align: center;">8/13/2026</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rob</td>
+<td style="text-align: left;">Age</td>
+<td style="text-align: center;">15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rob</td>
+<td style="text-align: left;">Number of Visits</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rob</td>
+<td style="text-align: left;">Last Visit Date</td>
+<td style="text-align: center;">4/1/2025</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anna</td>
+<td style="text-align: left;">Age</td>
+<td style="text-align: center;">43</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Anna</td>
+<td style="text-align: left;">Number of Visits</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Anna</td>
+<td style="text-align: left;">Last Visit Date</td>
+<td style="text-align: center;">11/6/2025</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jan</td>
+<td style="text-align: left;">Age</td>
+<td style="text-align: center;">35</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jan</td>
+<td style="text-align: left;">Number of Visits</td>
+<td style="text-align: center;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Jan</td>
+<td style="text-align: left;">Last Visit Date</td>
+<td style="text-align: center;">6/10/2026</td>
+</tr>
+</tbody>
+</table>
+<p>Tableau is optimized for <strong>tall</strong> data, so datasets often need to be reshaped from wide to tall format before analysis. This structure provides greater flexibility for filtering, aggregating, and visualizing data.</p>
+<div id="accordionExercise3" class="accordion">
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex3-headingOne" data-anchor-id="tall-data">
+<button class="accordion-button fs-3" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseOne" aria-expanded="true" aria-controls="ex3-collapseOne">
+<img src="images/guidepost_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Exercise 3: Review metadata and survey structure
+</button>
+</h2>
+<div id="ex3-collapseOne" class="accordion-collapse collapse show fs-4" aria-labelledby="ex3-headingOne" data-bs-parent="#accordionExercise3">
+<div class="accordion-body fs-4">
+<p>
+Download and review the survey documentation, metadata, and dataset files for the <strong>2024 Citywide Mobility Survey</strong> including:
+</p>
+<ul>
+<li>
+<a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Day-2024/naav-ygga/about_data">Citywide Mobility Survey - Day 2024</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Household-2024/5mb3-padx/about_data">Citywide Mobility Survey - Household 2024</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Person-2024/i2im-iqtt/about_data">Citywide Mobility Survey - Person 2024</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Trip-2024/wgnh-qwsg/about_data">Citywide Mobility Survey - Trip 2024</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/Transportation/Citywide-Mobility-Survey-Vehicle-2024/qhkz-4dqm/about_data">Citywide Mobility Survey - Vehicle 2024</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/593f8f55-e40e-4fa9-a88c-c9fbee816279?download=true&amp;filename=NYC%20Citywide%20Mobility%20Survey%202024%20Questionnaire.pdf">NYC_Citywide_Mobility_Survey_2024_Questionnaire.pdf</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&amp;filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx">Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx</a>
+</li>
+<li>
+<a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/1272677e-34ae-44f5-ab2f-cbaf87b8c07e?download=true&amp;filename=CMS_Survey_User_Guide_2024_final.pdf">CMS_Survey_User_Guide_2024_final.pdf</a>
+</li>
+</ul>
+<p>
+Use the questions below to evaluate the dataset’s structure and prepare it for analysis in Tableau:
+</p>
+<ol>
+<li>
+Review the survey questionnaire and metadata. Identify dimensions needed to answer 1-2 research questions outlined in <a href="#ex1-headingTwo">Exercise 1</a>. How is each dimension defined?
+</li>
+<li>
+Identify measures needed to answer 1-2 research questions outlined in <a href="#ex1-headingTwo">Exercise 1</a>. How is each measure defined?
+</li>
+<li>
+How are the survey responses coded? Are any text responses represented by numerical values? Provide one or two examples
+</li>
+<li>
+What field serves as the unique identifier in each dataset (HOUSHOLD, PERSON, TRIP, and VEHICLE)?
+</li>
+<li>
+How are null, blank, or missing values represented in the dataset?
+</li>
+<li>
+Are survey weights included? If so, what documentation explains how they should be applied?
+</li>
+<li>
+How are the HOUSEHOLD, PERSON, TRIP, and VEHICLE datasets related? Which fields are used to join or relate them?
+</li>
+<li>
+Is the dataset organized in a <strong>wide</strong> (many columns, fewer rows) or <strong>tall</strong> (fewer columns, more rows) format?
+</li>
+<li>
+Based on your review, what data preparation steps would you recommend before beginning analysis?Would the dataset need to be reshaped (pivoted) before analysis in Tableau? Why or why not? How might you filter visualizations or aggregate data?
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="accordion-item">
+<h2 class="accordion-header anchored" id="ex3-headingTwo">
+<button class="accordion-button fs-3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ex3-collapseTwo" aria-expanded="false" aria-controls="ex3-collapseTwo">
+<img src="images/magnifying_glass_standard_icon.png" alt="" aria-hidden="true" style="height: 3rem; vertical-align: middle; margin-right: 0.5rem;">Solution:
+</button>
+</h2>
+<div id="ex3-collapseTwo" class="accordion-collapse collapse" aria-labelledby="ex3-headingTwo" data-bs-parent="#accordionExercise3">
+<div class="accordion-body">
+<ol>
+<li>
+The Table of Contents for the <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/593f8f55-e40e-4fa9-a88c-c9fbee816279?download=true&amp;filename=NYC%20Citywide%20Mobility%20Survey%202024%20Questionnaire.pdf">2024 Citywide Mobility Survey Questionnaire</a> links each question to a variable name included in the <strong>Columns Information</strong> tab in the <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&amp;filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx">2024 Citywide Mobility Survey Data Dictionary</a>. The <strong>HOUSEHOLD</strong>, <strong>PERSON</strong>, and <strong>TRIP</strong> datasets host the relevant dimensions and measures needed for our project.<br>
+</li>
+<li>
+Dimensions and measure that may answer the research questions you selected are listed in <a href="#step-4.-select-dimensions-and-measures">Step 4. Select dimensions and measures</a>
+</li>
+<li>
+Text responses are represented by numerical values. These values are defined in the <strong>Expected/Allowed Values</strong> column on the <strong>Column Information</strong> tab in the data dictionary.
+</li>
+<li>
+The <code>hh_id</code> or <em>Household Id</em> serves as the unique identifier for each row in the <strong>HOUSEHOLD</strong> dataset. The <code>person_id</code> or <em>Person Id</em> serves as the unique identifier for each row in the <strong>PERSON</strong> and <strong>TRIP</strong> dataset.
+</li>
+<li>
+Null values are represented by the values
+<ul>
+<li>
+995 - Missing response
+</li>
+<li>
+996 - Not applicable
+</li>
+<li>
+997 - Missing response
+</li>
+<li>
+998 - Don’t know
+</li>
+<li>
+999 - Prefer not to answer
+</li>
+<li>
+Null
+</li>
+</ul>
+For additional information, see page 15 of <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/1272677e-34ae-44f5-ab2f-cbaf87b8c07e?download=true&amp;filename=CMS_Survey_User_Guide_2024_final.pdf">2024 Citywide Mobility Survey User Guide</a>
+</li>
+<li>
+Survey weights are present in each dataset. Information about survey weights is provided in the user guide
+<ul>
+<li>
+<strong>HOUSEHOLD</strong>
+<ul>
+<li>
+<code>hh_weight_citywide</code>
+</li>
+<li>
+<code>hh_weight_zonal</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>PERSON</strong>
+<ul>
+<li>
+<code>person_weight_citywide</code>
+</li>
+<li>
+<code>person_weight_zonal</code>
+</li>
+</ul>
+</li>
+<li>
+<strong>TRIP</strong>
+<ul>
+<li>
+<code>trip_weight_citywide</code>
+</li>
+<li>
+<code>trip_weight_zonal</code>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+Relationships between each dataset are defined on the <strong>Relational Diagram</strong> tab in the data dictionary
+</li>
+<li>
+Each dataset is organized in wide format. Each row represents a household, person, trip, or vehicle, with survey responses stored across many columns.
+</li>
+<li>
+Both wide and tall data is needed for analysis. Some variables may need to be pivoted into a tall fomrat to make them easier to analyze and visualize in Tableau. Demographic variables can remain in a wide table and be related to reshaped survey responses using the <code>person_id</code>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="step-4.-select-dimensions-and-measures" class="level2">
+<h2 class="anchored" data-anchor-id="step-4.-select-dimensions-and-measures">Step 4. Select dimensions and measures</h2>
+<p>Dimensions and measures that may answer the research questions introduced in <a href="#step-1.-research-question">Exercise 1</a> include:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Household</th>
+<th>Person</th>
+<th>Trip</th>
+<th>Demographics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>bicycle_type_1</td>
+<td>age</td>
+<td>bike_park_loc</td>
+<td>age</td>
+</tr>
+<tr class="even">
+<td>bicycle_type_2</td>
+<td>bike_freq</td>
+<td>citi_bike_alt_mode</td>
+<td>education</td>
+</tr>
+<tr class="odd">
+<td>bicycle_type_3</td>
+<td>bike_purp_1</td>
+<td>d_cms_zone</td>
+<td>employment</td>
+</tr>
+<tr class="even">
+<td>bicycle_type_4</td>
+<td>bike_purp_2</td>
+<td>d_purpose</td>
+<td>ethnicity</td>
+</tr>
+<tr class="odd">
+<td>bicycle_type_997</td>
+<td>bike_purp_3</td>
+<td>hh_id</td>
+<td>gender</td>
+</tr>
+<tr class="even">
+<td>bike_change</td>
+<td>bike_purp_4</td>
+<td>mode_priority</td>
+<td>hh_id</td>
+</tr>
+<tr class="odd">
+<td>ebike_new</td>
+<td>bike_purp_5</td>
+<td>mode_type</td>
+<td>income_broad</td>
+</tr>
+<tr class="even">
+<td>ebike_new_no_1</td>
+<td>bike_purp_6</td>
+<td>o_cms_zone</td>
+<td>industry</td>
+</tr>
+<tr class="odd">
+<td>ebike_new_no_2</td>
+<td>bike_purp_7</td>
+<td>o_purpose</td>
+<td>race</td>
+</tr>
+<tr class="even">
+<td>ebike_new_no_3</td>
+<td>bike_purp_997</td>
+<td>person_id</td>
+<td>relationship</td>
+</tr>
+<tr class="odd">
+<td>ebike_new_no_4</td>
+<td>bike_stolen</td>
+<td>purpose_app</td>
+<td>student</td>
+</tr>
+<tr class="even">
+<td>ebike_new_no_5</td>
+<td>bike_stolen_followup</td>
+<td>transit_access</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ebike_new_no_6</td>
+<td>citi_bike_freq</td>
+<td>transit_egress</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ebike_new_no_997</td>
+<td>citi_bike_pay</td>
+<td>trip_id</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>hh_id</td>
+<td>citi_bike_type</td>
+<td>trip_weight_citywide</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>hh_weight_citywide</td>
+<td>education</td>
+<td>trip_weight_zonal</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>hh_weight_zonal</td>
+<td>employment</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>increased_bike_1</td>
+<td>ethnicity</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>increased_bike_2</td>
+<td>gender</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>increased_bike_3</td>
+<td>hh_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>increased_bike_4</td>
+<td>industry</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>increased_bike_5</td>
+<td>no_bike_nyc_1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>increased_bike_6</td>
+<td>no_bike_nyc_10</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>increased_bike_7</td>
+<td>no_bike_nyc_11</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>increased_bike_997</td>
+<td>no_bike_nyc_2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>income_broad</td>
+<td>no_bike_nyc_3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>num_bicycles</td>
+<td>no_bike_nyc_4</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>reduced_bike_1</td>
+<td>no_bike_nyc_5</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>reduced_bike_2</td>
+<td>no_bike_nyc_6</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>reduced_bike_3</td>
+<td>no_bike_nyc_7</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>reduced_bike_4</td>
+<td>no_bike_nyc_8</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>reduced_bike_5</td>
+<td>no_bike_nyc_9</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>reduced_bike_6</td>
+<td>no_bike_nyc_997</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>reduced_bike_7</td>
+<td>no_bike_share_1</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>reduced_bike_997</td>
+<td>no_bike_share_2</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>no_bike_share_3</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>no_bike_share_4</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>no_bike_share_5</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>no_bike_share_6</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>no_bike_share_7</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>no_bike_share_8</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>no_bike_share_997</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>person_id</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>person_weight_citywide</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>person_weight_zonal</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>race</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>relationship</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>school_bike_park</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>school_mode</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>school_mode_bike</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>school_type</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>student</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>work_bike_park</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>work_mode</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>work_mode_bike</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="step-5.-prepare-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-5.-prepare-data">Step 5. Prepare data</h2>
+<p>Taking time to identify necessary data preparation steps before beginning analysis and visualization can save considerable time and frustration later. Before reshaping any data, determine whether to clean it in Tableau, or before you connect the data to Tableau. If only a few changes are needed, Tableau’s data grouping and calculated fields features are often sufficient. If extensive cleaning or transformation is required, however, it is generally more efficient to prepare the data before importing it into Tableau. This approach can improve Tableau workbook performance, simplify your workflow, and help keep your Tableau workbook organized.</p>
+<p>Some common data preparation tasks include:</p>
+<ul>
+<li><strong>Standardizing</strong> names, locations, and formats (“OH” = “Ohio”)</li>
+<li><strong>Removing</strong> unnecessary punctuation, including leading and trailing spaces</li>
+<li><strong>Eliminating</strong> duplicate rows, when appropriate</li>
+<li><strong>Converting</strong> text to consistent case (e.g.&nbsp;all lowercase)</li>
+<li><strong>Replacing</strong> null values with zeros or other meaningful defaults</li>
+<li><strong>Standardizing</strong> dates and time formats</li>
+<li><strong>Splitting or unmerging</strong> columns</li>
+<li><strong>Verifying and correcting</strong> data types</li>
+<li><strong>Pivoting</strong> or reshaping data from <em>wide</em> to <em>tall</em> to support analysis and visualization</li>
+</ul>
+<p>There are many tools available for data preparation. Simple tasks can often be completed in <strong>Excel</strong> or <strong>Google Sheets</strong>, while more complex workflows may be better handled with <strong>Tableau Prep, R,</strong> or <strong>Python</strong>. The best choice depends on the size and complexity of your dataset, the transformations you need to perform, and the tools you’re most comfortable using.</p>
+<section id="tableau-prep" class="level3">
+<h3 class="anchored" data-anchor-id="tableau-prep"><img src="images/tableau_prep.png" class="img-fluid"> Tableau Prep</h3>
+<p>Tableau Prep is a visual, drag-and-drop tool used to clean, combine, and transform data from multiple sources. Tableau Prep is particularly useful for preparing survey data, as the tool documents each step taken to prepare data for analysis.</p>
+<p>To prepare the <strong>2024 Citywide Mobility Survey</strong> data to answer the research questions introduced in <a href="#step-1.-research-question">Exercise 1</a> using Tableau Prep, start by connecting the data in Tableau Prep Builder.</p>
+<!-- **STEP 5_1: Connect to data** -->
+</section>
+<section id="step-5.1.-connect-to-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.1.-connect-to-data">Step 5.1. Connect to data</h3>
+<p>On Tableau Prep’s <strong>Start Page</strong></p>
+<ol type="1">
+<li>In the <strong>Connections</strong> pane, click the <code>+</code> to create a new connection.</li>
+<li>Connect to the HOUSEHOLD, PERSON, AND TRIP files downloaded in <a href="#ex3-headingOne">Exercise 3</a>.</li>
+<li>As each file is added, right-click the input and rename it as follows:</li>
+</ol>
+<ul>
+<li><code>Citywide_Mobility_Survey_-_Household_2024.csv</code> → <strong>HOUSEHOLD</strong></li>
+<li><code>Citywide_Mobility_Survey_-_Person_2024.csv</code> → <strong>PERSON</strong></li>
+<li><code>Citywide_Mobility_Survey_-_Trip_2024.csv</code> → <strong>TRIP</strong></li>
+</ul>
+<ol start="4" type="1">
+<li>The three input tables will appear in the <strong>Flow pane</strong>. Selecting an input table displays its contents in the <strong>Input pane</strong> directly below the <strong>Flow pane</strong>. Use the <strong>^</strong> on the right side of the <strong>Flow pane</strong> to expand or collapse the pane as needed.</li>
+</ol>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_1_connect_data.mp4" type="video/mp4">
+</video>
+</section>
+<section id="step-5.2.-isolate-variables" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.2.-isolate-variables">Step 5.2. Isolate variables</h3>
+<!-- **STEP 5_2: Isolate variables** -->
+<p>For <strong>each input table</strong>, retain only the dimensions and measures identified in <a href="#step-4.-select-dimensions-and-measures">Step 4</a> Removing unnecessary fields reduces the size of the dataset, simplifies preparation, and improves Tableau workbook performance.</p>
+<ul>
+<li><strong>Shift</strong> + <strong>click</strong> to select a range of consecutive rows.</li>
+<li><strong>Ctrl</strong> + <strong>click</strong> (Windows) or <strong>Cmd</strong> + <strong>click</strong> (Mac) to select multiple individual, non-adjacent rows</li>
+</ul>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_2_isolate_variables.mp4" type="video/mp4">
+</video>
+</section>
+<section id="step-5.3.-reshape-data" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.3.-reshape-data">Step 5.3. Reshape data</h3>
+<!-- **STEP 5_3. Reshape data** -->
+<p>To optimize survey data for analysis in Tableau, create <strong>demographic</strong> and <strong>weights</strong> tables in a wide format and a <strong>survey response</strong> table in a long (pivoted) format. The demographic and weights tables should contain <strong>one row per Respondent ID</strong>, while the survey response table should contain <strong>multiple rows per Respondent ID</strong>, with one row for each survey question and response. These tables can then be related using the <strong>Respondent ID</strong> field.</p>
+<p>Keeping demographic and weight data in a wide format preserves a single record for each respondent, making it easier to filter, group, segment, and properly weight variables without introducing duplicate records or affecting aggregations. Survey question responses should be pivoted into a long format to support flexible analysis and visualization across many questions. This structure provides an effective balance of performance, usability, and analytical flexibility in Tableau.</p>
+<section id="demographics" class="level4">
+<h4 class="anchored" data-anchor-id="demographics">Demographics</h4>
+<p>To create the <strong>DEMOGRAPHICS</strong> table:</p>
+<ol type="1">
+<li>Click the <strong>+</strong> sign to the right of the <strong>HOUSEHOLD</strong> table and select <strong>Clean Step</strong>. This creates a branch from the HOUSEHOLD table where you can filter, rename, and transform fields without modifying the original table.</li>
+<li>In the <strong>Input pane</strong>, switch from <strong>Profile</strong> view to <strong>Field List</strong> view by clicking the <img src="images/tableau_prep_show_field_list.png" class="img-fluid"> <strong>Show Field List</strong> icon to the left of the Search Box.</li>
+<li>Retain only the fields:
+<ul>
+<li><strong>hh_id</strong> (this is the [Respondent ID])</li>
+<li><strong>income_broad</strong></li>
+</ul></li>
+<li>In the <strong>Flow Pane</strong>, right-click the <strong>Clean Step</strong> and rename to <strong>H_DEMOGRAPHICS</strong>.</li>
+<li>Repeat Steps 2-4 for the <strong>PERSON</strong> table. Retain only the following fields:
+<ul>
+<li><strong>hh_id</strong></li>
+<li><strong>person_id</strong></li>
+<li><strong>age</strong></li>
+<li><strong>can_drive</strong></li>
+<li><strong>education</strong></li>
+<li><strong>employment</strong></li>
+<li><strong>ethnicity</strong></li>
+<li><strong>gender</strong></li>
+<li><strong>industry</strong></li>
+<li><strong>race</strong></li>
+<li><strong>relationship</strong></li>
+<li><strong>student</strong></li>
+</ul>
+Rename the resulting step <strong>P_DEMOGRAPHICS</strong>.</li>
+<li>Drag <strong>P_DEMOGRAPHICS</strong> onto <strong>H_DEMOGRAPHICS</strong> and drop it on the <strong>Join</strong> icon when it appears. The <strong>Join Profile</strong> will open in the <strong>Input pane</strong>. Verify the <strong>Join Clause</strong> is <strong>H_DEMOGRAPHICS hh_id</strong> = <strong>P_DEMOGRAPHICS hh_id</strong> and the <strong>Join Type</strong> is <strong>Inner</strong>. Switch from <strong>Profile</strong> view to <strong>Field List</strong> view and remove the duplicate <strong>hh_id (hh_id_-1)</strong>. Rename the resulting step <strong>DEMOGRAPHICS</strong></li>
+</ol>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_3_demographics.mp4" type="video/mp4">
+</video>
+</section>
+<section id="weights" class="level4">
+<h4 class="anchored" data-anchor-id="weights">Weights</h4>
+<p>To create the <strong>WEIGHTS</strong> tables:</p>
+<ol type="1">
+<li>Create a new branch from the <strong>HOUSEHOLD</strong> table by clicking the <strong>+</strong> sign to the right of <strong>HOUSEHOLD</strong> and selecting <strong>Clean Step</strong>. <strong><em>IMPORTANT</em></strong>: Be sure to select the <strong>+</strong> sign attached directly to the <strong>HOUSEHOLD</strong> household table. Selecting the <strong>+</strong> icon on an existing black flow line will add a new step to the <strong>H_DEMOGRAPHICS</strong> branch.</li>
+<li>Rename the step <strong>H_WEIGHTS</strong></li>
+<li>Retain the following fields:
+<ul>
+<li>hh_id</li>
+<li>hh_weight_zonal</li>
+<li>hh_weight_citywide</li>
+</ul></li>
+<li>Create a new branch from the <strong>PERSON</strong> table, rename the step <strong>P_WEIGHTS</strong> and retain the following fields:
+<ul>
+<li>hh_id</li>
+<li>person_id</li>
+<li>person_weight_zonal</li>
+<li>person_weight_citywide</li>
+</ul></li>
+<li>Create a new branch from the <strong>TRIP</strong> table, rename the step <strong>T_WEIGHTS</strong> and retain the following fields:
+<ul>
+<li>hh_id</li>
+<li>person_id</li>
+<li>trip_id</li>
+<li>trip_weight_zonal</li>
+<li>trip_weight_citywide</li>
+</ul></li>
+</ol>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_4_weights.mp4" type="video/mp4">
+</video>
+</section>
+<section id="survey-responses" class="level4">
+<h4 class="anchored" data-anchor-id="survey-responses">Survey Responses</h4>
+<p>To create the <strong>SURVEY_RESPONSES</strong> table:</p>
+<ol type="1">
+<li>Create a new branch from the <strong>HOUSEHOLD</strong> table by clicking the <strong>+</strong> sign to the right of <strong>HOUSEHOLD</strong> and selecting <strong>Clean Step</strong>. Rename the step <strong>S_HOUSEHOLD</strong> and retain all fields except:
+<ul>
+<li><strong>hh_weight_zonal</strong></li>
+<li><strong>hh_weight_citywide</strong></li>
+</ul></li>
+<li>Repeat Step 1 for the <strong>PERSON</strong> table, renaming the step <strong>S_PERSON</strong> and retaining all fields except:
+<ul>
+<li><strong>person_weight_zonal</strong></li>
+<li><strong>person_weight_citywide</strong></li>
+</ul></li>
+<li>Repeat Step 1 for the <strong>TRIP</strong> table, renaming the step <strong>S_TRIP</strong> and retaining all fields except:
+<ul>
+<li><strong>trip_weight_zonal</strong></li>
+<li><strong>trip_weight_citywide</strong></li>
+</ul></li>
+<li>Union the three survey response tables by dragging <strong>S_PERSON</strong> onto <strong>S_HOUSEHOLD</strong> and dropping it on the <strong>Union</strong> icon when it appears. Then drag <strong>S_TRIP</strong> onto the resulting union and drop it on the <strong>Add to Union</strong> icon. Remove the <strong>Table Names</strong> field. Rename the resulting step <strong>SURVEY_RESPONSES</strong>.</li>
+<li>Pivot the survey response table. Click the <strong>+</strong> sign to the right of the <strong>SURVEY_RESPONSES</strong> step and select <strong>Pivot</strong>. Drop all fields into the <strong>Pivot Fields</strong> pane except:
+<ul>
+<li>hh_id</li>
+<li>person_id</li>
+</ul></li>
+<li>Rename:
+<ul>
+<li><strong>Pivot1 Values</strong> → <strong>column_abbreviation</strong></li>
+<li><strong>Pivot1 Names</strong> → <strong>numeric_value</strong></li>
+</ul></li>
+<li>Filter the <strong>numeric_value</strong> field to exclude <strong>Null</strong> values.</li>
+<li>Rename the pivot step <strong>SURVEY_RESPONSES_PIVOT</strong>. The <strong>SURVEY_RESPONSES_PIVOT</strong> table now contains one row per respondent per survey question</li>
+</ol>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_5_survey_responses.mp4" type="video/mp4">
+</video>
+</section>
+</section>
+<section id="step-5.4.-output-files" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.4.-output-files">Step 5.4. Output files</h3>
+<!-- **STEP 5_4. Output files** -->
+<ol type="1">
+<li>Click the <strong>+</strong> sign to the right of the <strong>DEMOGRAPHICS</strong> step and select <strong>Output Step</strong>. Rename the output step <strong>D_OUTPUT</strong> and select <strong>Comma Separated Values (.csv)</strong> as the <strong>Output Type</strong>. Click <strong>Browse</strong> to select a location to save the file, name the file <code>demographics.csv</code>, and click <strong>Accept</strong>. Then click <strong>Run Flow</strong>. This will create the <code>demographics.csv</code> file in the location you specified.</li>
+<li>Repeat Step 1 for each <strong>WEIGHTS</strong> step.
+<ul>
+<li>For <strong>H_WEIGHTS</strong>, name the output file <code>household_weights.csv</code></li>
+<li>For <strong>P_WEIGHTS</strong>, name the output file <code>person_weights.csv</code></li>
+<li>For <strong>T_WEIGHTS</strong>, name the output file <code>trip_weights.csv</code></li>
+</ul>
+Click <strong>Run Flow</strong> to create the output.</li>
+<li>Repeat Step 1 for the <strong>SURVEY_RESPONSES_PIVOT</strong> step and name the output file <code>survey_responses.csv</code>. Click <strong>Run Flow</strong> to create the output.</li>
+</ol>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_6_output.mp4" type="video/mp4">
+</video>
+<p>The following <code>.csv</code> files are now ready for analysis in Tableau:</p>
+<ul>
+<li><code>demographics.csv</code></li>
+<li><code>household_weights.csv</code></li>
+<li><code>person_weights.csv</code></li>
+<li><code>trip_weights.csv</code></li>
+<li><code>survey_responses.csv</code></li>
+</ul>
+</section>
+</section>
+<section id="step-6.-modifycreate-data-dictionary" class="level2">
+<h2 class="anchored" data-anchor-id="step-6.-modifycreate-data-dictionary">Step 6. Modify|Create data dictionary</h2>
+<p>The <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&amp;filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx%22">Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx</a> file provides an overview of HOUSEHOLD, PERSON, DAY, TRIP, and VEHICLE datasets. It documents the purpose of each table, defines the variables contained within them, and explains the coding used for the survey responses. A relationship diagram illustrating how each table is connected using the household, person, and day identifiers is also included, as well as a tab disclosing the dataset’s revision history.</p>
+<p>After pivoting the survey response fields, we can use the column abbreviation with the numeric value variables to relate our survey responses to the original survey questions and their corresponding text values. To support this process, however, the <strong>Column Information</strong> worksheet in the <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/af8301d7-20ee-4fb7-985a-b3f96c71f0f5?download=true&amp;filename=Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx%22">Citywide_Mobility_Survey-_Datasets-Collections_2024.xlsx</a> file must be restrctured into a more analysis-friendly data dictionary.</p>
+<p>To update the <strong>Column Information</strong> worksheet:</p>
+<ul>
+<li>Remove the <strong>Citywide Mobility Survey Tables</strong> title row so that the column headers in row 2 become the first row of the worksheet.</li>
+<li>Restructure the worksheet so that it contains <strong>one row for each survey question-response combination</strong>.</li>
+<li>Split the existing <strong>Expected/Allowed Values</strong> field into two separate columns:
+<ul>
+<li><strong>numeric_value</strong>: the numeric code associated with the response.</li>
+<li><strong>column_abbreviation</strong>: the correspnding survey response variable abbreviation (column name).</li>
+</ul></li>
+<li>Using the <a href="https://data.cityofnewyork.us/api/views/naav-ygga/files/593f8f55-e40e-4fa9-a88c-c9fbee816279?download=true&amp;filename=NYC%20Citywide%20Mobility%20Survey%202024%20Questionnaire.pdf">NYC_Citywide_Mobility_Survey_2024_Questionnaire</a>, lookup each survey variable abbreviation and add:
+<ul>
+<li><strong>question_number</strong>: the survey question number.</li>
+<li><strong>question_text</strong>: the full text of the survey question.</li>
+</ul></li>
+<li>For matrix questions, add a <strong>row_item</strong> column containing the full text of the matrix row associated with each response.</li>
+</ul>
+<p>For example, the matrix question <em>“What are the reasons you do not ride a bicycle more often?”</em> has multiple row items, including <em>“I do not own a bicycle”</em> and <em>“I do not feel safe riding a bicycle.”</em> Each item should be recorded in the <strong>row_item</strong> column alongside its corresponding survey response.</p>
+<p>The <a href="data/data_dictionary_bikes.csv">data_dictionary_bikes.csv</a> file contains a preprocessed version of the data dictionary that includes the variables needed to answer the research questions introduced in <a href="#step-1.-research-question">Exercise 1</a>. Each record represents a single survey question-response combination and includes the question number, question text, row item (when applicable), column abbreviation, and numeric value.</p>
+</section>
+<section id="step-7.-relate-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="step-7.-relate-datasets">Step 7. Relate datasets</h2>
+<p>The final step in preparing the survey data for analysis in Tableau is to relate the demographic, weights, survey response, and data dictionary tables.</p>
+<ol type="1">
+<li>Open Tableau Desktop and connect to the five <code>.csv</code> files created in <a href="#step-5.-prepare-data">Step 5</a> and the <a href="data/data_dictionary_bikes.csv">data_dictionary_bikes.csv</a> file.
+<ul>
+<li><a href="data/survey_responses.csv">survey_responses.csv</a></li>
+<li><a href="data/data_dictionary_bikes.csv">data_dictionary.csv</a></li>
+<li><a href="data/demographics.csv">demographics.csv</a></li>
+<li><a href="data/household_weights.csv">household_weights.csv</a></li>
+<li><a href="data/person_weights.csv">person_weights.csv</a></li>
+<li><a href="data/trip_weights.csv">trip_weights.csv</a></li>
+</ul></li>
+<li>Drag and drop the <strong>survey_response.csv</strong> table to the canvas. Then create a relationship by dragging the <strong>data_dictionary_bikes.csv</strong> table to the canvas. When you see the blue <em>“noodle”</em> between the two tables, drop <strong>data_dictionary_bikes.csv</strong>. In the <strong>relationship settings</strong>, set the relationship as:
+<ul>
+<li><code>Column Abbreviation</code> = <code>Column Abbreviation</code></li>
+<li><code>Numeric Value</code> = <code>Numeric Value</code></li>
+</ul></li>
+<li>Repeat step 2 to relate <strong>demographics.csv</strong> to the <strong>survey_responses.csv</strong> table and set the relationship as:
+<ul>
+<li><code>Hh Id</code> = <code>Hh Id</code></li>
+<li><code>Person Id</code> = <code>Person Id</code></li>
+<li><strong>Note</strong>: You may need to select <strong>Edit Calculation</strong> to change the data type for <strong>Person Id</strong> from string to integer.</li>
+</ul></li>
+<li>Repeat step 2 to relate <strong>household_weights.csv</strong> to the <strong>survey_responses.csv</strong> table and set the relationship as:
+<ul>
+<li><code>Hh Id</code> = <code>Hh Id</code></li>
+</ul></li>
+<li>Repeat step 2 to relate <strong>person_weights.csv</strong> to the <strong>survey_responses.csv</strong> table and sset the relationship as:
+<ul>
+<li><code>Hh Id</code> = <code>Hh Id</code></li>
+<li><code>Person Id</code> = <code>Person Id</code></li>
+</ul></li>
+<li>Repeat step 2 to relate <strong>trip_weights.csv</strong> to the <strong>survey_responses.csv</strong> table and set the relationship as:
+<ul>
+<li><code>Hh Id</code> = <code>Hh Id</code></li>
+<li><code>Person Id</code> = <code>Person Id</code></li>
+</ul></li>
+</ol>
+<video autoplay="" muted="" controls="" width="100%">
+<source src="videos/tableau_prep_7_relate_datasets.mp4" type="video/mp4">
+</video>
+<p>With the survey data prepared and related in Tableau, the foundation is now in place for analysis and visualization. The next lesson explores various approaches to effectively and efficiently visualize demographic data.</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" role="list">
+
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/OSU-Libraries-Research-Services\.github\.io\/data_visualization\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./tableau_and_surveys.html" class="pagination-link" aria-label="Introduction">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tableau_and_surveys_lesson_2.html" class="pagination-link" aria-label="Lesson 2. Demographic Data">
+        <span class="nav-page-text">Lesson 2. Demographic Data</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://library.osu.edu/policies/copyright-information">
+<p>© 2026 The Ohio State University</p>
+</a>
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
